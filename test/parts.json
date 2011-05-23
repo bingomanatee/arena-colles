@@ -1,0 +1,4652 @@
+{
+    "item": {
+        "actor_parts/item / 0076.png ": {
+            "path ": "actor_parts / item / 0076.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000001 "
+        },
+        "actor_parts / item / 0152.png ": {
+            "path ": "actor_parts / item / 0152.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000002 "
+        },
+        "actor_parts / item / 0134.png ": {
+            "path ": "actor_parts / item / 0134.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000003 "
+        },
+        "actor_parts / item / 0179.png ": {
+            "path ": "actor_parts / item / 0179.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000004 "
+        },
+        "actor_parts / item / 0164.png ": {
+            "path ": "actor_parts / item / 0164.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000005 "
+        },
+        "actor_parts / item / 0123.png ": {
+            "path ": "actor_parts / item / 0123.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000006 "
+        },
+        "actor_parts / item / 0158.png ": {
+            "path ": "actor_parts / item / 0158.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000007 "
+        },
+        "actor_parts / item / 0015.png ": {
+            "path ": "actor_parts / item / 0015.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000008 "
+        },
+        "actor_parts / item / 0035.png ": {
+            "path ": "actor_parts / item / 0035.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000009 "
+        },
+        "actor_parts / item / 0045.png ": {
+            "path ": "actor_parts / item / 0045.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900000a "
+        },
+        "actor_parts / item / 0050.png ": {
+            "path ": "actor_parts / item / 0050.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900000b "
+        },
+        "actor_parts / item / 0031.png ": {
+            "path ": "actor_parts / item / 0031.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900000c "
+        },
+        "actor_parts / item / 0022.png ": {
+            "path ": "actor_parts / item / 0022.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900000d "
+        },
+        "actor_parts / item / 0139.png ": {
+            "path ": "actor_parts / item / 0139.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900000e "
+        },
+        "actor_parts / item / 0163.png ": {
+            "path ": "actor_parts / item / 0163.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900000f "
+        },
+        "actor_parts / item / 0120.png ": {
+            "path ": "actor_parts / item / 0120.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000010 "
+        },
+        "actor_parts / item / 0013.png ": {
+            "path ": "actor_parts / item / 0013.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000011 "
+        },
+        "actor_parts / item / 0127.png ": {
+            "path ": "actor_parts / item / 0127.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000012 "
+        },
+        "actor_parts / item / 0054.png ": {
+            "path ": "actor_parts / item / 0054.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000013 "
+        },
+        "actor_parts / item / 0088.png ": {
+            "path ": "actor_parts / item / 0088.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000014 "
+        },
+        "actor_parts / item / 0115.png ": {
+            "path ": "actor_parts / item / 0115.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000015 "
+        },
+        "actor_parts / item / 0033.png ": {
+            "path ": "actor_parts / item / 0033.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000016 "
+        },
+        "actor_parts / item / 0075.png ": {
+            "path ": "actor_parts / item / 0075.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000017 "
+        },
+        "actor_parts / item / 0025.png ": {
+            "path ": "actor_parts / item / 0025.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000018 "
+        },
+        "actor_parts / item / 0185.png ": {
+            "path ": "actor_parts / item / 0185.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000019 "
+        },
+        "actor_parts / item / 0067.png ": {
+            "path ": "actor_parts / item / 0067.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900001a "
+        },
+        "actor_parts / item / 0169.png ": {
+            "path ": "actor_parts / item / 0169.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900001b "
+        },
+        "actor_parts / item / 0121.png ": {
+            "path ": "actor_parts / item / 0121.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900001c "
+        },
+        "actor_parts / item / 0151.png ": {
+            "path ": "actor_parts / item / 0151.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900001d "
+        },
+        "actor_parts / item / 0184.png ": {
+            "path ": "actor_parts / item / 0184.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900001e "
+        },
+        "actor_parts / item / 0143.png ": {
+            "path ": "actor_parts / item / 0143.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900001f "
+        },
+        "actor_parts / item / 0009.png ": {
+            "path ": "actor_parts / item / 0009.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000020 "
+        },
+        "actor_parts / item / 0137.png ": {
+            "path ": "actor_parts / item / 0137.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000021 "
+        },
+        "actor_parts / item / 0052.png ": {
+            "path ": "actor_parts / item / 0052.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000022 "
+        },
+        "actor_parts / item / 0020.png ": {
+            "path ": "actor_parts / item / 0020.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000023 "
+        },
+        "actor_parts / item / 0038.png ": {
+            "path ": "actor_parts / item / 0038.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000024 "
+        },
+        "actor_parts / item / 0177.png ": {
+            "path ": "actor_parts / item / 0177.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000025 "
+        },
+        "actor_parts / item / 0113.png ": {
+            "path ": "actor_parts / item / 0113.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000026 "
+        },
+        "actor_parts / item / 0157.png ": {
+            "path ": "actor_parts / item / 0157.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000027 "
+        },
+        "actor_parts / item / 0122.png ": {
+            "path ": "actor_parts / item / 0122.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000028 "
+        },
+        "actor_parts / item / 0041.png ": {
+            "path ": "actor_parts / item / 0041.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000029 "
+        },
+        "actor_parts / item / 0086.png ": {
+            "path ": "actor_parts / item / 0086.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900002a "
+        },
+        "actor_parts / item / 0034.png ": {
+            "path ": "actor_parts / item / 0034.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900002b "
+        },
+        "actor_parts / item / 0056.png ": {
+            "path ": "actor_parts / item / 0056.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900002c "
+        },
+        "actor_parts / item / 0103.png ": {
+            "path ": "actor_parts / item / 0103.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900002d "
+        },
+        "actor_parts / item / 0097.png ": {
+            "path ": "actor_parts / item / 0097.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900002e "
+        },
+        "actor_parts / item / 0180.png ": {
+            "path ": "actor_parts / item / 0180.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900002f "
+        },
+        "actor_parts / item / 0069.png ": {
+            "path ": "actor_parts / item / 0069.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000030 "
+        },
+        "actor_parts / item / 0102.png ": {
+            "path ": "actor_parts / item / 0102.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000031 "
+        },
+        "actor_parts / item / 0162.png ": {
+            "path ": "actor_parts / item / 0162.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000032 "
+        },
+        "actor_parts / item / 0093.png ": {
+            "path ": "actor_parts / item / 0093.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000033 "
+        },
+        "actor_parts / item / 0105.png ": {
+            "path ": "actor_parts / item / 0105.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000034 "
+        },
+        "actor_parts / item / 0167.png ": {
+            "path ": "actor_parts / item / 0167.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000035 "
+        },
+        "actor_parts / item / 0049.png ": {
+            "path ": "actor_parts / item / 0049.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000036 "
+        },
+        "actor_parts / item / 0018.png ": {
+            "path ": "actor_parts / item / 0018.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000037 "
+        },
+        "actor_parts / item / 0065.png ": {
+            "path ": "actor_parts / item / 0065.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000038 "
+        },
+        "actor_parts / item / 0014.png ": {
+            "path ": "actor_parts / item / 0014.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000039 "
+        },
+        "actor_parts / item / 0073.png ": {
+            "path ": "actor_parts / item / 0073.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900003a "
+        },
+        "actor_parts / item / 0191.png ": {
+            "path ": "actor_parts / item / 0191.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900003b "
+        },
+        "actor_parts / item / 0124.png ": {
+            "path ": "actor_parts / item / 0124.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900003c "
+        },
+        "actor_parts / item / 0005.png ": {
+            "path ": "actor_parts / item / 0005.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900003d "
+        },
+        "actor_parts / item / 0030.png ": {
+            "path ": "actor_parts / item / 0030.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900003e "
+        },
+        "actor_parts / item / 0112.png ": {
+            "path ": "actor_parts / item / 0112.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900003f "
+        },
+        "actor_parts / item / 0106.png ": {
+            "path ": "actor_parts / item / 0106.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000040 "
+        },
+        "actor_parts / item / 0116.png ": {
+            "path ": "actor_parts / item / 0116.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000041 "
+        },
+        "actor_parts / item / 0090.png ": {
+            "path ": "actor_parts / item / 0090.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000042 "
+        },
+        "actor_parts / item / 0202.png ": {
+            "path ": "actor_parts / item / 0202.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000043 "
+        },
+        "actor_parts / item / 0108.png ": {
+            "path ": "actor_parts / item / 0108.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000044 "
+        },
+        "actor_parts / item / 0008.png ": {
+            "path ": "actor_parts / item / 0008.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000045 "
+        },
+        "actor_parts / item / 0092.png ": {
+            "path ": "actor_parts / item / 0092.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000046 "
+        },
+        "actor_parts / item / 0187.png ": {
+            "path ": "actor_parts / item / 0187.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000047 "
+        },
+        "actor_parts / item / 0027.png ": {
+            "path ": "actor_parts / item / 0027.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000048 "
+        },
+        "actor_parts / item / 0100.png ": {
+            "path ": "actor_parts / item / 0100.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000049 "
+        },
+        "actor_parts / item / 0048.png ": {
+            "path ": "actor_parts / item / 0048.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900004a "
+        },
+        "actor_parts / item / 0140.png ": {
+            "path ": "actor_parts / item / 0140.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900004b "
+        },
+        "actor_parts / item / 0063.png ": {
+            "path ": "actor_parts / item / 0063.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900004c "
+        },
+        "actor_parts / item / 0062.png ": {
+            "path ": "actor_parts / item / 0062.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900004d "
+        },
+        "actor_parts / item / 0021.png ": {
+            "path ": "actor_parts / item / 0021.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900004e "
+        },
+        "actor_parts / item / 0089.png ": {
+            "path ": "actor_parts / item / 0089.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900004f "
+        },
+        "actor_parts / item / 0074.png ": {
+            "path ": "actor_parts / item / 0074.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000050 "
+        },
+        "actor_parts / item / 0010.png ": {
+            "path ": "actor_parts / item / 0010.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000051 "
+        },
+        "actor_parts / item / 0098.png ": {
+            "path ": "actor_parts / item / 0098.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000052 "
+        },
+        "actor_parts / item / 0129.png ": {
+            "path ": "actor_parts / item / 0129.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000053 "
+        },
+        "actor_parts / item / 0043.png ": {
+            "path ": "actor_parts / item / 0043.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000054 "
+        },
+        "actor_parts / item / 0055.png ": {
+            "path ": "actor_parts / item / 0055.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000055 "
+        },
+        "actor_parts / item / 0126.png ": {
+            "path ": "actor_parts / item / 0126.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000056 "
+        },
+        "actor_parts / item / 0037.png ": {
+            "path ": "actor_parts / item / 0037.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000057 "
+        },
+        "actor_parts / item / 0201.png ": {
+            "path ": "actor_parts / item / 0201.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000058 "
+        },
+        "actor_parts / item / 0104.png ": {
+            "path ": "actor_parts / item / 0104.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000059 "
+        },
+        "actor_parts / item / 0136.png ": {
+            "path ": "actor_parts / item / 0136.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900005a "
+        },
+        "actor_parts / item / 0026.png ": {
+            "path ": "actor_parts / item / 0026.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900005b "
+        },
+        "actor_parts / item / 0159.png ": {
+            "path ": "actor_parts / item / 0159.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900005c "
+        },
+        "actor_parts / item / 0160.png ": {
+            "path ": "actor_parts / item / 0160.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900005d "
+        },
+        "actor_parts / item / 0148.png ": {
+            "path ": "actor_parts / item / 0148.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900005e "
+        },
+        "actor_parts / item / 0095.png ": {
+            "path ": "actor_parts / item / 0095.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900005f "
+        },
+        "actor_parts / item / 0016.png ": {
+            "path ": "actor_parts / item / 0016.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000060 "
+        },
+        "actor_parts / item / 0138.png ": {
+            "path ": "actor_parts / item / 0138.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000061 "
+        },
+        "actor_parts / item / 0087.png ": {
+            "path ": "actor_parts / item / 0087.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000062 "
+        },
+        "actor_parts / item / 0083.png ": {
+            "path ": "actor_parts / item / 0083.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000063 "
+        },
+        "actor_parts / item / 0011.png ": {
+            "path ": "actor_parts / item / 0011.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000064 "
+        },
+        "actor_parts / item / 0170.png ": {
+            "path ": "actor_parts / item / 0170.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000065 "
+        },
+        "actor_parts / item / 0203.png ": {
+            "path ": "actor_parts / item / 0203.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000066 "
+        },
+        "actor_parts / item / 0178.png ": {
+            "path ": "actor_parts / item / 0178.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000067 "
+        },
+        "actor_parts / item / 0114.png ": {
+            "path ": "actor_parts / item / 0114.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000068 "
+        },
+        "actor_parts / item / 0150.png ": {
+            "path ": "actor_parts / item / 0150.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000069 "
+        },
+        "actor_parts / item / 0149.png ": {
+            "path ": "actor_parts / item / 0149.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900006a "
+        },
+        "actor_parts / item / 0094.png ": {
+            "path ": "actor_parts / item / 0094.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900006b "
+        },
+        "actor_parts / item / 0117.png ": {
+            "path ": "actor_parts / item / 0117.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900006c "
+        },
+        "actor_parts / item / 0133.png ": {
+            "path ": "actor_parts / item / 0133.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900006d "
+        },
+        "actor_parts / item / 0047.png ": {
+            "path ": "actor_parts / item / 0047.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900006e "
+        },
+        "actor_parts / item / 0182.png ": {
+            "path ": "actor_parts / item / 0182.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900006f "
+        },
+        "actor_parts / item / 0012.png ": {
+            "path ": "actor_parts / item / 0012.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000070 "
+        },
+        "actor_parts / item / 0175.png ": {
+            "path ": "actor_parts / item / 0175.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000071 "
+        },
+        "actor_parts / item / 0145.png ": {
+            "path ": "actor_parts / item / 0145.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000072 "
+        },
+        "actor_parts / item / 0142.png ": {
+            "path ": "actor_parts / item / 0142.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000073 "
+        },
+        "actor_parts / item / 0131.png ": {
+            "path ": "actor_parts / item / 0131.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000074 "
+        },
+        "actor_parts / item / 0079.png ": {
+            "path ": "actor_parts / item / 0079.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000075 "
+        },
+        "actor_parts / item / 0168.png ": {
+            "path ": "actor_parts / item / 0168.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000076 "
+        },
+        "actor_parts / item / 0070.png ": {
+            "path ": "actor_parts / item / 0070.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000077 "
+        },
+        "actor_parts / item / 0072.png ": {
+            "path ": "actor_parts / item / 0072.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000078 "
+        },
+        "actor_parts / item / 0186.png ": {
+            "path ": "actor_parts / item / 0186.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000079 "
+        },
+        "actor_parts / item / 0085.png ": {
+            "path ": "actor_parts / item / 0085.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900007a "
+        },
+        "actor_parts / item / 0028.png ": {
+            "path ": "actor_parts / item / 0028.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900007b "
+        },
+        "actor_parts / item / 0156.png ": {
+            "path ": "actor_parts / item / 0156.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900007c "
+        },
+        "actor_parts / item / 0001.png ": {
+            "path ": "actor_parts / item / 0001.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900007d "
+        },
+        "actor_parts / item / 0023.png ": {
+            "path ": "actor_parts / item / 0023.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900007e "
+        },
+        "actor_parts / item / 0066.png ": {
+            "path ": "actor_parts / item / 0066.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900007f "
+        },
+        "actor_parts / item / 0118.png ": {
+            "path ": "actor_parts / item / 0118.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000080 "
+        },
+        "actor_parts / item / 0057.png ": {
+            "path ": "actor_parts / item / 0057.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000081 "
+        },
+        "actor_parts / item / 0059.png ": {
+            "path ": "actor_parts / item / 0059.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000082 "
+        },
+        "actor_parts / item / 0040.png ": {
+            "path ": "actor_parts / item / 0040.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000083 "
+        },
+        "actor_parts / item / 0130.png ": {
+            "path ": "actor_parts / item / 0130.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000084 "
+        },
+        "actor_parts / item / 0174.png ": {
+            "path ": "actor_parts / item / 0174.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000085 "
+        },
+        "actor_parts / item / 0068.png ": {
+            "path ": "actor_parts / item / 0068.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000086 "
+        },
+        "actor_parts / item / 0197.png ": {
+            "path ": "actor_parts / item / 0197.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000087 "
+        },
+        "actor_parts / item / 0119.png ": {
+            "path ": "actor_parts / item / 0119.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000088 "
+        },
+        "actor_parts / item / 0165.png ": {
+            "path ": "actor_parts / item / 0165.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000089 "
+        },
+        "actor_parts / item / 0042.png ": {
+            "path ": "actor_parts / item / 0042.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900008a "
+        },
+        "actor_parts / item / 0101.png ": {
+            "path ": "actor_parts / item / 0101.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900008b "
+        },
+        "actor_parts / item / 0039.png ": {
+            "path ": "actor_parts / item / 0039.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900008c "
+        },
+        "actor_parts / item / 0144.png ": {
+            "path ": "actor_parts / item / 0144.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900008d "
+        },
+        "actor_parts / item / 0044.png ": {
+            "path ": "actor_parts / item / 0044.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900008e "
+        },
+        "actor_parts / item / 0060.png ": {
+            "path ": "actor_parts / item / 0060.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900008f "
+        },
+        "actor_parts / item / 0154.png ": {
+            "path ": "actor_parts / item / 0154.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000090 "
+        },
+        "actor_parts / item / 0176.png ": {
+            "path ": "actor_parts / item / 0176.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000091 "
+        },
+        "actor_parts / item / 0107.png ": {
+            "path ": "actor_parts / item / 0107.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000092 "
+        },
+        "actor_parts / item / 0006.png ": {
+            "path ": "actor_parts / item / 0006.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000093 "
+        },
+        "actor_parts / item / 0091.png ": {
+            "path ": "actor_parts / item / 0091.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000094 "
+        },
+        "actor_parts / item / 0003.png ": {
+            "path ": "actor_parts / item / 0003.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000095 "
+        },
+        "actor_parts / item / 0036.png ": {
+            "path ": "actor_parts / item / 0036.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000096 "
+        },
+        "actor_parts / item / 0190.png ": {
+            "path ": "actor_parts / item / 0190.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000097 "
+        },
+        "actor_parts / item / 0200.png ": {
+            "path ": "actor_parts / item / 0200.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000098 "
+        },
+        "actor_parts / item / 0077.png ": {
+            "path ": "actor_parts / item / 0077.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da19000099 "
+        },
+        "actor_parts / item / 0125.png ": {
+            "path ": "actor_parts / item / 0125.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900009a "
+        },
+        "actor_parts / item / 0096.png ": {
+            "path ": "actor_parts / item / 0096.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900009b "
+        },
+        "actor_parts / item / 0084.png ": {
+            "path ": "actor_parts / item / 0084.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900009c "
+        },
+        "actor_parts / item / 0058.png ": {
+            "path ": "actor_parts / item / 0058.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900009d "
+        },
+        "actor_parts / item / 0024.png ": {
+            "path ": "actor_parts / item / 0024.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900009e "
+        },
+        "actor_parts / item / 0135.png ": {
+            "path ": "actor_parts / item / 0135.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da1900009f "
+        },
+        "actor_parts / item / 0071.png ": {
+            "path ": "actor_parts / item / 0071.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a0 "
+        },
+        "actor_parts / item / 0153.png ": {
+            "path ": "actor_parts / item / 0153.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a1 "
+        },
+        "actor_parts / item / 0019.png ": {
+            "path ": "actor_parts / item / 0019.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a2 "
+        },
+        "actor_parts / item / 0195.png ": {
+            "path ": "actor_parts / item / 0195.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a3 "
+        },
+        "actor_parts / item / 0166.png ": {
+            "path ": "actor_parts / item / 0166.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a4 "
+        },
+        "actor_parts / item / 0181.png ": {
+            "path ": "actor_parts / item / 0181.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a5 "
+        },
+        "actor_parts / item / 0161.png ": {
+            "path ": "actor_parts / item / 0161.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a6 "
+        },
+        "actor_parts / item / 0110.png ": {
+            "path ": "actor_parts / item / 0110.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a7 "
+        },
+        "actor_parts / item / 0099.png ": {
+            "path ": "actor_parts / item / 0099.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a8 "
+        },
+        "actor_parts / item / 0002.png ": {
+            "path ": "actor_parts / item / 0002.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000a9 "
+        },
+        "actor_parts / item / 0192.png ": {
+            "path ": "actor_parts / item / 0192.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000aa "
+        },
+        "actor_parts / item / 0007.png ": {
+            "path ": "actor_parts / item / 0007.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000ab "
+        },
+        "actor_parts / item / 0196.png ": {
+            "path ": "actor_parts / item / 0196.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000ac "
+        },
+        "actor_parts / item / 0183.png ": {
+            "path ": "actor_parts / item / 0183.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000ad "
+        },
+        "actor_parts / item / 0078.png ": {
+            "path ": "actor_parts / item / 0078.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000ae "
+        },
+        "actor_parts / item / 0109.png ": {
+            "path ": "actor_parts / item / 0109.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000af "
+        },
+        "actor_parts / item / 0155.png ": {
+            "path ": "actor_parts / item / 0155.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b0 "
+        },
+        "actor_parts / item / 0189.png ": {
+            "path ": "actor_parts / item / 0189.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b1 "
+        },
+        "actor_parts / item / 0198.png ": {
+            "path ": "actor_parts / item / 0198.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b2 "
+        },
+        "actor_parts / item / 0194.png ": {
+            "path ": "actor_parts / item / 0194.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b3 "
+        },
+        "actor_parts / item / 0111.png ": {
+            "path ": "actor_parts / item / 0111.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b4 "
+        },
+        "actor_parts / item / 0147.png ": {
+            "path ": "actor_parts / item / 0147.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b5 "
+        },
+        "actor_parts / item / 0017.png ": {
+            "path ": "actor_parts / item / 0017.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b6 "
+        },
+        "actor_parts / item / 0193.png ": {
+            "path ": "actor_parts / item / 0193.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b7 "
+        },
+        "actor_parts / item / 0061.png ": {
+            "path ": "actor_parts / item / 0061.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b8 "
+        },
+        "actor_parts / item / 0141.png ": {
+            "path ": "actor_parts / item / 0141.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000b9 "
+        },
+        "actor_parts / item / 0053.png ": {
+            "path ": "actor_parts / item / 0053.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000ba "
+        },
+        "actor_parts / item / 0029.png ": {
+            "path ": "actor_parts / item / 0029.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000bb "
+        },
+        "actor_parts / item / 0064.png ": {
+            "path ": "actor_parts / item / 0064.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000bc "
+        },
+        "actor_parts / item / 0080.png ": {
+            "path ": "actor_parts / item / 0080.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000bd "
+        },
+        "actor_parts / item / 0081.png ": {
+            "path ": "actor_parts / item / 0081.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000be "
+        },
+        "actor_parts / item / 0171.png ": {
+            "path ": "actor_parts / item / 0171.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000bf "
+        },
+        "actor_parts / item / 0146.png ": {
+            "path ": "actor_parts / item / 0146.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c0 "
+        },
+        "actor_parts / item / 0132.png ": {
+            "path ": "actor_parts / item / 0132.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c1 "
+        },
+        "actor_parts / item / 0204.png ": {
+            "path ": "actor_parts / item / 0204.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c2 "
+        },
+        "actor_parts / item / 0199.png ": {
+            "path ": "actor_parts / item / 0199.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c3 "
+        },
+        "actor_parts / item / 0082.png ": {
+            "path ": "actor_parts / item / 0082.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c4 "
+        },
+        "actor_parts / item / 0004.png ": {
+            "path ": "actor_parts / item / 0004.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c5 "
+        },
+        "actor_parts / item / 0032.png ": {
+            "path ": "actor_parts / item / 0032.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c6 "
+        },
+        "actor_parts / item / 0172.png ": {
+            "path ": "actor_parts / item / 0172.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c7 "
+        },
+        "actor_parts / item / 0173.png ": {
+            "path ": "actor_parts / item / 0173.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c8 "
+        },
+        "actor_parts / item / 0188.png ": {
+            "path ": "actor_parts / item / 0188.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000c9 "
+        },
+        "actor_parts / item / 0046.png ": {
+            "path ": "actor_parts / item / 0046.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000ca "
+        },
+        "actor_parts / item / 0051.png ": {
+            "path ": "actor_parts / item / 0051.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000cb "
+        },
+        "actor_parts / item / 0128.png ": {
+            "path ": "actor_parts / item / 0128.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "item "
+            },
+            "_id ": "4db5d76c926672da190000cc "
+        }
+    },
+    "head ": {
+        "actor_parts / head / 0076.png ": {
+            "path ": "actor_parts / head / 0076.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000cd "
+        },
+        "actor_parts / head / 0015.png ": {
+            "path ": "actor_parts / head / 0015.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000ce "
+        },
+        "actor_parts / head / 0035.png ": {
+            "path ": "actor_parts / head / 0035.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000cf "
+        },
+        "actor_parts / head / 0045.png ": {
+            "path ": "actor_parts / head / 0045.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d0 "
+        },
+        "actor_parts / head / 0050.png ": {
+            "path ": "actor_parts / head / 0050.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d1 "
+        },
+        "actor_parts / head / 0022.png ": {
+            "path ": "actor_parts / head / 0022.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d2 "
+        },
+        "actor_parts / head / 0031.png ": {
+            "path ": "actor_parts / head / 0031.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d3 "
+        },
+        "actor_parts / head / 0013.png ": {
+            "path ": "actor_parts / head / 0013.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d4 "
+        },
+        "actor_parts / head / 0054.png ": {
+            "path ": "actor_parts / head / 0054.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d5 "
+        },
+        "actor_parts / head / 0088.png ": {
+            "path ": "actor_parts / head / 0088.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d6 "
+        },
+        "actor_parts / head / 0033.png ": {
+            "path ": "actor_parts / head / 0033.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d7 "
+        },
+        "actor_parts / head / 0075.png ": {
+            "path ": "actor_parts / head / 0075.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d8 "
+        },
+        "actor_parts / head / 0025.png ": {
+            "path ": "actor_parts / head / 0025.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000d9 "
+        },
+        "actor_parts / head / 0067.png ": {
+            "path ": "actor_parts / head / 0067.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000da "
+        },
+        "actor_parts / head / 0009.png ": {
+            "path ": "actor_parts / head / 0009.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000db "
+        },
+        "actor_parts / head / 0052.png ": {
+            "path ": "actor_parts / head / 0052.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000dc "
+        },
+        "actor_parts / head / 0020.png ": {
+            "path ": "actor_parts / head / 0020.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000dd "
+        },
+        "actor_parts / head / 0038.png ": {
+            "path ": "actor_parts / head / 0038.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000de "
+        },
+        "actor_parts / head / 0041.png ": {
+            "path ": "actor_parts / head / 0041.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000df "
+        },
+        "actor_parts / head / 0086.png ": {
+            "path ": "actor_parts / head / 0086.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e0 "
+        },
+        "actor_parts / head / 0034.png ": {
+            "path ": "actor_parts / head / 0034.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e1 "
+        },
+        "actor_parts / head / 0056.png ": {
+            "path ": "actor_parts / head / 0056.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e2 "
+        },
+        "actor_parts / head / 0069.png ": {
+            "path ": "actor_parts / head / 0069.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e3 "
+        },
+        "actor_parts / head / 0049.png ": {
+            "path ": "actor_parts / head / 0049.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e4 "
+        },
+        "actor_parts / head / 0018.png ": {
+            "path ": "actor_parts / head / 0018.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e5 "
+        },
+        "actor_parts / head / 0065.png ": {
+            "path ": "actor_parts / head / 0065.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e6 "
+        },
+        "actor_parts / head / 0014.png ": {
+            "path ": "actor_parts / head / 0014.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e7 "
+        },
+        "actor_parts / head / 0073.png ": {
+            "path ": "actor_parts / head / 0073.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e8 "
+        },
+        "actor_parts / head / 0005.png ": {
+            "path ": "actor_parts / head / 0005.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000e9 "
+        },
+        "actor_parts / head / 0030.png ": {
+            "path ": "actor_parts / head / 0030.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000ea "
+        },
+        "actor_parts / head / 0090.png ": {
+            "path ": "actor_parts / head / 0090.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000eb "
+        },
+        "actor_parts / head / 0008.png ": {
+            "path ": "actor_parts / head / 0008.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000ec "
+        },
+        "actor_parts / head / 0027.png ": {
+            "path ": "actor_parts / head / 0027.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000ed "
+        },
+        "actor_parts / head / 0048.png ": {
+            "path ": "actor_parts / head / 0048.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000ee "
+        },
+        "actor_parts / head / 0063.png ": {
+            "path ": "actor_parts / head / 0063.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000ef "
+        },
+        "actor_parts / head / 0062.png ": {
+            "path ": "actor_parts / head / 0062.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f0 "
+        },
+        "actor_parts / head / 0021.png ": {
+            "path ": "actor_parts / head / 0021.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f1 "
+        },
+        "actor_parts / head / 0089.png ": {
+            "path ": "actor_parts / head / 0089.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f2 "
+        },
+        "actor_parts / head / 0074.png ": {
+            "path ": "actor_parts / head / 0074.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f3 "
+        },
+        "actor_parts / head / 0010.png ": {
+            "path ": "actor_parts / head / 0010.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f4 "
+        },
+        "actor_parts / head / 0043.png ": {
+            "path ": "actor_parts / head / 0043.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f5 "
+        },
+        "actor_parts / head / 0055.png ": {
+            "path ": "actor_parts / head / 0055.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f6 "
+        },
+        "actor_parts / head / 0037.png ": {
+            "path ": "actor_parts / head / 0037.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f7 "
+        },
+        "actor_parts / head / 0026.png ": {
+            "path ": "actor_parts / head / 0026.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f8 "
+        },
+        "actor_parts / head / 0016.png ": {
+            "path ": "actor_parts / head / 0016.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000f9 "
+        },
+        "actor_parts / head / 0087.png ": {
+            "path ": "actor_parts / head / 0087.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000fa "
+        },
+        "actor_parts / head / 0083.png ": {
+            "path ": "actor_parts / head / 0083.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000fb "
+        },
+        "actor_parts / head / 0011.png ": {
+            "path ": "actor_parts / head / 0011.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000fc "
+        },
+        "actor_parts / head / 0047.png ": {
+            "path ": "actor_parts / head / 0047.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000fd "
+        },
+        "actor_parts / head / 0012.png ": {
+            "path ": "actor_parts / head / 0012.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000fe "
+        },
+        "actor_parts / head / 0079.png ": {
+            "path ": "actor_parts / head / 0079.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da190000ff "
+        },
+        "actor_parts / head / 0070.png ": {
+            "path ": "actor_parts / head / 0070.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000100 "
+        },
+        "actor_parts / head / 0072.png ": {
+            "path ": "actor_parts / head / 0072.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000101 "
+        },
+        "actor_parts / head / 0085.png ": {
+            "path ": "actor_parts / head / 0085.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000102 "
+        },
+        "actor_parts / head / 0028.png ": {
+            "path ": "actor_parts / head / 0028.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000103 "
+        },
+        "actor_parts / head / 0001.png ": {
+            "path ": "actor_parts / head / 0001.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000104 "
+        },
+        "actor_parts / head / 0023.png ": {
+            "path ": "actor_parts / head / 0023.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000105 "
+        },
+        "actor_parts / head / 0066.png ": {
+            "path ": "actor_parts / head / 0066.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000106 "
+        },
+        "actor_parts / head / 0057.png ": {
+            "path ": "actor_parts / head / 0057.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000107 "
+        },
+        "actor_parts / head / 0059.png ": {
+            "path ": "actor_parts / head / 0059.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000108 "
+        },
+        "actor_parts / head / 0040.png ": {
+            "path ": "actor_parts / head / 0040.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000109 "
+        },
+        "actor_parts / head / 0068.png ": {
+            "path ": "actor_parts / head / 0068.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900010a "
+        },
+        "actor_parts / head / 0042.png ": {
+            "path ": "actor_parts / head / 0042.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900010b "
+        },
+        "actor_parts / head / 0039.png ": {
+            "path ": "actor_parts / head / 0039.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900010c "
+        },
+        "actor_parts / head / 0044.png ": {
+            "path ": "actor_parts / head / 0044.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900010d "
+        },
+        "actor_parts / head / 0060.png ": {
+            "path ": "actor_parts / head / 0060.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900010e "
+        },
+        "actor_parts / head / 0006.png ": {
+            "path ": "actor_parts / head / 0006.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900010f "
+        },
+        "actor_parts / head / 0003.png ": {
+            "path ": "actor_parts / head / 0003.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000110 "
+        },
+        "actor_parts / head / 0036.png ": {
+            "path ": "actor_parts / head / 0036.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000111 "
+        },
+        "actor_parts / head / 0077.png ": {
+            "path ": "actor_parts / head / 0077.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000112 "
+        },
+        "actor_parts / head / 0084.png ": {
+            "path ": "actor_parts / head / 0084.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000113 "
+        },
+        "actor_parts / head / 0058.png ": {
+            "path ": "actor_parts / head / 0058.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000114 "
+        },
+        "actor_parts / head / 0024.png ": {
+            "path ": "actor_parts / head / 0024.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000115 "
+        },
+        "actor_parts / head / 0071.png ": {
+            "path ": "actor_parts / head / 0071.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000116 "
+        },
+        "actor_parts / head / 0019.png ": {
+            "path ": "actor_parts / head / 0019.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000117 "
+        },
+        "actor_parts / head / 0002.png ": {
+            "path ": "actor_parts / head / 0002.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000118 "
+        },
+        "actor_parts / head / 0007.png ": {
+            "path ": "actor_parts / head / 0007.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000119 "
+        },
+        "actor_parts / head / 0078.png ": {
+            "path ": "actor_parts / head / 0078.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900011a "
+        },
+        "actor_parts / head / 0017.png ": {
+            "path ": "actor_parts / head / 0017.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900011b "
+        },
+        "actor_parts / head / 0061.png ": {
+            "path ": "actor_parts / head / 0061.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900011c "
+        },
+        "actor_parts / head / 0053.png ": {
+            "path ": "actor_parts / head / 0053.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900011d "
+        },
+        "actor_parts / head / 0029.png ": {
+            "path ": "actor_parts / head / 0029.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900011e "
+        },
+        "actor_parts / head / 0064.png ": {
+            "path ": "actor_parts / head / 0064.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da1900011f "
+        },
+        "actor_parts / head / 0080.png ": {
+            "path ": "actor_parts / head / 0080.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000120 "
+        },
+        "actor_parts / head / 0081.png ": {
+            "path ": "actor_parts / head / 0081.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000121 "
+        },
+        "actor_parts / head / 0082.png ": {
+            "path ": "actor_parts / head / 0082.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000122 "
+        },
+        "actor_parts / head / 0004.png ": {
+            "path ": "actor_parts / head / 0004.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000123 "
+        },
+        "actor_parts / head / 0032.png ": {
+            "path ": "actor_parts / head / 0032.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000124 "
+        },
+        "actor_parts / head / 0046.png ": {
+            "path ": "actor_parts / head / 0046.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000125 "
+        },
+        "actor_parts / head / 0051.png ": {
+            "path ": "actor_parts / head / 0051.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "head "
+            },
+            "_id ": "4db5d76c926672da19000126 "
+        }
+    },
+    "suit ": {
+        "actor_parts / suit / 0076.png ": {
+            "path ": "actor_parts / suit / 0076.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000127 "
+        },
+        "actor_parts / suit / 0123.png ": {
+            "path ": "actor_parts / suit / 0123.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000128 "
+        },
+        "actor_parts / suit / 0015.png ": {
+            "path ": "actor_parts / suit / 0015.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000129 "
+        },
+        "actor_parts / suit / 0035.png ": {
+            "path ": "actor_parts / suit / 0035.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900012a "
+        },
+        "actor_parts / suit / 0045.png ": {
+            "path ": "actor_parts / suit / 0045.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900012b "
+        },
+        "actor_parts / suit / 0050.png ": {
+            "path ": "actor_parts / suit / 0050.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900012c "
+        },
+        "actor_parts / suit / 0031.png ": {
+            "path ": "actor_parts / suit / 0031.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900012d "
+        },
+        "actor_parts / suit / 0022.png ": {
+            "path ": "actor_parts / suit / 0022.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900012e "
+        },
+        "actor_parts / suit / 0120.png ": {
+            "path ": "actor_parts / suit / 0120.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900012f "
+        },
+        "actor_parts / suit / 0013.png ": {
+            "path ": "actor_parts / suit / 0013.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000130 "
+        },
+        "actor_parts / suit / 0127.png ": {
+            "path ": "actor_parts / suit / 0127.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000131 "
+        },
+        "actor_parts / suit / 0054.png ": {
+            "path ": "actor_parts / suit / 0054.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000132 "
+        },
+        "actor_parts / suit / 0088.png ": {
+            "path ": "actor_parts / suit / 0088.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000133 "
+        },
+        "actor_parts / suit / 0115.png ": {
+            "path ": "actor_parts / suit / 0115.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000134 "
+        },
+        "actor_parts / suit / 0033.png ": {
+            "path ": "actor_parts / suit / 0033.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000135 "
+        },
+        "actor_parts / suit / 0075.png ": {
+            "path ": "actor_parts / suit / 0075.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000136 "
+        },
+        "actor_parts / suit / 0025.png ": {
+            "path ": "actor_parts / suit / 0025.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000137 "
+        },
+        "actor_parts / suit / 0067.png ": {
+            "path ": "actor_parts / suit / 0067.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000138 "
+        },
+        "actor_parts / suit / 0121.png ": {
+            "path ": "actor_parts / suit / 0121.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000139 "
+        },
+        "actor_parts / suit / 0009.png ": {
+            "path ": "actor_parts / suit / 0009.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900013a "
+        },
+        "actor_parts / suit / 0052.png ": {
+            "path ": "actor_parts / suit / 0052.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900013b "
+        },
+        "actor_parts / suit / 0020.png ": {
+            "path ": "actor_parts / suit / 0020.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900013c "
+        },
+        "actor_parts / suit / 0038.png ": {
+            "path ": "actor_parts / suit / 0038.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900013d "
+        },
+        "actor_parts / suit / 0113.png ": {
+            "path ": "actor_parts / suit / 0113.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900013e "
+        },
+        "actor_parts / suit / 0122.png ": {
+            "path ": "actor_parts / suit / 0122.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900013f "
+        },
+        "actor_parts / suit / 0041.png ": {
+            "path ": "actor_parts / suit / 0041.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000140 "
+        },
+        "actor_parts / suit / 0086.png ": {
+            "path ": "actor_parts / suit / 0086.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000141 "
+        },
+        "actor_parts / suit / 0034.png ": {
+            "path ": "actor_parts / suit / 0034.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000142 "
+        },
+        "actor_parts / suit / 0056.png ": {
+            "path ": "actor_parts / suit / 0056.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000143 "
+        },
+        "actor_parts / suit / 0097.png ": {
+            "path ": "actor_parts / suit / 0097.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000144 "
+        },
+        "actor_parts / suit / 0103.png ": {
+            "path ": "actor_parts / suit / 0103.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000145 "
+        },
+        "actor_parts / suit / 0069.png ": {
+            "path ": "actor_parts / suit / 0069.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000146 "
+        },
+        "actor_parts / suit / 0102.png ": {
+            "path ": "actor_parts / suit / 0102.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000147 "
+        },
+        "actor_parts / suit / 0105.png ": {
+            "path ": "actor_parts / suit / 0105.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000148 "
+        },
+        "actor_parts / suit / 0093.png ": {
+            "path ": "actor_parts / suit / 0093.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000149 "
+        },
+        "actor_parts / suit / 0049.png ": {
+            "path ": "actor_parts / suit / 0049.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900014a "
+        },
+        "actor_parts / suit / 0018.png ": {
+            "path ": "actor_parts / suit / 0018.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900014b "
+        },
+        "actor_parts / suit / 0065.png ": {
+            "path ": "actor_parts / suit / 0065.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900014c "
+        },
+        "actor_parts / suit / 0014.png ": {
+            "path ": "actor_parts / suit / 0014.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900014d "
+        },
+        "actor_parts / suit / 0073.png ": {
+            "path ": "actor_parts / suit / 0073.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900014e "
+        },
+        "actor_parts / suit / 0124.png ": {
+            "path ": "actor_parts / suit / 0124.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900014f "
+        },
+        "actor_parts / suit / 0005.png ": {
+            "path ": "actor_parts / suit / 0005.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000150 "
+        },
+        "actor_parts / suit / 0030.png ": {
+            "path ": "actor_parts / suit / 0030.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000151 "
+        },
+        "actor_parts / suit / 0112.png ": {
+            "path ": "actor_parts / suit / 0112.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000152 "
+        },
+        "actor_parts / suit / 0106.png ": {
+            "path ": "actor_parts / suit / 0106.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000153 "
+        },
+        "actor_parts / suit / 0116.png ": {
+            "path ": "actor_parts / suit / 0116.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000154 "
+        },
+        "actor_parts / suit / 0090.png ": {
+            "path ": "actor_parts / suit / 0090.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000155 "
+        },
+        "actor_parts / suit / 0108.png ": {
+            "path ": "actor_parts / suit / 0108.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000156 "
+        },
+        "actor_parts / suit / 0008.png ": {
+            "path ": "actor_parts / suit / 0008.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000157 "
+        },
+        "actor_parts / suit / 0092.png ": {
+            "path ": "actor_parts / suit / 0092.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000158 "
+        },
+        "actor_parts / suit / 0027.png ": {
+            "path ": "actor_parts / suit / 0027.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000159 "
+        },
+        "actor_parts / suit / 0100.png ": {
+            "path ": "actor_parts / suit / 0100.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900015a "
+        },
+        "actor_parts / suit / 0048.png ": {
+            "path ": "actor_parts / suit / 0048.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900015b "
+        },
+        "actor_parts / suit / 0063.png ": {
+            "path ": "actor_parts / suit / 0063.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900015c "
+        },
+        "actor_parts / suit / 0062.png ": {
+            "path ": "actor_parts / suit / 0062.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900015d "
+        },
+        "actor_parts / suit / 0021.png ": {
+            "path ": "actor_parts / suit / 0021.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900015e "
+        },
+        "actor_parts / suit / 0089.png ": {
+            "path ": "actor_parts / suit / 0089.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900015f "
+        },
+        "actor_parts / suit / 0074.png ": {
+            "path ": "actor_parts / suit / 0074.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000160 "
+        },
+        "actor_parts / suit / 0010.png ": {
+            "path ": "actor_parts / suit / 0010.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000161 "
+        },
+        "actor_parts / suit / 0098.png ": {
+            "path ": "actor_parts / suit / 0098.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000162 "
+        },
+        "actor_parts / suit / 0043.png ": {
+            "path ": "actor_parts / suit / 0043.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000163 "
+        },
+        "actor_parts / suit / 0055.png ": {
+            "path ": "actor_parts / suit / 0055.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000164 "
+        },
+        "actor_parts / suit / 0126.png ": {
+            "path ": "actor_parts / suit / 0126.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000165 "
+        },
+        "actor_parts / suit / 0037.png ": {
+            "path ": "actor_parts / suit / 0037.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000166 "
+        },
+        "actor_parts / suit / 0104.png ": {
+            "path ": "actor_parts / suit / 0104.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000167 "
+        },
+        "actor_parts / suit / 0026.png ": {
+            "path ": "actor_parts / suit / 0026.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000168 "
+        },
+        "actor_parts / suit / 0095.png ": {
+            "path ": "actor_parts / suit / 0095.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000169 "
+        },
+        "actor_parts / suit / 0016.png ": {
+            "path ": "actor_parts / suit / 0016.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900016a "
+        },
+        "actor_parts / suit / 0087.png ": {
+            "path ": "actor_parts / suit / 0087.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900016b "
+        },
+        "actor_parts / suit / 0083.png ": {
+            "path ": "actor_parts / suit / 0083.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900016c "
+        },
+        "actor_parts / suit / 0011.png ": {
+            "path ": "actor_parts / suit / 0011.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900016d "
+        },
+        "actor_parts / suit / 0117.png ": {
+            "path ": "actor_parts / suit / 0117.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900016e "
+        },
+        "actor_parts / suit / 0114.png ": {
+            "path ": "actor_parts / suit / 0114.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900016f "
+        },
+        "actor_parts / suit / 0094.png ": {
+            "path ": "actor_parts / suit / 0094.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000170 "
+        },
+        "actor_parts / suit / 0047.png ": {
+            "path ": "actor_parts / suit / 0047.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000171 "
+        },
+        "actor_parts / suit / 0012.png ": {
+            "path ": "actor_parts / suit / 0012.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000172 "
+        },
+        "actor_parts / suit / 0079.png ": {
+            "path ": "actor_parts / suit / 0079.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000173 "
+        },
+        "actor_parts / suit / 0070.png ": {
+            "path ": "actor_parts / suit / 0070.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000174 "
+        },
+        "actor_parts / suit / 0072.png ": {
+            "path ": "actor_parts / suit / 0072.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000175 "
+        },
+        "actor_parts / suit / 0085.png ": {
+            "path ": "actor_parts / suit / 0085.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000176 "
+        },
+        "actor_parts / suit / 0028.png ": {
+            "path ": "actor_parts / suit / 0028.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000177 "
+        },
+        "actor_parts / suit / 0001.png ": {
+            "path ": "actor_parts / suit / 0001.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000178 "
+        },
+        "actor_parts / suit / 0023.png ": {
+            "path ": "actor_parts / suit / 0023.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000179 "
+        },
+        "actor_parts / suit / 0066.png ": {
+            "path ": "actor_parts / suit / 0066.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900017a "
+        },
+        "actor_parts / suit / 0118.png ": {
+            "path ": "actor_parts / suit / 0118.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900017b "
+        },
+        "actor_parts / suit / 0057.png ": {
+            "path ": "actor_parts / suit / 0057.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900017c "
+        },
+        "actor_parts / suit / 0059.png ": {
+            "path ": "actor_parts / suit / 0059.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900017d "
+        },
+        "actor_parts / suit / 0040.png ": {
+            "path ": "actor_parts / suit / 0040.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900017e "
+        },
+        "actor_parts / suit / 0068.png ": {
+            "path ": "actor_parts / suit / 0068.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900017f "
+        },
+        "actor_parts / suit / 0119.png ": {
+            "path ": "actor_parts / suit / 0119.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000180 "
+        },
+        "actor_parts / suit / 0042.png ": {
+            "path ": "actor_parts / suit / 0042.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000181 "
+        },
+        "actor_parts / suit / 0101.png ": {
+            "path ": "actor_parts / suit / 0101.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000182 "
+        },
+        "actor_parts / suit / 0039.png ": {
+            "path ": "actor_parts / suit / 0039.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000183 "
+        },
+        "actor_parts / suit / 0044.png ": {
+            "path ": "actor_parts / suit / 0044.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000184 "
+        },
+        "actor_parts / suit / 0060.png ": {
+            "path ": "actor_parts / suit / 0060.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000185 "
+        },
+        "actor_parts / suit / 0107.png ": {
+            "path ": "actor_parts / suit / 0107.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000186 "
+        },
+        "actor_parts / suit / 0006.png ": {
+            "path ": "actor_parts / suit / 0006.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000187 "
+        },
+        "actor_parts / suit / 0091.png ": {
+            "path ": "actor_parts / suit / 0091.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000188 "
+        },
+        "actor_parts / suit / 0003.png ": {
+            "path ": "actor_parts / suit / 0003.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000189 "
+        },
+        "actor_parts / suit / 0036.png ": {
+            "path ": "actor_parts / suit / 0036.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900018a "
+        },
+        "actor_parts / suit / 0077.png ": {
+            "path ": "actor_parts / suit / 0077.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900018b "
+        },
+        "actor_parts / suit / 0125.png ": {
+            "path ": "actor_parts / suit / 0125.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900018c "
+        },
+        "actor_parts / suit / 0096.png ": {
+            "path ": "actor_parts / suit / 0096.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900018d "
+        },
+        "actor_parts / suit / 0084.png ": {
+            "path ": "actor_parts / suit / 0084.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900018e "
+        },
+        "actor_parts / suit / 0058.png ": {
+            "path ": "actor_parts / suit / 0058.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900018f "
+        },
+        "actor_parts / suit / 0024.png ": {
+            "path ": "actor_parts / suit / 0024.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000190 "
+        },
+        "actor_parts / suit / 0071.png ": {
+            "path ": "actor_parts / suit / 0071.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000191 "
+        },
+        "actor_parts / suit / 0019.png ": {
+            "path ": "actor_parts / suit / 0019.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000192 "
+        },
+        "actor_parts / suit / 0110.png ": {
+            "path ": "actor_parts / suit / 0110.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000193 "
+        },
+        "actor_parts / suit / 0099.png ": {
+            "path ": "actor_parts / suit / 0099.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000194 "
+        },
+        "actor_parts / suit / 0002.png ": {
+            "path ": "actor_parts / suit / 0002.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000195 "
+        },
+        "actor_parts / suit / 0007.png ": {
+            "path ": "actor_parts / suit / 0007.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000196 "
+        },
+        "actor_parts / suit / 0078.png ": {
+            "path ": "actor_parts / suit / 0078.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000197 "
+        },
+        "actor_parts / suit / 0109.png ": {
+            "path ": "actor_parts / suit / 0109.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000198 "
+        },
+        "actor_parts / suit / 0111.png ": {
+            "path ": "actor_parts / suit / 0111.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da19000199 "
+        },
+        "actor_parts / suit / 0017.png ": {
+            "path ": "actor_parts / suit / 0017.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900019a "
+        },
+        "actor_parts / suit / 0061.png ": {
+            "path ": "actor_parts / suit / 0061.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900019b "
+        },
+        "actor_parts / suit / 0053.png ": {
+            "path ": "actor_parts / suit / 0053.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900019c "
+        },
+        "actor_parts / suit / 0029.png ": {
+            "path ": "actor_parts / suit / 0029.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900019d "
+        },
+        "actor_parts / suit / 0064.png ": {
+            "path ": "actor_parts / suit / 0064.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900019e "
+        },
+        "actor_parts / suit / 0080.png ": {
+            "path ": "actor_parts / suit / 0080.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da1900019f "
+        },
+        "actor_parts / suit / 0081.png ": {
+            "path ": "actor_parts / suit / 0081.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da190001a0 "
+        },
+        "actor_parts / suit / 0082.png ": {
+            "path ": "actor_parts / suit / 0082.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da190001a1 "
+        },
+        "actor_parts / suit / 0004.png ": {
+            "path ": "actor_parts / suit / 0004.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da190001a2 "
+        },
+        "actor_parts / suit / 0032.png ": {
+            "path ": "actor_parts / suit / 0032.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da190001a3 "
+        },
+        "actor_parts / suit / 0046.png ": {
+            "path ": "actor_parts / suit / 0046.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da190001a4 "
+        },
+        "actor_parts / suit / 0051.png ": {
+            "path ": "actor_parts / suit / 0051.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "suit "
+            },
+            "_id ": "4db5d76c926672da190001a5 "
+        }
+    },
+    "body ": {
+        "actor_parts / body / 0015.png ": {
+            "path ": "actor_parts / body / 0015.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001a6 "
+        },
+        "actor_parts / body / 0022.png ": {
+            "path ": "actor_parts / body / 0022.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001a7 "
+        },
+        "actor_parts / body / 0013.png ": {
+            "path ": "actor_parts / body / 0013.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001a8 "
+        },
+        "actor_parts / body / 0025.png ": {
+            "path ": "actor_parts / body / 0025.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001a9 "
+        },
+        "actor_parts / body / 0009.png ": {
+            "path ": "actor_parts / body / 0009.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001aa "
+        },
+        "actor_parts / body / 0020.png ": {
+            "path ": "actor_parts / body / 0020.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001ab "
+        },
+        "actor_parts / body / 0018.png ": {
+            "path ": "actor_parts / body / 0018.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001ac "
+        },
+        "actor_parts / body / 0014.png ": {
+            "path ": "actor_parts / body / 0014.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001ad "
+        },
+        "actor_parts / body / 0005.png ": {
+            "path ": "actor_parts / body / 0005.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001ae "
+        },
+        "actor_parts / body / 0008.png ": {
+            "path ": "actor_parts / body / 0008.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001af "
+        },
+        "actor_parts / body / 0027.png ": {
+            "path ": "actor_parts / body / 0027.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b0 "
+        },
+        "actor_parts / body / 0021.png ": {
+            "path ": "actor_parts / body / 0021.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b1 "
+        },
+        "actor_parts / body / 0010.png ": {
+            "path ": "actor_parts / body / 0010.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b2 "
+        },
+        "actor_parts / body / 0026.png ": {
+            "path ": "actor_parts / body / 0026.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b3 "
+        },
+        "actor_parts / body / 0016.png ": {
+            "path ": "actor_parts / body / 0016.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b4 "
+        },
+        "actor_parts / body / 0011.png ": {
+            "path ": "actor_parts / body / 0011.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b5 "
+        },
+        "actor_parts / body / 0012.png ": {
+            "path ": "actor_parts / body / 0012.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b6 "
+        },
+        "actor_parts / body / 0001.png ": {
+            "path ": "actor_parts / body / 0001.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b7 "
+        },
+        "actor_parts / body / 0023.png ": {
+            "path ": "actor_parts / body / 0023.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b8 "
+        },
+        "actor_parts / body / 0006.png ": {
+            "path ": "actor_parts / body / 0006.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001b9 "
+        },
+        "actor_parts / body / 0003.png ": {
+            "path ": "actor_parts / body / 0003.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001ba "
+        },
+        "actor_parts / body / 0024.png ": {
+            "path ": "actor_parts / body / 0024.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001bb "
+        },
+        "actor_parts / body / 0019.png ": {
+            "path ": "actor_parts / body / 0019.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001bc "
+        },
+        "actor_parts / body / 0002.png ": {
+            "path ": "actor_parts / body / 0002.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001bd "
+        },
+        "actor_parts / body / 0007.png ": {
+            "path ": "actor_parts / body / 0007.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001be "
+        },
+        "actor_parts / body / 0017.png ": {
+            "path ": "actor_parts / body / 0017.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001bf "
+        },
+        "actor_parts / body / 0004.png ": {
+            "path ": "actor_parts / body / 0004.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "body "
+            },
+            "_id ": "4db5d76c926672da190001c0 "
+        }
+    },
+    "hair ": {
+        "actor_parts / hair / 0076.png ": {
+            "path ": "actor_parts / hair / 0076.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001c1 "
+        },
+        "actor_parts / hair / 0123.png ": {
+            "path ": "actor_parts / hair / 0123.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001c2 "
+        },
+        "actor_parts / hair / 0015.png ": {
+            "path ": "actor_parts / hair / 0015.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001c3 "
+        },
+        "actor_parts / hair / 0035.png ": {
+            "path ": "actor_parts / hair / 0035.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001c4 "
+        },
+        "actor_parts / hair / 0045.png ": {
+            "path ": "actor_parts / hair / 0045.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001c5 "
+        },
+        "actor_parts / hair / 0050.png ": {
+            "path ": "actor_parts / hair / 0050.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001c6 "
+        },
+        "actor_parts / hair / 0031.png ": {
+            "path ": "actor_parts / hair / 0031.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001c7 "
+        },
+        "actor_parts / hair / 0022.png ": {
+            "path ": "actor_parts / hair / 0022.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001c8 "
+        },
+        "actor_parts / hair / 0120.png ": {
+            "path ": "actor_parts / hair / 0120.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001c9 "
+        },
+        "actor_parts / hair / 0013.png ": {
+            "path ": "actor_parts / hair / 0013.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001ca "
+        },
+        "actor_parts / hair / 0127.png ": {
+            "path ": "actor_parts / hair / 0127.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001cb "
+        },
+        "actor_parts / hair / 0054.png ": {
+            "path ": "actor_parts / hair / 0054.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001cc "
+        },
+        "actor_parts / hair / 0088.png ": {
+            "path ": "actor_parts / hair / 0088.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001cd "
+        },
+        "actor_parts / hair / 0115.png ": {
+            "path ": "actor_parts / hair / 0115.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001ce "
+        },
+        "actor_parts / hair / 0033.png ": {
+            "path ": "actor_parts / hair / 0033.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001cf "
+        },
+        "actor_parts / hair / 0075.png ": {
+            "path ": "actor_parts / hair / 0075.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d0 "
+        },
+        "actor_parts / hair / 0025.png ": {
+            "path ": "actor_parts / hair / 0025.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d1 "
+        },
+        "actor_parts / hair / 0067.png ": {
+            "path ": "actor_parts / hair / 0067.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d2 "
+        },
+        "actor_parts / hair / 0121.png ": {
+            "path ": "actor_parts / hair / 0121.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d3 "
+        },
+        "actor_parts / hair / 0009.png ": {
+            "path ": "actor_parts / hair / 0009.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d4 "
+        },
+        "actor_parts / hair / 0052.png ": {
+            "path ": "actor_parts / hair / 0052.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d5 "
+        },
+        "actor_parts / hair / 0020.png ": {
+            "path ": "actor_parts / hair / 0020.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d6 "
+        },
+        "actor_parts / hair / 0038.png ": {
+            "path ": "actor_parts / hair / 0038.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d7 "
+        },
+        "actor_parts / hair / 0113.png ": {
+            "path ": "actor_parts / hair / 0113.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d8 "
+        },
+        "actor_parts / hair / 0122.png ": {
+            "path ": "actor_parts / hair / 0122.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001d9 "
+        },
+        "actor_parts / hair / 0041.png ": {
+            "path ": "actor_parts / hair / 0041.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001da "
+        },
+        "actor_parts / hair / 0086.png ": {
+            "path ": "actor_parts / hair / 0086.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001db "
+        },
+        "actor_parts / hair / 0034.png ": {
+            "path ": "actor_parts / hair / 0034.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001dc "
+        },
+        "actor_parts / hair / 0056.png ": {
+            "path ": "actor_parts / hair / 0056.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001dd "
+        },
+        "actor_parts / hair / 0103.png ": {
+            "path ": "actor_parts / hair / 0103.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001de "
+        },
+        "actor_parts / hair / 0097.png ": {
+            "path ": "actor_parts / hair / 0097.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001df "
+        },
+        "actor_parts / hair / 0069.png ": {
+            "path ": "actor_parts / hair / 0069.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e0 "
+        },
+        "actor_parts / hair / 0102.png ": {
+            "path ": "actor_parts / hair / 0102.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e1 "
+        },
+        "actor_parts / hair / 0105.png ": {
+            "path ": "actor_parts / hair / 0105.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e2 "
+        },
+        "actor_parts / hair / 0093.png ": {
+            "path ": "actor_parts / hair / 0093.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e3 "
+        },
+        "actor_parts / hair / 0049.png ": {
+            "path ": "actor_parts / hair / 0049.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e4 "
+        },
+        "actor_parts / hair / 0018.png ": {
+            "path ": "actor_parts / hair / 0018.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e5 "
+        },
+        "actor_parts / hair / 0065.png ": {
+            "path ": "actor_parts / hair / 0065.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e6 "
+        },
+        "actor_parts / hair / 0014.png ": {
+            "path ": "actor_parts / hair / 0014.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e7 "
+        },
+        "actor_parts / hair / 0073.png ": {
+            "path ": "actor_parts / hair / 0073.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e8 "
+        },
+        "actor_parts / hair / 0124.png ": {
+            "path ": "actor_parts / hair / 0124.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001e9 "
+        },
+        "actor_parts / hair / 0005.png ": {
+            "path ": "actor_parts / hair / 0005.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001ea "
+        },
+        "actor_parts / hair / 0030.png ": {
+            "path ": "actor_parts / hair / 0030.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001eb "
+        },
+        "actor_parts / hair / 0112.png ": {
+            "path ": "actor_parts / hair / 0112.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001ec "
+        },
+        "actor_parts / hair / 0106.png ": {
+            "path ": "actor_parts / hair / 0106.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001ed "
+        },
+        "actor_parts / hair / 0116.png ": {
+            "path ": "actor_parts / hair / 0116.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001ee "
+        },
+        "actor_parts / hair / 0090.png ": {
+            "path ": "actor_parts / hair / 0090.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001ef "
+        },
+        "actor_parts / hair / 0108.png ": {
+            "path ": "actor_parts / hair / 0108.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f0 "
+        },
+        "actor_parts / hair / 0008.png ": {
+            "path ": "actor_parts / hair / 0008.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f1 "
+        },
+        "actor_parts / hair / 0092.png ": {
+            "path ": "actor_parts / hair / 0092.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f2 "
+        },
+        "actor_parts / hair / 0027.png ": {
+            "path ": "actor_parts / hair / 0027.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f3 "
+        },
+        "actor_parts / hair / 0100.png ": {
+            "path ": "actor_parts / hair / 0100.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f4 "
+        },
+        "actor_parts / hair / 0048.png ": {
+            "path ": "actor_parts / hair / 0048.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f5 "
+        },
+        "actor_parts / hair / 0063.png ": {
+            "path ": "actor_parts / hair / 0063.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f6 "
+        },
+        "actor_parts / hair / 0062.png ": {
+            "path ": "actor_parts / hair / 0062.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f7 "
+        },
+        "actor_parts / hair / 0021.png ": {
+            "path ": "actor_parts / hair / 0021.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f8 "
+        },
+        "actor_parts / hair / 0089.png ": {
+            "path ": "actor_parts / hair / 0089.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001f9 "
+        },
+        "actor_parts / hair / 0074.png ": {
+            "path ": "actor_parts / hair / 0074.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001fa "
+        },
+        "actor_parts / hair / 0010.png ": {
+            "path ": "actor_parts / hair / 0010.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001fb "
+        },
+        "actor_parts / hair / 0098.png ": {
+            "path ": "actor_parts / hair / 0098.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001fc "
+        },
+        "actor_parts / hair / 0129.png ": {
+            "path ": "actor_parts / hair / 0129.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001fd "
+        },
+        "actor_parts / hair / 0043.png ": {
+            "path ": "actor_parts / hair / 0043.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001fe "
+        },
+        "actor_parts / hair / 0055.png ": {
+            "path ": "actor_parts / hair / 0055.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da190001ff "
+        },
+        "actor_parts / hair / 0126.png ": {
+            "path ": "actor_parts / hair / 0126.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000200 "
+        },
+        "actor_parts / hair / 0037.png ": {
+            "path ": "actor_parts / hair / 0037.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000201 "
+        },
+        "actor_parts / hair / 0104.png ": {
+            "path ": "actor_parts / hair / 0104.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000202 "
+        },
+        "actor_parts / hair / 0026.png ": {
+            "path ": "actor_parts / hair / 0026.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000203 "
+        },
+        "actor_parts / hair / 0095.png ": {
+            "path ": "actor_parts / hair / 0095.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000204 "
+        },
+        "actor_parts / hair / 0016.png ": {
+            "path ": "actor_parts / hair / 0016.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000205 "
+        },
+        "actor_parts / hair / 0087.png ": {
+            "path ": "actor_parts / hair / 0087.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000206 "
+        },
+        "actor_parts / hair / 0083.png ": {
+            "path ": "actor_parts / hair / 0083.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000207 "
+        },
+        "actor_parts / hair / 0011.png ": {
+            "path ": "actor_parts / hair / 0011.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000208 "
+        },
+        "actor_parts / hair / 0117.png ": {
+            "path ": "actor_parts / hair / 0117.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000209 "
+        },
+        "actor_parts / hair / 0114.png ": {
+            "path ": "actor_parts / hair / 0114.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900020a "
+        },
+        "actor_parts / hair / 0094.png ": {
+            "path ": "actor_parts / hair / 0094.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900020b "
+        },
+        "actor_parts / hair / 0047.png ": {
+            "path ": "actor_parts / hair / 0047.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900020c "
+        },
+        "actor_parts / hair / 0012.png ": {
+            "path ": "actor_parts / hair / 0012.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900020d "
+        },
+        "actor_parts / hair / 0131.png ": {
+            "path ": "actor_parts / hair / 0131.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900020e "
+        },
+        "actor_parts / hair / 0079.png ": {
+            "path ": "actor_parts / hair / 0079.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900020f "
+        },
+        "actor_parts / hair / 0070.png ": {
+            "path ": "actor_parts / hair / 0070.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000210 "
+        },
+        "actor_parts / hair / 0072.png ": {
+            "path ": "actor_parts / hair / 0072.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000211 "
+        },
+        "actor_parts / hair / 0085.png ": {
+            "path ": "actor_parts / hair / 0085.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000212 "
+        },
+        "actor_parts / hair / 0028.png ": {
+            "path ": "actor_parts / hair / 0028.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000213 "
+        },
+        "actor_parts / hair / 0001.png ": {
+            "path ": "actor_parts / hair / 0001.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000214 "
+        },
+        "actor_parts / hair / 0023.png ": {
+            "path ": "actor_parts / hair / 0023.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000215 "
+        },
+        "actor_parts / hair / 0066.png ": {
+            "path ": "actor_parts / hair / 0066.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000216 "
+        },
+        "actor_parts / hair / 0118.png ": {
+            "path ": "actor_parts / hair / 0118.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000217 "
+        },
+        "actor_parts / hair / 0057.png ": {
+            "path ": "actor_parts / hair / 0057.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000218 "
+        },
+        "actor_parts / hair / 0059.png ": {
+            "path ": "actor_parts / hair / 0059.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000219 "
+        },
+        "actor_parts / hair / 0040.png ": {
+            "path ": "actor_parts / hair / 0040.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900021a "
+        },
+        "actor_parts / hair / 0130.png ": {
+            "path ": "actor_parts / hair / 0130.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900021b "
+        },
+        "actor_parts / hair / 0068.png ": {
+            "path ": "actor_parts / hair / 0068.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900021c "
+        },
+        "actor_parts / hair / 0119.png ": {
+            "path ": "actor_parts / hair / 0119.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900021d "
+        },
+        "actor_parts / hair / 0042.png ": {
+            "path ": "actor_parts / hair / 0042.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900021e "
+        },
+        "actor_parts / hair / 0101.png ": {
+            "path ": "actor_parts / hair / 0101.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900021f "
+        },
+        "actor_parts / hair / 0039.png ": {
+            "path ": "actor_parts / hair / 0039.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000220 "
+        },
+        "actor_parts / hair / 0044.png ": {
+            "path ": "actor_parts / hair / 0044.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000221 "
+        },
+        "actor_parts / hair / 0060.png ": {
+            "path ": "actor_parts / hair / 0060.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000222 "
+        },
+        "actor_parts / hair / 0107.png ": {
+            "path ": "actor_parts / hair / 0107.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000223 "
+        },
+        "actor_parts / hair / 0006.png ": {
+            "path ": "actor_parts / hair / 0006.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000224 "
+        },
+        "actor_parts / hair / 0091.png ": {
+            "path ": "actor_parts / hair / 0091.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000225 "
+        },
+        "actor_parts / hair / 0003.png ": {
+            "path ": "actor_parts / hair / 0003.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000226 "
+        },
+        "actor_parts / hair / 0036.png ": {
+            "path ": "actor_parts / hair / 0036.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000227 "
+        },
+        "actor_parts / hair / 0077.png ": {
+            "path ": "actor_parts / hair / 0077.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000228 "
+        },
+        "actor_parts / hair / 0125.png ": {
+            "path ": "actor_parts / hair / 0125.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000229 "
+        },
+        "actor_parts / hair / 0096.png ": {
+            "path ": "actor_parts / hair / 0096.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900022a "
+        },
+        "actor_parts / hair / 0084.png ": {
+            "path ": "actor_parts / hair / 0084.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900022b "
+        },
+        "actor_parts / hair / 0058.png ": {
+            "path ": "actor_parts / hair / 0058.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900022c "
+        },
+        "actor_parts / hair / 0024.png ": {
+            "path ": "actor_parts / hair / 0024.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900022d "
+        },
+        "actor_parts / hair / 0071.png ": {
+            "path ": "actor_parts / hair / 0071.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900022e "
+        },
+        "actor_parts / hair / 0019.png ": {
+            "path ": "actor_parts / hair / 0019.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900022f "
+        },
+        "actor_parts / hair / 0110.png ": {
+            "path ": "actor_parts / hair / 0110.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000230 "
+        },
+        "actor_parts / hair / 0099.png ": {
+            "path ": "actor_parts / hair / 0099.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000231 "
+        },
+        "actor_parts / hair / 0002.png ": {
+            "path ": "actor_parts / hair / 0002.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000232 "
+        },
+        "actor_parts / hair / 0007.png ": {
+            "path ": "actor_parts / hair / 0007.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000233 "
+        },
+        "actor_parts / hair / 0078.png ": {
+            "path ": "actor_parts / hair / 0078.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000234 "
+        },
+        "actor_parts / hair / 0109.png ": {
+            "path ": "actor_parts / hair / 0109.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000235 "
+        },
+        "actor_parts / hair / 0111.png ": {
+            "path ": "actor_parts / hair / 0111.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000236 "
+        },
+        "actor_parts / hair / 0017.png ": {
+            "path ": "actor_parts / hair / 0017.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000237 "
+        },
+        "actor_parts / hair / 0061.png ": {
+            "path ": "actor_parts / hair / 0061.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000238 "
+        },
+        "actor_parts / hair / 0053.png ": {
+            "path ": "actor_parts / hair / 0053.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000239 "
+        },
+        "actor_parts / hair / 0029.png ": {
+            "path ": "actor_parts / hair / 0029.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900023a "
+        },
+        "actor_parts / hair / 0064.png ": {
+            "path ": "actor_parts / hair / 0064.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900023b "
+        },
+        "actor_parts / hair / 0080.png ": {
+            "path ": "actor_parts / hair / 0080.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900023c "
+        },
+        "actor_parts / hair / 0081.png ": {
+            "path ": "actor_parts / hair / 0081.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900023d "
+        },
+        "actor_parts / hair / 0132.png ": {
+            "path ": "actor_parts / hair / 0132.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900023e "
+        },
+        "actor_parts / hair / 0082.png ": {
+            "path ": "actor_parts / hair / 0082.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da1900023f "
+        },
+        "actor_parts / hair / 0004.png ": {
+            "path ": "actor_parts / hair / 0004.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000240 "
+        },
+        "actor_parts / hair / 0032.png ": {
+            "path ": "actor_parts / hair / 0032.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000241 "
+        },
+        "actor_parts / hair / 0046.png ": {
+            "path ": "actor_parts / hair / 0046.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000242 "
+        },
+        "actor_parts / hair / 0051.png ": {
+            "path ": "actor_parts / hair / 0051.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000243 "
+        },
+        "actor_parts / hair / 0128.png ": {
+            "path ": "actor_parts / hair / 0128.png ",
+            "meta ": {
+                "category ": "actor_parts ",
+                "part_type ": "hair "
+            },
+            "_id ": "4db5d76c926672da19000244 "
+        }
+    }
+}

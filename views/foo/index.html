@@ -1,0 +1,20 @@
+<h1>Foos!</h1>
+<% if (items && items.length) { %>
+
+<table>
+    <tr><th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+<% items.forEach(function(item){ %>
+    <tr>
+        <td><%- item._id %></td>
+        <td><%- item.name %></td>
+        <td><%- item.description %></td>
+    </tr>
+    <% }) %>
+</table>
+<% } %>
+<ul>
+    <li><a href="/foos/0/add">Add Foo</a></li>
+</ul>

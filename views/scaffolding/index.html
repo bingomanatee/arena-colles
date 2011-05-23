@@ -1,0 +1,28 @@
+<h1><%- controller_title %> Home</h1>
+
+<% if (items && items.length) { %>
+<h2><%- controller_title %> Items</h2>
+
+<%items.forEach(function(item){ %>
+<h3><%- controller_title %> <a href="/<%- plural %>/<%- item._id %>"><%- item._id %></a> - <a href="/<%- plural %>/<%- item._id %>/edit">Edit</a></h3>
+<table>
+    <% for(var property in item){ %>
+    <tr>
+        <th><%- property %></th>
+        <td><% if (typeof (item[property]) == 'object') { %>
+        <%- JSON.stringify(item[property]) %>
+        <% } else { %>
+        <%- item[property] %>
+        <% } %></td>
+    </tr>
+    <% } %>
+</table>
+<% })} else { %>
+<p> -- no items -- </p>
+<% } %>
+<hr />
+<a href="/<%- plural %>/0/add">Add a <%- controller %></a>
+<p><small>
+    This is a scaffolding page. For a custom view, create an <tt>index.html</tt> file in <tt>views/<%- controller %></tt>.
+</small></p>
+

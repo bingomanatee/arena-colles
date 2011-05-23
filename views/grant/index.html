@@ -1,0 +1,21 @@
+<h1>Role Grants</h1>
+
+<table border="1" cellpadding="4">
+    <tr><th>Action</th>
+        <th>Allowed Roles</th>
+    </tr><% if (grants && grants.length) grants.forEach(function(grant){ %>
+<tr>
+    <th><%- grant._id %></th>
+    <% if (grant.hasOwnProperty('roles')){ %>
+    <td><%-  grant.roles.join('<br />') %></td>
+    <% } else {%>
+    <td><%- JSON.stringify(grant) %></td>
+    <% } %>
+</tr>
+<% }) %>
+</table>
+<hr />
+
+<h2>Add a Grant</h2>
+
+<%- form.render() %>

@@ -1,0 +1,57 @@
+<form action="<%- configs.action %>" method="<%- configs.method %>" <%- properties %> >
+<table>
+<% fields.forEach(function(field) { if (field.type != 'hidden'){ %>
+<tr>
+    <th><%- field.label %></th>
+    <td><%- field.rendered %></td>
+</tr>
+<% }}) %>
+</table>
+<h3>Form</h3>
+<table>
+    <tr>
+        <th>Field</th>
+	<th>Label</th>
+        <th>Type</th>
+        <th>Options</th>
+        <th>Default</th>
+    </tr>
+    <% for (var i = 0; i < 15; ++i){ %>
+    <tr>
+        <td><input      name="meta_controller[forms][default][fields][<%- i %>][name]" type="text" onChange="copy_label(this)" /></td>
+        <td><input      name="meta_controller[forms][default][fields][<%- i %>][label]" type="text" /></td>
+        <td><select     name="meta_controller[forms][default][fields][<%- i %>][type]">
+        <option value="text">Text</option>
+        <option value="textarea">Text Area</option>
+        <option value="checkbox">Checkbox</option>
+        <option value="radio">Radio</option>
+        <option value="select">Select</option>
+        </select></td>
+        <td><textarea   name="meta_controller[forms][default][fields][<%- i %>][options]"></textarea></td>
+        <td><input      name="meta_controller[forms][default][fields][<%- i %>][value]" type="text" /></td>
+    </tr>
+    <% } %>
+</table>
+<input type="submit" value="Save Controller">
+<% fields.forEach(function(field) { if (field.type == 'hidden'){ %><%- field.rendered %><% }}) %>
+</form>
+<script language="javascript">
+    function copy_label(field){
+        
+        var name = field.name.replace('[name]', '[label]');
+        var label_field = field.form.elements[name];
+        label_field.value = toTitleCase(field.value);
+    }
+    
+    
+function toTitleCase(item) {
+    item = item.replace('_', ' ');
+    return item.replace(/([\w&`'ту"р.@:\/\{\(\[<>_]+-? *)/g, function(match, p1, index, title) {
+	if (index > 0 && title.charAt(index - 2) !== ":" && match.search(/^(a(nd?|s|t)?|b(ut|y)|en|for|i[fn]|o[fnr]|t(he|o)|vs?\.?|via)[ \-]/i) > -1) return match.toLowerCase();
+	if (title.substring(index - 1, index + 1).search(/['"_{(\[]/) > -1) return match.charAt(0) + match.charAt(1).toUpperCase() + match.substr(2);
+	if (match.substr(1).search(/[A-Z]+|&|[\w]+[._][\w]+/) > -1 || title.substring(index - 1, index + 1).search(/[\])}]/) > -1) return match;
+	return match.charAt(0).toUpperCase() + match.substr(1);
+    });
+};
+
+</script>

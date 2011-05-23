@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title><%- site_name %></title>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+	<link type="text/css" href="/css/flick/ui.css" rel="stylesheet" />	
+	<script type="text/javascript" src="/js/jq.js"></script>
+	<script type="text/javascript" src="/js/ui.js"></script>
+    </head>
+    
+<body>
+<div id="header">
+<img src="/theme/logo.png" id="logo" align="left" />
+<%- messages() %>
+ <br clear="all" />
+<%- partial('member') %>
+</div>
+
+<div id="menu"><%- partial('menu') %></div>
+
+<div id="content"><%- body %></div>
+
+ <div id="footer">Footer Message</div>
+</body>
+</html>

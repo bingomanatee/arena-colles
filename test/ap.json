@@ -1,0 +1,4652 @@
+{
+    "body": {
+        "actor_parts/body/0001.png": {
+            "path": "actor_parts/body/0001.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000001"
+        },
+        "actor_parts/body/0002.png": {
+            "path": "actor_parts/body/0002.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000002"
+        },
+        "actor_parts/body/0003.png": {
+            "path": "actor_parts/body/0003.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000003"
+        },
+        "actor_parts/body/0004.png": {
+            "path": "actor_parts/body/0004.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000004"
+        },
+        "actor_parts/body/0005.png": {
+            "path": "actor_parts/body/0005.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000005"
+        },
+        "actor_parts/body/0006.png": {
+            "path": "actor_parts/body/0006.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000006"
+        },
+        "actor_parts/body/0007.png": {
+            "path": "actor_parts/body/0007.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000007"
+        },
+        "actor_parts/body/0008.png": {
+            "path": "actor_parts/body/0008.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000008"
+        },
+        "actor_parts/body/0010.png": {
+            "path": "actor_parts/body/0010.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000009"
+        },
+        "actor_parts/body/0011.png": {
+            "path": "actor_parts/body/0011.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c70900000a"
+        },
+        "actor_parts/body/0009.png": {
+            "path": "actor_parts/body/0009.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c70900000b"
+        },
+        "actor_parts/body/0012.png": {
+            "path": "actor_parts/body/0012.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c70900000c"
+        },
+        "actor_parts/body/0014.png": {
+            "path": "actor_parts/body/0014.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c70900000d"
+        },
+        "actor_parts/body/0015.png": {
+            "path": "actor_parts/body/0015.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c70900000e"
+        },
+        "actor_parts/body/0013.png": {
+            "path": "actor_parts/body/0013.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c70900000f"
+        },
+        "actor_parts/body/0016.png": {
+            "path": "actor_parts/body/0016.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000010"
+        },
+        "actor_parts/body/0018.png": {
+            "path": "actor_parts/body/0018.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000011"
+        },
+        "actor_parts/body/0019.png": {
+            "path": "actor_parts/body/0019.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000012"
+        },
+        "actor_parts/body/0017.png": {
+            "path": "actor_parts/body/0017.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000013"
+        },
+        "actor_parts/body/0020.png": {
+            "path": "actor_parts/body/0020.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000014"
+        },
+        "actor_parts/body/0021.png": {
+            "path": "actor_parts/body/0021.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000015"
+        },
+        "actor_parts/body/0022.png": {
+            "path": "actor_parts/body/0022.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000016"
+        },
+        "actor_parts/body/0023.png": {
+            "path": "actor_parts/body/0023.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000017"
+        },
+        "actor_parts/body/0024.png": {
+            "path": "actor_parts/body/0024.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000018"
+        },
+        "actor_parts/body/0025.png": {
+            "path": "actor_parts/body/0025.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c709000019"
+        },
+        "actor_parts/body/0026.png": {
+            "path": "actor_parts/body/0026.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c70900001a"
+        },
+        "actor_parts/body/0027.png": {
+            "path": "actor_parts/body/0027.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "body"
+            },
+            "_id": "4db58d05b50632c70900001b"
+        }
+    },
+    "hair": {
+        "actor_parts/hair/0001.png": {
+            "path": "actor_parts/hair/0001.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900001c"
+        },
+        "actor_parts/hair/0002.png": {
+            "path": "actor_parts/hair/0002.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900001d"
+        },
+        "actor_parts/hair/0003.png": {
+            "path": "actor_parts/hair/0003.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900001e"
+        },
+        "actor_parts/hair/0005.png": {
+            "path": "actor_parts/hair/0005.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900001f"
+        },
+        "actor_parts/hair/0006.png": {
+            "path": "actor_parts/hair/0006.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000020"
+        },
+        "actor_parts/hair/0004.png": {
+            "path": "actor_parts/hair/0004.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000021"
+        },
+        "actor_parts/hair/0007.png": {
+            "path": "actor_parts/hair/0007.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000022"
+        },
+        "actor_parts/hair/0009.png": {
+            "path": "actor_parts/hair/0009.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000023"
+        },
+        "actor_parts/hair/0010.png": {
+            "path": "actor_parts/hair/0010.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000024"
+        },
+        "actor_parts/hair/0008.png": {
+            "path": "actor_parts/hair/0008.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000025"
+        },
+        "actor_parts/hair/0011.png": {
+            "path": "actor_parts/hair/0011.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000026"
+        },
+        "actor_parts/hair/0013.png": {
+            "path": "actor_parts/hair/0013.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000027"
+        },
+        "actor_parts/hair/0014.png": {
+            "path": "actor_parts/hair/0014.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000028"
+        },
+        "actor_parts/hair/0012.png": {
+            "path": "actor_parts/hair/0012.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000029"
+        },
+        "actor_parts/hair/0015.png": {
+            "path": "actor_parts/hair/0015.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900002a"
+        },
+        "actor_parts/hair/0016.png": {
+            "path": "actor_parts/hair/0016.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900002b"
+        },
+        "actor_parts/hair/0017.png": {
+            "path": "actor_parts/hair/0017.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900002c"
+        },
+        "actor_parts/hair/0018.png": {
+            "path": "actor_parts/hair/0018.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900002d"
+        },
+        "actor_parts/hair/0020.png": {
+            "path": "actor_parts/hair/0020.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900002e"
+        },
+        "actor_parts/hair/0021.png": {
+            "path": "actor_parts/hair/0021.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900002f"
+        },
+        "actor_parts/hair/0019.png": {
+            "path": "actor_parts/hair/0019.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000030"
+        },
+        "actor_parts/hair/0023.png": {
+            "path": "actor_parts/hair/0023.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000031"
+        },
+        "actor_parts/hair/0024.png": {
+            "path": "actor_parts/hair/0024.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000032"
+        },
+        "actor_parts/hair/0022.png": {
+            "path": "actor_parts/hair/0022.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000033"
+        },
+        "actor_parts/hair/0025.png": {
+            "path": "actor_parts/hair/0025.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000034"
+        },
+        "actor_parts/hair/0026.png": {
+            "path": "actor_parts/hair/0026.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000035"
+        },
+        "actor_parts/hair/0028.png": {
+            "path": "actor_parts/hair/0028.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000036"
+        },
+        "actor_parts/hair/0027.png": {
+            "path": "actor_parts/hair/0027.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000037"
+        },
+        "actor_parts/hair/0029.png": {
+            "path": "actor_parts/hair/0029.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000038"
+        },
+        "actor_parts/hair/0030.png": {
+            "path": "actor_parts/hair/0030.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000039"
+        },
+        "actor_parts/hair/0031.png": {
+            "path": "actor_parts/hair/0031.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900003a"
+        },
+        "actor_parts/hair/0032.png": {
+            "path": "actor_parts/hair/0032.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900003b"
+        },
+        "actor_parts/hair/0033.png": {
+            "path": "actor_parts/hair/0033.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900003c"
+        },
+        "actor_parts/hair/0034.png": {
+            "path": "actor_parts/hair/0034.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900003d"
+        },
+        "actor_parts/hair/0035.png": {
+            "path": "actor_parts/hair/0035.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900003e"
+        },
+        "actor_parts/hair/0036.png": {
+            "path": "actor_parts/hair/0036.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900003f"
+        },
+        "actor_parts/hair/0037.png": {
+            "path": "actor_parts/hair/0037.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000040"
+        },
+        "actor_parts/hair/0038.png": {
+            "path": "actor_parts/hair/0038.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000041"
+        },
+        "actor_parts/hair/0039.png": {
+            "path": "actor_parts/hair/0039.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000042"
+        },
+        "actor_parts/hair/0040.png": {
+            "path": "actor_parts/hair/0040.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000043"
+        },
+        "actor_parts/hair/0041.png": {
+            "path": "actor_parts/hair/0041.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000044"
+        },
+        "actor_parts/hair/0042.png": {
+            "path": "actor_parts/hair/0042.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000045"
+        },
+        "actor_parts/hair/0043.png": {
+            "path": "actor_parts/hair/0043.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000046"
+        },
+        "actor_parts/hair/0044.png": {
+            "path": "actor_parts/hair/0044.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000047"
+        },
+        "actor_parts/hair/0045.png": {
+            "path": "actor_parts/hair/0045.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000048"
+        },
+        "actor_parts/hair/0046.png": {
+            "path": "actor_parts/hair/0046.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000049"
+        },
+        "actor_parts/hair/0047.png": {
+            "path": "actor_parts/hair/0047.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900004a"
+        },
+        "actor_parts/hair/0048.png": {
+            "path": "actor_parts/hair/0048.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900004b"
+        },
+        "actor_parts/hair/0049.png": {
+            "path": "actor_parts/hair/0049.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900004c"
+        },
+        "actor_parts/hair/0050.png": {
+            "path": "actor_parts/hair/0050.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900004d"
+        },
+        "actor_parts/hair/0051.png": {
+            "path": "actor_parts/hair/0051.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900004e"
+        },
+        "actor_parts/hair/0052.png": {
+            "path": "actor_parts/hair/0052.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900004f"
+        },
+        "actor_parts/hair/0053.png": {
+            "path": "actor_parts/hair/0053.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000050"
+        },
+        "actor_parts/hair/0054.png": {
+            "path": "actor_parts/hair/0054.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000051"
+        },
+        "actor_parts/hair/0055.png": {
+            "path": "actor_parts/hair/0055.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000052"
+        },
+        "actor_parts/hair/0056.png": {
+            "path": "actor_parts/hair/0056.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000053"
+        },
+        "actor_parts/hair/0057.png": {
+            "path": "actor_parts/hair/0057.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000054"
+        },
+        "actor_parts/hair/0058.png": {
+            "path": "actor_parts/hair/0058.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000055"
+        },
+        "actor_parts/hair/0059.png": {
+            "path": "actor_parts/hair/0059.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000056"
+        },
+        "actor_parts/hair/0060.png": {
+            "path": "actor_parts/hair/0060.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000057"
+        },
+        "actor_parts/hair/0061.png": {
+            "path": "actor_parts/hair/0061.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000058"
+        },
+        "actor_parts/hair/0062.png": {
+            "path": "actor_parts/hair/0062.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000059"
+        },
+        "actor_parts/hair/0063.png": {
+            "path": "actor_parts/hair/0063.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900005a"
+        },
+        "actor_parts/hair/0064.png": {
+            "path": "actor_parts/hair/0064.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900005b"
+        },
+        "actor_parts/hair/0065.png": {
+            "path": "actor_parts/hair/0065.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900005c"
+        },
+        "actor_parts/hair/0066.png": {
+            "path": "actor_parts/hair/0066.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900005d"
+        },
+        "actor_parts/hair/0067.png": {
+            "path": "actor_parts/hair/0067.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900005e"
+        },
+        "actor_parts/hair/0068.png": {
+            "path": "actor_parts/hair/0068.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900005f"
+        },
+        "actor_parts/hair/0069.png": {
+            "path": "actor_parts/hair/0069.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000060"
+        },
+        "actor_parts/hair/0070.png": {
+            "path": "actor_parts/hair/0070.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000061"
+        },
+        "actor_parts/hair/0072.png": {
+            "path": "actor_parts/hair/0072.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000062"
+        },
+        "actor_parts/hair/0073.png": {
+            "path": "actor_parts/hair/0073.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000063"
+        },
+        "actor_parts/hair/0071.png": {
+            "path": "actor_parts/hair/0071.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000064"
+        },
+        "actor_parts/hair/0074.png": {
+            "path": "actor_parts/hair/0074.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000065"
+        },
+        "actor_parts/hair/0075.png": {
+            "path": "actor_parts/hair/0075.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000066"
+        },
+        "actor_parts/hair/0076.png": {
+            "path": "actor_parts/hair/0076.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000067"
+        },
+        "actor_parts/hair/0077.png": {
+            "path": "actor_parts/hair/0077.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000068"
+        },
+        "actor_parts/hair/0078.png": {
+            "path": "actor_parts/hair/0078.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000069"
+        },
+        "actor_parts/hair/0079.png": {
+            "path": "actor_parts/hair/0079.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900006a"
+        },
+        "actor_parts/hair/0080.png": {
+            "path": "actor_parts/hair/0080.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900006b"
+        },
+        "actor_parts/hair/0081.png": {
+            "path": "actor_parts/hair/0081.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900006c"
+        },
+        "actor_parts/hair/0082.png": {
+            "path": "actor_parts/hair/0082.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900006d"
+        },
+        "actor_parts/hair/0083.png": {
+            "path": "actor_parts/hair/0083.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900006e"
+        },
+        "actor_parts/hair/0084.png": {
+            "path": "actor_parts/hair/0084.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900006f"
+        },
+        "actor_parts/hair/0085.png": {
+            "path": "actor_parts/hair/0085.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000070"
+        },
+        "actor_parts/hair/0086.png": {
+            "path": "actor_parts/hair/0086.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000071"
+        },
+        "actor_parts/hair/0087.png": {
+            "path": "actor_parts/hair/0087.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000072"
+        },
+        "actor_parts/hair/0088.png": {
+            "path": "actor_parts/hair/0088.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000073"
+        },
+        "actor_parts/hair/0090.png": {
+            "path": "actor_parts/hair/0090.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000074"
+        },
+        "actor_parts/hair/0091.png": {
+            "path": "actor_parts/hair/0091.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000075"
+        },
+        "actor_parts/hair/0089.png": {
+            "path": "actor_parts/hair/0089.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000076"
+        },
+        "actor_parts/hair/0092.png": {
+            "path": "actor_parts/hair/0092.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000077"
+        },
+        "actor_parts/hair/0094.png": {
+            "path": "actor_parts/hair/0094.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000078"
+        },
+        "actor_parts/hair/0095.png": {
+            "path": "actor_parts/hair/0095.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000079"
+        },
+        "actor_parts/hair/0096.png": {
+            "path": "actor_parts/hair/0096.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900007a"
+        },
+        "actor_parts/hair/0093.png": {
+            "path": "actor_parts/hair/0093.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900007b"
+        },
+        "actor_parts/hair/0097.png": {
+            "path": "actor_parts/hair/0097.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900007c"
+        },
+        "actor_parts/hair/0098.png": {
+            "path": "actor_parts/hair/0098.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900007d"
+        },
+        "actor_parts/hair/0099.png": {
+            "path": "actor_parts/hair/0099.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900007e"
+        },
+        "actor_parts/hair/0100.png": {
+            "path": "actor_parts/hair/0100.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900007f"
+        },
+        "actor_parts/hair/0101.png": {
+            "path": "actor_parts/hair/0101.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000080"
+        },
+        "actor_parts/hair/0102.png": {
+            "path": "actor_parts/hair/0102.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000081"
+        },
+        "actor_parts/hair/0104.png": {
+            "path": "actor_parts/hair/0104.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000082"
+        },
+        "actor_parts/hair/0105.png": {
+            "path": "actor_parts/hair/0105.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000083"
+        },
+        "actor_parts/hair/0103.png": {
+            "path": "actor_parts/hair/0103.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000084"
+        },
+        "actor_parts/hair/0106.png": {
+            "path": "actor_parts/hair/0106.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000085"
+        },
+        "actor_parts/hair/0107.png": {
+            "path": "actor_parts/hair/0107.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000086"
+        },
+        "actor_parts/hair/0108.png": {
+            "path": "actor_parts/hair/0108.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000087"
+        },
+        "actor_parts/hair/0109.png": {
+            "path": "actor_parts/hair/0109.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000088"
+        },
+        "actor_parts/hair/0110.png": {
+            "path": "actor_parts/hair/0110.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000089"
+        },
+        "actor_parts/hair/0111.png": {
+            "path": "actor_parts/hair/0111.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900008a"
+        },
+        "actor_parts/hair/0112.png": {
+            "path": "actor_parts/hair/0112.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900008b"
+        },
+        "actor_parts/hair/0113.png": {
+            "path": "actor_parts/hair/0113.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900008c"
+        },
+        "actor_parts/hair/0114.png": {
+            "path": "actor_parts/hair/0114.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900008d"
+        },
+        "actor_parts/hair/0115.png": {
+            "path": "actor_parts/hair/0115.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900008e"
+        },
+        "actor_parts/hair/0116.png": {
+            "path": "actor_parts/hair/0116.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900008f"
+        },
+        "actor_parts/hair/0117.png": {
+            "path": "actor_parts/hair/0117.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000090"
+        },
+        "actor_parts/hair/0118.png": {
+            "path": "actor_parts/hair/0118.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000091"
+        },
+        "actor_parts/hair/0119.png": {
+            "path": "actor_parts/hair/0119.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000092"
+        },
+        "actor_parts/hair/0120.png": {
+            "path": "actor_parts/hair/0120.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000093"
+        },
+        "actor_parts/hair/0121.png": {
+            "path": "actor_parts/hair/0121.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000094"
+        },
+        "actor_parts/hair/0123.png": {
+            "path": "actor_parts/hair/0123.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000095"
+        },
+        "actor_parts/hair/0122.png": {
+            "path": "actor_parts/hair/0122.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000096"
+        },
+        "actor_parts/hair/0124.png": {
+            "path": "actor_parts/hair/0124.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000097"
+        },
+        "actor_parts/hair/0125.png": {
+            "path": "actor_parts/hair/0125.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000098"
+        },
+        "actor_parts/hair/0126.png": {
+            "path": "actor_parts/hair/0126.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c709000099"
+        },
+        "actor_parts/hair/0127.png": {
+            "path": "actor_parts/hair/0127.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900009a"
+        },
+        "actor_parts/hair/0128.png": {
+            "path": "actor_parts/hair/0128.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900009b"
+        },
+        "actor_parts/hair/0129.png": {
+            "path": "actor_parts/hair/0129.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900009c"
+        },
+        "actor_parts/hair/0130.png": {
+            "path": "actor_parts/hair/0130.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900009d"
+        },
+        "actor_parts/hair/0131.png": {
+            "path": "actor_parts/hair/0131.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900009e"
+        },
+        "actor_parts/hair/0132.png": {
+            "path": "actor_parts/hair/0132.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "hair"
+            },
+            "_id": "4db58d05b50632c70900009f"
+        }
+    },
+    "head": {
+        "actor_parts/head/0001.png": {
+            "path": "actor_parts/head/0001.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a0"
+        },
+        "actor_parts/head/0002.png": {
+            "path": "actor_parts/head/0002.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a1"
+        },
+        "actor_parts/head/0003.png": {
+            "path": "actor_parts/head/0003.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a2"
+        },
+        "actor_parts/head/0004.png": {
+            "path": "actor_parts/head/0004.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a3"
+        },
+        "actor_parts/head/0005.png": {
+            "path": "actor_parts/head/0005.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a4"
+        },
+        "actor_parts/head/0006.png": {
+            "path": "actor_parts/head/0006.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a5"
+        },
+        "actor_parts/head/0007.png": {
+            "path": "actor_parts/head/0007.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a6"
+        },
+        "actor_parts/head/0008.png": {
+            "path": "actor_parts/head/0008.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a7"
+        },
+        "actor_parts/head/0009.png": {
+            "path": "actor_parts/head/0009.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a8"
+        },
+        "actor_parts/head/0010.png": {
+            "path": "actor_parts/head/0010.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000a9"
+        },
+        "actor_parts/head/0011.png": {
+            "path": "actor_parts/head/0011.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000aa"
+        },
+        "actor_parts/head/0012.png": {
+            "path": "actor_parts/head/0012.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ab"
+        },
+        "actor_parts/head/0013.png": {
+            "path": "actor_parts/head/0013.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ac"
+        },
+        "actor_parts/head/0014.png": {
+            "path": "actor_parts/head/0014.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ad"
+        },
+        "actor_parts/head/0015.png": {
+            "path": "actor_parts/head/0015.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ae"
+        },
+        "actor_parts/head/0016.png": {
+            "path": "actor_parts/head/0016.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000af"
+        },
+        "actor_parts/head/0017.png": {
+            "path": "actor_parts/head/0017.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b0"
+        },
+        "actor_parts/head/0018.png": {
+            "path": "actor_parts/head/0018.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b1"
+        },
+        "actor_parts/head/0019.png": {
+            "path": "actor_parts/head/0019.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b2"
+        },
+        "actor_parts/head/0020.png": {
+            "path": "actor_parts/head/0020.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b3"
+        },
+        "actor_parts/head/0021.png": {
+            "path": "actor_parts/head/0021.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b4"
+        },
+        "actor_parts/head/0022.png": {
+            "path": "actor_parts/head/0022.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b5"
+        },
+        "actor_parts/head/0023.png": {
+            "path": "actor_parts/head/0023.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b6"
+        },
+        "actor_parts/head/0024.png": {
+            "path": "actor_parts/head/0024.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b7"
+        },
+        "actor_parts/head/0025.png": {
+            "path": "actor_parts/head/0025.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b8"
+        },
+        "actor_parts/head/0026.png": {
+            "path": "actor_parts/head/0026.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000b9"
+        },
+        "actor_parts/head/0027.png": {
+            "path": "actor_parts/head/0027.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ba"
+        },
+        "actor_parts/head/0028.png": {
+            "path": "actor_parts/head/0028.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000bb"
+        },
+        "actor_parts/head/0029.png": {
+            "path": "actor_parts/head/0029.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000bc"
+        },
+        "actor_parts/head/0030.png": {
+            "path": "actor_parts/head/0030.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000bd"
+        },
+        "actor_parts/head/0031.png": {
+            "path": "actor_parts/head/0031.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000be"
+        },
+        "actor_parts/head/0032.png": {
+            "path": "actor_parts/head/0032.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000bf"
+        },
+        "actor_parts/head/0033.png": {
+            "path": "actor_parts/head/0033.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c0"
+        },
+        "actor_parts/head/0034.png": {
+            "path": "actor_parts/head/0034.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c1"
+        },
+        "actor_parts/head/0035.png": {
+            "path": "actor_parts/head/0035.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c2"
+        },
+        "actor_parts/head/0036.png": {
+            "path": "actor_parts/head/0036.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c3"
+        },
+        "actor_parts/head/0037.png": {
+            "path": "actor_parts/head/0037.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c4"
+        },
+        "actor_parts/head/0038.png": {
+            "path": "actor_parts/head/0038.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c5"
+        },
+        "actor_parts/head/0039.png": {
+            "path": "actor_parts/head/0039.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c6"
+        },
+        "actor_parts/head/0040.png": {
+            "path": "actor_parts/head/0040.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c7"
+        },
+        "actor_parts/head/0041.png": {
+            "path": "actor_parts/head/0041.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c8"
+        },
+        "actor_parts/head/0042.png": {
+            "path": "actor_parts/head/0042.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000c9"
+        },
+        "actor_parts/head/0043.png": {
+            "path": "actor_parts/head/0043.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ca"
+        },
+        "actor_parts/head/0044.png": {
+            "path": "actor_parts/head/0044.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000cb"
+        },
+        "actor_parts/head/0045.png": {
+            "path": "actor_parts/head/0045.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000cc"
+        },
+        "actor_parts/head/0046.png": {
+            "path": "actor_parts/head/0046.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000cd"
+        },
+        "actor_parts/head/0047.png": {
+            "path": "actor_parts/head/0047.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ce"
+        },
+        "actor_parts/head/0048.png": {
+            "path": "actor_parts/head/0048.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000cf"
+        },
+        "actor_parts/head/0049.png": {
+            "path": "actor_parts/head/0049.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d0"
+        },
+        "actor_parts/head/0050.png": {
+            "path": "actor_parts/head/0050.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d1"
+        },
+        "actor_parts/head/0051.png": {
+            "path": "actor_parts/head/0051.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d2"
+        },
+        "actor_parts/head/0052.png": {
+            "path": "actor_parts/head/0052.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d3"
+        },
+        "actor_parts/head/0053.png": {
+            "path": "actor_parts/head/0053.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d4"
+        },
+        "actor_parts/head/0054.png": {
+            "path": "actor_parts/head/0054.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d5"
+        },
+        "actor_parts/head/0055.png": {
+            "path": "actor_parts/head/0055.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d6"
+        },
+        "actor_parts/head/0056.png": {
+            "path": "actor_parts/head/0056.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d7"
+        },
+        "actor_parts/head/0057.png": {
+            "path": "actor_parts/head/0057.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d8"
+        },
+        "actor_parts/head/0058.png": {
+            "path": "actor_parts/head/0058.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000d9"
+        },
+        "actor_parts/head/0059.png": {
+            "path": "actor_parts/head/0059.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000da"
+        },
+        "actor_parts/head/0060.png": {
+            "path": "actor_parts/head/0060.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000db"
+        },
+        "actor_parts/head/0061.png": {
+            "path": "actor_parts/head/0061.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000dc"
+        },
+        "actor_parts/head/0062.png": {
+            "path": "actor_parts/head/0062.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000dd"
+        },
+        "actor_parts/head/0064.png": {
+            "path": "actor_parts/head/0064.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000de"
+        },
+        "actor_parts/head/0065.png": {
+            "path": "actor_parts/head/0065.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000df"
+        },
+        "actor_parts/head/0063.png": {
+            "path": "actor_parts/head/0063.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e0"
+        },
+        "actor_parts/head/0066.png": {
+            "path": "actor_parts/head/0066.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e1"
+        },
+        "actor_parts/head/0067.png": {
+            "path": "actor_parts/head/0067.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e2"
+        },
+        "actor_parts/head/0068.png": {
+            "path": "actor_parts/head/0068.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e3"
+        },
+        "actor_parts/head/0069.png": {
+            "path": "actor_parts/head/0069.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e4"
+        },
+        "actor_parts/head/0070.png": {
+            "path": "actor_parts/head/0070.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e5"
+        },
+        "actor_parts/head/0071.png": {
+            "path": "actor_parts/head/0071.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e6"
+        },
+        "actor_parts/head/0072.png": {
+            "path": "actor_parts/head/0072.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e7"
+        },
+        "actor_parts/head/0073.png": {
+            "path": "actor_parts/head/0073.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e8"
+        },
+        "actor_parts/head/0074.png": {
+            "path": "actor_parts/head/0074.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000e9"
+        },
+        "actor_parts/head/0075.png": {
+            "path": "actor_parts/head/0075.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ea"
+        },
+        "actor_parts/head/0076.png": {
+            "path": "actor_parts/head/0076.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000eb"
+        },
+        "actor_parts/head/0077.png": {
+            "path": "actor_parts/head/0077.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ec"
+        },
+        "actor_parts/head/0078.png": {
+            "path": "actor_parts/head/0078.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ed"
+        },
+        "actor_parts/head/0079.png": {
+            "path": "actor_parts/head/0079.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ee"
+        },
+        "actor_parts/head/0080.png": {
+            "path": "actor_parts/head/0080.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000ef"
+        },
+        "actor_parts/head/0081.png": {
+            "path": "actor_parts/head/0081.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f0"
+        },
+        "actor_parts/head/0082.png": {
+            "path": "actor_parts/head/0082.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f1"
+        },
+        "actor_parts/head/0083.png": {
+            "path": "actor_parts/head/0083.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f2"
+        },
+        "actor_parts/head/0084.png": {
+            "path": "actor_parts/head/0084.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f3"
+        },
+        "actor_parts/head/0085.png": {
+            "path": "actor_parts/head/0085.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f4"
+        },
+        "actor_parts/head/0086.png": {
+            "path": "actor_parts/head/0086.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f5"
+        },
+        "actor_parts/head/0087.png": {
+            "path": "actor_parts/head/0087.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f6"
+        },
+        "actor_parts/head/0088.png": {
+            "path": "actor_parts/head/0088.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f7"
+        },
+        "actor_parts/head/0089.png": {
+            "path": "actor_parts/head/0089.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f8"
+        },
+        "actor_parts/head/0090.png": {
+            "path": "actor_parts/head/0090.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "head"
+            },
+            "_id": "4db58d05b50632c7090000f9"
+        }
+    },
+    "item": {
+        "actor_parts/item/0001.png": {
+            "path": "actor_parts/item/0001.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090000fa"
+        },
+        "actor_parts/item/0002.png": {
+            "path": "actor_parts/item/0002.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090000fb"
+        },
+        "actor_parts/item/0003.png": {
+            "path": "actor_parts/item/0003.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090000fc"
+        },
+        "actor_parts/item/0004.png": {
+            "path": "actor_parts/item/0004.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090000fd"
+        },
+        "actor_parts/item/0005.png": {
+            "path": "actor_parts/item/0005.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090000fe"
+        },
+        "actor_parts/item/0006.png": {
+            "path": "actor_parts/item/0006.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090000ff"
+        },
+        "actor_parts/item/0007.png": {
+            "path": "actor_parts/item/0007.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000100"
+        },
+        "actor_parts/item/0008.png": {
+            "path": "actor_parts/item/0008.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000101"
+        },
+        "actor_parts/item/0009.png": {
+            "path": "actor_parts/item/0009.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000102"
+        },
+        "actor_parts/item/0010.png": {
+            "path": "actor_parts/item/0010.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000103"
+        },
+        "actor_parts/item/0011.png": {
+            "path": "actor_parts/item/0011.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000104"
+        },
+        "actor_parts/item/0012.png": {
+            "path": "actor_parts/item/0012.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000105"
+        },
+        "actor_parts/item/0013.png": {
+            "path": "actor_parts/item/0013.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000106"
+        },
+        "actor_parts/item/0014.png": {
+            "path": "actor_parts/item/0014.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000107"
+        },
+        "actor_parts/item/0015.png": {
+            "path": "actor_parts/item/0015.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000108"
+        },
+        "actor_parts/item/0016.png": {
+            "path": "actor_parts/item/0016.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000109"
+        },
+        "actor_parts/item/0017.png": {
+            "path": "actor_parts/item/0017.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900010a"
+        },
+        "actor_parts/item/0018.png": {
+            "path": "actor_parts/item/0018.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900010b"
+        },
+        "actor_parts/item/0019.png": {
+            "path": "actor_parts/item/0019.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900010c"
+        },
+        "actor_parts/item/0020.png": {
+            "path": "actor_parts/item/0020.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900010d"
+        },
+        "actor_parts/item/0021.png": {
+            "path": "actor_parts/item/0021.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900010e"
+        },
+        "actor_parts/item/0022.png": {
+            "path": "actor_parts/item/0022.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900010f"
+        },
+        "actor_parts/item/0023.png": {
+            "path": "actor_parts/item/0023.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000110"
+        },
+        "actor_parts/item/0024.png": {
+            "path": "actor_parts/item/0024.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000111"
+        },
+        "actor_parts/item/0025.png": {
+            "path": "actor_parts/item/0025.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000112"
+        },
+        "actor_parts/item/0026.png": {
+            "path": "actor_parts/item/0026.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000113"
+        },
+        "actor_parts/item/0027.png": {
+            "path": "actor_parts/item/0027.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000114"
+        },
+        "actor_parts/item/0028.png": {
+            "path": "actor_parts/item/0028.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000115"
+        },
+        "actor_parts/item/0029.png": {
+            "path": "actor_parts/item/0029.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000116"
+        },
+        "actor_parts/item/0030.png": {
+            "path": "actor_parts/item/0030.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000117"
+        },
+        "actor_parts/item/0031.png": {
+            "path": "actor_parts/item/0031.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000118"
+        },
+        "actor_parts/item/0032.png": {
+            "path": "actor_parts/item/0032.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000119"
+        },
+        "actor_parts/item/0033.png": {
+            "path": "actor_parts/item/0033.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900011a"
+        },
+        "actor_parts/item/0034.png": {
+            "path": "actor_parts/item/0034.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900011b"
+        },
+        "actor_parts/item/0035.png": {
+            "path": "actor_parts/item/0035.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900011c"
+        },
+        "actor_parts/item/0036.png": {
+            "path": "actor_parts/item/0036.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900011d"
+        },
+        "actor_parts/item/0037.png": {
+            "path": "actor_parts/item/0037.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900011e"
+        },
+        "actor_parts/item/0038.png": {
+            "path": "actor_parts/item/0038.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900011f"
+        },
+        "actor_parts/item/0039.png": {
+            "path": "actor_parts/item/0039.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000120"
+        },
+        "actor_parts/item/0040.png": {
+            "path": "actor_parts/item/0040.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000121"
+        },
+        "actor_parts/item/0041.png": {
+            "path": "actor_parts/item/0041.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000122"
+        },
+        "actor_parts/item/0042.png": {
+            "path": "actor_parts/item/0042.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000123"
+        },
+        "actor_parts/item/0043.png": {
+            "path": "actor_parts/item/0043.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000124"
+        },
+        "actor_parts/item/0044.png": {
+            "path": "actor_parts/item/0044.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000125"
+        },
+        "actor_parts/item/0045.png": {
+            "path": "actor_parts/item/0045.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000126"
+        },
+        "actor_parts/item/0046.png": {
+            "path": "actor_parts/item/0046.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000127"
+        },
+        "actor_parts/item/0047.png": {
+            "path": "actor_parts/item/0047.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000128"
+        },
+        "actor_parts/item/0048.png": {
+            "path": "actor_parts/item/0048.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000129"
+        },
+        "actor_parts/item/0049.png": {
+            "path": "actor_parts/item/0049.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900012a"
+        },
+        "actor_parts/item/0050.png": {
+            "path": "actor_parts/item/0050.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900012b"
+        },
+        "actor_parts/item/0051.png": {
+            "path": "actor_parts/item/0051.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900012c"
+        },
+        "actor_parts/item/0052.png": {
+            "path": "actor_parts/item/0052.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900012d"
+        },
+        "actor_parts/item/0053.png": {
+            "path": "actor_parts/item/0053.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900012e"
+        },
+        "actor_parts/item/0054.png": {
+            "path": "actor_parts/item/0054.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900012f"
+        },
+        "actor_parts/item/0055.png": {
+            "path": "actor_parts/item/0055.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000130"
+        },
+        "actor_parts/item/0056.png": {
+            "path": "actor_parts/item/0056.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000131"
+        },
+        "actor_parts/item/0057.png": {
+            "path": "actor_parts/item/0057.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000132"
+        },
+        "actor_parts/item/0058.png": {
+            "path": "actor_parts/item/0058.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000133"
+        },
+        "actor_parts/item/0059.png": {
+            "path": "actor_parts/item/0059.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000134"
+        },
+        "actor_parts/item/0060.png": {
+            "path": "actor_parts/item/0060.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000135"
+        },
+        "actor_parts/item/0062.png": {
+            "path": "actor_parts/item/0062.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000136"
+        },
+        "actor_parts/item/0061.png": {
+            "path": "actor_parts/item/0061.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000137"
+        },
+        "actor_parts/item/0063.png": {
+            "path": "actor_parts/item/0063.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000138"
+        },
+        "actor_parts/item/0064.png": {
+            "path": "actor_parts/item/0064.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000139"
+        },
+        "actor_parts/item/0065.png": {
+            "path": "actor_parts/item/0065.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900013a"
+        },
+        "actor_parts/item/0066.png": {
+            "path": "actor_parts/item/0066.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900013b"
+        },
+        "actor_parts/item/0067.png": {
+            "path": "actor_parts/item/0067.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900013c"
+        },
+        "actor_parts/item/0068.png": {
+            "path": "actor_parts/item/0068.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900013d"
+        },
+        "actor_parts/item/0069.png": {
+            "path": "actor_parts/item/0069.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900013e"
+        },
+        "actor_parts/item/0070.png": {
+            "path": "actor_parts/item/0070.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900013f"
+        },
+        "actor_parts/item/0071.png": {
+            "path": "actor_parts/item/0071.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000140"
+        },
+        "actor_parts/item/0072.png": {
+            "path": "actor_parts/item/0072.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000141"
+        },
+        "actor_parts/item/0073.png": {
+            "path": "actor_parts/item/0073.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000142"
+        },
+        "actor_parts/item/0074.png": {
+            "path": "actor_parts/item/0074.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000143"
+        },
+        "actor_parts/item/0075.png": {
+            "path": "actor_parts/item/0075.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000144"
+        },
+        "actor_parts/item/0076.png": {
+            "path": "actor_parts/item/0076.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000145"
+        },
+        "actor_parts/item/0077.png": {
+            "path": "actor_parts/item/0077.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000146"
+        },
+        "actor_parts/item/0078.png": {
+            "path": "actor_parts/item/0078.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000147"
+        },
+        "actor_parts/item/0079.png": {
+            "path": "actor_parts/item/0079.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000148"
+        },
+        "actor_parts/item/0080.png": {
+            "path": "actor_parts/item/0080.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000149"
+        },
+        "actor_parts/item/0081.png": {
+            "path": "actor_parts/item/0081.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900014a"
+        },
+        "actor_parts/item/0082.png": {
+            "path": "actor_parts/item/0082.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900014b"
+        },
+        "actor_parts/item/0083.png": {
+            "path": "actor_parts/item/0083.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900014c"
+        },
+        "actor_parts/item/0084.png": {
+            "path": "actor_parts/item/0084.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900014d"
+        },
+        "actor_parts/item/0085.png": {
+            "path": "actor_parts/item/0085.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900014e"
+        },
+        "actor_parts/item/0086.png": {
+            "path": "actor_parts/item/0086.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900014f"
+        },
+        "actor_parts/item/0087.png": {
+            "path": "actor_parts/item/0087.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000150"
+        },
+        "actor_parts/item/0088.png": {
+            "path": "actor_parts/item/0088.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000151"
+        },
+        "actor_parts/item/0089.png": {
+            "path": "actor_parts/item/0089.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000152"
+        },
+        "actor_parts/item/0090.png": {
+            "path": "actor_parts/item/0090.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000153"
+        },
+        "actor_parts/item/0091.png": {
+            "path": "actor_parts/item/0091.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000154"
+        },
+        "actor_parts/item/0092.png": {
+            "path": "actor_parts/item/0092.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000155"
+        },
+        "actor_parts/item/0093.png": {
+            "path": "actor_parts/item/0093.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000156"
+        },
+        "actor_parts/item/0094.png": {
+            "path": "actor_parts/item/0094.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000157"
+        },
+        "actor_parts/item/0095.png": {
+            "path": "actor_parts/item/0095.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000158"
+        },
+        "actor_parts/item/0096.png": {
+            "path": "actor_parts/item/0096.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000159"
+        },
+        "actor_parts/item/0097.png": {
+            "path": "actor_parts/item/0097.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900015a"
+        },
+        "actor_parts/item/0098.png": {
+            "path": "actor_parts/item/0098.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900015b"
+        },
+        "actor_parts/item/0099.png": {
+            "path": "actor_parts/item/0099.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900015c"
+        },
+        "actor_parts/item/0100.png": {
+            "path": "actor_parts/item/0100.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900015d"
+        },
+        "actor_parts/item/0101.png": {
+            "path": "actor_parts/item/0101.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900015e"
+        },
+        "actor_parts/item/0102.png": {
+            "path": "actor_parts/item/0102.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900015f"
+        },
+        "actor_parts/item/0103.png": {
+            "path": "actor_parts/item/0103.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000160"
+        },
+        "actor_parts/item/0104.png": {
+            "path": "actor_parts/item/0104.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000161"
+        },
+        "actor_parts/item/0105.png": {
+            "path": "actor_parts/item/0105.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000162"
+        },
+        "actor_parts/item/0106.png": {
+            "path": "actor_parts/item/0106.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000163"
+        },
+        "actor_parts/item/0107.png": {
+            "path": "actor_parts/item/0107.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000164"
+        },
+        "actor_parts/item/0108.png": {
+            "path": "actor_parts/item/0108.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000165"
+        },
+        "actor_parts/item/0109.png": {
+            "path": "actor_parts/item/0109.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000166"
+        },
+        "actor_parts/item/0110.png": {
+            "path": "actor_parts/item/0110.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000167"
+        },
+        "actor_parts/item/0111.png": {
+            "path": "actor_parts/item/0111.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000168"
+        },
+        "actor_parts/item/0112.png": {
+            "path": "actor_parts/item/0112.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000169"
+        },
+        "actor_parts/item/0113.png": {
+            "path": "actor_parts/item/0113.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900016a"
+        },
+        "actor_parts/item/0114.png": {
+            "path": "actor_parts/item/0114.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900016b"
+        },
+        "actor_parts/item/0115.png": {
+            "path": "actor_parts/item/0115.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900016c"
+        },
+        "actor_parts/item/0116.png": {
+            "path": "actor_parts/item/0116.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900016d"
+        },
+        "actor_parts/item/0117.png": {
+            "path": "actor_parts/item/0117.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900016e"
+        },
+        "actor_parts/item/0118.png": {
+            "path": "actor_parts/item/0118.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900016f"
+        },
+        "actor_parts/item/0119.png": {
+            "path": "actor_parts/item/0119.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000170"
+        },
+        "actor_parts/item/0120.png": {
+            "path": "actor_parts/item/0120.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000171"
+        },
+        "actor_parts/item/0121.png": {
+            "path": "actor_parts/item/0121.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000172"
+        },
+        "actor_parts/item/0122.png": {
+            "path": "actor_parts/item/0122.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000173"
+        },
+        "actor_parts/item/0123.png": {
+            "path": "actor_parts/item/0123.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000174"
+        },
+        "actor_parts/item/0124.png": {
+            "path": "actor_parts/item/0124.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000175"
+        },
+        "actor_parts/item/0125.png": {
+            "path": "actor_parts/item/0125.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000176"
+        },
+        "actor_parts/item/0126.png": {
+            "path": "actor_parts/item/0126.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000177"
+        },
+        "actor_parts/item/0127.png": {
+            "path": "actor_parts/item/0127.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000178"
+        },
+        "actor_parts/item/0128.png": {
+            "path": "actor_parts/item/0128.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000179"
+        },
+        "actor_parts/item/0129.png": {
+            "path": "actor_parts/item/0129.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900017a"
+        },
+        "actor_parts/item/0130.png": {
+            "path": "actor_parts/item/0130.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900017b"
+        },
+        "actor_parts/item/0131.png": {
+            "path": "actor_parts/item/0131.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900017c"
+        },
+        "actor_parts/item/0132.png": {
+            "path": "actor_parts/item/0132.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900017d"
+        },
+        "actor_parts/item/0133.png": {
+            "path": "actor_parts/item/0133.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900017e"
+        },
+        "actor_parts/item/0134.png": {
+            "path": "actor_parts/item/0134.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900017f"
+        },
+        "actor_parts/item/0135.png": {
+            "path": "actor_parts/item/0135.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000180"
+        },
+        "actor_parts/item/0136.png": {
+            "path": "actor_parts/item/0136.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000181"
+        },
+        "actor_parts/item/0137.png": {
+            "path": "actor_parts/item/0137.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000182"
+        },
+        "actor_parts/item/0138.png": {
+            "path": "actor_parts/item/0138.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000183"
+        },
+        "actor_parts/item/0139.png": {
+            "path": "actor_parts/item/0139.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000184"
+        },
+        "actor_parts/item/0140.png": {
+            "path": "actor_parts/item/0140.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000185"
+        },
+        "actor_parts/item/0141.png": {
+            "path": "actor_parts/item/0141.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000186"
+        },
+        "actor_parts/item/0142.png": {
+            "path": "actor_parts/item/0142.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000187"
+        },
+        "actor_parts/item/0143.png": {
+            "path": "actor_parts/item/0143.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000188"
+        },
+        "actor_parts/item/0144.png": {
+            "path": "actor_parts/item/0144.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000189"
+        },
+        "actor_parts/item/0145.png": {
+            "path": "actor_parts/item/0145.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900018a"
+        },
+        "actor_parts/item/0146.png": {
+            "path": "actor_parts/item/0146.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900018b"
+        },
+        "actor_parts/item/0147.png": {
+            "path": "actor_parts/item/0147.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900018c"
+        },
+        "actor_parts/item/0148.png": {
+            "path": "actor_parts/item/0148.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900018d"
+        },
+        "actor_parts/item/0149.png": {
+            "path": "actor_parts/item/0149.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900018e"
+        },
+        "actor_parts/item/0150.png": {
+            "path": "actor_parts/item/0150.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900018f"
+        },
+        "actor_parts/item/0151.png": {
+            "path": "actor_parts/item/0151.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000190"
+        },
+        "actor_parts/item/0152.png": {
+            "path": "actor_parts/item/0152.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000191"
+        },
+        "actor_parts/item/0153.png": {
+            "path": "actor_parts/item/0153.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000192"
+        },
+        "actor_parts/item/0154.png": {
+            "path": "actor_parts/item/0154.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000193"
+        },
+        "actor_parts/item/0155.png": {
+            "path": "actor_parts/item/0155.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000194"
+        },
+        "actor_parts/item/0156.png": {
+            "path": "actor_parts/item/0156.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000195"
+        },
+        "actor_parts/item/0157.png": {
+            "path": "actor_parts/item/0157.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000196"
+        },
+        "actor_parts/item/0158.png": {
+            "path": "actor_parts/item/0158.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000197"
+        },
+        "actor_parts/item/0159.png": {
+            "path": "actor_parts/item/0159.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000198"
+        },
+        "actor_parts/item/0160.png": {
+            "path": "actor_parts/item/0160.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c709000199"
+        },
+        "actor_parts/item/0161.png": {
+            "path": "actor_parts/item/0161.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900019a"
+        },
+        "actor_parts/item/0163.png": {
+            "path": "actor_parts/item/0163.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900019b"
+        },
+        "actor_parts/item/0164.png": {
+            "path": "actor_parts/item/0164.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900019c"
+        },
+        "actor_parts/item/0162.png": {
+            "path": "actor_parts/item/0162.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900019d"
+        },
+        "actor_parts/item/0165.png": {
+            "path": "actor_parts/item/0165.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900019e"
+        },
+        "actor_parts/item/0166.png": {
+            "path": "actor_parts/item/0166.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c70900019f"
+        },
+        "actor_parts/item/0167.png": {
+            "path": "actor_parts/item/0167.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a0"
+        },
+        "actor_parts/item/0168.png": {
+            "path": "actor_parts/item/0168.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a1"
+        },
+        "actor_parts/item/0169.png": {
+            "path": "actor_parts/item/0169.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a2"
+        },
+        "actor_parts/item/0170.png": {
+            "path": "actor_parts/item/0170.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a3"
+        },
+        "actor_parts/item/0171.png": {
+            "path": "actor_parts/item/0171.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a4"
+        },
+        "actor_parts/item/0172.png": {
+            "path": "actor_parts/item/0172.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a5"
+        },
+        "actor_parts/item/0173.png": {
+            "path": "actor_parts/item/0173.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a6"
+        },
+        "actor_parts/item/0174.png": {
+            "path": "actor_parts/item/0174.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a7"
+        },
+        "actor_parts/item/0175.png": {
+            "path": "actor_parts/item/0175.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a8"
+        },
+        "actor_parts/item/0176.png": {
+            "path": "actor_parts/item/0176.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001a9"
+        },
+        "actor_parts/item/0177.png": {
+            "path": "actor_parts/item/0177.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001aa"
+        },
+        "actor_parts/item/0178.png": {
+            "path": "actor_parts/item/0178.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001ab"
+        },
+        "actor_parts/item/0179.png": {
+            "path": "actor_parts/item/0179.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001ac"
+        },
+        "actor_parts/item/0180.png": {
+            "path": "actor_parts/item/0180.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001ad"
+        },
+        "actor_parts/item/0181.png": {
+            "path": "actor_parts/item/0181.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001ae"
+        },
+        "actor_parts/item/0182.png": {
+            "path": "actor_parts/item/0182.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001af"
+        },
+        "actor_parts/item/0183.png": {
+            "path": "actor_parts/item/0183.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b0"
+        },
+        "actor_parts/item/0184.png": {
+            "path": "actor_parts/item/0184.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b1"
+        },
+        "actor_parts/item/0185.png": {
+            "path": "actor_parts/item/0185.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b2"
+        },
+        "actor_parts/item/0187.png": {
+            "path": "actor_parts/item/0187.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b3"
+        },
+        "actor_parts/item/0188.png": {
+            "path": "actor_parts/item/0188.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b4"
+        },
+        "actor_parts/item/0186.png": {
+            "path": "actor_parts/item/0186.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b5"
+        },
+        "actor_parts/item/0189.png": {
+            "path": "actor_parts/item/0189.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b6"
+        },
+        "actor_parts/item/0190.png": {
+            "path": "actor_parts/item/0190.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b7"
+        },
+        "actor_parts/item/0191.png": {
+            "path": "actor_parts/item/0191.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b8"
+        },
+        "actor_parts/item/0192.png": {
+            "path": "actor_parts/item/0192.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001b9"
+        },
+        "actor_parts/item/0193.png": {
+            "path": "actor_parts/item/0193.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001ba"
+        },
+        "actor_parts/item/0194.png": {
+            "path": "actor_parts/item/0194.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001bb"
+        },
+        "actor_parts/item/0195.png": {
+            "path": "actor_parts/item/0195.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001bc"
+        },
+        "actor_parts/item/0196.png": {
+            "path": "actor_parts/item/0196.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001bd"
+        },
+        "actor_parts/item/0197.png": {
+            "path": "actor_parts/item/0197.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001be"
+        },
+        "actor_parts/item/0198.png": {
+            "path": "actor_parts/item/0198.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001bf"
+        },
+        "actor_parts/item/0199.png": {
+            "path": "actor_parts/item/0199.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001c0"
+        },
+        "actor_parts/item/0200.png": {
+            "path": "actor_parts/item/0200.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001c1"
+        },
+        "actor_parts/item/0201.png": {
+            "path": "actor_parts/item/0201.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001c2"
+        },
+        "actor_parts/item/0202.png": {
+            "path": "actor_parts/item/0202.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001c3"
+        },
+        "actor_parts/item/0203.png": {
+            "path": "actor_parts/item/0203.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001c4"
+        },
+        "actor_parts/item/0204.png": {
+            "path": "actor_parts/item/0204.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "item"
+            },
+            "_id": "4db58d05b50632c7090001c5"
+        }
+    },
+    "suit": {
+        "actor_parts/suit/0001.png": {
+            "path": "actor_parts/suit/0001.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001c6"
+        },
+        "actor_parts/suit/0002.png": {
+            "path": "actor_parts/suit/0002.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001c7"
+        },
+        "actor_parts/suit/0003.png": {
+            "path": "actor_parts/suit/0003.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001c8"
+        },
+        "actor_parts/suit/0004.png": {
+            "path": "actor_parts/suit/0004.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001c9"
+        },
+        "actor_parts/suit/0005.png": {
+            "path": "actor_parts/suit/0005.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001ca"
+        },
+        "actor_parts/suit/0006.png": {
+            "path": "actor_parts/suit/0006.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001cb"
+        },
+        "actor_parts/suit/0007.png": {
+            "path": "actor_parts/suit/0007.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001cc"
+        },
+        "actor_parts/suit/0008.png": {
+            "path": "actor_parts/suit/0008.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001cd"
+        },
+        "actor_parts/suit/0009.png": {
+            "path": "actor_parts/suit/0009.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001ce"
+        },
+        "actor_parts/suit/0010.png": {
+            "path": "actor_parts/suit/0010.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001cf"
+        },
+        "actor_parts/suit/0011.png": {
+            "path": "actor_parts/suit/0011.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d0"
+        },
+        "actor_parts/suit/0012.png": {
+            "path": "actor_parts/suit/0012.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d1"
+        },
+        "actor_parts/suit/0013.png": {
+            "path": "actor_parts/suit/0013.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d2"
+        },
+        "actor_parts/suit/0014.png": {
+            "path": "actor_parts/suit/0014.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d3"
+        },
+        "actor_parts/suit/0015.png": {
+            "path": "actor_parts/suit/0015.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d4"
+        },
+        "actor_parts/suit/0016.png": {
+            "path": "actor_parts/suit/0016.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d5"
+        },
+        "actor_parts/suit/0017.png": {
+            "path": "actor_parts/suit/0017.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d6"
+        },
+        "actor_parts/suit/0018.png": {
+            "path": "actor_parts/suit/0018.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d7"
+        },
+        "actor_parts/suit/0019.png": {
+            "path": "actor_parts/suit/0019.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d8"
+        },
+        "actor_parts/suit/0020.png": {
+            "path": "actor_parts/suit/0020.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001d9"
+        },
+        "actor_parts/suit/0021.png": {
+            "path": "actor_parts/suit/0021.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001da"
+        },
+        "actor_parts/suit/0022.png": {
+            "path": "actor_parts/suit/0022.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001db"
+        },
+        "actor_parts/suit/0023.png": {
+            "path": "actor_parts/suit/0023.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001dc"
+        },
+        "actor_parts/suit/0024.png": {
+            "path": "actor_parts/suit/0024.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001dd"
+        },
+        "actor_parts/suit/0025.png": {
+            "path": "actor_parts/suit/0025.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001de"
+        },
+        "actor_parts/suit/0026.png": {
+            "path": "actor_parts/suit/0026.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001df"
+        },
+        "actor_parts/suit/0027.png": {
+            "path": "actor_parts/suit/0027.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e0"
+        },
+        "actor_parts/suit/0028.png": {
+            "path": "actor_parts/suit/0028.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e1"
+        },
+        "actor_parts/suit/0029.png": {
+            "path": "actor_parts/suit/0029.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e2"
+        },
+        "actor_parts/suit/0030.png": {
+            "path": "actor_parts/suit/0030.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e3"
+        },
+        "actor_parts/suit/0031.png": {
+            "path": "actor_parts/suit/0031.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e4"
+        },
+        "actor_parts/suit/0032.png": {
+            "path": "actor_parts/suit/0032.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e5"
+        },
+        "actor_parts/suit/0033.png": {
+            "path": "actor_parts/suit/0033.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e6"
+        },
+        "actor_parts/suit/0034.png": {
+            "path": "actor_parts/suit/0034.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e7"
+        },
+        "actor_parts/suit/0035.png": {
+            "path": "actor_parts/suit/0035.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e8"
+        },
+        "actor_parts/suit/0036.png": {
+            "path": "actor_parts/suit/0036.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001e9"
+        },
+        "actor_parts/suit/0037.png": {
+            "path": "actor_parts/suit/0037.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001ea"
+        },
+        "actor_parts/suit/0038.png": {
+            "path": "actor_parts/suit/0038.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001eb"
+        },
+        "actor_parts/suit/0040.png": {
+            "path": "actor_parts/suit/0040.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001ec"
+        },
+        "actor_parts/suit/0041.png": {
+            "path": "actor_parts/suit/0041.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001ed"
+        },
+        "actor_parts/suit/0039.png": {
+            "path": "actor_parts/suit/0039.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001ee"
+        },
+        "actor_parts/suit/0042.png": {
+            "path": "actor_parts/suit/0042.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001ef"
+        },
+        "actor_parts/suit/0043.png": {
+            "path": "actor_parts/suit/0043.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001f0"
+        },
+        "actor_parts/suit/0044.png": {
+            "path": "actor_parts/suit/0044.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001f1"
+        },
+        "actor_parts/suit/0045.png": {
+            "path": "actor_parts/suit/0045.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001f2"
+        },
+        "actor_parts/suit/0046.png": {
+            "path": "actor_parts/suit/0046.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001f3"
+        },
+        "actor_parts/suit/0047.png": {
+            "path": "actor_parts/suit/0047.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001f4"
+        },
+        "actor_parts/suit/0048.png": {
+            "path": "actor_parts/suit/0048.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001f5"
+        },
+        "actor_parts/suit/0049.png": {
+            "path": "actor_parts/suit/0049.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001f6"
+        },
+        "actor_parts/suit/0050.png": {
+            "path": "actor_parts/suit/0050.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001f7"
+        },
+        "actor_parts/suit/0051.png": {
+            "path": "actor_parts/suit/0051.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d05b50632c7090001f8"
+        },
+        "actor_parts/suit/0052.png": {
+            "path": "actor_parts/suit/0052.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c7090001f9"
+        },
+        "actor_parts/suit/0053.png": {
+            "path": "actor_parts/suit/0053.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c7090001fa"
+        },
+        "actor_parts/suit/0054.png": {
+            "path": "actor_parts/suit/0054.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c7090001fb"
+        },
+        "actor_parts/suit/0055.png": {
+            "path": "actor_parts/suit/0055.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c7090001fc"
+        },
+        "actor_parts/suit/0056.png": {
+            "path": "actor_parts/suit/0056.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c7090001fd"
+        },
+        "actor_parts/suit/0057.png": {
+            "path": "actor_parts/suit/0057.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c7090001fe"
+        },
+        "actor_parts/suit/0058.png": {
+            "path": "actor_parts/suit/0058.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c7090001ff"
+        },
+        "actor_parts/suit/0059.png": {
+            "path": "actor_parts/suit/0059.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000200"
+        },
+        "actor_parts/suit/0060.png": {
+            "path": "actor_parts/suit/0060.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000201"
+        },
+        "actor_parts/suit/0061.png": {
+            "path": "actor_parts/suit/0061.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000202"
+        },
+        "actor_parts/suit/0062.png": {
+            "path": "actor_parts/suit/0062.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000203"
+        },
+        "actor_parts/suit/0063.png": {
+            "path": "actor_parts/suit/0063.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000204"
+        },
+        "actor_parts/suit/0064.png": {
+            "path": "actor_parts/suit/0064.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000205"
+        },
+        "actor_parts/suit/0066.png": {
+            "path": "actor_parts/suit/0066.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000206"
+        },
+        "actor_parts/suit/0067.png": {
+            "path": "actor_parts/suit/0067.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000207"
+        },
+        "actor_parts/suit/0065.png": {
+            "path": "actor_parts/suit/0065.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000208"
+        },
+        "actor_parts/suit/0068.png": {
+            "path": "actor_parts/suit/0068.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000209"
+        },
+        "actor_parts/suit/0069.png": {
+            "path": "actor_parts/suit/0069.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900020a"
+        },
+        "actor_parts/suit/0070.png": {
+            "path": "actor_parts/suit/0070.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900020b"
+        },
+        "actor_parts/suit/0071.png": {
+            "path": "actor_parts/suit/0071.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900020c"
+        },
+        "actor_parts/suit/0072.png": {
+            "path": "actor_parts/suit/0072.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900020d"
+        },
+        "actor_parts/suit/0074.png": {
+            "path": "actor_parts/suit/0074.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900020e"
+        },
+        "actor_parts/suit/0075.png": {
+            "path": "actor_parts/suit/0075.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900020f"
+        },
+        "actor_parts/suit/0073.png": {
+            "path": "actor_parts/suit/0073.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000210"
+        },
+        "actor_parts/suit/0076.png": {
+            "path": "actor_parts/suit/0076.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000211"
+        },
+        "actor_parts/suit/0078.png": {
+            "path": "actor_parts/suit/0078.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000212"
+        },
+        "actor_parts/suit/0079.png": {
+            "path": "actor_parts/suit/0079.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000213"
+        },
+        "actor_parts/suit/0077.png": {
+            "path": "actor_parts/suit/0077.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000214"
+        },
+        "actor_parts/suit/0080.png": {
+            "path": "actor_parts/suit/0080.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000215"
+        },
+        "actor_parts/suit/0081.png": {
+            "path": "actor_parts/suit/0081.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000216"
+        },
+        "actor_parts/suit/0083.png": {
+            "path": "actor_parts/suit/0083.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000217"
+        },
+        "actor_parts/suit/0084.png": {
+            "path": "actor_parts/suit/0084.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000218"
+        },
+        "actor_parts/suit/0082.png": {
+            "path": "actor_parts/suit/0082.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000219"
+        },
+        "actor_parts/suit/0085.png": {
+            "path": "actor_parts/suit/0085.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900021a"
+        },
+        "actor_parts/suit/0087.png": {
+            "path": "actor_parts/suit/0087.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900021b"
+        },
+        "actor_parts/suit/0086.png": {
+            "path": "actor_parts/suit/0086.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900021c"
+        },
+        "actor_parts/suit/0088.png": {
+            "path": "actor_parts/suit/0088.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900021d"
+        },
+        "actor_parts/suit/0090.png": {
+            "path": "actor_parts/suit/0090.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900021e"
+        },
+        "actor_parts/suit/0091.png": {
+            "path": "actor_parts/suit/0091.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900021f"
+        },
+        "actor_parts/suit/0089.png": {
+            "path": "actor_parts/suit/0089.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000220"
+        },
+        "actor_parts/suit/0092.png": {
+            "path": "actor_parts/suit/0092.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000221"
+        },
+        "actor_parts/suit/0093.png": {
+            "path": "actor_parts/suit/0093.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000222"
+        },
+        "actor_parts/suit/0095.png": {
+            "path": "actor_parts/suit/0095.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000223"
+        },
+        "actor_parts/suit/0098.png": {
+            "path": "actor_parts/suit/0098.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000224"
+        },
+        "actor_parts/suit/0099.png": {
+            "path": "actor_parts/suit/0099.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000225"
+        },
+        "actor_parts/suit/0094.png": {
+            "path": "actor_parts/suit/0094.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000226"
+        },
+        "actor_parts/suit/0096.png": {
+            "path": "actor_parts/suit/0096.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000227"
+        },
+        "actor_parts/suit/0100.png": {
+            "path": "actor_parts/suit/0100.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000228"
+        },
+        "actor_parts/suit/0097.png": {
+            "path": "actor_parts/suit/0097.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000229"
+        },
+        "actor_parts/suit/0101.png": {
+            "path": "actor_parts/suit/0101.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900022a"
+        },
+        "actor_parts/suit/0102.png": {
+            "path": "actor_parts/suit/0102.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900022b"
+        },
+        "actor_parts/suit/0103.png": {
+            "path": "actor_parts/suit/0103.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900022c"
+        },
+        "actor_parts/suit/0104.png": {
+            "path": "actor_parts/suit/0104.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900022d"
+        },
+        "actor_parts/suit/0105.png": {
+            "path": "actor_parts/suit/0105.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900022e"
+        },
+        "actor_parts/suit/0106.png": {
+            "path": "actor_parts/suit/0106.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900022f"
+        },
+        "actor_parts/suit/0108.png": {
+            "path": "actor_parts/suit/0108.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000230"
+        },
+        "actor_parts/suit/0109.png": {
+            "path": "actor_parts/suit/0109.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000231"
+        },
+        "actor_parts/suit/0107.png": {
+            "path": "actor_parts/suit/0107.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000232"
+        },
+        "actor_parts/suit/0110.png": {
+            "path": "actor_parts/suit/0110.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000233"
+        },
+        "actor_parts/suit/0111.png": {
+            "path": "actor_parts/suit/0111.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000234"
+        },
+        "actor_parts/suit/0112.png": {
+            "path": "actor_parts/suit/0112.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000235"
+        },
+        "actor_parts/suit/0114.png": {
+            "path": "actor_parts/suit/0114.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000236"
+        },
+        "actor_parts/suit/0115.png": {
+            "path": "actor_parts/suit/0115.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000237"
+        },
+        "actor_parts/suit/0113.png": {
+            "path": "actor_parts/suit/0113.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000238"
+        },
+        "actor_parts/suit/0116.png": {
+            "path": "actor_parts/suit/0116.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000239"
+        },
+        "actor_parts/suit/0117.png": {
+            "path": "actor_parts/suit/0117.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900023a"
+        },
+        "actor_parts/suit/0118.png": {
+            "path": "actor_parts/suit/0118.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900023b"
+        },
+        "actor_parts/suit/0119.png": {
+            "path": "actor_parts/suit/0119.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900023c"
+        },
+        "actor_parts/suit/0120.png": {
+            "path": "actor_parts/suit/0120.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900023d"
+        },
+        "actor_parts/suit/0121.png": {
+            "path": "actor_parts/suit/0121.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900023e"
+        },
+        "actor_parts/suit/0122.png": {
+            "path": "actor_parts/suit/0122.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c70900023f"
+        },
+        "actor_parts/suit/0123.png": {
+            "path": "actor_parts/suit/0123.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000240"
+        },
+        "actor_parts/suit/0124.png": {
+            "path": "actor_parts/suit/0124.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000241"
+        },
+        "actor_parts/suit/0125.png": {
+            "path": "actor_parts/suit/0125.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000242"
+        },
+        "actor_parts/suit/0126.png": {
+            "path": "actor_parts/suit/0126.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000243"
+        },
+        "actor_parts/suit/0127.png": {
+            "path": "actor_parts/suit/0127.png",
+            "meta": {
+                "category": "actor_parts",
+                "part_type": "suit"
+            },
+            "_id": "4db58d06b50632c709000244"
+        }
+    }
+}

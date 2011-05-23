@@ -1,0 +1,27 @@
+<h1>Import Models for <%- model %></h1>
+<form method="post" action="/meta/import_models_import">
+    <h2><%- model %> Items</h2>
+    
+    <table border="2" cellpadding="2">
+        <tr><th class="check_boxes" style="text-align: left"><input type="checkbox" name="model[_ids]" id="check_all" /></th>
+            <td><input type="submit" value="Import Records" /></td></tr>
+<% data.forEach(function(item){ %>
+        <tr><th class="check_boxes" style="text-align: left"><label><input type="checkbox" name="model[_ids][]" class="all_checks" value="<%- item._id %>"><%- item._id %></label></th>
+   <% delete item._id; %>
+        <td><pre><%- JSON.stringify(item, null, 2).replace(/^\{/, '').replace(/\}$/, '') %></pre></td></tr><% }) %>
+        <tr><th>&nbsp;</th><td><input type="submit" value="Import Records" /></td></tr>
+    </table>
+    <input name="model[name]" value="<%- model %>" type="hidden" />
+</form>
+
+<script type="text/javascript">
+$(function() {
+    $("#check_all").click(function() {
+        var checked_status = this.checked;
+        var checkbox_name = this.name;
+        $(".all_checks").each(function() {
+                this.checked = checked_status;
+        });
+    });
+});
+</script>
