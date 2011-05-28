@@ -1,0 +1,45 @@
+<h1>Map of &quot;<%- map.name %>&quot;</h1>
+        <link rel="stylesheet" href="/map/css/show.css" /> 
+<dl>
+    
+    <dt>Height:</dt>
+    <dd><%- map.height %></dd>
+    
+    <dt>Width: </dt>
+    <dd><%- map.width %></dd>
+    
+</dl>
+<p><a href="/maps/<%- map._id %>/gen_coords">Generate Coordinates</a></p>
+<table>
+<tr>
+    <td>
+        <p><b>x</b><span id="scroller_x"></span></p>
+        <p><b>y</b><span id="scroller_y"></span></p>
+        <div id="map_region">
+            <div id="scroller"></div>
+        </div>
+    </td>
+    <td>
+        <div id="zoom_region">
+            <div class="btn" id="zoom_up" onClick="window.map.move(0, -1)">Up</div>
+            <div class="btn" id="zoom_down" onClick="window.map.move(0, 1)">Down</div>
+            <div class="btn" id="zoom_left" onClick="window.map.move(-1, 0)">Left</div>
+            <div class="btn" id="zoom_right" onClick="window.map.move(1, 0)">Right</div>
+            <span id="zoom_region_tiles"></span>
+        </div>
+    </td>
+</tr>
+</table>	
+<script type="text/javascript" src="/js/jqt/jqtm.js"></script>
+<script src="/map/js/Map.js" type="text/javascript">
+</script>
+<script id="cell_template" type="text/x-jquery-tmpl">
+  <div class="topo h${h}" id="${id}" style="left: ${x}; top: ${y}; width: ${scale}; height: ${scale}"></div>
+</script>
+<script type="text/javascript">
+    $(function(){
+$('#cell_template').template('cell');
+var map = window.map = new Map(<%- map.height %>/10,<%- map.width %>/10);
+    $("#scroller").draggable({scroll: false, containment: 'parent', stop: function(){map.refresh() }});
+    });
+</script>

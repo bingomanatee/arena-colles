@@ -7,8 +7,10 @@ module.exports = {
     },
     
     fields: [
-        {name: 'map[name]', label: 'Label'},
-        {name: 'map[width]', label: 'Width (m)'},
-        {name: 'map[height]', label: 'Height(m)'}
+        {name: 'map[name]', label: 'Planet'},
+        {name: 'map[long]', label: 'Width (px)'},
+        {name: 'map[lat]', label: 'Height(px)'},
+        {name: 'map[km_per_pixel]', label: 'Kilometers/Pixel'},
+        {name: 'map[height_data]', label: 'Height Data', type: 'textarea'}
     ]
 }

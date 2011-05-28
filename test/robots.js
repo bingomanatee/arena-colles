@@ -60,7 +60,7 @@ micronaut.save(function(err, micronaut_saved) {
 
             robots_module.model().find({}, function(err, robots) {
                 robots.forEach(function(robot) {
-                    console.log('robot ' + robot._id + ': ' + robot.name);
+                     // console.log('robot ' + robot._id + ': ' + robot.name);
                 })
             })
         })

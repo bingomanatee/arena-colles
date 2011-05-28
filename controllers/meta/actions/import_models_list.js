@@ -6,7 +6,7 @@ var jsoninpath = require('util/jsoninpath');
 module.exports = function(context) {
 
     var params = context.req_params(false).models;
-    console.log(__filename, ': params: ', params);
+     // console.log(__filename, ': params: ', params);
     if (params.filter){
         var path = MVC_MODELS + '/_export/' + params.model;
        jsoninpath(path, function(err, data){

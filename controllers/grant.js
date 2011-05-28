@@ -10,13 +10,13 @@ var forms_module = require('mvc/forms');
 module.exports = {
 
     index: function(context) {
-        console.log(__filename, '::index: ');
+         // console.log(__filename, '::index: ');
         
         function _form_callback(err, form) {
-            console.log(__filename, '::form: ', form);
+             // console.log(__filename, '::form: ', form);
 
             function _all_callback(err, results) {
-                console.log(__filename, '::data: ', results);
+                 // console.log(__filename, '::data: ', results);
                 context.render({
                     grants: results,
                     form: form

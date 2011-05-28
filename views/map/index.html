@@ -1,0 +1,21 @@
+<h1>Planets</h1>
+
+<table>
+    <tr><th>Planet</th>
+        <th>Longitude (px)</th>
+        <th>Latitude (px)</th>
+        <th>KM/px</th>
+<% maps.forEach(function(map){
+%>
+<tr><th><%- map.name %></th>
+<td><%- map.long %></td>
+<td><%- map.lat %></td>
+<td><%- map.km_per_pixel %></td>
+<td>
+<a href="/maps/<%- map._id %>">View</a>
+</td>
+</tr>
+<%
+})
+  %>  
+</table>

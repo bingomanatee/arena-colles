@@ -15,13 +15,13 @@ module.exports = {
     mixins: {
 
         get_with_grants: function(id, callback) {
-            console.log(__filename, ': get_with_grants');
+             // console.log(__filename, ': get_with_grants');
             var self = this;
             if (grants_model) {
                 self._get_with_grants(id, callback);
             } else {
                 models_module.model('grants', function(err, model) {
-                    console.log(__filename, ': retrieved grants model');
+                     // console.log(__filename, ': retrieved grants model');
                     grants_model = model;
                     self._get_with_grants(id, callback);
                 })
@@ -29,7 +29,7 @@ module.exports = {
         },
 
         _get_with_grants: function(id, callback) {
-            console.log(__filename, ': getting member ', id,' : callback, ', callback);
+             // console.log(__filename, ': getting member ', id,' : callback, ', callback);
             var self = this;
             
             function _get_member(err, member) {
@@ -40,7 +40,7 @@ module.exports = {
                     if (member.hasOwnProperty('roles')) {
                         
                         function _end_gate() {
-                            console.log(__filename, ':: _get_with_grants - uniquifiying actions ', member.actions);
+                             // console.log(__filename, ':: _get_with_grants - uniquifiying actions ', member.actions);
                             member.actions = _.unique(member.actions);
                             callback(null, member);
                         }
@@ -48,7 +48,7 @@ module.exports = {
                         var gate = new Gate(_end_gate);
                         
                         function _grants_model_find(err, grant_results) {
-                            console.log(__filename, ':: _get_with_grants: found ', grant_results);
+                             // console.log(__filename, ':: _get_with_grants: found ', grant_results);
                             if (grant_results) {
                                 grant_results.forEach(function(grant_result) {
                                     member.actions.push(grant_result._id);
@@ -58,7 +58,7 @@ module.exports = {
                         }
 
                         member.roles.forEach(function(role) {
-                            console.log(__filename, ':: _get_with_grants - finding role ', role);
+                             // console.log(__filename, ':: _get_with_grants - finding role ', role);
                             gate.task_start();
                             grants_model.find({
                                 roles: role
@@ -95,12 +95,12 @@ module.exports = {
 
         authenticate: function(member, callback) {
             var self = this;
-             console.log(__filename, ': member: ', member);
+              // console.log(__filename, ': member: ', member);
              
             function _auth(err, result) {
-                console.log(__filename, ' found: ', result);
+                 // console.log(__filename, ' found: ', result);
                 if (result && (result.password == member.password)) {
-                    console.log(__filename, ': member ', member, ' found: ', result);
+                     // console.log(__filename, ': member ', member, ' found: ', result);
                     callback(null, result);
                 } else {
                     callback(new Error('Cannot authenticate'));

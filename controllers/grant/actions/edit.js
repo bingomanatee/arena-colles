@@ -15,7 +15,7 @@ module.exports = function(context) {
 
 	    function _form_handler(err, form) {
 		if (err) {
-		    console.log(__filename, ': error in form: ', err);
+		     // console.log(__filename, ': error in form: ', err);
 		    throw err;
 		} else {
 		    form.configs.action = form.configs.action.replace('__ID__', item._id);
@@ -29,7 +29,7 @@ module.exports = function(context) {
 		context: self.name
 	    });
 	} catch (err) {
-	    console.log(__filename, ': error in form caught, ', err);
+	     // console.log(__filename, ': error in form caught, ', err);
 	}
 	// response.render(self._views.edit, params);
     }); // end get

@@ -4,7 +4,7 @@ module.exports = function(context) {
 
     self.model.authenticate(member, function(err, authenticated) {
         if (authenticated) {
-            console.log('authentication: ', authenticated);
+             // console.log('authentication: ', authenticated);
             self.model.get_with_grants(member._id, function(err, member) {
                 context.request.session.member = member;
                 context.flash('You are now logged in', 'info', 'home');

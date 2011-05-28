@@ -117,7 +117,7 @@ $.extend(Datepicker.prototype, {
 	/* Debug logging (if enabled). */
 	log: function () {
 		if (this.debug)
-			console.log.apply('', arguments);
+			 // console.log.apply('', arguments);
 	},
 	
 	// TODO rename to "widget" when switching to widget factory

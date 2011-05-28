@@ -5,7 +5,7 @@ var path_module = require('path');
 module.exports = function(context) {
 
     var params = context.req_params(false);
-    console.log(__filename, ': params: ', params);
+     // console.log(__filename, ': params: ', params);
     var models = params.models.models;
 
     models.forEach(function(model) {
@@ -19,18 +19,18 @@ module.exports = function(context) {
                 
                 function _exists_handler(exists) {
                     if (!exists) {
-                        console.log(__filename, ': making dir ', model_dir);
+                         // console.log(__filename, ': making dir ', model_dir);
                         fs.mkdirSync(model_dir, 0775);
                     }
                     records.forEach(function(record) {
                         var file_path = model_dir + '/' + record._id + '.json';
-                        console.log(__filename, ': write ', file_path);
+                         // console.log(__filename, ': write ', file_path);
                         fs.writeFile(file_path, JSON.stringify(record));
                     });
 
                 }
                 
-                console.log(__filename, ':checking for existence of ', model_dir);
+                 // console.log(__filename, ':checking for existence of ', model_dir);
                 path_module.exists(model_dir, _exists_handler);
             };
 

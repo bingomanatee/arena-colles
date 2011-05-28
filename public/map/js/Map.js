@@ -28,7 +28,7 @@ Map.prototype.refresh_topo = function(){
 }
 
 Map.prototype.move = function(x, y){
-    console.log('move ', x, ',',  y);
+     // console.log('move ', x, ',',  y);
     this.x += x;
     this.y += y;
     this.move_thumb();
@@ -64,7 +64,7 @@ Map.prototype.move_thumb = function(){
     var sp_x = Math.round(this.scroll_width * this.x_percent());
     var sp_y = Math.round(this.scroll_height * this.y_percent());
     
-    console.log('moving sp to ', sp_x, ',', sp_y);
+     // console.log('moving sp to ', sp_x, ',', sp_y);
     this.scroller.css('left', sp_x + 'px');
     this.scroller.css('top', sp_y + 'px');
     this.report();

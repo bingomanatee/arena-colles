@@ -11,5 +11,5 @@ var test = require(path);
 if (test.hasOwnProperty('run')){
     test.run();
 } else {
-    console.log('your test, ' + path + ', does not have a run method.');
+     // console.log('your test, ' + path + ', does not have a run method.');
 }

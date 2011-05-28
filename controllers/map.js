@@ -1,3 +1,6 @@
+
+var context_module = require('mvc/controller/context');
+
 /**
  *  CONTROLLER MAP
  * Map data for Arena Colles
@@ -20,11 +23,25 @@ module.exports = {
 
     destroy: require('mvc/actions/destroy'),
 
-
+    gen_coords: require('./map/actions/gen_coords'),
+    
+    tile: require('./map/actions/tile'),
+    
     forms: {
-  "default": {
-    "fields": []
-  }
-}
+    },
+    
+    route: function(app) {
+        context_module(function(err, Context) {
+            var context_config = {
+                controller: module.exports
+            };
+            var context = new Context(context_config);
+
+            context.get(app, '/maps/:id/gen_coords', 'gen_coords');
+            
+            context.get(app, '/map/:id/tile/:long/:lat', 'tile');
+
+        });
+    }
     
 };

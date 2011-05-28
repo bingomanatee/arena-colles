@@ -12,7 +12,7 @@ module.exports = function(context) {
   	// if (can){
     self.model.get(id, function(err, item) {
       if (err || !item) {
-        console.log(__filename, ': error ', err);
+         // console.log(__filename, ': error ', err);
         context.flash('Cannot get ' + id, 'error', 'home');
       } else {
         var params = params_module(self.name);
@@ -20,7 +20,7 @@ module.exports = function(context) {
         try {
            function _forms_module_callback(err, form) {
             if (err) {
-              console.log(__filename, ': error in form: ', err);
+               // console.log(__filename, ': error in form: ', err);
             } else {
               form.configs.action = form.configs.action.replace('__ID__', item._id);
               params.form = form;
@@ -32,7 +32,7 @@ module.exports = function(context) {
             context: self.name
           });
         } catch (err) {
-          console.log(__filename, ': error in form caught, ', err);
+           // console.log(__filename, ': error in form caught, ', err);
         }
         // response.render(self._views.edit, params);
       }

@@ -18,7 +18,7 @@ module.exports = {
                 if (err) {
                     callback(err);
                 } else {
-                //    console.log(__filename + ':: returning database ');
+                //     // console.log(__filename + ':: returning database ');
                     self._db = db;
                     callback(null, db);
                 };

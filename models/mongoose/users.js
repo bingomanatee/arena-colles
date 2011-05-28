@@ -43,8 +43,8 @@ module.exports = {
     model: function(new_instance){
         if (!module.exports._model){
             var schema = module.exports.schema();
-         //   console.log('schema for users');
-         //   console.log(schema);
+         //    // console.log('schema for users');
+         //    // console.log(schema);
             mongoose.model('Users', schema);
             module.exports._model = mongoose.model('Users');
         }

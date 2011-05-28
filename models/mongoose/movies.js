@@ -28,7 +28,7 @@ module.exports = {
     schema: function(){
         if (!module.exports._schema){
             var scene_schema = require('./movie/scenes').schema();
-            console.log(__filename, ':: schema::', scene_schema);
+             // console.log(__filename, ':: schema::', scene_schema);
             module.exports._schema_def.scene = [scene_schema];
             module.exports._schema = new mongoose.Schema(module.exports._schema_def);
         }
@@ -47,8 +47,8 @@ module.exports = {
     model: function(new_instance){
         if (!module.exports._model){
             var schema = module.exports.schema();
-         //   console.log('schema for users');
-         //   console.log(schema);
+         //    // console.log('schema for users');
+         //    // console.log(schema);
             mongoose.model('Movies', schema);
             module.exports._model = mongoose.model('Movies');
         }

@@ -13,7 +13,7 @@ module.exports = function(context) {
                 files.forEach(function(file){
                     
                     function _data_saved(err, result){
-                        console.log(__filename, ': saved ', result, ' in ' , params.name);
+                         // console.log(__filename, ': saved ', result, ' in ' , params.name);
                     }
                     
                     function _load_file(err, data){
@@ -21,7 +21,7 @@ module.exports = function(context) {
                         
                         data = JSON.stringify(data);
                         if (data){
-                            console.log(__filename, 'importing ', data, ' into ', prams.name);
+                             // console.log(__filename, 'importing ', data, ' into ', prams.name);
                             model.put(data, _data_saved);
                         }
                     }
@@ -34,7 +34,7 @@ module.exports = function(context) {
         }
         
         if (err || !model){
-            console.log(__filename, 'cannot find ', params.name, err);
+             // console.log(__filename, 'cannot find ', params.name, err);
             context.flash('Cannot find ' + params.name, 'error', '/admin');
         } else {
             fs.readdir(path, _read_files);

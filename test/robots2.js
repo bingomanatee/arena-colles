@@ -17,10 +17,10 @@ q.asc('name') // sorts robots by name, ascending
 robots_model.find(q, function(err, robots) {
     for (var r in robots) {
         var robot = robots[r];
-        console.log('robot: ' + robot.name);
+         // console.log('robot: ' + robot.name);
         
         robot.parts.forEach(function (part) {
-            console.log('part ' + part.name + ' weighs ' + part.weight);
+             // console.log('part ' + part.name + ' weighs ' + part.weight);
         });
     }
 });

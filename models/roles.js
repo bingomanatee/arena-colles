@@ -13,11 +13,11 @@ module.exports = {
             var self = this;
             self.all(function(err, roles) {
                 if (err){
-                    console.log(__filename, ': error in all: ', err);
+                     // console.log(__filename, ': error in all: ', err);
                     callback(err);
                 }
                 
-                console.log(__filename, ': roles: ', roles);
+                 // console.log(__filename, ': roles: ', roles);
                 
                 var out = [];
                 if (use_none){

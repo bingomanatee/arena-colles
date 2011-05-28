@@ -19,7 +19,7 @@ module.exports = function model_names(){
     controllers         = _.select(controllers, _model_select);
    // console.log(__filename, ': controllers, ', controllers);
     controllers         = _.map(controllers, _un_js);
- //   console.log(__filename, ': controllers, _un_js: ', controllers);
+ //    // console.log(__filename, ': controllers, _un_js: ', controllers);
     controllers         = _.map(controllers, inflect);
     //console.log(__filename, ': controllers, inflected: ', controllers);
     

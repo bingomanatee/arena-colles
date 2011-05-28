@@ -43,13 +43,13 @@ require('launch').init(app, function() {
             }
         }
     });
-    console.log('starting to listen...');
+     // console.log('starting to listen...');
     try {
         app.listen(MVC_PORT);
-        console.log('MVC started on port ' + MVC_PORT);
+         // console.log('MVC started on port ' + MVC_PORT);
 
     } catch (err) {
-        console.log('error starting app listen ', err);
+         // console.log('error starting app listen ', err);
 
     }
 });

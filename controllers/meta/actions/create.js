@@ -6,7 +6,7 @@ var ejs = require('ejs');
 module.exports = function(context) {
         var self = this;
         
-        console.log(__filename, ':: body = ', context.request.body)
+         // console.log(__filename, ':: body = ', context.request.body)
         var cont = context.request.body.meta_controller;
         var name = cont.name = cont.name.toLowerCase();
         
@@ -33,32 +33,32 @@ module.exports = function(context) {
             }
         });
 
-        console.log(__filename, '::create: looking for ', cont_path);
+         // console.log(__filename, '::create: looking for ', cont_path);
         path_module.exists(cont_path, function(exists) {
             if (exists) {
-                console.log(__filename, '::create: not saving controller ' + name);
+                 // console.log(__filename, '::create: not saving controller ' + name);
                 context.flash('Sorry, controller ' + name + ' already exists', 'error');
                 response.redirect('/meta');
             } else {
 				function _write_handler(err) {
-				    console.log(__filename, '::create: written controller ' + name);
+				     // console.log(__filename, '::create: written controller ' + name);
 				    context.flash('Controller ' + name + ' created');
 				    context.response.redirect('/meta/' + name);
 				}
 				
 				function _read_handler(err, template) {
-				    console.log(__filename, '::create: controller: ', cont);
+				     // console.log(__filename, '::create: controller: ', cont);
 				    _extend_actions(cont.actions);
 				    var new_controller = ejs.render(template.toString(), {
 				        locals: cont
 				    })
-				    console.log('content: ', new_controller);
+				     // console.log('content: ', new_controller);
 				
 				    fs.writeFile(cont_path, new_controller, _write_handler);
 				}
 
                 var template_path = MVC_CONTROLLERS + '/meta/templates/controller.js';
-                console.log(__filename, '::create: saving controller ', name, ' from ', template_path);
+                 // console.log(__filename, '::create: saving controller ', name, ' from ', template_path);
                 if (!path_module.existsSync(template_path)) {
                     throw new Error('Cannot get template ' + template_path);
                 }

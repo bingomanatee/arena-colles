@@ -10,7 +10,7 @@ var _grants_model = false;
 
 module.exports = function(context) {
     context_module(function(err, Context) {
-        console.log(__filename, ': got context ', err, Context);
+         // console.log(__filename, ': got context ', err, Context);
 
         var filenames = [];
         fs.readdir(MVC_CONTROLLERS, function(err, controller_files) {

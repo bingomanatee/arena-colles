@@ -45,11 +45,11 @@ module.exports = {
         label: "Roles",
         type: "checkbox",
         callback: function(field, callback) {
-            console.log(__filename, ': starting callback for roles');
+             // console.log(__filename, ': starting callback for roles');
             function _role_model(err, role_model) {
-                console.log(__filename, ': _role_model found model; ');
+                 // console.log(__filename, ': _role_model found model; ');
                 role_model.options(function(err, options) {
-                    console.log(__filename, '_role_model found options: ', options, ' callback: ', callback);
+                     // console.log(__filename, '_role_model found options: ', options, ' callback: ', callback);
                     field.options = options;
                     callback();
                 });
