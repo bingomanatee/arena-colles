@@ -39,7 +39,7 @@ module.exports = {
 
             context.get(app, '/maps/:id/gen_coords', 'gen_coords');
             
-            context.get(app, '/map/:id/tile/:long/:lat', 'tile');
+            context.get(app, '/maps/:id/tile/:lon/:lat', 'tile');
 
         });
     }

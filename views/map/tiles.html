@@ -1,0 +1,21 @@
+<h1>Tiles</h1>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>Lon</th>
+        <th>Lat</th>
+        <th>Height</th>
+    </tr>
+    
+    <% tiles.forEach(function(tile){
+    %>
+    <tr>
+        <td><%- tile._id %></td>
+        <td><%- parseInt(tile.position[0]) %></td>
+        <td><%- parseInt(tile.position[1]) %></td>
+        <td><%- tile.height %></td>
+    </tr>
+    <%
+    }) %>
+</table>
