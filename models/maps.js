@@ -8,8 +8,8 @@ module.exports = {
         
         tiles: require('./maps/tiles'),
         
-        gen_coords: require('./maps/gen_coords')
+        gen_coords: require('./maps/gen_coords'),
+        
+        zoom_back: require('./maps/zoom_back')
     }
 }
-
-function _stub() {}

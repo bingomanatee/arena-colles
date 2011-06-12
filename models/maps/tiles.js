@@ -37,8 +37,8 @@ module.exports = function(query, callback) {
         zoom: 1,
         lat: 0,
         long: 0,
-        width: 30,
-        height: 15
+        width: 10,
+        height: 5
     });
 
     models_module.model('map_coords', function(err, mc_model) { _gen_tile(err, mc_model, query, callback); });

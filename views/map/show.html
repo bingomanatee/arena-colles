@@ -2,12 +2,13 @@
         <link rel="stylesheet" href="/map/css/show.css" /> 
 <dl>  
     <dt>Height:</dt>
-    <dd><%- map.height %></dd>
+    <dd><%- map.lat %> divisions (<%- Math.round(parseInt(map.lat)/18, 2)/10 %> units/&deg;)</dd>
     
     <dt>Width: </dt>
-    <dd><%- map.width %></dd>
+    <dd><%- map.long %> divisions (<%- Math.round(parseInt(map.long)/36, 2)/10 %> units/&deg;)</dd>
 </dl>
 <p><a href="/maps/<%- map._id %>/gen_coords">Generate Coordinates</a></p>
+<p><a href="/maps/<%- map._id %>/zoom_back">Zoom Back</a></p>
 
 <form onsubmit=" return tile(this)">
     <table>

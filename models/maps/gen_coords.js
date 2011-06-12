@@ -34,7 +34,7 @@ module.exports = function(map, callback) {
             var last_row_count = 0;
             rows.forEach(function(row, lon) {
                 if (lon < map.long) {
-                    console.log(__filename, ': indexing LONG : ', lon, '( of ', map.lon, '), ', row.length, ' cols(', map.long, ' expected) ', ' row: ', row.substr(0, 20));
+                    console.log(__filename, ': indexing LONG : ', lon, '( of ', map.long, '), ', row.length, ' cols(', map.long, ' expected) ', ' row: ', row.substr(0, 20));
                     console.log(__filename, ': point count exptected: ', lon * map.lat, ', actual: ', pt_count);
                     var cols = row.split(',');
                     last_row_count = pt_count;
@@ -47,17 +47,19 @@ module.exports = function(map, callback) {
                             map_pt = {
                                 map: map._id,
                                 height: height,
+                                i: lon,
+                                j: lat,
                                 zoom: 1,
                                 parent: false,
                                 position: [adj_lon, adj_lat]
                             };
 
-                            if (!((lon % 10) + (lat % 5))) {
+                          /*  if (!((lon % 10) + (lat % 5))) {
                                 console.log((lon * lat) * 100 / (map.long * map.lat), '% done');
                                 console.log('indexing height: ', height, ', lat: ', lat, ' of ', map.lat,
                                             ', lon: ', lon, ' of ', map.long);
                               //  console.log('creating point: ', map_pt);
-                            }
+                            } */
                             gate.task_start();
                             pt_count++;
                             mc_model.put(map_pt, function() {
@@ -69,7 +71,7 @@ module.exports = function(map, callback) {
                     });
                     
                 } else {
-                    console.log('skipping: lat ', lon , ' > ', map.long);
+                    console.log('skipping: longitude: ', lon , ' > ', map.long);
                 }
             });
             gate.start();
