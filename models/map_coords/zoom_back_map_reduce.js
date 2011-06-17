@@ -16,46 +16,75 @@ module.exports = function(map_id, output) {
                 position: this.position,
                 map: this.map
             };
+
             emit(index, value);
-        },
+        }.toString(),
 
         reduce: function(key, values) {
+            print('reduce ===========');
+            var e = !((key.i + key.j) % 10);
+
             var ret = {
-                heights: [],
+                height: 0,
                 count: 0,
-                positions: [],
+                position: [0, 0],
                 map: null
             };
+            if (e) {
+                printjson(values);
+            }
             for (var i = 0; i < values.length; ++i) {
                 var v = values[i];
+                print('... reducing ');
+                printjson(v);
                 ret.map = v.map;
                 ++ret.count;
-                ret.heights.push(v.height);
-                ret.positions.push(v.position);
+                ret.height += v.height;
+                ret.position[0] += v.position[0];
+                ret.position[1] += v.position[1];
             }
-            return ret;
-        },
-
+            ret.height /= ret.count;
+            ret.position[0] /= ret.count;
+            ret.position[1] /= ret.count;
+            delete ret.count;
+            if (e) {
+                print('--- result:');
+                printjson(ret);
+            }
+            return [ret];
+        }.toString(),
+/*
         finalize: function(key, value) {
+            print(" ===================== finalizing ")
+            printjson(key)
+            printjson( value);
             value.height = 0;
             value.heights.forEach(function(h) {
                 value.height += h;
             });
             value.height /= value.count;
+            value.zoom = 1;
             delete(value.heights);
             var lat = 0;
             var lon = 0;
             value.positions.forEach(function(p) {
+                if (p && (typeof(p) == 'object') && p.hasOwnProperty('length') && p.length > 1){
                 lon += p[0];
                 lat += p[1];
+                } else {
+                    print('Cannot lon/lat')
+                    printjson(p);
+                }
             });
             lat /= value.count;
             lon /= value.count;
             value.position = [lon, lat];
             delete(value.positions);
+            print('................ to value ')
+            printjson(value);
             return value;
-        },
-
+        }.toString(), */
+        verbose: true,
         query: {
             "map": map_id,
             zoom: 2

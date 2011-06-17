@@ -1,3 +1,5 @@
+var models_module = require(MVC_MODELS);
+
 module.exports = function(context) {
     var self = this;
     var id = context.request.params.id;
@@ -8,8 +10,8 @@ module.exports = function(context) {
 
     console.log(__filename, ': zooming back ==================== from ', id);
 
-    this.model.get(id, function(err, map) {
-        self.model.zoom_back(id, _after_zoom);
-    })
-
+    models_module.model('map_coords', function(err, mc_model){
+        mc_model.zoom_back(id, _after_zoom);
+    });
+    
 }
