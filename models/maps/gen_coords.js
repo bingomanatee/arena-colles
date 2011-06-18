@@ -46,7 +46,7 @@ module.exports = function(map, callback) {
 
                             map_pt = {
                                 map: map._id,
-                                height: height,
+                                height:  Number(height).valueOf(),
                                 i: lon,
                                 j: lat,
                                 zoom: 1,

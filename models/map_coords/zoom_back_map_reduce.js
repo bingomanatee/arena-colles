@@ -21,37 +21,32 @@ module.exports = function(map_id, output) {
         }.toString(),
 
         reduce: function(key, values) {
-            print('reduce ===========');
-            var e = !((key.i + key.j) % 10);
+            //    print('--- reduce ---');
+            var count = 0;
 
             var ret = {
                 height: 0,
-                count: 0,
                 position: [0, 0],
                 map: null
             };
-            if (e) {
-                printjson(values);
-            }
             for (var i = 0; i < values.length; ++i) {
                 var v = values[i];
-                print('... reducing ');
-                printjson(v);
+                //    print('... reducing ');
+              //  printjson(v);
                 ret.map = v.map;
-                ++ret.count;
+                ++count;
                 ret.height += v.height;
                 ret.position[0] += v.position[0];
                 ret.position[1] += v.position[1];
             }
-            ret.height /= ret.count;
-            ret.position[0] /= ret.count;
-            ret.position[1] /= ret.count;
-            delete ret.count;
-            if (e) {
-                print('--- result:');
-                printjson(ret);
+            if (count) {
+                ret.height /= count;
+                ret.position[0] /= count;
+                ret.position[1] /= count;
             }
-            return [ret];
+         //   print('...  computing');
+            //  printjson(ret);
+            return ret;
         }.toString(),
 /*
         finalize: function(key, value) {

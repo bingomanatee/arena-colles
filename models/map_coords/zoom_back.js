@@ -4,42 +4,35 @@ var map_reduce = require('./zoom_back_map_reduce');
 
 /* -------------- MAIN --------------------- */
 
-    function _insert_row(err, doc, map_id) {
+    function _insert_row(err, doc, map_id, map_coords_model) {
         if (doc) {
-          //  console.log(__filename, ': _insert_row from ', doc);
-            if (doc.hasOwnProperty('height') && doc.hasOwnProperty('position')){
-                console.log('inserting new row: ', doc);
-                var new_point = {
-                    map: map_id,
-                    i: doc._id.i,
-                    j: doc._id.j,
-                    height: doc.height,
-                    position: new Array()
-                };
-                new_point.position.push(doc.position[0]);
-                new_point.posiiton.push(doc.position[1]);
-    
+            console.log(__filename, ': _insert_row from ', doc);
+            if (doc.hasOwnProperty('value') && doc.value.hasOwnProperty('height') && doc.value.hasOwnProperty('position')){
+                var new_point = doc.value;
+                new_point.zoom = 1;
+                _.defaults(new_point, doc._id);
+                console.log('inserting new row: ', doc, '>>', new_point);
                 gate.task_start();
                 map_coords_model.insert(new_point, function() {
                     gate.task_done();
                 });
-            } else if (doc.hasOwnProperty('value') && doc.value){
-                console.log('... recursing on ', doc.value);
-                doc.value._id = doc._id;
-                _insert_row(err, doc.value, map_id); 
             } else {
                 console.log('ignoring document ', doc);
             }
         } else {
+            console.log('no doc - starting gate');
             gate.start();
         }
     }
 
     function _insert_rows(err, mz_model, map_coords_model, map_id) {
         function _insert(err, cursor) {
-            cursor.each(function(err, row){ _insert_row(err, row, map_id); });
+            cursor.each(function(err, row){ _insert_row(err, row, map_id, map_coords_model); });
         }
-        mz_model.all(function(err, cursor) {_insert(err, cursor, map_coords_model, map_id); }, {
+        mz_model.all(
+            function(err, cursor) {
+            _insert(err, cursor, map_coords_model, map_id); },
+            {
             cursor: true
         });
     }
@@ -89,11 +82,10 @@ module.exports = function(map_id, callback) {
             map: map_id
         };
 
-            _create_zoombacks(self, map_id, callback);
-      /*  self.update(zoominc, function() {
+       self.update(zoominc, function() {
             _create_zoombacks(self, map_id, callback);
         }, filter, {multi: true});
-      */
+   
     } catch (err) {
         if (err) {
             console.log(__filename, ': err ', err);
