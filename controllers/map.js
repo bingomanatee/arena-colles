@@ -9,7 +9,7 @@ module.exports = {
 
     index: require('mvc/actions/index'),
 
-    show: require('mvc/actions/show'),
+    show: require('./map/actions/show'),
 
     add: require('mvc/actions/add'),
 

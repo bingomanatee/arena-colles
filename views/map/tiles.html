@@ -1,10 +1,47 @@
 <h1>Tiles</h1>
+<%
+var cset = false;
+%>
 
-<table>
+<table border="1" cellpadding="3" style: "font-size: 40%">
+    <% tile_array.forEach(function(ta_row, ri){ %>
+    
+    <% if (!cset){ %>
+    <tr><!-- header row 1 -->
+    <th>&nbsp;</th>
+    <% ta_row.forEach(function(ta_row_item, ci){ if (ta_row_item) {
+    %>
+    <td><%= ci %></td>
+    <%
+    }})
+    %>
+    </tr><!-- end header row 1 -->
+    <% cset = true;
+    } %>
+    <!-- data row -->
+       <tr>
+    <th><%= ri %></th>
+    <% ta_row.forEach(function(ta_row_item, ci){ if (ta_row_item) { var c = parseInt(ta_row_item); 
+    %>
+    <td style="background-color: rgb(<%= c %>,<%= c %>,<%= c %>)">&nbsp</td>
+    <%
+    }})
+    %>
+    </tr>
+    <!-- end data row -->
+    <% 
+    })
+    %>
+</table>
+
+<h2> Data <h2>
+<table border=1 cellpadding=4>
     <tr>
         <th>id</th>
         <th>Lon</th>
         <th>Lat</th>
+        <th>i</th>
+        <th>j</th>
         <th>Height</th>
     </tr>
     
@@ -14,6 +51,8 @@
         <td><%- tile._id %></td>
         <td><%- parseInt(tile.position[0]) %></td>
         <td><%- parseInt(tile.position[1]) %></td>
+        <td><%- tile.i %></td>
+        <td><%- tile.j %></td>
         <td><%- tile.height %></td>
     </tr>
     <%

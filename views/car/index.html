@@ -1,0 +1,64 @@
+<h1>Vehicles</h1>
+
+
+<table border=1, cellpadding=4>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+</tr>
+
+<% cars.forEach(function(car){
+%>
+<tr>
+    <td><%= car._id %></td>
+    <td><%= car.name %></td>
+    <td><%= car.type %></td>
+    <td><a href="/cars/<%= car._id %>" class="button linkbutton">See</a></td>
+    <td><a href="/cars/<%= car._id %>/edit" class="button editbutton">Edit</a></td>
+</tr>
+<%
+})
+  %>  
+</table>
+
+
+<ul>
+    <li><a href="/cars/0/add">Add a Vehicle</a></ll>
+</ul>
+
+
+<div id="speed_graph" style="width: 400px, height: 300px, border: 1px solid black">&nbsp;</div>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Slope (in degrees)');
+        data.addRows(<%= keys.length %>);
+            
+        <% keys.forEach(function(kl, i){ %>
+        data.setValue(<%= i %>, 0, '<%= kl.label %>'),
+        <% }) %>
+        
+<% cars.forEach(function(car, car_index){
+    %>
+        data.addColumn('number', '<%= car.name %> speed');
+<%
+            speed = car.speed;
+            keys.forEach(function(kl, i){
+%>    
+            data.setValue(<%= i %>, <%= car_index + 1 %>, <%= parseInt(speed[kl.label]) %>);
+<% 
+            })
+%>
+<% }) // each car
+%>
+        var chart = new google.visualization.LineChart(document.getElementById('speed_graph'));
+        chart.draw(data, {width: 800, height: 400, title: 'Vecle speed against terrain slope', legend: 'bottom'});
+      }
+    </script>

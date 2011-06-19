@@ -5,10 +5,12 @@ module.exports = function(context){
     var id = context.request.params.id;
     
     function _after_gen(err, map){
+        console.log(__filename, "_after_gen: retrieved map ", map._id, ': ', map.name);
         context.flash('Renedered coordinates of map ' + id, 'info', '/maps/' + id);
     }
     
     function _get_map(err, map){
+        console.log(__filename, "_get_map: retrieved map ", map._id, ': ', map.name);
         self.model.gen_coords(map, _after_gen);
     }
     

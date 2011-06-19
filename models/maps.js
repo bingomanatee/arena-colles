@@ -8,6 +8,8 @@ module.exports = {
         
         tiles: require('./maps/tiles'),
         
+        point_count: require('./map_coords/point_count'),
+        
         gen_coords: require('./maps/gen_coords')
     }
 }

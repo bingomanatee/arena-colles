@@ -1,0 +1,41 @@
+<h1>Vehicle &quot;<%= car.name %>&quot; (<%= car._id %>)</h1>
+
+<h2><%= car.type %></h2>
+<%
+  console.log('=== keys: ', keys);
+%>
+<div id="speed_graph" style="width: 400px, height: 300px, border: 1px solid black">&nbsp;</div>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Angle');
+        data.addColumn('number', 'Speed');
+        data.addRows(<%= keys.length %>);
+<%            speed = car.speed;
+            keys.forEach(function(kl, i){
+%>    
+            data.setValue(<%= i %>, 1, <%= parseInt(speed[kl.label]) %>);
+            data.setValue(<%= i %>, 0, '<%= kl.value %>');
+<% 
+            })
+%>
+
+        var chart = new google.visualization.LineChart(document.getElementById('speed_graph'));
+        chart.draw(data, {width: 800, height: 400, title: 'Vecle speed against terrain slope', legend: 'none'});
+      }
+    </script>
+    <%
+/*
+
+ "name" : "Marsmobile", "type" : "buggy", "speed" :
+ { "up40" : "10", "up20" : "20", "up10" : "40",
+ "flat" : "50", "down10" : "60",
+ "down20" : "55", "down30" : "40", "down40" : "5" },
+ "_id" : ObjectId("4dfd1cac31f524a80a000001") }
+
+*/
+%>

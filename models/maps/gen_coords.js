@@ -34,8 +34,9 @@ module.exports = function(map, callback) {
             var last_row_count = 0;
             rows.forEach(function(row, lon) {
                 if (lon < map.long) {
+                  if (!lon % 10){
                     console.log(__filename, ': indexing LONG : ', lon, '( of ', map.long, '), ', row.length, ' cols(', map.long, ' expected) ', ' row: ', row.substr(0, 20));
-                    console.log(__filename, ': point count exptected: ', lon * map.lat, ', actual: ', pt_count);
+                  }//  console.log(__filename, ': point count exptected: ', lon * map.lat, ', actual: ', pt_count);
                     var cols = row.split(',');
                     last_row_count = pt_count;
 
