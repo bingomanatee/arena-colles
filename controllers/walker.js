@@ -25,6 +25,8 @@ module.exports = {
     
     forms: {},
     
+    randomwalk: require('./walker/actions/random'),
+    
     route: function(app) {
         context_module(function(err, Context) {
             var context_config = {
@@ -32,6 +34,7 @@ module.exports = {
             };
             var context = new Context(context_config);
 
+            context.get(app, '/randomwalk', 'randomwalk', 'walker/random.html');
         });
     }
     
