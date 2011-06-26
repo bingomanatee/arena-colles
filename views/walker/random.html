@@ -1,38 +1,3 @@
 <h1>Random Walk</h1>
-<style>
-.i { width: 20px; border: 2px solid black; padding: 3px; font-weight: bold; color: rgb(0, 0, 100) }
-.j { width: 20px; border: 2px solid black; padding: 3px; font-weight: bold; color: rgb(100, 0, 0) }
-</style>
 
-<table>
-    <tr>
-        <th>#</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-    </tr>
-    
-    <% randomwalker.walks.forEach(function(walk, n){%>
-    <tr>
-        <th><%= n %>: </th>
-        <% walk.steps.forEach(function(step, n){ %>
-        <td><div class="i"><%= step.i %></div>
-            <div class="j"><%= step.j %></div>
-        </td>
-        <% }); %>
-        <% for (var w = walk.steps.length; w < 12; ++w){ %>
-        <td style="background-color: #666">&nbsp;</td>
-        <% } %>
-    </tr>
-    <%
-    })
-    %>
-</table>
+<p>Generated Walks</p>

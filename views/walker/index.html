@@ -1,17 +1,18 @@
-<h1>Walker</h1>
-
-<h2>Map</h2>
-
-<table border="2">
-    
-<% for (var j = 0; j < walker.grid.j; ++j) { %>
-<tr>
-    <th style="padding: 2px"><%= j %></th>
-<% for (var i = 0; i < walker.grid.i; ++i){ %>
-<td style="padding: 2px">
-<%- walker.grid.p(i, j).__toString(true) %>
-</td>
-<% } %>
-</tr>
-<% } %>
+<h1>Randomwalker</h1>
+<style>
+#coords td,
+#coords th {
+    width: 50px;
+    padding: 1em;
+}
+</style>
+<table id="coords" cellpadding="4" border="2">
+    <tr><th>ID:</th></tr>
+    <% randomwalks.forEach(function(w){ %>
+    <tr><th><%= w._id %></th>
+  <%  w.moves.forEach(function(d){ %>
+        <td><%= d %></td>
+        <% }) %>
+    </tr>
+    <% }) %>
 </table>

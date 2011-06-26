@@ -84,7 +84,7 @@ function _create_zoombacks(map_coords_model, map_id, callback) {
 
     var mr = map_reduce(map_id, "map_zoom");
     console.log(__filename, ': _create_zoombacks for map ', map_id, mr);
-    map_coords_model.config.db.command(mr, function() {
+    map_coords_model.command(mr, function() {
         console.log('executed command ', mr);
         
         _insert_new_data(map_coords_model, map_id, callback);

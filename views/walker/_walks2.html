@@ -1,0 +1,13 @@
+<style>
+.i { width: 20px; border: 2px solid black; padding: 3px; font-weight: bold; color: rgb(0, 0, 100) }
+.j { width: 20px; border: 2px solid black; padding: 3px; font-weight: bold; color: rgb(100, 0, 0) }
+.ijg { width: 200px; height: 200px; background-image: url(/img/grid.png); float: left; border: 1px solid black; margin: 1em; position: relative; background-position: -20px -20px}
+.sq { width: 10px; height: 10px; border: 2px solid black; font-size: 60%; font-family: sans-serif; position: absolute;}
+</style>
+
+    
+<% walks.forEach(function(walk, n){%>
+<div class="ijg"><% walk.points.forEach(function(p, i){ %>
+<div class="sq" style="left:<%= (10 * p.i) + 90 %>px; top:<%= (10 * p.j) + 80 %>px"><%= i %></div>
+<% }) %></div>
+<% }) %>

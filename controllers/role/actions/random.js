@@ -12,15 +12,13 @@ module.exports = function(context) {
             throw err;
         }
         m.drop(function(){
-            var rw = new Random_Walker(m, function(){
+            var rw = new Random_Walker(0, 0, 24, 24, m, function(){
                 console.log('.. .  . WRITING WALK DONE!');
                 context.render(self._views.random, params);
             });
             params.randomwalker = rw;
             console.log('... random made');
-            if (!context.request.params.hasOwnProperty('steps')) throw new Error('no steps in params');
-            var steps = context.request.params.steps;
-            rw.start(steps);
+            rw.walk(console.req_params().steps);
             console.log(' . .  . . .  . . DONE WALKING');
           
         })

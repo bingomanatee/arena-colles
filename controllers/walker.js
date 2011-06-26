@@ -7,9 +7,9 @@ var context_module = require('mvc/controller/context');
  */
 module.exports = {
 
-    index: require('./walker/actions/index'),
+   index: require('./walker/actions/index'),
 
-    show: require('./walker/actions/show'),
+   // show: require('./walker/actions/show'),
 
     add: require('mvc/actions/add'),
 
@@ -23,7 +23,13 @@ module.exports = {
 
     destroy: require('mvc/actions/destroy'),
     
-    forms: {},
+   // find: require('./walker/actions/find'),
+    
+   // coverage: require('./walker/actions/coverage'),
+    
+    forms: {
+      //  walkto: require('./walker/forms/walkto')
+        },
     
     randomwalk: require('./walker/actions/random'),
     
@@ -34,7 +40,9 @@ module.exports = {
             };
             var context = new Context(context_config);
 
-            context.get(app, '/randomwalk', 'randomwalk', 'walker/random.html');
+            context.get(app, '/randomwalk/:steps', 'randomwalk', 'walker/random.html');
+         //   context.post(app, '/walkers/0/find', 'find', 'walker/find.html');
+         //   context.get(app, '/walkers/0/coverage', 'coverage', 'walker/coverage.html');
         });
     }
     

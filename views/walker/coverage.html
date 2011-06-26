@@ -1,0 +1,12 @@
+<h1>Coverage</h1>
+
+<table border=1 cellpadding=2>
+    <% matrix.forEach(function(row, i){%>
+    <tr>
+        <th><%= i %></th>
+        <% row.forEach(function(coverage, j){ %>
+        <td>(<%= coverage.i %>,<%= coverage.j %>) <%= coverage.count %></td>        
+        <% }) %> 
+    </tr>
+    <% }) %>   
+</table>
