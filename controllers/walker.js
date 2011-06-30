@@ -33,6 +33,8 @@ module.exports = {
     
     randomwalk: require('./walker/actions/random'),
     
+    walkto: require('./walker/actions/walkto'),
+    
     route: function(app) {
         context_module(function(err, Context) {
             var context_config = {
@@ -41,7 +43,7 @@ module.exports = {
             var context = new Context(context_config);
 
             context.get(app, '/randomwalk/:steps', 'randomwalk', 'walker/random.html');
-         //   context.post(app, '/walkers/0/find', 'find', 'walker/find.html');
+            context.get(app, '/walk_to', 'walkto', 'walker/walk_to.html');
          //   context.get(app, '/walkers/0/coverage', 'coverage', 'walker/coverage.html');
         });
     }

@@ -10,6 +10,11 @@ module.exports = {
         
         point_count: require('./map_coords/point_count'),
         
-        gen_coords: require('./maps/gen_coords')
+        gen_coords: require('./maps/gen_coords'),
+        gen_sectors: require('./maps/gen_sectors'),
+        
+        zoom_in_bleed: require('./maps/zoom_in_bleed'),
+        
+        zoom_in: require('./maps/zoom_in')
     }
 }

@@ -23,9 +23,13 @@ module.exports = {
 
     destroy: require('mvc/actions/destroy'),
 
-    gen_coords: require('./map/actions/gen_coords'),
+ //   gen_coords: require('./map/actions/gen_coords'),
+
+    gen_sectors: require('./map/actions/gen_sectors'),
     
     zoom_back: require('./map/actions/zoom_back'),
+    
+    zoom_in: require('./map/actions/zoom_in'),
     
     tile: require('./map/actions/tile'),
     
@@ -39,9 +43,13 @@ module.exports = {
             };
             var context = new Context(context_config);
 
-            context.get(app, '/maps/:id/gen_coords', 'gen_coords');
+         //   context.get(app, '/maps/:id/gen_coords', 'gen_coords');
+            
+            context.get(app, '/maps/:id/gen_sectors', 'gen_sectors');
 
             context.get(app, '/maps/:id/zoom_back', 'zoom_back');
+            
+            context.get(app, '/maps/:id/zoom_in', 'zoom_in');
             
             context.get(app, '/maps/:id/tile/:lon/:lat', 'tile');
 

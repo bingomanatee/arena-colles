@@ -7,8 +7,10 @@
     <dt>Width: </dt>
     <dd><%- map.long %> divisions (<%- Math.round(parseInt(map.long)/36, 2)/10 %> units/&deg;)</dd>
 </dl>
-<p><a href="/maps/<%- map._id %>/gen_coords">Generate Coordinates</a></p>
-<p><a href="/maps/<%- map._id %>/zoom_back">Zoom Back</a></p>
+<p><a href="/maps/<%- map._id %>/gen_sectors">Generate Sectors</a></p>
+<!-- p><a href="/maps/<%- map._id %>/zoom_back">Zoom Back</a></p -->
+
+<p><a href="/maps/<%- map._id %>/zoom_in">Zoom In(<%= map.zoom %> )</a></p>
 
 <form onsubmit=" return tile(this)">
     <table>
@@ -26,18 +28,23 @@
     
 </form>
 
-<div id="point_counts" style="float: right" border="2">
-    <h2>Point Counts</h2>
-    <table>
-        <tr>
-            <td><%= JSON.stringify(point_count) %></td>
-        </tr>
-    </table>
+<table border=1>
+<% sectors.forEach(function(sr){ %>
+<tr>
+<% sr.forEach(function(s){ %>
+<td nowrap >lat_i: <%= s.lat_i %>, lon_i: <%= s.lon_i %><br />
+lat: <%= parseInt(s.lat_n) %> ... <%= parseInt(s.lat_s) %><br />
+lon: <%= parseInt(s.lon_w) %> ... <%= parseInt(s.lon_e) %>
+</td>
+<% }) %>
+    <tr>
+<% }) %>    
+</table>
 
 <div id="tiles">
     
-    
 </div>
+
 <script language="javascript">
     function on_tile(data) {
         console.log('tiles found: ', data);

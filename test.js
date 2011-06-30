@@ -1,3 +1,4 @@
+var config = require('./config');
 var launch = require('launch');
 
 launch.init({}, function() {
