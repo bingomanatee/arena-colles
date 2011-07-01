@@ -33,6 +33,8 @@ module.exports = {
     
     tile: require('./map/actions/tile'),
     
+    analyze: require('./map/actions/analyze'),
+    
     forms: {
     },
     
@@ -52,6 +54,8 @@ module.exports = {
             context.get(app, '/maps/:id/zoom_in', 'zoom_in');
             
             context.get(app, '/maps/:id/tile/:lon/:lat', 'tile');
+            
+            context.get(app, '/maps/:id/analyze', 'analyze');
 
         });
     }
