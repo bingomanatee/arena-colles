@@ -17,7 +17,7 @@ module.exports = {
 
     delete: require('mvc/actions/delete'),
 
-    create: require('mvc/actions/create'),
+    create: require('./map/actions/create'),
 
     update: require('mvc/actions/update'),
 

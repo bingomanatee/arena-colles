@@ -3,10 +3,12 @@
 module.exports = {
     configs: {
         action: '/maps/0/',
-        method: 'post'
+        method: 'post',
+        properties: {'enctype' :"multipart/form-data"}
     },
     
     fields: [
+        {name: 'image', label:'Image', type: 'file'},
         {name: 'map[name]', label: 'Planet'},
         {name: 'map[long]', label: 'Width (px)'},
         {name: 'map[lat]', label: 'Height(px)'},

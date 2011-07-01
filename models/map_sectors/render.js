@@ -8,7 +8,7 @@ module.exports = function(sector, callback) {
     var canvas = new Canvas(dim, dim),
         ctx = canvas.getContext('2d');
 
-    _write_sector_to_canvas(sector, dim, ctx);
+    _write_sector_to_canvas(sector, dim, ctx, min_color, max_color);
 
 
     function _write_buffer() {
@@ -20,7 +20,7 @@ module.exports = function(sector, callback) {
         stream.on('data', function(chunk) {
             out.write(chunk);
         });
-        
+
         stream.on('end', callback);
     }
 
@@ -36,21 +36,23 @@ module.exports = function(sector, callback) {
 
 }
 
-function _write_sector_to_canvas(sector, dim, ctx) {
+function _write_sector_to_canvas(sector, dim, ctx, min, max) {
     var mins = [];
     var maxs = [];
 
-    sector.height.forEach(function(heights) {
-        console.log('analyzing ', heights);
+    if (arguments.length < 4) {
+        sector.height.forEach(function(heights) {
+            console.log('analyzing ', heights);
 
-        mins.push(Math.min.apply(Math, heights));
-        maxs.push(Math.max.apply(Math, heights));
+            mins.push(Math.min.apply(Math, heights));
+            maxs.push(Math.max.apply(Math, heights));
 
-        console.log('maxs: ', maxs, '; mins: ', mins);
-    });
+            console.log('maxs: ', maxs, '; mins: ', mins);
+        });
+        min = Math.min.apply(Math, mins);
+        max = Math.max.apply(Math, maxs);
+    }
 
-    var min = Math.min.apply(Math, mins);
-    var max = Math.max.apply(Math, maxs);
     var range = max - min;
 
     console.log('min: ', min, '; max: ', max);
@@ -64,11 +66,22 @@ function _write_sector_to_canvas(sector, dim, ctx) {
         var grey = parseInt((sector.height[x][y] - min) * 255 / range);
         console.log('grey at ', x, ',', y, ': ', grey);
         grey = Math.max(0, Math.min(255, grey));
-        var color = 'rgb(' + [parseInt(grey * 0.75), grey, parseInt(grey * 0.66)].join(',') + ')';
+        color = _grey_color(grey);
 
         console.log('color set to ', color);
 
         ctx.fillStyle = color;
         ctx.fillRect(x * lon_x_ratio, y * lat_y_ratio, dim, dim);
     }
+}
+
+_colors = [];
+
+function _grey_color(grey) {
+    if (!colors[grey]) {
+        var color = 'rgb(' + [parseInt(grey * 0.75), grey, parseInt(grey * 0.66)].join(',') + ')';
+        _colors[grey] = color;
+    }
+
+    return _colors[grey];
 }

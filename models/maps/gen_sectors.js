@@ -29,7 +29,11 @@ module.exports = function(map, callback) {
             var rows = _.map(map.height_data.split("\n"), function(row) {
                 return row.split(',');
             });
-
+            
+            var stat = new Stat(_.flatten(rows));
+            var min_color = stat.avg() - stat.std_dev();
+            var max_color = stat.avg() + stat.std_dev();
+            
             var lat_ticks = rows.length;
             lat_ticks -= lat_ticks % 10;
             var lat_sectors = Math.floor(lat_ticks / 10);
@@ -114,15 +118,14 @@ module.exports = function(map, callback) {
             sectors.forEach(function(sector_row) {
                 sector_row.forEach(function(sector) {
                     gate.task_start();
-                    sector_model.put(sector, function(err, sector) {
+                    sector_model.put(sector, function(err, new_sector) {
                         
                         gate.task_done();
-                        if (sector.hasOwnProperty('length')){
-                            sector = sector[0];
+                        if (new_sector.hasOwnProperty('length')){
+                            new_sector = new_sector[0];
                         }
-                        gate.task_start();
                         
-                        
+                        sector_model.render(sector, gate.task_done_callback(true), min_color, max_color)
                     });
                 });
             });
