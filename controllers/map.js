@@ -34,8 +34,11 @@ module.exports = {
     tile: require('./map/actions/tile'),
     
     analyze: require('./map/actions/analyze'),
+
+    reference_color: require('./map/actions/reference_color'),
     
     forms: {
+        reference_color: require('./map/forms/reference_color')
     },
     
     route: function(app) {
@@ -56,6 +59,8 @@ module.exports = {
             context.get(app, '/maps/:id/tile/:lon/:lat', 'tile');
             
             context.get(app, '/maps/:id/analyze', 'analyze');
+            
+            context.post(app, '/maps/:id/reference_color', 'reference_color');
 
         });
     }

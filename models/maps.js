@@ -12,6 +12,7 @@ module.exports = {
         
         gen_coords: require('./maps/gen_coords'),
         gen_sectors: require('./maps/gen_sectors'),
+        rc: require('./maps/rc'),
         
         zoom_in_bleed: require('./maps/zoom_in_bleed'),
         

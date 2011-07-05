@@ -1,0 +1,21 @@
+<html>
+    
+    <body>
+        <table>
+            <tr><th>height</th>
+                <th>color</th>
+            </tr>
+            <% s.forEach(function(i){ %>
+            <tr>
+                <td><%= i.height %></td>
+                
+                <td style="background-color: rgb(<%= i.rgb.join(',') %>); width=100px; height=100px">
+               <pre>
+<%= JSON.stringify(i) %>
+               </pre>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+    </body>
+</html>

@@ -1,174 +1,20 @@
-<h1>Map <%= map.name %> Analysis</h1>
+<h1>Map <%- map.name %> Analysis</h1>
 
-<img src="<%= map.path %>" />
+<h2>Reference Color</h2>
+<p>Associate a color with a height value</p>
 
-<table style="border: 1px solid black; height: 300px; overflow: scroll">
-    <tr><th>Brightness</th>
-        <th>Frequency</th>
-    </tr>
-    
-    <% data.forEach(function (b, f){ %>
-    <tr>
-        <td><%= b %></td>
-        <td><%= f %></td>
-    </tr>
-    <% }) %>
-</table>
-<h2>Brightness</h2>
-<div id="chart" style="width: 1000px; height: 300px; border: 1px solid black" ></div>
-<h2>Saturation</h2>
-<div id="chart2" style="width: 1000px; height: 300px; border: 1px solid black" ></div>
+<%- ref_form.render()
+%>
 
-<script src="/js/highcharts/js/highcharts.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(function() {
-   chart = new Highcharts.Chart({
-      chart: {
-         renderTo: 'chart', 
-         defaultSeriesType: 'scatter',
-         zoomType: 'xy'
-      },
-      title: {
-         text: 'Frequency of Brightness'
-      },
-      subtitle: {
-         text: 'brightness = r + g + b'
-      },
-      xAxis: {
-         title: {
-            enabled: true,
-            text: 'Brightness (R + G + B)'
-         },
-         startOnTick: true,
-         endOnTick: true,
-         showLastLabel: true
-      },
-      yAxis: {
-         title: {
-            text: 'Frequency'
-         }
-      },
-      tooltip: {
-         formatter: function() {
-                   return ''+
-               this.x +' brightness '+ this.y +' freq.';
-         }
-      },
-      legend: {
-         layout: 'vertical',
-         align: 'left',
-         verticalAlign: 'top',
-         x: 100,
-         y: 70,
-         floating: true,
-         backgroundColor: '#FFFFFF',
-         borderWidth: 1
-      },
-      plotOptions: {
-         scatter: {
-            marker: {
-               radius: 2,
-               states: {
-                  hover: {
-                     enabled: true,
-                     lineColor: 'rgb(100,100,100)'
-                  }
-               }
-            },
-            states: {
-               hover: {
-                  marker: {
-                     enabled: false
-                  }
-               }
-            }
-         }
-      },
-      series: [{
-         name: 'Brightness',
-         color: 'rgba(223, 83, 83, .5)',
-         data: [
-            <% data.forEach(function(value, data){ %>
-                             [<%= data %>, <%= value %>],
-            <% }) %>
-            
-         ]
-   
-      }]
-   });
-   
-   
-   chart2 = new Highcharts.Chart({
-      chart: {
-         renderTo: 'chart2', 
-         defaultSeriesType: 'scatter',
-         zoomType: 'xy'
-      },
-      title: {
-         text: 'Frequency of HUE'
-      },
-      xAxis: {
-         title: {
-            enabled: true,
-            text: 'Hue - 0 = RED, 120 = GREEN, 240 = BLUE'
-         },
-         startOnTick: true,
-         endOnTick: true,
-         showLastLabel: true
-      },
-      yAxis: {
-         title: {
-            text: 'Frequency'
-         }
-      },
-      tooltip: {
-         formatter: function() {
-                   return ''+
-               this.x +' brightness '+ this.y +' freq.';
-         }
-      },
-      legend: {
-         layout: 'vertical',
-         align: 'left',
-         verticalAlign: 'top',
-         x: 100,
-         y: 70,
-         floating: true,
-         backgroundColor: '#FFFFFF',
-         borderWidth: 1
-      },
-      plotOptions: {
-         scatter: {
-            marker: {
-               radius: 2,
-               states: {
-                  hover: {
-                     enabled: true,
-                     lineColor: 'rgb(100,100,100)'
-                  }
-               }
-            },
-            states: {
-               hover: {
-                  marker: {
-                     enabled: false
-                  }
-               }
-            }
-         }
-      },
-      series: [{
-         name: 'Hue',
-         color: 'rgba(223, 83, 83, .5)',
-         data: [
-            <% hs.forEach(function(value, data){ %>
-                             [<%= data %>, <%= value %>],
-            <% }) %>
-            
-         ]
-   
-      }]
-   });
-   });
-    
-</script>
+<img src="<%- map.path %>" width="800" height="400" />
+
+<% if (map.hasOwnProperty('rc')){ %>
+<h2>RC Images </h2>
+<% map.rc.forEach(function(data, i){ %>
+<pre>
+    <%= JSON.stringify(data, 0, 2) %>
+</pre>
+
+<img src="/img/map/rc/<%= map._id %>/<%= i %>.png" width="800" height="400" />
+<% }) %>
+<% } %>
