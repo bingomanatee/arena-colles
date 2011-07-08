@@ -12,19 +12,16 @@ module.exports = function(context) {
             params.map = params.item = map;
 
             model_module.model('map_sectors', function(err, ms_model) {
-                var sector_options = {
-                    sort: [['min_lat', 1], ['east_long', 1]]
-                };
 
                 function _on_find(err, sectors) {
-                    console.log(__filename, ': found sectors ', sectors);
+                  //  console.log(__filename, ': found sectors ', sectors);
                     params.sectors = sectors;
                     context.render(params);
                 }
 
                 ms_model.find({
                     map: map._id
-                }, _on_find, sector_options);
+                }).sort([['min_lat', 1], ['east_long', 1]]).toArray(_on_find);
             });
 
         } else {

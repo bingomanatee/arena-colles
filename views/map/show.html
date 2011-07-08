@@ -12,7 +12,7 @@ return diff;
 %>
 <h1>Map of &quot;<%- map.name %>&quot;</h1>
 
-<img src="<%= map.path %>" width=800 height=400 />
+<!-- img src="<%= map.path %>" width=800 height=400 / -->
 
         <link rel="stylesheet" href="/map/css/show.css" /> 
 <dl>  
@@ -96,11 +96,9 @@ return diff;
     <% sectors.forEach(function(sector){
     %>
     <tr>
-        <td>
-            <% if (sector.parsed){ %>
-        <b>
-            <%= sector._id %>
-        </b>
+        <td><% if (sector.parsed){ %>
+        <b><%= sector._id %></b>
+        (<a href="/maps/<%= map._id %>/parse_rows/<%= sector._id %>" >Redo</a>)
         <% } else { %>
             <a href="/maps/<%= map._id %>/parse_rows/<%= sector._id %>" >
             <%= sector._id %>

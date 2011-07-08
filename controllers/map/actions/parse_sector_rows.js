@@ -16,18 +16,20 @@ module.exports = function(context) {
                 if (sector) {
                     params.sector = sector;
                     console.log(__filename, ': parsing sector ', sector);
+                    sector.parsed = true;
+                    ms_model.update(sector, function() {
+                        console.log('sector updated.');
+                        context.flash('parsed ' + sid, 'info', '/maps/' + map_id + '?sid = ' + sid);
+                    });
+                    console.log('parsing rows.... ');
                     ms_model.parse_rows(sector, function(e) {
                         console.log(__filename, ': @@@@@@@@@@@@ done parsing rows');
-                        sector.parsed = true;
-                        ms_model.put(sector, function() {
-                            console.log('sector updated.');
-                            context.render('/map/parse_sector_rows.html', params);
-                        });
                     });
                 } else {
                     props.sector = false;
                     console.render(params);
                 }
+
 
             }); // end get sector
         }); // end model   

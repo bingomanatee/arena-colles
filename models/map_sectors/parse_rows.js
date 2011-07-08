@@ -12,23 +12,25 @@ function _path(sector) {
 
 
 module.exports = function(sector, sector_callback) {
+    console.log(__filename, ': ========== PARSING ROWS OF ========== ', sector);
+    
     var path = _path(sector);
-    var row_chunk_size = sector.rows / 16;
 
     if (!path_module.existsSync(path)) {
         throw new Exception('missing data file ', path);
     }
 
-    console.log(__filename, ': ========== PARSING ROWS OF ========== ', sector);
     var self = this;
     mm.model('map_sector_rows', function(err, sector_rows_model) {
         var sector_row_count = 0;
 
-        function _save_row_data(sector, ints, row_index, callback) {
+        function _save_row_data(sector, ints, sector_row_index, callback) {
             var sr_data = {
                 data: ints,
                 sector: sector._id,
-                row: row_index
+                row: sector_row_index,
+                length: ints.length,
+                expected_length: sector.cols
             };
 
             sector_rows_model.put(sr_data, callback);
@@ -37,43 +39,46 @@ module.exports = function(sector, sector_callback) {
         sector_rows_model.delete({
             sector: sector._id
         }, function() { // after delete
-            var file_position = 0;
-            var row_index = 1;
-
+            var file_position = 0; // where in the source file to take a read chunk
+            var sector_row_index = 0; // the number of rows that have been read
+            var row_byte_count = sector.bytes;
+            var rows_per_buffer = 8; // why not?
+            var buffer_size = rows_per_buffer * row_byte_count; // size read in one swipe
+            
             fs.open(path, 'r', function(err, fd) {
-                var buffer = new Buffer(sector.cols * row_chunk_size * 2);
-
-                function _buffer_bytes(buffer_row) {
-                    var start = buffer_row * 2 * sector.cols;
-                    var end = (1 + buffer_row) * 2 * sector.cols;
-                    var bytes = buffer.slice(start, end);
-                    return bytes;
-                }
+                var buffer = new Buffer(buffer_size);
 
                 function _read_chunk() {
                     console.log('READING CHUNK ', file_position);
 
                     function _write_buffer() {
-                        file_position += buffer.length;
-                        for (var buffer_row = 0; buffer_row < row_chunk_size; ++buffer_row) {
-                            var bytes = _buffer_bytes(buffer_row);
-                            var ints = _read_bin_line(bytes);
+                        console.log('digesting from ', file_position, '(',
+                                    file_position/1024, 'k) to ',
+                                    file_position + buffer_size, ' (',
+                                    (file_position + buffer_size) / 1024, 'k)'); 
+                        file_position += buffer_size;
+                        for (var buffer_row = 0; buffer_row < rows_per_buffer; ++buffer_row) {
+                            
+                            var bytes = _buffer_bytes(buffer, buffer_row, row_byte_count);
+                            var ints = _read_bin_line(buffer, bytes);
 
                             if (!(buffer_row % 100)) {
-                                console.log('saving buffer row ', buffer_row, '; row index ', row_index);
+                                console.log('saving buffer row ', buffer_row, '; sector row ', sector_row_index);
                             }
 
-                            _save_row_data(sector, ints, row_index, gate.task_done_callback(true));
-                            ++row_index;
+                            _save_row_data(sector, ints, sector_row_index, gate.task_done_callback(true));
+                            ++sector_row_index;
                         }
+                        console.log('saving last buffer row ', buffer_row, '; sector row ', sector_row_index);
+
                         gate.start();
                     }
 
                     function _next_chunk() {
-                        if (file_position < sector.rows * sector.cols * 2) {
-                            _read_chunk();
+                        if (file_position < sector.rows * row_byte_count) {
+                            setTimeout(_read_chunk, 1000);
                         } else {
-                            console.log('ALL CHUNKS READ.');db.ma
+                            console.log('ALL CHUNKS READ.');
                             sector.parsed = true;
                             self.put(sector, function(err, result) {
                                 console.log('parsed ', result);
@@ -83,8 +88,8 @@ module.exports = function(sector, sector_callback) {
                     }
 
                     var gate = new Gate(_next_chunk);
-                    fs.read(fd, buffer, 0, buffer.length, file_position, _write_buffer);
-                    file_position += buffer.length;
+                    console.log('reading fd, buffer, 0, ', buffer_size, ',', file_position, ', _write_buffer');
+                    fs.read(fd, buffer, 0, buffer_size, file_position, _write_buffer);
                 } // end _read_chunk;
                 _read_chunk();
             }); // end fs.open
@@ -92,30 +97,13 @@ module.exports = function(sector, sector_callback) {
     }) // end mm.model
 }
 
-/**
- *
- *
- res.writeHead(200,{'Content-Type':'text/plain'})
- var buffer=new Buffer(100)
- var fs=require('fs')
- fs.open('.'+req.url,'r',function(err,fd){
- fs.fstat(fd,function(err, stats){
- var i=0
- var s=stats.size
- console.log('.'+req.url+' '+s)
- for(i=0;i<s;console.log(i)){
- i=i+buffer.length
- fs.read(fd,buffer,0,buffer.length,i,function(e,l,b){
- res.write(b.toString('utf8',0,l))
- console.log(b.toString('utf8',0,l))
- })
- }
- res.end()
- fs.close(fd)
- })
- })
- */
-
+function _buffer_bytes(buffer, buffer_row, row_byte_count) {
+    var start = buffer_row * row_byte_count;
+    var end = (1 + buffer_row) * row_byte_count;
+    var bytes = buffer.slice(start, end);
+    return bytes;
+}
+                
 function _read_bin_line(data) {
 
     var l = data.length;

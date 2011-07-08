@@ -14,7 +14,7 @@ module.exports.run = function() {
         
         ms_model.find({
             map: map_id
-        }, function(err, sectors) {
+        }).toArray(function(err, sectors) {
 
             sectors.forEach(function(sector) {
                 if (sector.hasOwnProperty('data_files') && sector.data_files.hasOwnProperty('note')) {
@@ -51,6 +51,7 @@ module.exports.run = function() {
                         var m = /RECORD_BYTES.*= ([\d]*)/.exec(note_data);
                         if (m){
                             sector.cols = parseInt(m[1]/2);
+                            sector.bytes = parseInt(m[1]);
                         }
 
                         ms_model.put(sector, function(err, new_sector) {
