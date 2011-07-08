@@ -7,6 +7,8 @@ module.exports = {
         
         render: require('./map_sectors/render'),
         
+        parse_rows: require('./map_sectors/parse_rows'),
+        
         on_load: function(self, callback) {
 
             self.index([

@@ -28,13 +28,14 @@ module.exports = {
             callback(null, this._models[plural]);
         } else {
             var model_file = MVC_MODELS + '/' + plural + '.js';
-            // console.log(__filename, ': looking for model file ', model_file);
+           //  console.log(__filename, ': looking for model file ', model_file);
             if (path.existsSync(model_file)) {
-                // console.log(__filename, ': loading model for ', model_name);
+            //     console.log(__filename, ': loading model for ', model_name);
                 var model_module = require(MVC_MODELS + '/' + plural);
 
                 if (model_module.hasOwnProperty('model') && typeof(module.module.form) == 'function') {
                     function _found_f(err, model_found) {
+                    //    console.log('found model ', model_name);
                         if (model_found) {
                             self._models[plural] = model_found;
                         }
@@ -44,6 +45,7 @@ module.exports = {
                 }
 
                 mongo_model.init(model_module, function(err, model) {
+              //      console.log(model_name, ': initialized');
                     if (err) {
                         callback(err);
                     } else {

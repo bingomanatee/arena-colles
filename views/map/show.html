@@ -1,6 +1,18 @@
+<%
+
+function diff_deg(a, b){
+a += 360;
+b += 360;
+var diff = Math.abs(a - b);
+if (diff > 180) {
+diff = 360 - diff;
+}
+return diff;
+}
+%>
 <h1>Map of &quot;<%- map.name %>&quot;</h1>
 
-<img src="<%= map.path %>" />
+<img src="<%= map.path %>" width=800 height=400 />
 
         <link rel="stylesheet" href="/map/css/show.css" /> 
 <dl>  
@@ -32,19 +44,6 @@
     
 </form>
 
-<table border=1>
-<% sectors.forEach(function(sr){ %>
-<tr>
-<% sr.forEach(function(s){ %>
-<td nowrap >lat_i: <%= s.lat_i %>, lon_i: <%= s.lon_i %><br />
-lat: <%= parseInt(s.lat_n) %> ... <%= parseInt(s.lat_s) %><br />
-lon: <%= parseInt(s.lon_w) %> ... <%= parseInt(s.lon_e) %>
-</td>
-<% }) %>
-    <tr>
-<% }) %>    
-</table>
-
 <div id="tiles">
     
 </div>
@@ -70,3 +69,59 @@ lon: <%= parseInt(s.lon_w) %> ... <%= parseInt(s.lon_e) %>
         return false;
     }
 </script>
+<style>
+.lat { background-color: #CCC;}
+.st td, .st th {
+    padding: 0.5em;
+    border: 1px solid black;
+}
+</style>
+<table class="st">
+    <tr>
+        <th>Sector ID</th>
+        <th>&nbsp;</th>
+        <th>Min Lat</th>
+        <th>Max Lat</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>East Long</th>
+        <th>West Long</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>Rows</th>
+        <th>Cols</th>
+        <th>pixels/&deg; x</th>
+        <th>pixels/&deg; y</th>
+    </tr>
+    <% sectors.forEach(function(sector){
+    %>
+    <tr>
+        <td>
+            <% if (sector.parsed){ %>
+        <b>
+            <%= sector._id %>
+        </b>
+        <% } else { %>
+            <a href="/maps/<%= map._id %>/parse_rows/<%= sector._id %>" >
+            <%= sector._id %>
+        </a>
+        <% } %>
+        </td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td class="lat"><%= sector.min_lat %>&deg;</td>
+        <td class="lat"><%= sector.max_lat %>&deg;</td>
+        <td><b><%= diff_deg(sector.min_lat, sector.max_lat) %>&deg;</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td><%= sector.east_long %>&deg;</td>
+        <td><%= sector.west_long %>&deg;</td>
+        <td><b><%= diff_deg(sector.east_long, sector.west_long) %>&deg;</b></td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td><%= sector.rows %></td>
+        <td class="lat"><%= sector.cols %></td>
+        <td><%= Math.round(sector.cols/diff_deg(sector.east_long, sector.west_long)) %> </td>
+        <td class="lat"><%= Math.round(sector.rows /diff_deg(sector.min_lat, sector.max_lat)) %></td>
+    </tr>
+    <%
+    })
+    %>
+</table>

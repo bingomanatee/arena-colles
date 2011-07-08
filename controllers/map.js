@@ -37,6 +37,8 @@ module.exports = {
 
     reference_color: require('./map/actions/reference_color'),
     
+    parse_sector_rows: require('./map/actions/parse_sector_rows'),
+    
     forms: {
         reference_color: require('./map/forms/reference_color')
     },
@@ -61,6 +63,8 @@ module.exports = {
             context.get(app, '/maps/:id/analyze', 'analyze');
             
             context.post(app, '/maps/:id/reference_color', 'reference_color');
+            
+            context.get(app, '/maps/:id/parse_rows/:sector_id', 'parse_sector_rows');
 
         });
     }
