@@ -9,15 +9,9 @@ module.exports = {
         
         parse_rows: require('./map_sectors/parse_rows'),
         
-        on_load: function(self, callback) {
-
-            self.index([
-                ["lon_i", 1],
-                ["lat_i", 1]
-            ], false, function() {
-                callback(null, self);
-            });
-
-        } // end onLoad
+        data_path: require('./map_sectors/data_path'),
+        
+        region: require('./map_sectors/region'),
+        
     }
 }

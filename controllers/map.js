@@ -66,6 +66,7 @@ module.exports = {
             
             context.get(app, '/maps/:id/parse_rows/:sector_id', 'parse_sector_rows');
 
+            context.get(app, '/img/sector_images/:id/:x/:y/:w/:h.png', 'sector_image');
         });
     }
     

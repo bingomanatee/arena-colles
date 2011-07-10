@@ -11,7 +11,7 @@ module.exports = {
         
         options: function(callback, use_none) {
             var self = this;
-            self.all(function(err, roles) {
+            self.all().toArray(function(err, roles) {
                 if (err){
                      // console.log(__filename, ': error in all: ', err);
                     callback(err);

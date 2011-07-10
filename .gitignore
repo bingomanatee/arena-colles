@@ -1,3 +1,8 @@
 *.png
 /test/geo/
 *.img
+/resources/mola_128/
+/resources/mola_16/
+mola_32
+/scripts/sector_files/
+/node_modules/mongodb/benchmark/

@@ -7,7 +7,7 @@ global.MVC_HELPERS      = MVC_ROOT + '/helpers';
 global.MVC_SESSION_KEY  = 'ac';
 
 global.MONGODB_SERVER_NAME  = 'localhost';
-global.MONGODB_DB_NAME      = 'ac'; // Change this for each app you develop!
+global.MONGODB_DB_NAME      = 'arena_colles'; // Change this for each app you develop!
 global.MONGODB_PORT         = 27017;
 
 global.PHP_BINARY = false;

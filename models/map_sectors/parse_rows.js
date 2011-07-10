@@ -13,7 +13,7 @@ function _path(sector) {
 
 module.exports = function(sector, sector_callback) {
     console.log(__filename, ': ========== PARSING ROWS OF ========== ', sector);
-    
+
     var path = _path(sector);
 
     if (!path_module.existsSync(path)) {
@@ -32,7 +32,9 @@ module.exports = function(sector, sector_callback) {
                 length: ints.length,
                 expected_length: sector.cols
             };
-
+            if (!(sector_row_index % 10)){
+                console.log('... saved row ', sector_row_index);
+            }
             sector_rows_model.put(sr_data, callback);
         }
 
@@ -42,9 +44,8 @@ module.exports = function(sector, sector_callback) {
             var file_position = 0; // where in the source file to take a read chunk
             var sector_row_index = 0; // the number of rows that have been read
             var row_byte_count = sector.bytes;
-            var rows_per_buffer = 8; // why not?
+            var rows_per_buffer = 32; // why not?
             var buffer_size = rows_per_buffer * row_byte_count; // size read in one swipe
-            
             fs.open(path, 'r', function(err, fd) {
                 var buffer = new Buffer(buffer_size);
 
@@ -52,17 +53,14 @@ module.exports = function(sector, sector_callback) {
                     console.log('READING CHUNK ', file_position);
 
                     function _write_buffer() {
-                        console.log('digesting from ', file_position, '(',
-                                    file_position/1024, 'k) to ',
-                                    file_position + buffer_size, ' (',
-                                    (file_position + buffer_size) / 1024, 'k)'); 
+                        console.log('digesting from ', file_position, '(', file_position / 1024, 'k) to ', file_position + buffer_size, ' (', (file_position + buffer_size) / 1024, 'k)');
                         file_position += buffer_size;
                         for (var buffer_row = 0; buffer_row < rows_per_buffer; ++buffer_row) {
-                            
+
                             var bytes = _buffer_bytes(buffer, buffer_row, row_byte_count);
                             var ints = _read_bin_line(buffer, bytes);
 
-                            if (!(buffer_row % 100)) {
+                            if (!(sector_row_index % 50)) {
                                 console.log('saving buffer row ', buffer_row, '; sector row ', sector_row_index);
                             }
 
@@ -76,7 +74,7 @@ module.exports = function(sector, sector_callback) {
 
                     function _next_chunk() {
                         if (file_position < sector.rows * row_byte_count) {
-                            setTimeout(_read_chunk, 1000);
+                           _read_chunk();
                         } else {
                             console.log('ALL CHUNKS READ.');
                             sector.parsed = true;
@@ -103,7 +101,7 @@ function _buffer_bytes(buffer, buffer_row, row_byte_count) {
     var bytes = buffer.slice(start, end);
     return bytes;
 }
-                
+
 function _read_bin_line(data) {
 
     var l = data.length;
