@@ -91,3 +91,23 @@ padding: 0.5em;
     font-size: 100%;
     color: rgb(102, 102, 51);
 }
+
+table.grid {
+	border: 1px solid black;
+	border-bottom: 2px solid black;
+}
+table.grid th,
+table.grid td {
+	font-size: 80%;
+	padding: 1em;
+	border : 1px solid black;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+table.grid th {
+	background-color: rgb(225, 225, 255);
+	font-weight: bold;
+	border-right: none;
+}
+

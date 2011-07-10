@@ -13,22 +13,25 @@ module.exports.run = function() {
         manifest = JSON.parse(manifest);
         var map_id = ms_model._as_oid(manifest.map);
 
-        ms_model.find({
-            map: map_id,
-            parsed: false
-        }, function(err, sectors) {
-            if (sectors.length) {
-                var sector = sectors.pop();
+        function _parse_next() {
+            ms_model.find({
+                map: map_id,
+                parsed: false
+            }).limit(1).toArray(function(err, sectors) {
+                if (sectors.length) {
+                    var sector = sectors.pop();
 
-                gate = new Gate(_parse_next);
+                    gate = new Gate(_parse_next);
 
-                ms_model.parse_rows(sector, gate.task_done_callback(true))
+                    ms_model.parse_rows(sector, gate.task_done_callback(true))
 
-                gate.start();
+                    gate.start();
 
-            } else {
-                console.log('parsed ALL sectors!');
-            }
-        }) // end find_and_delete
+                } else {
+                    console.log('parsed ALL sectors!');
+                }
+            }) // end parse
+        };
+        _parse_next();
     }); // and model
 }

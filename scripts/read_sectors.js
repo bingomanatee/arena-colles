@@ -21,9 +21,9 @@ module.exports.run = function(){
                 };
                 console.log('writing ', section);
                 ms_model.put(section, function(err, result){
-        //            console.log('sector saved: ', result);
-                    var sector = result[0];
-                    _import_sector_data(sector, gate.task_done_callback(true));
+                    console.log('sector saved: ', result);
+                    var sector = result;
+                    _import_sector_data(sector);
                     });
             })
             

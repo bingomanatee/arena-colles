@@ -15,14 +15,8 @@ return diff;
 <!-- img src="<%= map.path %>" width=800 height=400 / -->
 
         <link rel="stylesheet" href="/map/css/show.css" /> 
-<dl>  
-    <dt>Height:</dt>
-    <dd><%- map.lat %> divisions (<%- Math.round(parseInt(map.lat)/18, 2)/10 %> units/&deg;)</dd>
-    
-    <dt>Width: </dt>
-    <dd><%- map.long %> divisions (<%- Math.round(parseInt(map.long)/36, 2)/10 %> units/&deg;)</dd>
-</dl>
-<p><a href="/maps/<%- map._id %>/gen_sectors">Generate Sectors</a></p>
+
+<!-- p><a href="/maps/<%- map._id %>/gen_sectors">Generate Sectors</a></p-->
 <p><a href="/maps/<%- map._id %>/analyze">Analyze Brightness</a></p>
 <!-- p><a href="/maps/<%- map._id %>/zoom_back">Zoom Back</a></p -->
 
@@ -96,14 +90,10 @@ return diff;
     <% sectors.forEach(function(sector){
     %>
     <tr>
-        <td><% if (sector.parsed){ %>
-        <b><%= sector._id %></b>
-        (<a href="/maps/<%= map._id %>/parse_rows/<%= sector._id %>" >Redo</a>)
-        <% } else { %>
-            <a href="/maps/<%= map._id %>/parse_rows/<%= sector._id %>" >
+        <td>
+            <a href="/map_sectors/<%= sector._id %>" >
             <%= sector._id %>
         </a>
-        <% } %>
         </td>
         <td>&nbsp;&nbsp;&nbsp;</td>
         <td class="lat"><%= sector.min_lat %>&deg;</td>
