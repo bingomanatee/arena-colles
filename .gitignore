@@ -6,3 +6,5 @@
 mola_32
 /scripts/sector_files/
 /node_modules/mongodb/benchmark/
+/node_modules/mongodb/benchmark/grid_fs_write_benchmark.js
+/node_modules/mongodb/benchmark/streaming_benchmark.js
