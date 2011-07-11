@@ -46,7 +46,7 @@ module.exports.run = function() {
 
         var height_layer_1 = {
             path: function(mola, i, j) {
-                return MVC_PUBLIC + '/img/maps/tiles/' + mola.file_root + '/tile/' + i + '_' + j + '/h/1.png';
+                return MVC_PUBLIC + '/img/maps/tiles/' + mola.file_root + '/' + i + '_' + j + '/h/1.png';
             },
             mode: 'height',
             offset: 0,
@@ -69,6 +69,15 @@ module.exports.run = function() {
             offset: -1000,
             scale: 16
         };
+        
+        var sea_floor = {
+            path: function(mola, i, j) {
+                return MVC_PUBLIC + '/img/maps/tiles/' + mola.file_root + '/' + i + '_' + j + '/h/sea_2.png';
+            },
+            mode: 'height',
+            offset: -512,
+            scale: 2
+        };
 
         var color_layer = {
             path: function(mola, i, j) {
@@ -76,7 +85,8 @@ module.exports.run = function() {
             },
             mode: 'color'
         };
-        var chop_layers = [color_layer, height_layer_1, height_layer_4, height_layer_16];
+        
+        var chop_layers = [color_layer];
 
         var props = {
             rows: parseInt(file.notes.file_records),
@@ -87,8 +97,8 @@ module.exports.run = function() {
             west: west,
             chop_layers: chop_layers,
             file_root: file.root,
-            pixels_per_row: 128,
-            pixels_per_col: 128
+            pixels_per_row: 512,
+            pixels_per_col: 512
         };
 
         var mola = new MOLA(file.image_file, props);
