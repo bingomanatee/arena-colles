@@ -13,5 +13,11 @@ module.exports = {
         
         region: require('./map_sectors/region'),
         
+        tile: require('./map_sectors/tile'),
+        
+        on_load: function(model, callback){            
+            model.config.coll.ensureIndex({image_file: 1, i: 1, j: 1});            
+            callback(null, model);
+        }
     }
 }

@@ -1,109 +1,55 @@
-<h1><%- controller %> Item ID = &quot;<%- item._id %>&quot;</h1>
 
-<table class="scaffold_ticket">
-    <% for(var param in item){ %>
-    <tr>
-    <th><%- param %></th>
-    <td>
-        <%
-        var value = item[param];
-        if (typeof(value) == 'object') { %>
-        <pre><%- JSON.stringify(value) %></pre>
-        <% } else { %>
-        <%- value %>
-        <% } %>
-    </td>
-    </tr>
-    <% } %>
-</table>
-<hr />
-<p><a href="/<%- plural %>/<%- item._id %>/edit">Edit</a></p>
-
-<h2>Quadrants</h2>
+    <h1>Map: <%= item.map %> :: Scaffold ID = "<%- item._id %>" row(i): <%= sector.i %>), col(j): <%= sector.j %>)</h1>
 <%
-
-var l0 = parseInt(item.max_lat);
-var l1 = parseInt(item.min_lat);
-
-var lat_range = (item.max_lat - item.min_lat);
-var long_range = (item.east_long - item.west_long);
-var w = 0;
-var h = 0;
- 
-var w = parseInt(Math.abs(
-    item.bytes * 5 / long_range
-));
-    
-var h = parseInt(Math.abs(
-    item.rows * 5/lat_range
-));
-
+var north = tileset.i_to_degree(sector.i);
+var south = tileset.i_to_degree(1 + sector.i);
+var east = tileset.j_to_degree(sector.j);
+var west = tileset.j_to_degree(sector.j + 1);
 %>
-<p> from <%= l0 %> to <%= l1 %> latitude</p>
-<h3>Longitude</h3>
-<table class="grid">
- <tr>
-    <th>Latitude</th>
-    <% for (var longitude= item.west_long; longitude < item.east_long; longitude += 5){ %>
-    <th colspan="3"><%= Math.abs(longitude) %>&deg <%= longitude < 0 ? 'W' : 'E' %></th>
-    <% } // end for longitude %>
+<p>Sector Rows Per Sector: <%= tileset.rows_per_sector %></p>
+<p>Sector Cols Per Sector: <%= tileset.cols_per_sector %></p>
+
+    <div id="compass" style="width: 400px">
+        <div class="north">
+            <b>North</b>: <%= item.north %>(<%= north %>) </div>
+                            
+                             
+                            <div class="east" style="float: right; clear: right;">
+                                <b>East</b>: <%= item.east %> (<%= east %>)
+        </div>
+
+        <div class="west">
+            <b>West</b>: <%= item.west %> (<%= west %>)
+        </div>
+
+        <div class="south">
+            <b>South</b>: <%= item.south %> (<%= south %>)
+        </div>
+    </div>
+
+<h2>Tile</h2>
+
+<p><b>Rows</b>: <%= tile.rows %> (<%= tile.rows / 512 %>)</p>
+<p><b>Cols</b>: <%= tile.cols %> (<%= tile.cols / 512 %>)</p>
+
+    <div id="compass" style="width: 400px">
+        <div class="north">
+            <b>North</b>: <%= tile.north %> </div>
+                            
+                             
+                            <div class="east" style="float: right; clear: right;">
+                                <b>East</b>: <%= tile.east %> 
+        </div>
+
+        <div class="west">
+            <b>West</b>: <%= tile.west %> 
+        </div>
+
+        <div class="south">
+            <b>South</b>: <%= tile.south %> 
+        </div>
+    </div>
     
-    <%
-    for (var latitude = l0; latitude >= l1; latitude -= 5)
-    {
-    var x = 0;
-    var y = 0;
-    // /img/sector_images/:id/:x/:y/:w/:h.png
-
+    <h2>Height Image</h2>
     
-    %>
-    <!-- row 1 -->
-    <tr>
-    <th rowspan="3"><%= latitude %>&deg</th>
-<% for (var longitude = item.west_long; longitude < item.east_long; longitude += 5){
-
-%>
-    <td>&nbsp;</td>
-    <td><%= x %></td>
-    <td><%= w %></td>
-    <%
-    }
-    // end for longitude
-    %>
-    </tr>
-    <!-- end row 1 -->
-    
- <!-- row 2 -->
-    <tr>
-<% for (var longitude = item.west_long; longitude < item.east_long; longitude += 5){
-
-    var y = parseInt(Math.abs(
-        item.rows *  (latitude - item.min_lat)/ lat_range   
-    )) 
-
-    var x = parseInt(Math.abs(
-        item.bytes * (longitude - item.west_long)/long_range
-    ));
-%>
-    <td><%= y %></td>
-    <td colspan="2" rowspan="2">
-        <a href="/img/sector_images/<%= item._id %>/<%= [0, 0, item.bytes, item.rows].join('/') %>/graph.png">
-    <%= Math.abs(longitude) %>&deg <%= longitude < 0 ? 'W' : 'E' %>, <%= latitude %>&deg
-    </a></td>
-    <% }
-    // end for longitude
-    %> 
-    </tr>
- <!-- row 3 -->
-     <tr>
-<% for (var longitude = item.west_long; longitude < item.east_long; longitude += 5){ %>
-    <td><%= h %></td>
-<% } // end for longitude %> 
-    </tr>
-     <!-- end row 3 -->
-    <%
-    } // end for lat
-    %>
- </tr>
-</table>
-
+    <img src="/map_sectors/image/<%= sector._id %>.png" width="512" height="512" />

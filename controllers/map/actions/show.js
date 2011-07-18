@@ -1,5 +1,7 @@
 var params_module = require('mvc/params');
 var model_module = require(MVC_MODELS);
+var Math_utils = require('util/math');
+var Tileset = require('mola/tileset');
 
 module.exports = function(context) {
     var self = this;
@@ -11,19 +13,19 @@ module.exports = function(context) {
         } else if (map) {
             params.map = params.item = map;
 
-            model_module.model('map_sectors', function(err, ms_model) {
+            model_module.model('map_tiles', function(err, mt_model) {
 
-                function _on_find(err, sectors) {
-                  //  console.log(__filename, ': found sectors ', sectors);
-                    params.sectors = sectors;
-                    context.render(params);
-                }
+                mt_model.all().toArray(function(err, tiles) {
+                    var tiles_indexed = {};
+                    tiles.forEach(function(tile) {
+                        tile.index = new Tileset(tile);
+                        tiles_indexed[tile.data_file.image_file] = tile;
+                    });
+                        params.tiles = tiles_indexed;
+                        context.render(params);
 
-                ms_model.find({
-                    map: map._id
-                }).sort([['min_lat', 1], ['east_long', 1]]).toArray(_on_find);
-            });
-
+                }); // end all
+            }); // end map_tiles model
         } else {
             context.flash('Cannot find ' + self.name + ' ' + id, 'error', '/' + params.plural);
         };

@@ -1,115 +1,81 @@
-<%
-
-function diff_deg(a, b){
-a += 360;
-b += 360;
-var diff = Math.abs(a - b);
-if (diff > 180) {
-diff = 360 - diff;
-}
-return diff;
-}
-%>
-<h1>Map of &quot;<%- map.name %>&quot;</h1>
-
-<!-- img src="<%= map.path %>" width=800 height=400 / -->
-
-        <link rel="stylesheet" href="/map/css/show.css" /> 
-
+<h1>Map of "<%- map.name %>"</h1><!-- img src="<%= map.path %>" width=800 height=400 / -->
 <!-- p><a href="/maps/<%- map._id %>/gen_sectors">Generate Sectors</a></p-->
-<p><a href="/maps/<%- map._id %>/analyze">Analyze Brightness</a></p>
-<!-- p><a href="/maps/<%- map._id %>/zoom_back">Zoom Back</a></p -->
 
-<p><a href="/maps/<%- map._id %>/zoom_in">Zoom In(<%= map.zoom %> )</a></p>
+<p><a href="/maps/%3C%-%20map._id%20%%3E/analyze">Analyze Brightness</a></p><!-- p><a href="/maps/<%- map._id %>/zoom_back">Zoom Back</a></p -->
 
-<form onsubmit=" return tile(this)">
-    <table>
-        <tr>
-            <th>Lat</th>
-            <td><input name="lat" id="lat" type="text" value="0" /></td>
-        </tr>
-        <tr>
-            <th>Long</th>
-            <td><input name="long" id="long" type="text" value="0" /></td>
-        </tr>
-        <tr><th>&nbsp;</th>
-            <td><input type="submit" value="View">
-    </table>
-    
-</form>
+<p><a href="/maps/%3C%-%20map._id%20%%3E/zoom_in">Zoom In(<%= map.zoom %> )</a></p>
 
-<div id="tiles">
-    
-</div>
+<h2>tiles</h2><%
 
-<script language="javascript">
-    function on_tile(data) {
-        console.log('tiles found: ', data);
-        $('#tiles').html(data);    }
+function n_tile(tiles){
+var n_tile_set = [];
+for (var p in tiles){
+var tile = tiles[p];
 
-    function tile(f) {
-        console.log('tile: form', f);
-        try {
-            var lat = $('#lat').val();
-            var lon = $('#long').val();
-        } catch (e) {
-            console.log(e);
-        }
-
-        console.log('lat: ', lat, ', lon: ', lon);
-
-        var url = '/maps/<%- map._id %>/tile/' + lon + '/' + lat;
-        $.get(url, on_tile);
-        return false;
-    }
-</script>
-<style>
-.lat { background-color: #CCC;}
-.st td, .st th {
-    padding: 0.5em;
-    border: 1px solid black;
+var found = false;
+n_tile_set.forEach(function(t){
+if (t.north == tile.north){
+found = true;
+t.tiles.push(tile);
 }
-</style>
-<table class="st">
-    <tr>
-        <th>Sector ID</th>
-        <th>&nbsp;</th>
-        <th>Min Lat</th>
-        <th>Max Lat</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>East Long</th>
-        <th>West Long</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>Rows</th>
-        <th>Cols</th>
-        <th>pixels/&deg; x</th>
-        <th>pixels/&deg; y</th>
-    </tr>
-    <% sectors.forEach(function(sector){
+})
+if (!found){
+n_tile_set.push({north: tile.north, tiles: [tile]})
+}
+
+} // end tiles
+return n_tile_set
+}
+
+var n_tiles = n_tile(tiles);
+%>
+
+<h1>Tiles</h1>
+
+<table>
+    <% 
+    n_tiles.forEach(function(tile_row){ 
     %>
+
     <tr>
-        <td>
-            <a href="/map_sectors/<%= sector._id %>" >
-            <%= sector._id %>
-        </a>
-        </td>
-        <td>&nbsp;&nbsp;&nbsp;</td>
-        <td class="lat"><%= sector.min_lat %>&deg;</td>
-        <td class="lat"><%= sector.max_lat %>&deg;</td>
-        <td><b><%= diff_deg(sector.min_lat, sector.max_lat) %>&deg;</b></td>
-        <td>&nbsp;&nbsp;&nbsp;</td>
-        <td><%= sector.east_long %>&deg;</td>
-        <td><%= sector.west_long %>&deg;</td>
-        <td><b><%= diff_deg(sector.east_long, sector.west_long) %>&deg;</b></td>
-        <td>&nbsp;&nbsp;&nbsp;</td>
-        <td><%= sector.rows %></td>
-        <td class="lat"><%= sector.cols %></td>
-        <td><%= Math.round(sector.cols/diff_deg(sector.east_long, sector.west_long)) %> </td>
-        <td class="lat"><%= Math.round(sector.rows /diff_deg(sector.min_lat, sector.max_lat)) %></td>
-    </tr>
-    <%
-    })
+        <th>
+            <h2>North = <%= tile_row.north %>&deg;</h2>
+        </th><% tile_row.tiles.forEach(function (tile) { %><!-- BEGIN TILE CELL -->
+
+        <td style="border: 3px solid black">
+            <table class="st">
+                <tr>
+                    <td><%= tile._id %></td>
+
+                    <td><%= tile.data_file.image_file %></td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        <p><b>North</b>: <%= tile.north %>&deg; <b>South</b>: <%= tile.south %>&deg; <b>East</b>: <%= tile.east %>&deg; <b>West</b>: <%= tile.west %>&deg;</p>
+
+                        <table id="sectors_table">
+                            <tr>
+                                <th>i \ j</th><% for (var j = 0; j < tile.index.cols_per_sector; ++j) { %>
+
+                                <td><%= j %></td><% } %>
+                            </tr><% for (var i = 0; i < tile.index.rows_per_sector; ++i){ %>
+
+                            <tr>
+                                <th><%= i %></th><% for (var j = 0; j < tile.index.cols_per_sector; ++j) { %>
+
+                                <td nowrap="nowrap">
+                                <%= tile.index.i_to_degree(i, true) %>.. <%= tile.index.i_to_degree(i + 1, true) %>&deg; lat,<br />
+                                <%= tile.index.j_to_degree(j, true) %>...<%= tile.index.j_to_degree(j + 1, true) %>&deg; long <br />
+                                <a href="/map_sectors/ij/<%= i %>/<%= j %>/<%= tile.map_id %>">Sector</a></td><% } %>
+                            </tr><% } %>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td><!-- END TILE CELL -->
+        <% }) // end tile cell
+        %>
+    </tr><% }) // end n row
     %>
 </table>
