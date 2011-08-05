@@ -45,7 +45,7 @@ var n_tiles = n_tile(tiles);
         <td style="border: 3px solid black">
             <table class="st">
                 <tr>
-                    <td><%= tile._id %></td>
+                    <td>Tile <a href="/maps/<%= tile.map_id %>/tile/<%= tile._id %>.json"><%= tile._id %></a></td>
 
                     <td><%= tile.data_file.image_file %></td>
                 </tr>
@@ -53,7 +53,7 @@ var n_tiles = n_tile(tiles);
                 <tr>
                     <td colspan="3">
                         <p><b>North</b>: <%= tile.north %>&deg; <b>South</b>: <%= tile.south %>&deg; <b>East</b>: <%= tile.east %>&deg; <b>West</b>: <%= tile.west %>&deg;</p>
-
+                        <img src="/img/tile_icon/<%= tile._id %>.png" /> <br />
                         <table id="sectors_table">
                             <tr>
                                 <th>i \ j</th><% for (var j = 0; j < tile.index.cols_per_sector; ++j) { %>

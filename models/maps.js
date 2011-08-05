@@ -7,6 +7,7 @@ module.exports = {
     mixins: {
         
         tiles: require('./maps/tiles'),
+        tile:  require('./maps/tile'),
         
         point_count: require('./map_coords/point_count'),
         

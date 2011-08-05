@@ -16,13 +16,24 @@ module.exports = function(context) {
             model_module.model('map_tiles', function(err, mt_model) {
 
                 mt_model.all().toArray(function(err, tiles) {
-                    var tiles_indexed = {};
-                    tiles.forEach(function(tile) {
-                        tile.index = new Tileset(tile);
-                        tiles_indexed[tile.data_file.image_file] = tile;
-                    });
+                    params.tiles = tiles_indexed;
+                    if (context.request.params.format == 'json') {
+                        
+                        var tiles_indexed = {};
+                        tiles.forEach(function(tile) {
+                            tileset = new Tileset(tile);
+                            tiles_indexed[tile.data_file.image_file] = tileset.as_json(false);
+                        });
+                        context.response.send(JSON.stringify(tiles_indexed, null, 2));
+                    } else {
+                        var tiles_indexed = {};
+                        tiles.forEach(function(tile) {
+                            tile.index = new Tileset(tile);
+                            tiles_indexed[tile.data_file.image_file] = tile;
+                        });
                         params.tiles = tiles_indexed;
                         context.render(params);
+                    }
 
                 }); // end all
             }); // end map_tiles model

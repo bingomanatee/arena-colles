@@ -31,6 +31,8 @@ module.exports = {
     
     zoom_in: require('./map/actions/zoom_in'),
     
+    tiles: require('./map/actions/tiles'),
+    
     tile: require('./map/actions/tile'),
     
     analyze: require('./map/actions/analyze'),
@@ -42,6 +44,8 @@ module.exports = {
     forms: {
         reference_color: require('./map/forms/reference_color')
     },
+    
+    tile_icon: require('./map/actions/tile_icon'),
     
     route: function(app) {
         context_module(function(err, Context) {
@@ -58,7 +62,11 @@ module.exports = {
             
             context.get(app, '/maps/:id/zoom_in', 'zoom_in');
             
-            context.get(app, '/maps/:id/tile/:lon/:lat', 'tile');
+            context.get(app, '/maps/:id/tiles/:lon/:lat', 'tiles');
+            
+            context.get(app, '/maps/:id/tile/:tile_id.:format?', 'tile');
+            
+            context.get(app, '/img/tile_icon/:tile_id.png', 'tile_icon');
             
             context.get(app, '/maps/:id/analyze', 'analyze');
             

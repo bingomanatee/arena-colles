@@ -12,6 +12,6 @@ global.MONGODB_PORT         = 27017;
 
 global.PHP_BINARY = false;
 global.PHP_INI = false;
-global.MVC_PORT = 8000;
+global.MVC_PORT = 80;
 
 global.MVC_SITE_NAME = 'Arena Colles';
