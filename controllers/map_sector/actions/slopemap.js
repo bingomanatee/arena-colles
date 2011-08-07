@@ -4,6 +4,8 @@ require('mola/as_slopemap').load();
 var MOLA = require('mola');
 var Tileset = require('mola/tileset');
 
+var fs_util = require('util/fs');
+var fs = require('fs');
 module.exports = function(context) {
     var rp = context.req_params(true);
     var self = this;
@@ -33,6 +35,11 @@ module.exports = function(context) {
 
                 // console.log('context: ', context, '; context request: ', context.request);
                 c.createPNGStream().pipe(context.response);
+                
+                var dir = MVC_PUBLIC + '/img/map_sector/' + sector._id;
+                fs_util.ensure_dir(dir);
+                var fst = fs.createWriteStream(dir + '/slope.png');
+                c.createPNGStream().pipe(fst);
 
             }
         });

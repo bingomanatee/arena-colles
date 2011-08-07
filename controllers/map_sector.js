@@ -21,15 +21,15 @@ module.exports = {
             };
             var context = new Context(context_config);
 
-            context.get(app, '/map_sectors/image/:id.:format', 'sector_image');
+            context.get(app, '/img/map_sectors/:id/color.png', 'sector_image');
             
-            context.get(app, '/map_sectors/height/:id.:format', 'sector_height');
+            context.get(app, '/img/map_sectors/:id/height.png', 'sector_height');
             
-            context.get(app, '/map_sectors/slope/:id.:format', 'sector_slopemap');
+            context.get(app, '/img/map_sectors/:id/slope.png', 'sector_slopemap');
             
             context.get(app, '/map_sectors/ij/:i/:j/:map_id', 'ij');
             
-            context.get(app, '/img/sector_icon/:id.png', 'tile_icon');
+            context.get(app, '/img/map_sectors/:id/icon.png', 'tile_icon');
         });
     }
 }

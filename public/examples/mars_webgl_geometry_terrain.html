@@ -1,0 +1,546 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>three.js canvas - geometry - terrain</title>
+<meta charset="utf-8">
+<style type="text/css">
+    body {
+        color: #71544e;
+        font-family: Monospace;
+        font-size: 13px;
+        text-align: center;
+
+        background-color: #bfd1e5;
+        margin: 0px;
+        overflow: hidden;
+    }
+
+    #info {
+        position: absolute;
+        top: 0px;
+        width: 100px;
+        padding: 5px;
+    }
+
+    .coord {
+        position: absolute;
+        top: 0px;
+        left: 200px;
+        width: 100px;
+        padding: 5px;
+        background-color: white;
+        border: 1px solid black;
+    }
+
+    #info_x {
+        left: 200px;;
+    }
+
+    #info_y {
+        left: 300px;
+    }
+
+    #info_z {
+        left: 400px;
+    }
+
+    #info_xr {
+        left: 200px;
+        top: 50px;
+    }
+
+    #info_yr {
+        left: 300px;
+        top: 50px;
+    }
+
+    #info_zr {
+        left: 400px;
+        top: 50px;
+    }
+
+    a {
+
+        color: #b07861;
+    }
+
+</style>
+<script type="text/javascript" src="/js/jq.js"></script>
+<script type="text/javascript" src="/js/3/build/Three.js"></script>
+<script type="text/javascript" src="/js/3/extras/ImageUtils.js"></script>
+<script type="text/javascript" src="js/ImprovedNoise.js"></script>
+<script type="text/javascript" src="js/RequestAnimationFrame.js"></script>
+<script type="text/javascript" src="js/Stats.js"></script>
+<script type="text/javascript">
+var dtr = 180 / Math.PI; // this is actually radians to degrees. 
+var map_scale = 1;
+var t_size = 512 * 1000 / 2 * map_scale; // data scale is 500 m / pixel
+var height_scale = 8 * map_scale;
+var mesh_quality = 128;
+var directionalLight;
+
+var container, stats;
+
+var camera, scene, renderer;
+
+var mesh;
+
+var mouseX = 0;
+var mouseY = 0;
+
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+
+var deg_to_rad = Math.PI / 180;
+var rad_to_deg = 180 / Math.PI;
+
+var moveForward = false,
+        moveBackwards = false,
+        moveUp = false,
+        moveDown = false,
+        moveLeft = false,
+        moveRight = false,
+        isShiftDown = false,
+        isCtrlDown = false,
+        yawLeft = false,
+        yawRight = false,
+        pitchUp = false,
+        pitchDown = false,
+        rollLeft = false,
+        rollRight = false;
+
+function add_mesh(sector, cb) {
+    console.log('loading sector ', sector._id);
+    console.log('sector dims: ', sector.i, ', ', sector.j);
+
+    var data = sector.heights; // generateHeight( 512, 512, sector.heights );
+    console.log('loading material ...');
+
+    var m_config = {map: THREE.ImageUtils.loadTexture('http://localhost/img/map_sector/' + sector._id + '/color.png'), needsUpdate: true };
+    var material = new THREE.MeshPhongMaterial(m_config);
+    // var material = new THREE.MeshLambertMaterial( { ambient: 0x000000, color: 0x55ff00, specular: 0x555555, shininess: 30, needsUpdate: true } )
+
+    //			var material = new THREE.MeshPhongMaterial( { ambient: 0x030303, color: 0xdddddd, specular: 0x009900, shininess: 30, shading: THREE.SmoothShading } );
+    console.log('... done ');
+    //{ map: new THREE.Texture( generateTexture( data, 512, 512 ) ) } );
+
+    var step = 512 / mesh_quality;
+    console.log('creating plane...');
+    var plane = new THREE.PlaneGeometry(t_size, t_size, mesh_quality - 1, mesh_quality - 1);
+
+    for (var i = 0, l = plane.vertices.length; i < l; i ++) {
+
+        var x = i % mesh_quality;
+        var y = ~~ ( i / mesh_quality );
+        plane.vertices[ i ].position.z = ((data[ ( x * step ) + ( y * step * 512 ) ] * height_scale) - (50 * height_scale));
+
+    }
+    console.log('done');
+
+    console.log('centroids')
+
+    plane.computeCentroids();
+
+    var mesh = new THREE.Mesh(plane, material);
+    // mesh.rotation.x = -90 * Math.PI / 180;
+    console.log('sector dims: ', sector.i, ', ', sector.j);
+
+    // mesh.position.z = (sector.i ) * 1024;
+    // mesh.position.x = (sector.j ) * 1024;
+
+    mesh.position.x = t_size * (sector.j - 4);
+    mesh.position.y = t_size * -1 * (sector.i - 2);
+    mesh.overdraw = true;
+    group.addChild(mesh);
+    if (cb) {
+        cb();
+    }
+
+}
+
+function load_sectors() {
+
+    var url = 'http://localhost/map_sectors/4e21a364e4264fe45b00001b.json';
+    console.log('loading ', url);
+    jQuery.getJSON(url, null, function(sector, status) {
+        console.log('found sector', sector._id, '; status = ', status);
+        add_mesh(sector, function() {
+            var url = 'http://localhost/map_sectors/4e21a367e4264fe45b00001c.json';
+
+            console.log('loading ', url);
+            jQuery.getJSON(url, null, function(sector, status) {
+                console.log('found sector', sector._id, '; status = ', status);
+                add_mesh(sector,
+                        function() {
+                            var url = 'http://localhost/map_sectors/4e21a3b6e4264fe45b000033.json';
+
+                            console.log('loading ', url);
+                            jQuery.getJSON(url, null, function(sector, status) {
+                                console.log('found sector', sector._id, '; status = ', status);
+                                add_mesh(sector, animate)
+                            });
+
+                        }
+
+                );
+            });
+        });
+    });
+
+}
+
+var group;
+
+function init() {
+
+    container = document.getElementById('container');
+
+    camera = new THREE.Camera(60, window.innerWidth / window.innerHeight, 1, 1000000);
+    camera.position.x = -10000;
+    camera.position.y = 30000;
+    camera.rotation.x = -0.4;
+    ;
+    camera.useTarget = false;
+
+    scene = new THREE.Scene();
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    container.innerHTML = "";
+
+    container.appendChild(renderer.domElement);
+
+    stats = new Stats();
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.top = '0px';
+    container.appendChild(stats.domElement);
+
+
+    //	particleLight = new THREE.Mesh( new THREE.SphereGeometry( 4, 8, 8 ), new THREE.MeshBasicMaterial( { color: 0xffffff } ) );
+    //	scene.addObject( particleLight );
+
+    // Lights
+
+    scene.addLight(new THREE.AmbientLight(0x202020));
+
+    directionalLight = new THREE.DirectionalLight(Math.random() * 0xffffff);
+    directionalLight.position.x = -100;
+    directionalLight.position.y = 200;
+    directionalLight.position.z = 0;
+    directionalLight.position.normalize();
+    scene.addLight(directionalLight);
+
+    group = new THREE.Object3D();
+    group.rotation.x = -90 * deg_to_rad;
+    scene.addObject(group);
+
+				pointLight = new THREE.PointLight( 0xffffff, 10 );
+				scene.addLight( pointLight );
+
+    //		var ambient = new THREE.AmbientLight( 0x101010 );
+    //			scene.addLight( ambient );
+
+    //  document.addEventListener('mousemove', onDocumentMouseMove, false);
+
+    //document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+    //document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+    document.addEventListener('keydown', onDocumentKeyDown, false);
+    document.addEventListener('keyup', onDocumentKeyUp, false);
+
+}
+
+/**
+ * not used
+ *
+ * @param width int
+ * @param height int
+ * @param sector object
+ */
+
+function generateHeight(width, height, sector) {
+
+    var data = Float32Array ? new Float32Array() : [];
+    //perlin = new ImprovedNoise()
+    var size = width * height, quality = 2, z = Math.random() * 100;
+
+    for (var i = 0; i < size; i ++) {
+
+        data[ i ] = 0
+
+    }
+
+    for (var j = 0; j < 4; j ++) {
+
+        quality *= 4;
+
+        for (var i = 0; i < size; i ++) {
+
+            var x = i % width, y = ~~ ( i / width );
+            data[ i ] += Math.floor(Math.abs(perlin.noise(x / quality, y / quality, z) * 0.5) * quality + 10);
+
+        }
+
+    }
+
+    return data;
+
+}
+
+function generateTexture(data, width, height) {
+
+    var canvas, context, image, imageData,
+            level, diff, vector3, sun, shade;
+
+    vector3 = new THREE.Vector3(0, 0, 0);
+
+    sun = new THREE.Vector3(1, 1, 1);
+    sun.normalize();
+
+    canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+
+    context = canvas.getContext('2d');
+    context.fillStyle = '#000';
+    context.fillRect(0, 0, width, height);
+
+    image = context.getImageData(0, 0, width, height);
+    imageData = image.data;
+
+    for (var i = 0, j = 0, l = imageData.length; i < l; i += 4,j ++) {
+
+        vector3.x = data[ j - 1 ] - data[ j + 1 ];
+        vector3.y = 2;
+        vector3.z = data[ j - width ] - data[ j + width ];
+        vector3.normalize();
+
+        shade = vector3.dot(sun);
+
+        imageData[ i ] = ( 96 + shade * 128 ) * ( data[ j ] * 0.007 );
+        imageData[ i + 1 ] = ( 32 + shade * 96 ) * ( data[ j ] * 0.007 );
+        imageData[ i + 2 ] = ( shade * 96 ) * ( data[ j ] * 0.007 );
+
+    }
+
+    context.putImageData(image, 0, 0);
+
+    return canvas;
+
+}
+
+function onDocumentMouseMove(event) {
+
+    mouseX = event.clientX - windowHalfX;
+    mouseY = event.clientY - windowHalfY;
+
+}
+
+
+function onDocumentKeyDown(event) {
+
+    switch (event.keyCode) {
+
+        case 38:
+            moveForward = true;
+            break; // up
+        case 40:
+            moveBackwards = true;
+            break; // down
+        case 37:
+            moveLeft = true;
+            break; // left
+        case 39:
+            moveRight = true;
+            break; // right
+        case 65:
+            yawLeft = true;
+            break; // a
+        case 68:
+            yawRight = true;
+            break; // d
+        case 87:
+            moveUp/*pitchUp*/ = true;
+            break; // w
+        case 83:
+            moveDown/*pitchDown*/ = true;
+            break; // s
+        case 90:
+            rollLeft = true;
+            break; // z
+        case 67:
+            rollRight = true;
+            break; // c
+
+        case 16:
+            isShiftDown = true;
+            break;
+        case 17:
+            isCtrlDown = true;
+            break;
+
+    }
+
+}
+
+function onDocumentKeyUp(event) {
+
+    switch (event.keyCode) {
+
+        case 38:
+            moveForward = false;
+            break; // up
+        case 40:
+            moveBackwards = false;
+            break; // down
+        case 37:
+            moveLeft = false;
+            break; // left
+        case 39:
+            moveRight = false;
+            break; // right
+        case 65:
+            yawLeft = false;
+            break; // a
+        case 68:
+            yawRight = false;
+            break; // d
+        case 87:
+            moveUp/*pitchUp*/ = false;
+            break; // w
+        case 83:
+            moveDown/*pitchDown*/ = false;
+            break; // s
+        case 90:
+            rollLeft = false;
+            break; // z
+        case 67:
+            rollRight = false;
+            break; // c
+
+        case 16:
+            isShiftDown = false;
+            break;
+        case 17:
+            isCtrlDown = false;
+            break;
+    }
+}
+
+//
+
+function animate() {
+
+    requestAnimationFrame(animate);
+
+    render();
+    stats.update();
+
+}
+
+function render() {
+
+    //  camera.position.x += ( mouseX - camera.position.x ) * 0.1;
+    // camera.position.y += ( - mouseY - camera.position.y ) * 0.1;
+    if (moveUp) {
+        if (isShiftDown) {
+            camera.rotation.y += 0.1 * deg_to_rad;
+        } else if (isCtrlDown) {
+            directionalLight.position.y += 1 * deg_to_rad;
+            directionalLight.position.normalize();
+        } else {
+            camera.position.y += 10;
+        }
+    }
+
+    if (moveDown) {
+        if (isShiftDown) {
+            camera.rotation.y -= 0.1 * deg_to_rad;
+        } else if (isCtrlDown) {
+            directionalLight.position.y -= 1 * deg_to_rad;
+            directionalLight.position.normalize();
+        } else {
+            camera.position.y -= 10;
+        }
+    }
+    if (moveLeft) {
+        if (isShiftDown) {
+            camera.rotation.x -= 0.1 * deg_to_rad;
+        } else if (isCtrlDown) {
+            directionalLight.position.x -= 1 * deg_to_rad;
+            directionalLight.position.normalize();
+        } else {
+            camera.position.x -= 10;
+        }
+    }
+    if (moveRight) {
+
+        if (isShiftDown) {
+            camera.rotation.x += 0.1 * deg_to_rad;
+        } else if (isCtrlDown) {
+            directionalLight.position.x += 1 * deg_to_rad;
+            directionalLight.position.normalize();
+        } else {
+            camera.position.x += 10;
+        }
+    }
+    if (moveForward) {
+
+        if (isShiftDown) {
+            camera.rotation.z += 0.1 * deg_to_rad;
+        } else if (isCtrlDown) {
+            directionalLight.position.z += 1 * deg_to_rad;
+            directionalLight.position.normalize();
+        } else {
+            camera.position.z += 10;
+        }
+    }
+    if (moveBackwards) {
+
+        if (isShiftDown) {
+            camera.rotation.z -= 0.1 * deg_to_rad;
+        } else if (isCtrlDown) {
+            directionalLight.rotation.z -= 1 * deg_to_rad;
+        } else {
+            camera.position.z -= 10;
+        }
+    }
+
+    $('#info_x').html(camera.position.x);
+
+    $('#info_y').html(camera.position.y);
+
+    $('#info_z').html(camera.position.z);
+
+
+    $('#info_xr').html(parseInt(camera.rotation.x * rad_to_deg) + ',' + parseInt(directionalLight.rotation.x * rad_to_deg));
+
+    $('#info_yr').html(parseInt(camera.rotation.y * rad_to_deg) + ',' + parseInt(directionalLight.rotation.y * rad_to_deg));
+
+    $('#info_zr').html(parseInt(camera.rotation.z * rad_to_deg) + ',' + parseInt(directionalLight.rotation.z * rad_to_deg));
+
+    renderer.render(scene, camera);
+
+}
+
+
+$(function() {
+    init();
+    load_sectors();
+});
+
+</script>
+</head>
+<body>
+
+<div id="container"><br/><br/><br/><br/><br/>Generating...</div>
+<div id="info"><a href="http://github.com/mrdoob/three.js" target="_blank">three.js</a> - terrain demo. <a
+        href="canvas_geometry_terrain.html">generate another</a></div>
+<div class="coord" id="info_x">0</div>
+<div class="coord" id="info_y">0</div>
+<div class="coord" id="info_z">0</div>
+<div class="coord" id="info_xr">0</div>
+<div class="coord" id="info_yr">0</div>
+<div class="coord" id="info_zr">0</div>
+</body>
+</html>
