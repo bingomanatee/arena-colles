@@ -11,7 +11,7 @@ module.exports = {
 
     show: require('./map/actions/show'),
 
-    add: require('mvc/actions/add'),
+    add: require('./map/actions/add'),
 
     edit: require('mvc/actions/edit'),
 
@@ -38,8 +38,10 @@ module.exports = {
     analyze: require('./map/actions/analyze'),
 
     reference_color: require('./map/actions/reference_color'),
+
+    parse_images: require('./map/actions/parse_images'),
     
-    parse_sector_rows: require('./map/actions/parse_sector_rows'),
+   // parse_sector_rows: require('./map/actions/parse_sector_rows'),
     
     forms: {
         reference_color: require('./map/forms/reference_color')
@@ -72,9 +74,11 @@ module.exports = {
             
             context.post(app, '/maps/:id/reference_color', 'reference_color');
             
-            context.get(app, '/maps/:id/parse_rows/:sector_id', 'parse_sector_rows');
+   //         context.get(app, '/maps/:id/parse_rows/:sector_id', 'parse_sector_rows');
 
             context.get(app, '/img/sector_images/:id/:x/:y/:w/:h.png', 'sector_image');
+
+            context.get(app, '/maps/:id/parse_images', 'parse_images');
         });
     }
     

@@ -47,7 +47,7 @@ border-color: rgb(25, 50, 160);
 }
 
 input, textarea{
-    width: 10em;
+    width: 20em;
     padding: 0.5em;
     background-image: url(/theme/inputs/input.png);
     background-repeat: repeat-x;

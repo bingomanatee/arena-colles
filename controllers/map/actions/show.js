@@ -1,9 +1,8 @@
-var params_module = require('mvc/params');
-var model_module = require(MVC_MODELS);
-var Math_utils = require('util/math');
-var Tileset = require('mola/tileset');
+
+var mm = require(MVC_MODELS);
 
 module.exports = function(context) {
+    var rp = context.req_params(true);
     var self = this;
     var id = context.request.params.id;
     var params = context.params();
@@ -13,28 +12,13 @@ module.exports = function(context) {
         } else if (map) {
             params.map = params.item = map;
 
-            model_module.model('map_tiles', function(err, mt_model) {
+            mm.model('mapimage', function(err, mi_model) {
 
-                mt_model.all().toArray(function(err, tiles) {
-                    params.tiles = tiles_indexed;
-                    if (context.request.params.format == 'json') {
-                        
-                        var tiles_indexed = {};
-                        tiles.forEach(function(tile) {
-                            tileset = new Tileset(tile);
-                            tiles_indexed[tile.data_file.image_file] = tileset.as_json(false);
-                        });
-                        context.response.send(JSON.stringify(tiles_indexed, null, 2));
-                    } else {
-                        var tiles_indexed = {};
-                        tiles.forEach(function(tile) {
-                            tile.index = new Tileset(tile);
-                            tiles_indexed[tile.data_file.image_file] = tile;
-                        });
-                        params.tiles = tiles_indexed;
+                mi_model.find({map: mi_model._as_oid(id)}).toArray(
+                    function(err, images) {
+                    params.image_grid = _image_grid(images);
+                    params.images = images;
                         context.render(params);
-                    }
-
                 }); // end all
             }); // end map_tiles model
         } else {
@@ -43,3 +27,34 @@ module.exports = function(context) {
     });
     console.log(__filename, 'get returns now? ', result);
 };
+
+function _image_grid(images){
+    var grid = [];
+    var souths = [];
+    var wests = [];
+    images.forEach(function(image){
+        var south = parseInt(image.manifest.minimum_latitude);
+        var west = parseInt(image.manifest.westernmost_longitude);
+        souths.push(south);
+        wests.push(west);
+    });
+    wests = _.sortBy(_.uniq(wests), function(a){return a});
+    souths = _.sortBy(_.uniq(souths), function(a){return a});
+    console.log('souths: ', souths, ': wests: ', wests);
+    
+    souths.forEach(function(south){
+      var south_row = [];
+        wests.forEach(function(west, w){
+            images.forEach(function(image){
+                if (parseInt(image.manifest.westernmost_longitude) == west
+                    && parseInt(image.manifest.minimum_latitude) == south
+                    ){
+                    south_row[w] = image;
+                }
+            })
+
+        });
+        grid.push(south_row);
+    });
+    return grid;
+}
