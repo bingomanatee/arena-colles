@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <style type="text/css">
     body {
-        color: #71544e;
+        color: #993366;
         font-family: Monospace;
         font-size: 13px;
         text-align: center;
@@ -116,7 +116,7 @@ function add_mesh(sector, cb) {
     var data = sector.heights; // generateHeight( 512, 512, sector.heights );
     console.log('loading material ...');
 
-    var m_config = {map: THREE.ImageUtils.loadTexture('http://localhost/img/map_sector/' + sector._id + '/color.png'), needsUpdate: true };
+    var m_config = {map: THREE.ImageUtils.loadTexture('http://localhost/img/map_sector/' + sector._id + '/terrain.png'), needsUpdate: true };
     var material = new THREE.MeshPhongMaterial(m_config);
     // var material = new THREE.MeshLambertMaterial( { ambient: 0x000000, color: 0x55ff00, specular: 0x555555, shininess: 30, needsUpdate: true } )
 
@@ -132,7 +132,7 @@ function add_mesh(sector, cb) {
 
         var x = i % mesh_quality;
         var y = ~~ ( i / mesh_quality );
-        plane.vertices[ i ].position.z = ((data[ ( x * step ) + ( y * step * 512 ) ] * height_scale) - (50 * height_scale));
+        plane.vertices[ i ].position.z = (Math.max(0, data[ ( x * step ) + ( y * step * 512 ) ] * height_scale) - (50 * height_scale));
 
     }
     console.log('done');
@@ -158,35 +158,54 @@ function add_mesh(sector, cb) {
 
 }
 
-function load_sectors() {
+var _sector_list = [];
+var _check_sector_queue;
+function _load_sector(id) {
+    _sector_list.push({id: id, loaded: false});
+    var url = 'http://localhost/map_sectors/' + id + '.json';
 
-    var url = 'http://localhost/map_sectors/4e21a364e4264fe45b00001b.json';
     console.log('loading ', url);
     jQuery.getJSON(url, null, function(sector, status) {
         console.log('found sector', sector._id, '; status = ', status);
         add_mesh(sector, function() {
-            var url = 'http://localhost/map_sectors/4e21a367e4264fe45b00001c.json';
 
-            console.log('loading ', url);
-            jQuery.getJSON(url, null, function(sector, status) {
-                console.log('found sector', sector._id, '; status = ', status);
-                add_mesh(sector,
-                        function() {
-                            var url = 'http://localhost/map_sectors/4e21a3b6e4264fe45b000033.json';
-
-                            console.log('loading ', url);
-                            jQuery.getJSON(url, null, function(sector, status) {
-                                console.log('found sector', sector._id, '; status = ', status);
-                                add_mesh(sector, animate)
-                            });
-
-                        }
-
-                );
+            _sector_list.forEach(function(l) {
+                if (l.id == id) {
+                    l.loaded = true;
+                }
             });
-        });
+        })
     });
 
+}
+
+var last_done = -1;
+var _current_id = 0;
+
+function _sector_check(){
+    var done = 0;
+    _sector_list.forEach(function(l){
+        if(l.loaded){
+            ++done;
+        }
+    });
+    if (done == _sector_ids.length){
+        clearInterval(_s_check);
+        animate();
+    } else {
+        if (last_done != done){
+            console.log('finished sectors: ', done);
+            _load_sector(_sector_ids[_current_id]);
+            ++_current_id;
+        }
+        last_done = done;
+    }
+}
+
+var _sector_ids = ['4e21a364e4264fe45b00001b', '4e21a367e4264fe45b00001c',  "4e21a326e4264fe45b000005", "4e21a329e4264fe45b000006", '4e21a3b6e4264fe45b000033', '4e21a3b1e4264fe45b000032', '4e21a36ae4264fe45b00001d', "4e21a323e4264fe45b000004"];
+var _s_check = null;
+function load_sectors() {
+    _s_check = setInterval(_sector_check, 2000);
 }
 
 var group;
@@ -196,8 +215,8 @@ function init() {
     container = document.getElementById('container');
 
     camera = new THREE.Camera(60, window.innerWidth / window.innerHeight, 1, 1000000);
-    camera.position.x = -10000;
-    camera.position.y = 30000;
+    camera.position.x = -60000;
+    camera.position.y = 60000;
     camera.rotation.x = -0.4;
     ;
     camera.useTarget = false;
@@ -222,10 +241,10 @@ function init() {
 
     // Lights
 
-    scene.addLight(new THREE.AmbientLight(0x202020));
+   // scene.addLight(new THREE.AmbientLight(0x202020));
 
-    directionalLight = new THREE.DirectionalLight(Math.random() * 0xffffff);
-    directionalLight.position.x = -100;
+    directionalLight = new THREE.DirectionalLight( 0xffffff);
+    directionalLight.position.x = -10;
     directionalLight.position.y = 200;
     directionalLight.position.z = 0;
     directionalLight.position.normalize();
@@ -235,8 +254,8 @@ function init() {
     group.rotation.x = -90 * deg_to_rad;
     scene.addObject(group);
 
-				pointLight = new THREE.PointLight( 0xffffff, 10 );
-				scene.addLight( pointLight );
+   // pointLight = new THREE.PointLight(0xffffff, 10);
+  //  scene.addLight(pointLight);
 
     //		var ambient = new THREE.AmbientLight( 0x101010 );
     //			scene.addLight( ambient );
@@ -446,10 +465,10 @@ function render() {
         if (isShiftDown) {
             camera.rotation.y += 0.1 * deg_to_rad;
         } else if (isCtrlDown) {
-            directionalLight.position.y += 1 * deg_to_rad;
-            directionalLight.position.normalize();
+            directionalLight.position.y += 0.1;
+            //      directionalLight.position.normalize();
         } else {
-            camera.position.y += 10;
+            camera.position.y += 100;
         }
     }
 
@@ -457,20 +476,19 @@ function render() {
         if (isShiftDown) {
             camera.rotation.y -= 0.1 * deg_to_rad;
         } else if (isCtrlDown) {
-            directionalLight.position.y -= 1 * deg_to_rad;
-            directionalLight.position.normalize();
+            directionalLight.position.y -= 0.1;
+            //      directionalLight.position.normalize();
         } else {
-            camera.position.y -= 10;
+            camera.position.y -= 100;
         }
     }
     if (moveLeft) {
         if (isShiftDown) {
             camera.rotation.x -= 0.1 * deg_to_rad;
         } else if (isCtrlDown) {
-            directionalLight.position.x -= 1 * deg_to_rad;
-            directionalLight.position.normalize();
+            directionalLight.position.x -= 0.1;
         } else {
-            camera.position.x -= 10;
+            camera.position.x -= 100;
         }
     }
     if (moveRight) {
@@ -478,10 +496,10 @@ function render() {
         if (isShiftDown) {
             camera.rotation.x += 0.1 * deg_to_rad;
         } else if (isCtrlDown) {
-            directionalLight.position.x += 1 * deg_to_rad;
+            directionalLight.position.x += 0.1;
             directionalLight.position.normalize();
         } else {
-            camera.position.x += 10;
+            camera.position.x += 100;
         }
     }
     if (moveForward) {
@@ -489,10 +507,10 @@ function render() {
         if (isShiftDown) {
             camera.rotation.z += 0.1 * deg_to_rad;
         } else if (isCtrlDown) {
-            directionalLight.position.z += 1 * deg_to_rad;
-            directionalLight.position.normalize();
+            directionalLight.position.z += 0.1;
+            //     directionalLight.position.normalize();
         } else {
-            camera.position.z += 10;
+            camera.position.z += 100;
         }
     }
     if (moveBackwards) {
@@ -500,9 +518,15 @@ function render() {
         if (isShiftDown) {
             camera.rotation.z -= 0.1 * deg_to_rad;
         } else if (isCtrlDown) {
-            directionalLight.rotation.z -= 1 * deg_to_rad;
+            directionalLight.position.z -= 0.1;
         } else {
-            camera.position.z -= 10;
+            camera.position.z -= 100;
+        }
+    }
+
+    if (rollRight) {
+        if (isShiftDown) {
+            directionalLight.position.normalize();
         }
     }
 
@@ -513,11 +537,11 @@ function render() {
     $('#info_z').html(camera.position.z);
 
 
-    $('#info_xr').html(parseInt(camera.rotation.x * rad_to_deg) + ',' + parseInt(directionalLight.rotation.x * rad_to_deg));
+    $('#info_xr').html(parseInt(directionalLight.rotation.x * rad_to_deg) + ',' + (directionalLight.position.x ));
 
-    $('#info_yr').html(parseInt(camera.rotation.y * rad_to_deg) + ',' + parseInt(directionalLight.rotation.y * rad_to_deg));
+    $('#info_yr').html(parseInt(directionalLight.rotation.y * rad_to_deg) + ',' + (directionalLight.position.y ));
 
-    $('#info_zr').html(parseInt(camera.rotation.z * rad_to_deg) + ',' + parseInt(directionalLight.rotation.z * rad_to_deg));
+    $('#info_zr').html(parseInt(directionalLight.rotation.z * rad_to_deg) + ',' + (directionalLight.position.z ));
 
     renderer.render(scene, camera);
 
@@ -533,7 +557,7 @@ $(function() {
 </head>
 <body>
 
-<div id="container"><br/><br/><br/><br/><br/>Generating...</div>
+<div id="container" style="background-color: rgb(200,10,15)"><br/><br/><br/><br/><br/>Generating...</div>
 <div id="info"><a href="http://github.com/mrdoob/three.js" target="_blank">three.js</a> - terrain demo. <a
         href="canvas_geometry_terrain.html">generate another</a></div>
 <div class="coord" id="info_x">0</div>

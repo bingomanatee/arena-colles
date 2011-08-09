@@ -10,6 +10,8 @@ module.exports = {
     
     sector_slopemap: require('./map_sector/actions/slopemap'),
     
+    sector_terrainmap: require('./map_sector/actions/terrainmap'),
+    
     ij: require('./map_sector/actions/ij'),
     
     tile_icon: require('./map_sector/actions/tile_icon'),
@@ -21,11 +23,13 @@ module.exports = {
             };
             var context = new Context(context_config);
 
-            context.get(app, '/img/map_sectors/:id/color.png', 'sector_image');
+            context.get(app, '/img/map_sector/:id/color.png', 'sector_image');
             
-            context.get(app, '/img/map_sectors/:id/height.png', 'sector_height');
+            context.get(app, '/img/map_sector/:id/height.png', 'sector_height');
             
-            context.get(app, '/img/map_sectors/:id/slope.png', 'sector_slopemap');
+            context.get(app, '/img/map_sector/:id/slope.png', 'sector_slopemap');
+            
+            context.get(app, '/img/map_sector/:id/terrain.png', 'sector_terrainmap');
             
             context.get(app, '/map_sectors/ij/:i/:j/:map_id', 'ij');
             
