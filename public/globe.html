@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Globe</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="/js/jq.js"></script>
+    <script type="text/javascript" src="/js/3/build/Three.js"></script>
+    <script type="text/javascript" src="/js/3/extras/ImageUtils.js"></script>
+
+    <script type="text/javascript">
+
+        function Planet_Wedge(planet, segment, west_long){
+            this.planet = planet;
+            this.segment = segment;
+            this.west_long = west_long;
+            this.east_long = west_long - planet.deg_inc;
+            this.max_lat = segment.max_lat;
+            this.min_lat = segment.min_lat;
+        }
+
+        Planet_Wedge.prototype = {
+            render: function(){
+                var width = Math.min(this.planet.radius / 10, 10);
+                var width_segs = Math.min(16, Math.max(4, parseInt(width/5)));
+
+                var height = Math.sin(this.deg_inc/2 * degrees_to_radians) * this.planet.radius;
+                var height_segs = Math.min(16, Math.max(4, parseInt(height/5)));
+                var depth = height;
+                var depth_segs = height_segs;
+                var material = new THREE.MeshLambertMaterial( { ambient: 0x000000, color: 0x55ff00, specular: 0x555555, shininess: 30, needsUpdate: true } )
+                // THREE.CubeGeometry = function ( width, height, depth, segmentsWidth, segmentsHeight, segmentsDepth, materials, flipped, sides ) {
+
+                var cube = new THREE.CubeGeometry(width, height, depth, width_segs, height_segs, depth_segs, [material]);
+                cube.position.x = this.planet.radius;
+                cube.rotation.z = ((this.max_lat + this.min_lat) / 2) * degrees_to_radians;
+                cube.rotation.y = ((this.west_long + this.east_long) / 2) * degrees_to_radians;
+                this.cube = cube;
+                planet.center.addChild(cube);
+            }
+        }
+
+        function Planet_Segment(planet, max_lat){
+            this.planet = planet;
+            this.max_lat = max_lat;
+            this.min_lat = max_lat - planet.deg_inc;
+            this.deg_inc = planet.deg_inc;
+
+            this.wedges = [];
+        }
+
+        Planet_Segment.prototype = {
+            make_wedges: function(){
+                this.wedges = [];
+                for (var long = 360; long > -360; long -= this.deg_inc){
+                    var wedge = new Planet_Wedge(this.planet, this, long);
+                    this.wedges.push(wedge);
+                }
+            },
+
+            render: function(){
+                this.wedges.forEach(function(wedge){
+                    wedge.render();
+                })
+            }
+        }
+
+        function Planet(radius, deg_inc, cx, cy, cz) {
+            if (!deg_inc) {
+                deg_inc = 10;
+            }
+            if (!cx) cx = 0;
+            if (!cy) cy = 0;
+            if (!cz) cz = 0;
+            this.center = {x: cx, y: cy, z: cz};
+            this.deg_inc = deg_inc;
+        }
+
+        Planet.prototype = {
+            segments: [],
+
+            make_segments: function() {
+                for (var angle = 180; angle > -180; --angle) {
+                    var segment = new Planet_Segment(this, angle);
+                    this.segments.push(segment);
+                }
+            },
+
+            render: function () {
+                var self = this;
+                var material = new THREE.MeshLambertMaterial( { ambient: 0x000000, color: 0x55ff00, specular: 0x555555, shininess: 30, needsUpdate: true } );
+                // THREE.CubeGeometry = function ( width, height, depth, segmentsWidth, segmentsHeight, segmentsDepth, materials, flipped, sides ) {
+
+                var cube = new THREE.CubeGeometry(1, 1, 1, 1, 1, 1, [material]);
+                cube.position.x = this.center.x;
+                cube.position.y = this.center.y;
+                cube.position.z = this.center.z;
+                this.center = cube;
+
+                this.segments.forEach(function(segment){segment.render; });
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function init() {
+
+            container = document.getElementById('container');
+
+            camera = new THREE.Camera(60, window.innerWidth / window.innerHeight, 1, 1000000);
+            camera.position.x = -60000;
+            camera.position.y = 60000;
+            camera.rotation.x = -0.4;
+            ;
+            camera.useTarget = false;
+
+            scene = new THREE.Scene();
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            container.innerHTML = "";
+
+            container.appendChild(renderer.domElement);
+
+            stats = new Stats();
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.top = '0px';
+            container.appendChild(stats.domElement);
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        var radians_to_degrees = 180 / Math.PI;
+        var degrees_to_radians = Math.PI / 180;
+        var planet_radius = 10000;
+
+        var planet = new planet(planet_radius);
+
+        planet.make_segments();
+
+        planet.render();
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+</html>
