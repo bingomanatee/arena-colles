@@ -23,31 +23,13 @@ module.exports = {
 
     destroy: require('mvc/actions/destroy'),
 
- //   gen_coords: require('./map/actions/gen_coords'),
-
-    gen_sectors: require('./map/actions/gen_sectors'),
-    
-    zoom_back: require('./map/actions/zoom_back'),
-    
-    zoom_in: require('./map/actions/zoom_in'),
-    
-    tiles: require('./map/actions/tiles'),
-    
-    tile: require('./map/actions/tile'),
-    
-    analyze: require('./map/actions/analyze'),
-
-    reference_color: require('./map/actions/reference_color'),
-
     parse_images: require('./map/actions/parse_images'),
-    
-   // parse_sector_rows: require('./map/actions/parse_sector_rows'),
     
     forms: {
         reference_color: require('./map/forms/reference_color')
     },
     
-    tile_icon: require('./map/actions/tile_icon'),
+   // tile_icon: require('./map/actions/tile_icon'),
     
     route: function(app) {
         context_module(function(err, Context) {
@@ -55,28 +37,6 @@ module.exports = {
                 controller: module.exports
             };
             var context = new Context(context_config);
-
-         //   context.get(app, '/maps/:id/gen_coords', 'gen_coords');
-            
-            context.get(app, '/maps/:id/gen_sectors', 'gen_sectors');
-
-            context.get(app, '/maps/:id/zoom_back', 'zoom_back');
-            
-            context.get(app, '/maps/:id/zoom_in', 'zoom_in');
-            
-            context.get(app, '/maps/:id/tiles/:lon/:lat', 'tiles');
-            
-            context.get(app, '/maps/:id/tile/:tile_id.:format?', 'tile');
-            
-            context.get(app, '/img/tile_icon/:tile_id.png', 'tile_icon');
-            
-            context.get(app, '/maps/:id/analyze', 'analyze');
-            
-            context.post(app, '/maps/:id/reference_color', 'reference_color');
-            
-   //         context.get(app, '/maps/:id/parse_rows/:sector_id', 'parse_sector_rows');
-
-            context.get(app, '/img/sector_images/:id/:x/:y/:w/:h.png', 'sector_image');
 
             context.get(app, '/maps/:id/parse_images', 'parse_images');
         });
