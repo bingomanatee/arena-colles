@@ -2,6 +2,7 @@ var mm = require(MVC_MODELS);
 var gate = require('util/gate');
 
 module.exports = function(image, callback) {
+    var self = this;
     mm.model('mapimage_tile', function(err, mit_model) {
         _make_image_data(image, mit_model, callback);
     });
@@ -10,13 +11,17 @@ module.exports = function(image, callback) {
 
 function _make_image_data(image, mit_model, callback) {
     mit_model.remove({image: image._id}, function() {
-        _make_image_data_scale(image, mit_model, 128, function() {
-            _make_image_data_scale(image, mit_model, 64, function() {
-                _make_image_data_scale(image, mit_model, 32, callback);
-            });
-        });
+        _make_image_data_scale(image, mit_model, 128, callback);
     });
 }
+
+/*
+ function() {
+ _make_image_data_scale(image, mit_model, 64, function() {
+ _make_image_data_scale(image, mit_model, 32, callback);
+ });
+ });
+ */
 
 /**
  * make the preliminary data metrics
@@ -29,6 +34,7 @@ function _generate_data_sets(data_sets, image, scale) {
         for (var j = 0; j < image.cols; j += scale) {
             var data = {
                 image: image._id,
+                image_data: image,
                 min_image_i: i,
                 min_image_j: j,
                 max_image_i: i + scale,
@@ -49,49 +55,17 @@ function _generate_data_sets(data_sets, image, scale) {
  may extend past the image rows/cols
  */
 function _make_image_data_scale(image, mit_model, scale, callback) {
-
+    var tc = (image.rows * image.cols) / (128 * 128);
+    var total_inserts = 16 * tc;
     // load all slots into a work queue
     var data_sets = [];
     _generate_data_sets(data_sets, image, scale);
-    var writing_data_set = false;
-
-    /**
-     * write the data after
-     * it has been transferred from the image file.
-     * When the callback comes back from Mongo the scale_loop
-     * runs again.
-     *
-     * @param data
-     */
-    function _post_process_data(data) {
-        mit_model.put(data, function(err, new_data) {
-            console.log('... done writing data, ', new_data._id, 'j: ', data.min_abs_i, ',', data.min_abs_j);
-            writing_data_set = false;
-        });
-    }
-
-    /**
-     * pops one data off the data set at a time and
-     * wait for it to be saved
-     */
-    function _scale_loop() {
-        var data = false;
-
-        if (writing_data_set) {
-            return;
-        }
-        writing_data_set = true;
-
-        if (data_sets.length) {
-            data = data_sets.pop();
-            _process_heights(data, image, scale, _post_process_data);
-        } else {
-            clearInterval(scaleInterval);
-            callback();
-        }
-    }
-
-    var scaleInterval = setInterval(_scale_loop, 250);
+    //  var writing_data_set = false;
+    mit_model.config.coll.insert(data_sets, callback);
+    var count = mit_model.count(function(err, c) {
+        console.log('inserted ', data_sets.length, ' records into mapimage_tile: expected ', tc);
+        console.log(', % done: ', parseInt((100 * c) / total_inserts));
+    })
 }
 
 /*
