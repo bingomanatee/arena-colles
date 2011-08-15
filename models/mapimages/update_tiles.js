@@ -1,6 +1,8 @@
 var fs = require('fs');
 var mm = require(MVC_MODELS);
-
+var Pipe = require('util/pipe');
+var bin = require('util/binary');
+var import = require('mola2/import');
 /**
  *
  * this function loads height data into the mapimage_tiles.
@@ -11,113 +13,55 @@ var mm = require(MVC_MODELS);
  * @param max - the maximum row of the tile (in image_i)
  */
 
+//        this.action(params, this.static_params, this._act_done_callback(), this._pipe_done_callback());
+
+function _import_image_data(image, static_params, act_done, pipe_done) {
+    console.log('importing image ', image);
+
+    import(image, function(err, image_data) {
+
+        function _update_tile(param, sp2, a2_done, p2_done) {
+            tile_cursor.next(function(err, tile) {
+                if (!tile) {
+                    console.log('no tile - done with image ', image._id);
+                    return p2_done();
+                }
+                console.log('updating tile ', tile._id, tile.min_image_i, 'x', tile.min_image_j);
+
+                var height_rows = image_data.slice(tile.min_image_i, tile.max_image_i);
+                height_rows.forEach(function(row, i) {
+                    height_rows[i] = row.slice(tile.min_image_j, tile.max_image_j);
+                })
+
+                tile.heights = height_rows;
+                static_params.mit_model.put(tile, a2_done);
+
+            })
+        }
+
+     //   console.log('data read from image file: ', image_data.length, 'rows', image.rows, 'expected');
+        
+        var tile_cursor = static_params.mit_model.find({image: image._id, heights: {"$exists": false}});
+
+        //  tile_cursor.forEach(_update_tile, function(){ console.log('done with tiles'); act_done(); });
+
+        var pipe_2 = new Pipe(act_done, _update_tile, 200, false);
+        pipe_2.start();
+    });
+
+}
+
 module.exports = function (map_id, scale, callback) {
     var self = this;
 
-    this.for_map(map_id, function(err, images) {
-        images.forEach(function(image) {
-            _update_tiles_for_image(image, scale, function() {
-                console.log('done with image ', image._id)
-            });
-        });
-    })
-
-    callback();
-}
-
-
-function _update_tiles_for_image(image, scale, callback) {
-    var self = this;
-   //@TODO: destroy previous tiles
-
     mm.model("mapimage_tiles", function(err, mit_model) {
-        var work_queue = [];
-        for (var min = 0; min < image.rows; min += scale) {
-            var max = Math.min(image.rows, (min + scale));
-            console.log('loading chunk row ', min, ', to ', max, ' of image ', image._id, '(', image.rows, ' rows)');
+        self.for_map(map_id, function(err, images) {
 
-            work_queue.push({image: image, min: min, max: max});
-        }
+            var params = {scale: scale, mit_model: mit_model};
 
-        var working = false;
+            var pipe = new Pipe(callback, _import_image_data, 500, images, params);
 
-        function _check_queue() {
-            if (working) {
-                return;
-            }
-            working = true;
-
-            function _update_tiles(int_rows, work_def) {
-                function _on_tile(err, tile) {
-                    var first_row = tile.min_image_i - work_def.min; // should be zero
-                    var last_row = tile.max_image_i - work_def.min;
-
-                    if (isNaN(first_row) || isNaN(last_row)) {
-                        console.log(__filename, ': error creating first , last rows for tile ', tile);
-                        throw new Error('error slicing tiles');
-                    } else {
-                        var heights = [];
-                        for (var row = first_row; row <= last_row; ++row) {
-                            var height_row = int_rows[row].slice(tile.min_image_j, tile.max_image_j + 1);
-                            heights.push(height_row);
-                        }
-                        tile.heights = heights;
-                        mit_model.put(tile); //@TODO: gate?
-                    }
-                }
-
-                function _done_with_tiles(){
-                    working = false;
-                }
-
-                var query = {
-                    image: id,
-                    min_image_i: {"$gte": min},
-                    max_image_i: {"$lte": max},
-                    scale: scale
-                };
-
-                //@TODO: index by scale, image
-
-                var cursor = mit_model.find(query);
-
-                cursor.forEach(_on_tile, _done_with_tiles);
-            }
-
-            function _load_image_chunk(work_def) {
-                var byte_start = work_def.min * image.cols * 2;
-                var byte_end = (1 + work_def.max) * image.cols * 2;
-
-                var ints = [];
-                var int_rows = [];
-
-                var stream = fs.createReadStream(image.image_file, {start: byte_start, end: byte_end});
-                var raw_data = '';
-
-                stream.on('data', function(data) {
-                    raw_data += data;
-                    ints = bin.int_array(raw_data);
-                    while (ints.length > image.cols) {
-                        var row = ints.slice(0, cols);
-                        int_rows.push(row);
-                        ints = ints.slice(cols);
-                    }
-                });
-
-                stream.on('end', function() {
-                    if (ints.length){
-                        int_rows.push(row); // ????
-                    }
-                    _update_tiles(int_rows, work_def);
-                });
-            }
-
-            if (work_queue.length) {
-                var work_def = work_queue.pop();
-                _load_image_chunk(work_def);
-            }
-        }
-    });
-
-    // var wqi = setInterval(_check_queue, 1000);
+            pipe.start();
+        })
+    })
 }

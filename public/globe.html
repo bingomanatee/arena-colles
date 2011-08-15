@@ -3,143 +3,101 @@
 <head>
     <title>Globe</title>
     <meta charset="utf-8">
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            background-color: #39F
+        }
+    </style>
+
     <script type="text/javascript" src="/js/jq.js"></script>
     <script type="text/javascript" src="/js/3/build/Three.js"></script>
     <script type="text/javascript" src="/js/3/extras/ImageUtils.js"></script>
+    <script type="text/javascript" src="/js/3/RequestAnimationFrame.js"></script>
 
-    <script type="text/javascript">
+    <script type="text/javascript" src="/js/Planet.js">
 
-        function Planet_Wedge(planet, segment, west_long){
-            this.planet = planet;
-            this.segment = segment;
-            this.west_long = west_long;
-            this.east_long = west_long - planet.deg_inc;
-            this.max_lat = segment.max_lat;
-            this.min_lat = segment.min_lat;
-        }
-
-        Planet_Wedge.prototype = {
-            render: function(){
-                var width = Math.min(this.planet.radius / 10, 10);
-                var width_segs = Math.min(16, Math.max(4, parseInt(width/5)));
-
-                var height = Math.sin(this.deg_inc/2 * degrees_to_radians) * this.planet.radius;
-                var height_segs = Math.min(16, Math.max(4, parseInt(height/5)));
-                var depth = height;
-                var depth_segs = height_segs;
-                var material = new THREE.MeshLambertMaterial( { ambient: 0x000000, color: 0x55ff00, specular: 0x555555, shininess: 30, needsUpdate: true } )
-                // THREE.CubeGeometry = function ( width, height, depth, segmentsWidth, segmentsHeight, segmentsDepth, materials, flipped, sides ) {
-
-                var cube = new THREE.CubeGeometry(width, height, depth, width_segs, height_segs, depth_segs, [material]);
-                cube.position.x = this.planet.radius;
-                cube.rotation.z = ((this.max_lat + this.min_lat) / 2) * degrees_to_radians;
-                cube.rotation.y = ((this.west_long + this.east_long) / 2) * degrees_to_radians;
-                this.cube = cube;
-                planet.center.addChild(cube);
-            }
-        }
-
-        function Planet_Segment(planet, max_lat){
-            this.planet = planet;
-            this.max_lat = max_lat;
-            this.min_lat = max_lat - planet.deg_inc;
-            this.deg_inc = planet.deg_inc;
-
-            this.wedges = [];
-        }
-
-        Planet_Segment.prototype = {
-            make_wedges: function(){
-                this.wedges = [];
-                for (var long = 360; long > -360; long -= this.deg_inc){
-                    var wedge = new Planet_Wedge(this.planet, this, long);
-                    this.wedges.push(wedge);
-                }
-            },
-
-            render: function(){
-                this.wedges.forEach(function(wedge){
-                    wedge.render();
-                })
-            }
-        }
-
-        function Planet(radius, deg_inc, cx, cy, cz) {
-            if (!deg_inc) {
-                deg_inc = 10;
-            }
-            if (!cx) cx = 0;
-            if (!cy) cy = 0;
-            if (!cz) cz = 0;
-            this.center = {x: cx, y: cy, z: cz};
-            this.deg_inc = deg_inc;
-        }
-
-        Planet.prototype = {
-            segments: [],
-
-            make_segments: function() {
-                for (var angle = 180; angle > -180; --angle) {
-                    var segment = new Planet_Segment(this, angle);
-                    this.segments.push(segment);
-                }
-            },
-
-            render: function () {
-                var self = this;
-                var material = new THREE.MeshLambertMaterial( { ambient: 0x000000, color: 0x55ff00, specular: 0x555555, shininess: 30, needsUpdate: true } );
-                // THREE.CubeGeometry = function ( width, height, depth, segmentsWidth, segmentsHeight, segmentsDepth, materials, flipped, sides ) {
-
-                var cube = new THREE.CubeGeometry(1, 1, 1, 1, 1, 1, [material]);
-                cube.position.x = this.center.x;
-                cube.position.y = this.center.y;
-                cube.position.z = this.center.z;
-                this.center = cube;
-
-                this.segments.forEach(function(segment){segment.render; });
-
-                return this.center;
-            }
-        }
     </script>
 
     <script type="text/javascript">
 
-        function render(){
+        function render() {
             renderer.render(scene, camera);
         }
 
-        function animate (){
+        function animate() {
             requestAnimationFrame(animate);
 
             render();
         }
 
         function init() {
+            console.log('init');
 
-            container = document.getElementById('container');
-
-            camera = new THREE.Camera(60, window.innerWidth / window.innerHeight, 1, 1000000);
-           // camera.position.x = -60000;
-           // camera.position.y = 60000;
-          /  camera.rotation.x = -0.4;
-            ;
-            camera.useTarget = false;
+            container = $('#container');
+            console.log('container', container);
 
             scene = new THREE.Scene();
 
+            camera = new THREE.Camera(45, window.innerWidth / window.innerHeight, 1, 2000);
+            camera.position.y = 200;
+            camera.position.z = 800;
+
+            light = new THREE.DirectionalLight(0xffffff, 2.0);
+            light.position.z = -1;
+            light.position.x = 0.2;
+            light.position.y = 0.1;
+            light.position.normalize();
+            scene.addLight(light);
+
+            material = [
+                new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('/examples/textures/UV.jpg') }),
+                new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, opacity: 0.1 })
+            ];
+/*
+            var c = new THREE.CubeGeometry(100, 100, 100, 4, 4, 4);
+            var object = new THREE.Mesh(c, material);
+            object.position.x = - 200;
+            object.position.z = 200; */
+         //   scene.addObject(object);
+
+            // camera.position.x = -60000;
+            // camera.position.y = 60000;
+            //  camera.rotation.x = -0.4;
+
+            camera.useTarget = true;
+
             renderer = new THREE.WebGLRenderer();
             renderer.setSize(window.innerWidth, window.innerHeight);
+            /*
+             var planet = new Planet(1000, 30, 0, -10, 500);
+             planet.make_segments();
+             planet.render();
 
-            var planet = new Planet(1000, 30, 0, -10, 500);
+             container.empty();
+             container.append(renderer.domElement);
 
-            container.innerHTML = "";
-            container.appendChild(renderer.domElement);
+             scene.addObject(planet.center);
 
-            var planet_center = planet.render();
+             */
 
-            scene.addObject(planet_center);
+            planet = new Planet(400, 5, 0, 0, 0);
+            planet.render(scene);
+            var object = planet.center;
 
+            camera.position.x = object.position.x + 800;
+            camera.position.y = object.position.y + 300;
+            camera.position.z = object.position.z - 1000;
+
+            camera.target = object;
+            container.append(renderer.domElement);
             animate();
 
         }
@@ -151,20 +109,13 @@
         var degrees_to_radians = Math.PI / 180;
         var planet_radius = 10000;
 
-        var planet = new planet(planet_radius);
-
-        planet.make_segments();
-
-        planet.render();
+        $(init);
 
     </script>
 </head>
 
 <body>
-<div id="container" style="width: 100%; height: 100%; background-color: #360">
-    loading...
-
-
+<div id="container">
 </div>
 
 </body>
