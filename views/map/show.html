@@ -1,20 +1,27 @@
 <h1>Map of "<%= map.name %>"</h1>
-<%
+
+        <%
+
 var i0 = images[0];
 var keys = _.keys(i0.manifest);
-%>
-<h2>Images</h2>
+        %>
+
+
+        <h2>Images</h2>
 <table class="grid">
 <tr>
     <th>ID</th>
-    <th>Image File</th>
+    <th colspan="3">Image File</th>
     <th><%- keys.join('</th><th>') %></th>
 </tr>
-<% _.sortBy(_.filter(images, function(image){return image.manifest.name == 'MEDIAN_TOPOGRAPHY'})
-    , function(i){ return parseFloat(i.manifest.minimum_latitude); }).forEach(function(image) { %>
+    <!-- _.sortBy(_.filter(images, function(image){return image.manifest.name == 'MEDIAN_TOPOGRAPHY'})
+    , function(i){ return parseFloat(i.manifest.minimum_latitude); }).forEach(function(image) { -->
+<% images.forEach(function(image){ %>
     <tr>
-        <th><%= image._id %></th>
-        <th><%= image.image_file.split('/').pop() %></th>
+        <th><a href="/mapimages/<%= image._id %>" ><%= image._id %></a></th>
+     <th><%= image.image_file.split('/').pop() %></th>
+        <td><a href="/mapimages/<%= image._id %>/update_tile">Update Tiles</a></td>
+        <td><a href="/mapimages/<%= image._id %>.png">Show Image</a></td>
         <% keys.forEach(function(key){
         var value =  image.manifest[key];
         if (typeof(value) == 'object'){
@@ -29,11 +36,12 @@ var keys = _.keys(i0.manifest);
 
 <h2>Image Files Grid</h2>
 
+
  <table class="grid">
  <% image_grid.forEach(function(row, row_id){ %>
  <tr>
  <% row.forEach(function(image){ %>
-     <td><b><%= image._id %></b><br />
+     <td><b><a href="/mapimages/<%= image._id %>" ><%= image._id %></a></b><br />
          <dl>
             <% for (var image_prop in image) switch (image_prop){
              case '_id':
@@ -53,6 +61,6 @@ var keys = _.keys(i0.manifest);
 
  <% }) %>
  </table>
-
+ 
 <h3><a href="/maps/<%= map._id %>/parse_images">Parse Images</a></h3>
 <h3><a href="/mapimage_tiles/<%= map._id %>/gen_tiles">Generate Tiles</a></h3>

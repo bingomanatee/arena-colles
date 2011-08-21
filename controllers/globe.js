@@ -24,6 +24,8 @@ module.exports = {
 
     image: require('./globe/image'),
 
+    normal: require('./globe/normal'),
+
   //  parse_images: require('./map/actions/parse_images'),
 
     forms: {
@@ -40,6 +42,8 @@ module.exports = {
             var context = new Context(context_config);
 
            context.get(app, '/img/globe.png', 'image');
+
+           context.get(app, '/img/normal.png', 'normal');
         });
     }
 

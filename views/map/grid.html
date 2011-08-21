@@ -1,0 +1,25 @@
+
+ <table class="grid">
+ <% image_grid.forEach(function(row, row_id){ %>
+ <tr>
+ <% row.forEach(function(image){ %>
+     <td><b><%= image._id %></b><br />
+         <dl>
+            <% for (var image_prop in image) switch (image_prop){
+             case '_id':
+             break;
+             case 'manifest':
+             break;
+             default:
+             var image_value = image[image_prop];
+             %>
+             <dt><%= image_prop %></dt>
+             <dd><%= image_value %></dd>
+             <% } %>
+         </dl>
+     </td>
+     <% }) %>
+ </tr>
+
+ <% }) %>
+ </table>

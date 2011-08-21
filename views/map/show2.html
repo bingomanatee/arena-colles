@@ -1,0 +1,36 @@
+<%
+var i0 = images[0];
+var keys = _.keys(i0.manifest);
+%>
+<h2>Images</h2>
+<table class="grid">
+<tr>
+    <th>ID</th>
+    <th>Image File</th>
+    <th><%- keys.join('</th><th>') %></th>
+</tr>
+    <!-- _.sortBy(_.filter(images, function(image){return image.manifest.name == 'MEDIAN_TOPOGRAPHY'})
+    , function(i){ return parseFloat(i.manifest.minimum_latitude); }).forEach(function(image) { -->
+<% images.forEach(function(image){ %>
+    <tr>
+        <th><a href="/mapimages/" ><%= image._id %></a></th>
+      <% if (false ){ %>  <th><%= image.image_file.split('/').pop() %></th>
+        <% keys.forEach(function(key){
+        var value =  image.manifest[key];
+        if (typeof(value) == 'object'){
+            value = JSON.stringify(value);
+        }
+        %>
+        <td><%=  value %></td>
+        <% }) %>
+        <% } %>
+    </tr>
+<% }); %>
+</table>
+
+<h2>Image Files Grid</h2>
+
+
+<h3><a href="/maps/<%= map._id %>/parse_images">Parse Images</a></h3>
+<h3><a href="/mapimage_tiles/<%= map._id %>/gen_tiles">Generate Tiles</a></h3>
+<h3><a href="/mapimage_tiles/<%= map._id %>/update_tiles">Update Tile Heights (!SLOW!)</a></h3>

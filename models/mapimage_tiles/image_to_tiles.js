@@ -4,15 +4,11 @@ var gate = require('util/gate');
 module.exports = function(image, callback) {
     var self = this;
     mm.model('mapimage_tile', function(err, mit_model) {
-        _make_image_data(image, mit_model, callback);
+        mit_model.remove({image: image._id}, function() {
+            _make_image_data_scale(image, mit_model, 128, callback);
+        });
     });
 
-}
-
-function _make_image_data(image, mit_model, callback) {
-    mit_model.remove({image: image._id}, function() {
-        _make_image_data_scale(image, mit_model, 128, callback);
-    });
 }
 
 /*
@@ -53,6 +49,8 @@ function _generate_data_sets(data_sets, image, scale) {
  note - the max_image_j
  and max_image_i
  may extend past the image rows/cols
+
+ Here is where the data finally gets inserted.
  */
 function _make_image_data_scale(image, mit_model, scale, callback) {
     var tc = (image.rows * image.cols) / (128 * 128);
@@ -70,7 +68,9 @@ function _make_image_data_scale(image, mit_model, scale, callback) {
 
 /*
 
- break an image into tiles
+ DEPRECATED
+
+ load zeros into heights
 
  at this point the code simulates data loading by simply
  loading zeros into the data set.

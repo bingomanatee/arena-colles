@@ -8,7 +8,7 @@ module.exports = function(context) {
     var globemap = new Globemap(globe_manifest2);
     globemap.load(function() {
         console.log('loaded data');
-        var canvas = globemap.render();
+        var canvas = globemap.normal_map();
         console.log('retrieved canvas ', canvas);
        canvas.createPNGStream().pipe(context.response);
         //context.response.write();

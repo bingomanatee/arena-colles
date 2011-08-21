@@ -1,0 +1,38 @@
+<h1>Map Image <%= mapimage._id %></h1>
+
+<%
+var i = -1;
+var tcount = 1;
+%>
+
+<h2>Tile Grid</h2>
+
+<table class="grid">
+    <tr>
+        <th>count</th>
+        <th>I</th>
+        <th>J</th>
+    </tr>
+    <% tiles.forEach(function(tile){ %>
+    <% if (i != tile.min_image_i ) {
+    i = tile.min_image_i;
+    %>
+
+    <tr>
+        <td colspan="20"><h2><%= tile.min_image_i %> ROW</h2></td>
+    </tr>
+
+    <% } %>
+
+    <tr>
+        <th>
+            <%= tcount++ %>
+        </th>
+
+        <td><%= tile.min_image_i %></td>
+        <td>x <%= tile.min_image_j %></td>
+        <td><%= tile._id %></td>
+    </tr>
+    <% } ) %>
+    <tr><td><%= mapimage.rows * mapimage.cols / (128 * 128) %></td><td>expected</td></tr>
+</table>

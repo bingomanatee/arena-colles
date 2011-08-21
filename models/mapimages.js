@@ -12,6 +12,10 @@ module.exports = {
 
         gen_tiles:          require('./mapimages/gen_tiles'),
 
+        import_image_data:  require('./mapimages/import_image_data'),
+
+        color_map:          require('./mapimages/color_map'),
+
         update_tiles:       require('./mapimages/update_tiles')
     }
 }
