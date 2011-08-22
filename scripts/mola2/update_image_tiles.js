@@ -7,6 +7,7 @@ var Pipe = require('util/pipe');
  */
 module.exports.run = function() {
     var id = process.argv[3];
+    var start_row = parseInt(process.argv[4]);
 
     console.log('Map ID: ', id);
     mm.model('mapimage', function(err, mi_model){
@@ -16,7 +17,7 @@ module.exports.run = function() {
                 console.log('... ===== DONE ======= ');
             }
 
-            mi_model.update_tiles(image, 128, callback);
+            mi_model.update_tiles(image, 128, start_row, callback);
         })
 
     })

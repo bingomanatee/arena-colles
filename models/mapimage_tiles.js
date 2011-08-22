@@ -6,7 +6,7 @@ module.exports = {
             var index = {image: 1};
             console.log('indexing by ', index);
             self.index(index, false, function() {
-                self.index({image: 1, min_image_i: 1, min_image_j: 1}, false, function() {
+                self.index({image: 1, tile_i: 1, tile_j: 1, scale: 1}, false, function() {
                     callback(null, self);
                 });
             });

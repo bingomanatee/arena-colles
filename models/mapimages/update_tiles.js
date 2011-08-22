@@ -3,7 +3,78 @@ var pm = require('path');
 var fs = require('fs');
 var Pipe = require('util/pipe');
 var bin = require('util/binary');
+var util = require('util');
+var DBref = require('mongolian').DBRef;
+
 //var Gate = require('util/gate');
+
+function _stub() {
+}
+
+/* ************************ proc_int_row_slice ***************** */
+
+function proc_int_row_slice(image_id, i_offset, data, mir_model, callback) {
+    setTimeout(function() {
+        var record = {
+            _id: {
+                image: image_id,
+                row: i_offset
+            },
+            heights: data
+        };
+        mir_model.put(record, callback);
+    }, 10);
+}
+
+/* ************************ save_int_row_slice ***************** */
+
+function save_int_row_slice(image, i_offset, data, scale, mit_model, mi_model, tile_i, callback) {
+    var tile_j = 0;
+    tiles = [];
+    for (var j = 0; j < image.cols; j += scale) {
+        var heights = [];
+        for (var i = 0; i < data.length; ++i) {
+            heights[i] = data[i].slice(j, j + scale);
+        }
+
+        var query = {min_image_i: i_offset, min_image_j: j, image: image._id};
+
+        var img_ref = new DBref("mapimage", image._id);
+
+        var lon_incs = image.cols / scale;
+        var lat_incs = image.rows / scale;
+        var w = parseInt(image.manifest.westernmost_longitude);
+        var e = parseInt(image.manifest.easternmost_longitude);
+        var lon_span = w - e;
+        var tile_lon_width = lon_span / lon_incs;
+        var n = parseInt(image.manifest.maximum_latitude);
+        var s = parseInt(image.manifest.minimum_latitude);
+        var lat_span = n - s;
+        var tile_lat_width = lat_span / lat_incs;
+
+        var tile = {img_ref: img_ref,
+            scale: scale,
+            image: image._id,
+            tile_i: tile_i,
+            tile_j: tile_j,
+            w: w - (tile_j * tile_lon_width),
+            e: w - ((1 + tile_j) * tile_lon_width),
+            n: n - (tile_i * tile_lat_width),
+            s: n - (tile_i * tile_lat_width),
+            heights: heights};
+
+        tiles.push(tile);
+
+        ++tile_j;
+    }
+    image.lrp = tile_i;
+    mi_model.put(image);
+    console.log('processed row ', tile_i, 'of', image.rows / scale, 'rows');
+    mit_model.insert(tiles);
+    callback();
+}
+
+/* ************************ import data ************************ */
 /**
  * mapimage: update_tiles
  * updates all the tiles for  a single image id
@@ -12,90 +83,111 @@ var bin = require('util/binary');
  * @param callback
  */
 
-function _stub() {
-}
-/* ************************ save_int_row_slice ***************** */
+module.exports = function(image, scale, start_row, callback) {
+    var self = this;
+    start_row = parseInt(start_row);
+    scale = parseInt(scale);
+    console.log('start row: ', start_row);
 
-function save_int_row_slice(image, i_offset, data, scale, mit_model) {
-    for (var j = 0; j < image.cols; j += scale) {
-        var heights = [];
-        for (var i = 0; i < data.length; ++i) {
-            heights[i] = data[i].slice(j, j + scale);
-        }
+    function _on_parse() {
 
-        var query = {min_image_i: i_offset, min_image_j: j, image: image._id};
-        mit_model.update({"$set": {heights: heights}}, null, query);
-    }
-}
+        var start_time = new Date().getTime();
 
-/* ************************ import data ************************ */
+        mm.model('mapimage_row', function(err, mir_model) {
 
-module.exports = function(image, scale, callback) {
+            var path = image.image_file,
+                rows = image.rows,
+                cols = image.cols,
+                tile_i = start_row,
+                tile_j = 0,
+                i_offset = 0;
 
-    mm.model('mapimage_tile', function(err, mit_model) {
-        console.log(__filename, ': input ', image._id);
+            console.log(__filename, ': input ', image._id);
+//            if (start_row == 0) {
+//                mir_model.delete({image: image._id, scale: scale});
+//            }
 
-        var path = image.image_file,
-            rows = image.rows,
-            cols = image.cols,
-            i_offset = 0;
+            console.log(__filename, ': reading ', path, 'r', rows, 'c', cols);
+            if (!pm.existsSync(path)) {
+                throw new Error(__filename + ': cannot find ' + path);
+            }
 
-        console.log(__filename, ': reading ', path, 'r', rows, 'c', cols);
-        if (!pm.existsSync(path)) {
-            throw new Error(__filename + ': cannot find ' + path);
-        }
+            var file_info = fs.statSync(path);
+            console.log(file_info);
 
-        var file_info = fs.statSync(path);
-        console.log(file_info);
+            var bytes_per_row = image.cols * 2;
+            var read_config = {
+                bufferSize: 64 * 1024,
+                start: scale * start_row * bytes_per_row,
+                end: file_info.size
+            };
+            console.log('bytes_per_row: ', bytes_per_row);
+            console.log('estimated bytes', bytes_per_row * image.rows);
+            console.log('size:', file_info.size);
+            console.log('read config: ', read_config);
 
-        var read_config = {
-            bufferSize: 64 * 1024
-        };
+            var ints = [];
+            var int_rows = [];
 
-        var ints = [];
-        var int_rows = [];
+            var handle = fs.createReadStream(path, read_config);
+            var read_size = 0;
+            var last_percent = 0;
+            var data_count = 0;
+            var expected = (read_config.end - read_config.start) / 2;
 
-        var handle = fs.createReadStream(path, read_config);
-        var read_size = 0;
-        var last_percent = 0;
-        var data_count = 0;
-        var expected = rows * cols;
+            handle.on('data', function(data) {
+                ++data_count;
+                var new_data = bin.int_array(data);
+                read_size += new_data.length;
+                var percent = read_size * 100 / expected;
 
-        handle.on('data', function(data) {
-            ++data_count;
-            var new_data = bin.int_array(data);
-            ints = ints.concat(new_data);
-            while (ints.length >= cols) {
-                int_rows.push(ints.slice(0, cols));
-                ints = ints.slice(cols);
-
-                if (int_rows.length > scale) {
-
-                    var int_row_slice = int_rows.slice(0, scale + 1);
-                    int_rows = int_rows.slice(scale);
-
-                    save_int_row_slice(image, i_offset, int_row_slice, scale, mit_model);
-                    i_offset += scale;
+                ints = ints.concat(new_data);
+                while (ints.length >= cols) {
+                    int_rows.push(ints.slice(0, cols));
+                    ints = ints.slice(cols);
                 }
-            }
-            read_size += new_data.length;
-            var percent = read_size * 100 / expected;
-            if ((percent - last_percent) >= 10) {
-                console.log(parseInt(percent), '% read ', read_size, ' of ', expected, ' ints');
-                last_percent = percent;
-            }
+            });
+
+            handle.on('end', function() {
+                if (ints.length) {
+                    int_rows.push(ints);
+                }
+
+                var processing = false;
+                var write_interval = setInterval(function() {
+                    if (processing) {
+                        return;
+                    }
+                    processing = true;
+                    if (int_rows.length) {
+                        var int_row_slice = int_rows.slice(0, scale + 1);
+                        int_rows = int_rows.slice(scale);
+                        console.log('initializing ', tile_i);
+                        proc_int_row_slice(image._id, tile_i, int_row_slice, mir_model, function() {
+                            processing = false;
+                            console.log('row saved');
+                        });
+                        ++tile_i;
+                    } else {
+                        clearInterval(write_interval);
+                        callback();
+                    }
+
+                }, 100);
+
+
+                console.log(__filename, 'done reading image ', image._id);
+            })
+
         });
+    }
 
-        handle.on('end', function() {
-            if (ints.length) {
-                int_rows.push(ints);
-            }
-            save_int_row_slice(image, i_offset, int_rows, scale, mit_model);
-            console.log(__filename, ' >>>>>>>>>>>>>>>>>>>>>>>>>> DONE! ');
-            callback();
-        })
-
-    });
+    ;
+    if (start_row == 0) {
+        this.parse_image(image, _on_parse);
+    } else {
+        _on_parse();
+    }
 }
 
 

@@ -1,0 +1,71 @@
+info it worked if it ends with ok
+verbose cli [ 'node',
+verbose cli   '/Users/dave/local/node/bin/npm',
+verbose cli   'start',
+verbose cli   'forever',
+verbose cli   'scripts/mola2/update_tiles.js' ]
+info using npm@1.0.26
+info using node@v0.4.10-pre
+verbose config file /Users/dave/.npmrc
+verbose config file /Users/dave/local/node/etc/npmrc
+silly testEngine { name: 'forever',
+silly testEngine   preferGlobal: 'true',
+silly testEngine   description: 'A simple CLI tool for ensuring that a given node script runs continuously (i.e. forever)',
+silly testEngine   version: '0.6.5',
+silly testEngine   author: 
+silly testEngine    { name: 'Charlie Robbins',
+silly testEngine      email: 'charlie.robbins@gmail.com' },
+silly testEngine   contributors: 
+silly testEngine    [ { name: 'Fedor Indutny',
+silly testEngine        email: 'fedor.indutny@gmail.com' },
+silly testEngine      { name: 'James Halliday', email: 'mail@substack.net' } ],
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git://github.com/indexzero/forever.git' },
+silly testEngine   keywords: [ 'cli', 'fault tolerant', 'sysadmin', 'tools' ],
+silly testEngine   dependencies: 
+silly testEngine    { async: '0.1.x',
+silly testEngine      colors: '0.x.x',
+silly testEngine      cliff: '0.x.x',
+silly testEngine      eyes: '0.1.x',
+silly testEngine      daemon: '0.3.x',
+silly testEngine      mkdirp: '0.x.x',
+silly testEngine      nconf: '0.x.x',
+silly testEngine      optimist: '0.2.x',
+silly testEngine      pkginfo: '0.x.x',
+silly testEngine      portfinder: '0.x.x',
+silly testEngine      timespan: '2.0.x',
+silly testEngine      winston: '0.3.x' },
+silly testEngine   devDependencies: { vows: '0.5.x' },
+silly testEngine   bin: { forever: './bin/forever' },
+silly testEngine   main: './lib/forever',
+silly testEngine   scripts: { test: 'vows test/*-test.js --spec' },
+silly testEngine   engines: { node: '>= 0.4.0' },
+silly testEngine   _npmJsonOpts: 
+silly testEngine    { file: '/Users/dave/Documents/Arena_Colles/node_modules/forever/package.json',
+silly testEngine      wscript: false,
+silly testEngine      contributors: false,
+silly testEngine      serverjs: false },
+silly testEngine   _id: 'forever@0.6.5',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.26',
+silly testEngine   _nodeVersion: 'v0.4.10-pre',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /Users/dave/Documents/Arena_Colles/node_modules/forever/package.json
+verbose loadDefaults forever@0.6.5
+verbose run-script [ 'prestart', 'start', 'poststart' ]
+info prestart forever@0.6.5
+info start forever@0.6.5
+info poststart forever@0.6.5
+ERR! Error: ENOENT, No such file or directory '/Users/dave/Documents/Arena_Colles/node_modules/scripts/mola2/update_tiles.js/package.json'
+ERR! Report this *entire* log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Darwin 11.0.0
+ERR! command "node" "/Users/dave/local/node/bin/npm" "start" "forever" "scripts/mola2/update_tiles.js"
+ERR! cwd /Users/dave/Documents/Arena_Colles
+ERR! node -v v0.4.10-pre
+ERR! npm -v 1.0.26
+verbose exit [ 2, true ]
