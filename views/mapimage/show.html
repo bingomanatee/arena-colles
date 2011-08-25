@@ -12,14 +12,16 @@ var tcount = 1;
         <th>count</th>
         <th>I</th>
         <th>J</th>
+        <th>ID</th>
+        <th>Image ID</th>
     </tr>
     <% tiles.forEach(function(tile){ %>
-    <% if (i != tile.min_image_i ) {
-    i = tile.min_image_i;
+    <% if (i != tile.tile_i ) {
+    i = tile.tile_i;
     %>
 
     <tr>
-        <td colspan="20"><h2><%= tile.min_image_i %> ROW</h2></td>
+        <td colspan="20"><h2><%= tile.tile_i %> ROW</h2></td>
     </tr>
 
     <% } %>
@@ -29,9 +31,10 @@ var tcount = 1;
             <%= tcount++ %>
         </th>
 
-        <td><%= tile.min_image_i %></td>
-        <td>x <%= tile.min_image_j %></td>
+        <td><%= tile.tile_i %></td>
+        <td>x <%= tile.tile_j %></td>
         <td><%= tile._id %></td>
+        <td><%= tile.image %></td>
     </tr>
     <% } ) %>
     <tr><td><%= mapimage.rows * mapimage.cols / (128 * 128) %></td><td>expected</td></tr>

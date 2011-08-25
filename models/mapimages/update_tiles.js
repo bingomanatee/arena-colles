@@ -4,6 +4,7 @@ var fs = require('fs');
 var Pipe = require('util/pipe');
 var bin = require('util/binary');
 var util = require('util');
+var Gate = require('util/gate');
 var DBref = require('mongolian').DBRef;
 
 //var Gate = require('util/gate');
@@ -24,54 +25,6 @@ function proc_int_row_slice(image_id, i_offset, data, mir_model, callback) {
         };
         mir_model.put(record, callback);
     }, 10);
-}
-
-/* ************************ save_int_row_slice ***************** */
-
-function save_int_row_slice(image, i_offset, data, scale, mit_model, mi_model, tile_i, callback) {
-    var tile_j = 0;
-    tiles = [];
-    for (var j = 0; j < image.cols; j += scale) {
-        var heights = [];
-        for (var i = 0; i < data.length; ++i) {
-            heights[i] = data[i].slice(j, j + scale);
-        }
-
-        var query = {min_image_i: i_offset, min_image_j: j, image: image._id};
-
-        var img_ref = new DBref("mapimage", image._id);
-
-        var lon_incs = image.cols / scale;
-        var lat_incs = image.rows / scale;
-        var w = parseInt(image.manifest.westernmost_longitude);
-        var e = parseInt(image.manifest.easternmost_longitude);
-        var lon_span = w - e;
-        var tile_lon_width = lon_span / lon_incs;
-        var n = parseInt(image.manifest.maximum_latitude);
-        var s = parseInt(image.manifest.minimum_latitude);
-        var lat_span = n - s;
-        var tile_lat_width = lat_span / lat_incs;
-
-        var tile = {img_ref: img_ref,
-            scale: scale,
-            image: image._id,
-            tile_i: tile_i,
-            tile_j: tile_j,
-            w: w - (tile_j * tile_lon_width),
-            e: w - ((1 + tile_j) * tile_lon_width),
-            n: n - (tile_i * tile_lat_width),
-            s: n - (tile_i * tile_lat_width),
-            heights: heights};
-
-        tiles.push(tile);
-
-        ++tile_j;
-    }
-    image.lrp = tile_i;
-    mi_model.put(image);
-    console.log('processed row ', tile_i, 'of', image.rows / scale, 'rows');
-    mit_model.insert(tiles);
-    callback();
 }
 
 /* ************************ import data ************************ */

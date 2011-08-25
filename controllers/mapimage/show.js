@@ -38,8 +38,8 @@ module.exports = function(context) {
                 function _with_tiles(err, tiles) {
 
                     console.log('rendering tile ', util.inspect(tiles[0]) );
-                    tiles = _.sortBy(tiles, _ij);
-                    console.log('tiles sorted');
+                 //   tiles = _.sortBy(tiles, _ij);
+                 //   console.log('tiles sorted');
                     params.tiles = tiles;
                     console.log('rendering...');
                     context.render(params);
@@ -48,7 +48,7 @@ module.exports = function(context) {
                 mm.model('mapimage_tile', function(err, mit_model) {
                     var q = {image: image._id};
                     console.log('looking for ', q);
-                    mit_model.find(q, {heights: 0}).toArray(_with_tiles);
+                    mit_model.find(q, {heights: 0}).sort({tile_i: 1, tile_j: 1}).toArray(_with_tiles);
                 });
 
             }
