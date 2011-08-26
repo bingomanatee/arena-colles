@@ -16,6 +16,8 @@ module.exports = {
 
         color_map:          require('./mapimages/color_map'),
 
-        update_tiles:       require('./mapimages/update_tiles')
+        update_tiles:       require('./mapimages/update_tiles'),
+
+        update_bin:         require('./mapimages/update_bin')
     }
 }
