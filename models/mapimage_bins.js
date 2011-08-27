@@ -11,9 +11,10 @@ module.exports = {
                 });
             });
         },
-        image_to_tiles: require('./mapimage_tiles/image_to_tiles'),
+        save_bin: require('./mapimage_bin/save_bin'),
         ao_map: require('./mapimage_bin/ao_map'),
         color_map: require('./mapimage_bin/color_map'),
         update_tile: require('./mapimage_bin/update_tile')
     }
+
 }

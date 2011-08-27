@@ -6,6 +6,8 @@ var bin = require('util/binary');
 var util = require('util');
 var DBref = require('mongolian').DBRef;
 var pm = require('path');
+var util = require('util');
+var texp = require('util/texp');
 
 /**
  * Mapimage.update_bin
@@ -26,154 +28,150 @@ var pm = require('path');
 module.exports = function(image, scale, callback) {
     var self = this;
     scale = parseInt(scale);
+    var self = this;
 
-    console.log(__filename, ': parsing image', image._id, 'at scale', scale);
+    console.log('==================== UPDATE BIN ', image._id,
+        image.image_file, ' =================');
 
-    function _on_parse() {
+    mm.model('mapimage_bin', function(err, mib_model) {
 
         var start_time = new Date().getTime();
 
-        mm.model('mapimage_bin', function(err, mib_model) {
+        console.log('removing old bin records');
 
-            console.log(__filename, ': input ', image._id);
-
-            console.log(__filename, ': reading ', image.image_file, 'r', image.rows, 'c', image.cols);
-            if (!pm.existsSync(image.image_file)) {
-                throw new Error(__filename + ': cannot find ' + image.image_file);
+        mib_model.remove({image: image._id}, function(err) {
+            if (err) {
+                console.log('remove error:', err);
             }
 
-            var file_info = fs.statSync(image.image_file);
-            console.log(file_info);
+            console.log(__filename, ': parsing image', image._id, 'at scale', scale);
 
-            var bytes_per_row = image.cols * 2;
-            var row_buffers = [];
-            var data_buffers = [];
-            var read_config = {
-                bufferSize: bytes_per_row //,
-                // start: row * bytes_per_row,
-                //    end: (row + 1) * bytes_per_row
-            };
-
-            var digesting = false;
-
-            function _digest_data(){
-                if (digesting) return;
-                digesting = true;
-
-                var row_buffer;
-                var row_buffer_place = 0;
-                var data_start = 0;
-
-                while (data_start < data.length) {
-                    if (!row_buffer) {
-                        row_buffer = new Buffer(image.cols * 2);
-                    }
-
-                    var read_size = Math.min(data.length - data_start, row_buffer.length - row_buffer_place);
-                    var data_end = data_start + read_size;
-                    console.log('reading from data ', data_start, 'to', data_end, 'into place', row_buffer_place, 'of row buffer');
-                    row_buffer.copy(data, row_buffer_place, data_start, data_end);
-                    row_buffer_place += read_size;
-                    data_start += read_size;
-
-                    if (row_buffer_place >= row_buffer.length) {
-                        row_buffers.push(row_buffer);
-                        row_buffer_place = 0;
-                        console.log(row_buffers.length, 'rows read');
-                        delete row_buffer;
-                    }
-                }
-
-            }
-
-
-            var handle = fs.createReadStream(image.image_file, read_config);
-
-            handle.on('data', function(data) {
-                console.log('data cunk of size', data.length, 'read');
-                data_buffers.push(data);
-                _digest_data();
+            self.parse_image(image, function(err, image) {
+                console.log('image parsed; reading image');
+                _on_parse(image, scale, callback, mib_model, start_time)
             });
-
-            handle.on('end', function() {
-                console.log(row_buffers.length, 'rows read');
-                //  _read_row();
-                _slice_rows();
-            });
-
-            var bin_chunks_read = 0;
-
-            function _slice_rows() {
-                for (var row = 0; row < image.rows; row += scale)
-                    for (var col = 0; col < image.cols * 2; col += scale * 2) {
-
-                        console.log('slicing row', row, ', col', col);
-
-                        var bin_buffer = new Buffer(scale * scale * 2);
-                        var bin_buffer_start = 0;
-                        var chunk_size = scale * 2;
-
-                        for (r2 = row; r2 <= row + scale; ++r2) {
-                            for (c2 = col; c2 <= col + chunk_size; ++c2) {
-                                bin_buffer.copy(row_buffer[r2], bin_buffer_start, c2, c2 + chunk_size);
-                                bin_buffer_start += chunk_size;
-                            }
-                        }
-
-                        var gridfs = mib_model.config.db.gridfs();
-                        var stream = gridfs.create({
-                            filename: image._id + '/' + scale + '/' + row + '/' + col,
-                            image: image._id,
-                            row: row,
-                            col: col,
-                            scale: scale
-                        });
-
-                        stream.write(bin_buffer);
-                        stream.end();
-                        ++ bin_chunks_read;
-                        if (bin_chunks_read >= (img.rows * image.cols / (scale * scale))) {
-                            callback();
-                        }
-                    }
-            }
 
         });
-    }
-
-    this.parse_image(image, _on_parse);
+    });
 
 }
 
+function _on_parse(image, scale, callback, mib_model, start_time) {
+    console.log('_on_parse:', image._id, ',', image.rows, 'x', image.cols);
+    var bytes_per_row = image.cols * 2;
+    var current_bin_position = 0;
+    var row_buffers = [new Buffer(scale * 2)];
 
-function texp(mil) {
-    mil /= 1000;
-    mil = parseInt(mil);
-
-    var mins = parseInt(mil / 60);
-    var secs = mil % 60;
-
-    if (mins) {
-        return mins + ' mins, ' + secs + ' secs';
-    } else {
-        return secs + ' seconds';
+    console.log(__filename, ': reading ', image._id, '-', image.image_file, 'r', image.rows, 'c', image.cols);
+    if (!pm.existsSync(image.image_file)) {
+        throw new Error(__filename + ': cannot find ' + image.image_file);
     }
+
+    var file_info = fs.statSync(image.image_file);
+    console.log(file_info);
+
+    var read_config = {
+        bufferSize: bytes_per_row //,
+        // start: row * bytes_per_row,
+        //    end: (row + 1) * bytes_per_row
+    };
+
+    var handle = fs.createReadStream(image.image_file, read_config);
+
+    handle.on('data', function(data) {
+        //    console.log('data cunk of size', data.length, 'read');
+        current_bin_position = _digest_data(data, row_buffers, current_bin_position);
+    });
+
+    handle.on('end', function() {
+        console.log(row_buffers.length, 'rows read');
+        _save_row_bins(row_buffers, image, scale, mib_model, callback, start_time);
+    });
+
+    var bin_chunks_read = 0;
 }
 
-var last_rem_est = 0;
-var last_percent = 0;
 
-function _report_times(start_time, il_time, total_tiles, done_tiles) {
-    var now = new Date().getTime();
-    var tile_elapse = now - il_time;
+function _digest_data(buffer, row_buffers, current_bin_position) {
 
-    var fract_done = done_tiles / total_tiles;
-    var time_per_tile = tile_elapse / done_tiles;
+    var data_start = 0;
 
-    var rem_tiles = total_tiles - done_tiles;
-    var rem_time = rem_tiles * time_per_tile;
+    //console.log('reading a buffer that is', buffer.length, 'bytes long');
+    //   console.log('========= start status ===========');
+    //  console.log(row_buffers.length, 'bin, starting at position', current_bin_position);
+    //   console.log('... buffer length:', buffer.length);
+    var current_bin_row = row_buffers[row_buffers.length - 1];
+    while (data_start < buffer.length) {
 
-    console.log(' total time elapsed: ', texp(now - start_time), ' for <<<<', done_tiles, '>>>> of ', total_tiles, ' tiles');
-    console.log('% done: ', parseInt(fract_done * 100), '% time remaining:', texp(rem_time));
-    console.log('time per tile: ', parseInt(time_per_tile), 'mills, ', '----------------');
+        var remaining_data_size = buffer.length - data_start;
+        var remaining_row_room = current_bin_row.length - current_bin_position;
+
+        //     console.log('remaining_data_size:', remaining_data_size);
+        //     console.log('remaining_row_room:', remaining_row_room);
+
+        var read_amount = Math.min(remaining_data_size, remaining_row_room);
+        var data_end = data_start + read_amount;
+
+        buffer.copy(current_bin_row, current_bin_position,
+            data_start, data_end);
+
+        //  console.log('... from', current_bin_position, 'to', current_bin_position + read_amount, '; reading from data', data_start, 'to', data_end);
+
+        data_start = data_end;
+
+        current_bin_position += read_amount;
+        if (current_bin_position >= current_bin_row.length) {
+            current_bin_row = new Buffer(current_bin_row.length);
+            row_buffers.push(current_bin_row);
+            current_bin_position = 0;
+        }
+    }
+    //  console.log('done with buffer');
+
+    return current_bin_position
+}
+
+function _save_row_bins(row_buffers, image, scale, mib_model, callback, start_time) {
+    var buf_rows = parseInt(image.rows / scale);
+    var buf_cols = parseInt(image.cols / scale);
+    console.log('buffer rows: ', buf_rows, 'x', buf_cols);
+
+    console.log('saving row_buffers to mongo');
+    var buffer_columns = [];
+    for (var c = 0; c < buf_cols; ++c) {
+        buffer_columns[c] = [];
+    }
+
+    var c = 0;
+    row_buffers.forEach(function(buffer, index) {
+        buffer_columns[c].push(buffer);
+        ++c;
+        if (c >= buf_cols) {
+            c = 0;
+        }
+    });
+
+    var data_items = [];
+    for (var r = 0; r < buf_rows; ++r) {
+        for (var c = 0; c < buf_cols; ++c) {
+            var column = buffer_columns[c];
+            var b_columns = column.slice(c * scale, (c + 1) * scale);
+            data_items.push({b_columns: b_columns, r: r, c: c});
+        }
+    }
+
+    var pipe = new Pipe(callback, _save_bin, data_items, {image: image, scale: scale, start_time: start_time, mib_model: mib_model});
+
+    console.log('image bins saving: ', texp(new Date().getTime() - start_time));
+
+    pipe.start();
+}
+
+function _save_bin(data_item, statics, after, done) {
+    if (!data_item) {
+        console.log('saved all images for ', statics.image._id, ': time = ', texp(statics.start_time, true));
+        return done();
+    }
+
+    statics.mib_model.save_bin(statics.image, data_item.r, data_item.c, statics.scale, data_item.b_columns, after);
 }
