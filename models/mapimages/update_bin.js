@@ -8,7 +8,8 @@ var DBref = require('mongolian').DBRef;
 var pm = require('path');
 var util = require('util');
 var texp = require('util/texp');
-
+var neobuffer = require('neobuffer');
+var import = require('mola2/import');
 /**
  * Mapimage.update_bin
  *
@@ -76,87 +77,43 @@ function _on_parse(image, scale, callback, mib_model, start_time) {
         //    end: (row + 1) * bytes_per_row
     };
 
-    var handle = fs.createReadStream(image.image_file, read_config);
-
-    handle.on('data', function(data) {
-        //    console.log('data cunk of size', data.length, 'read');
-        current_bin_position = _digest_data(data, row_buffers, current_bin_position);
-    });
-
-    handle.on('end', function() {
-        console.log(row_buffers.length, 'rows read');
-        _save_row_bins(row_buffers, image, scale, mib_model, callback, start_time);
+    import(image, function(err, heights) {
+        _save_row_bins(heights, image, scale, mib_model, callback, start_time);
     });
 
     var bin_chunks_read = 0;
 }
 
 
-function _digest_data(buffer, row_buffers, current_bin_position) {
-
-    var data_start = 0;
-
-    //console.log('reading a buffer that is', buffer.length, 'bytes long');
-    //   console.log('========= start status ===========');
-    //  console.log(row_buffers.length, 'bin, starting at position', current_bin_position);
-    //   console.log('... buffer length:', buffer.length);
-    var current_bin_row = row_buffers[row_buffers.length - 1];
-    while (data_start < buffer.length) {
-
-        var remaining_data_size = buffer.length - data_start;
-        var remaining_row_room = current_bin_row.length - current_bin_position;
-
-        //     console.log('remaining_data_size:', remaining_data_size);
-        //     console.log('remaining_row_room:', remaining_row_room);
-
-        var read_amount = Math.min(remaining_data_size, remaining_row_room);
-        var data_end = data_start + read_amount;
-
-        buffer.copy(current_bin_row, current_bin_position,
-            data_start, data_end);
-
-        //  console.log('... from', current_bin_position, 'to', current_bin_position + read_amount, '; reading from data', data_start, 'to', data_end);
-
-        data_start = data_end;
-
-        current_bin_position += read_amount;
-        if (current_bin_position >= current_bin_row.length) {
-            current_bin_row = new Buffer(current_bin_row.length);
-            row_buffers.push(current_bin_row);
-            current_bin_position = 0;
-        }
+function _get_heights(heights, r, c, image, scale) {
+    out = [];
+    var last_row = (r + 1) * scale;
+    for (var i = r * scale; i < last_row; ++i) {
+        var j_start = c * scale;
+        var j_end = (c + 1) * scale;
+        var slice = heights[i].slice(j_start, j_end);
+       // console.log('concatenating slice length ', slice.length);
+        out = out.concat(slice);
     }
-    //  console.log('done with buffer');
 
-    return current_bin_position
+  //  util.log(['_get_heights: ', r,'x,',c, ':', out.length].join(' '));
+    return out;
 }
 
-function _save_row_bins(row_buffers, image, scale, mib_model, callback, start_time) {
+function _save_row_bins(heights, image, scale, mib_model, callback, start_time) {
     var buf_rows = parseInt(image.rows / scale);
     var buf_cols = parseInt(image.cols / scale);
     console.log('buffer rows: ', buf_rows, 'x', buf_cols);
 
-    console.log('saving row_buffers to mongo');
-    var buffer_columns = [];
-    for (var c = 0; c < buf_cols; ++c) {
-        buffer_columns[c] = [];
-    }
-
-    var c = 0;
-    row_buffers.forEach(function(buffer, index) {
-        buffer_columns[c].push(buffer);
-        ++c;
-        if (c >= buf_cols) {
-            c = 0;
-        }
-    });
-
     var data_items = [];
     for (var r = 0; r < buf_rows; ++r) {
         for (var c = 0; c < buf_cols; ++c) {
-            var column = buffer_columns[c];
-            var b_columns = column.slice(c * scale, (c + 1) * scale);
-            data_items.push({b_columns: b_columns, r: r, c: c});
+            var h = _get_heights(heights, r, c, image, scale);
+            var hbuf = new neobuffer.Buffer(h.length * 2);
+            h.forEach(function(v, vi){hbuf.writeInt16(v, vi * 2, 'big')});
+            var b = new Buffer(hbuf.length);
+            hbuf.copy(b);
+            data_items.push({heights: b, r: r, c: c});
         }
     }
 
@@ -173,5 +130,5 @@ function _save_bin(data_item, statics, after, done) {
         return done();
     }
 
-    statics.mib_model.save_bin(statics.image, data_item.r, data_item.c, statics.scale, data_item.b_columns, after);
+    statics.mib_model.save_bin(statics.image, data_item.r, data_item.c, statics.scale, data_item.heights, after);
 }

@@ -28,6 +28,8 @@ module.exports = {
     forms: {
         reference_color: require('./map/forms/reference_color')
     },
+
+    animate: require('./map/actions/animate'),
     
    // tile_icon: require('./map/actions/tile_icon'),
     
@@ -39,6 +41,8 @@ module.exports = {
             var context = new Context(context_config);
 
             context.get(app, '/maps/:id/parse_images', 'parse_images');
+
+            context.get(app, '/maps/:id/animate', 'animate');
         });
     }
     

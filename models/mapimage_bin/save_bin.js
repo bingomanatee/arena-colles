@@ -3,25 +3,12 @@ var DBRef = bson.DBRef;
 var fs = require('fs');
 var fsu = require('util/fs');
 
-module.exports = function(image, r, c, scale, b_columns, callback) {
+module.exports = function(image, r, c, scale, heights, callback) {
     var self = this;
     var buffer = new Buffer(scale * scale * 2);
 
-    b_columns.forEach(function(b_buffer, index) {
-        b_buffer.copy(buffer, index * scale * 2);
-    });
-
     var dir = image.bin_path + '/' + r + '/' + c;
     var filename = dir + '/' + scale + '.bin';
-
-    /*
-
-     var gridfs = this.config.db.gridfs();
-
-     var stream = gridfs.create(filename).writeStream();
-     stream.write(buffer);
-     stream.end();
-     */
 
     fsu.ensure_dir(dir);
     var stream = fs.createWriteStream(filename);
@@ -40,9 +27,10 @@ module.exports = function(image, r, c, scale, b_columns, callback) {
             ]
         };
 
+
         console.log('saving file', filename);
-        self.put(data, callback);
+        self.annotate(bin, callback);
     });
-    stream.write(buffer);
+    stream.write(heights);
     stream.end();
 }

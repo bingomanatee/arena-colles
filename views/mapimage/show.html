@@ -1,29 +1,53 @@
 <h1>Map Image <%= mapimage._id %></h1>
 
 <%
-var i = -1;
+var r = -1;
 var tcount = 1;
 %>
+
+<h2>Images</h2>
+<table>
+    <% for (var i = 0; i < 10; ++i ){ %>
+    <tr>
+        <% for (var j = 0; j < 10; ++j ) { %>
+        <td>
+            <% tiles.forEach(function(tile){
+            if (tile.r == i && tile.c == j){ %>
+           <a href="/mapimage_bins/<%= tile._id %>"> <img src="/img/mapimage_bin/<%= tile._id %>/color_map.png" width="128" height="128"/></a>
+            <% }
+            }); %>
+        </td>
+        <% } %>
+    </tr>
+
+    <% } %>
+</table>
 
 <h2>Tile Grid</h2>
 
 <table class="grid">
-    <tr>
-        <th>count</th>
-        <th>I</th>
-        <th>J</th>
-        <th>ID</th>
-        <th>Image ID</th>
-    </tr>
-    <% tiles.forEach(function(tile){ %>
-    <% if (i != tile.tile_i ) {
-    i = tile.tile_i;
+    <% tiles.forEach(function(tile, tile_index){ %>
+    <%
+    if (r != tile.r ) {
+    r = tile.r;
     %>
 
     <tr>
-        <td colspan="20"><h2><%= tile.tile_i %> ROW</h2></td>
+        <td colspan="20"><h2><%= tile.r %> ROW</h2></td>
     </tr>
 
+    <tr>
+        <th>count</th>
+        <th>r</th>
+        <th>c</th>
+        <th>ID</th>
+        <th>N</th>
+        <th>S</th>
+        <th>W</th>
+        <th>E</th>
+        <th>Binary Data Path</th>
+        <th>Color Image</th>
+    </tr>
     <% } %>
 
     <tr>
@@ -31,11 +55,23 @@ var tcount = 1;
             <%= tcount++ %>
         </th>
 
-        <td><%= tile.tile_i %></td>
-        <td>x <%= tile.tile_j %></td>
+        <td><%= tile.r %></td>
+        <td>x <%= tile.c %></td>
         <td><%= tile._id %></td>
-        <td><%= tile.image %></td>
+        <td><%= tile.north %></td>
+        <td><%= tile.south %></td>
+        <td><%= tile.west %></td>
+        <td><%= tile.east %></td>
+        <td><%= tile.bin_path[0].filename %></td>
+        <td>     <a href="/mapimage_bins/<%= tile._id %>"><%= tile._id %></a></td>
     </tr>
     <% } ) %>
-    <tr><td><%= mapimage.rows * mapimage.cols / (128 * 128) %></td><td>expected</td></tr>
+    <tr>
+        <td><%= mapimage.rows * mapimage.cols / (128 * 128) %></td>
+        <td>expected</td>
+    </tr>
 </table>
+
+ <pre>
+     <%= JSON.stringify(mapimage, 0, 2)%>
+ </pre>

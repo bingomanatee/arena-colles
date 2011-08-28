@@ -37,18 +37,16 @@ module.exports = function(context) {
 
                 function _with_tiles(err, tiles) {
 
-                    console.log('rendering tile ', util.inspect(tiles[0]) );
-                 //   tiles = _.sortBy(tiles, _ij);
-                 //   console.log('tiles sorted');
+                    console.log('rendering tile ', util.inspect(tiles[0]));
                     params.tiles = tiles;
                     console.log('rendering...');
                     context.render(params);
                 }
 
-                mm.model('mapimage_tile', function(err, mit_model) {
+                mm.model('mapimage_bin', function(err, mib_model) {
                     var q = {image: image._id};
                     console.log('looking for ', q);
-                    mit_model.find(q, {heights: 0}).sort({tile_i: 1, tile_j: 1}).toArray(_with_tiles);
+                    mib_model.find(q, {heights: 0}).sort({r: 1, c: 1}).toArray(_with_tiles);
                 });
 
             }

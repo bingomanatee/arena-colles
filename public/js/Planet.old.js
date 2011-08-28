@@ -10,7 +10,7 @@ function Planet_Wedge(planet, segment, l) {
 Planet_Wedge.prototype = {
     material:  [
         new THREE.MeshPhongMaterial({ color: 0.8 * 0xffffff, opacity: 1 }) //,
-        // new THREE.MeshBasicMaterial({ color: 0xffffff, opacity: 0.5, wireframe: true })
+       // new THREE.MeshBasicMaterial({ color: 0xffffff, opacity: 0.5, wireframe: true })
     ],
 
     cube_g: false,
@@ -84,13 +84,16 @@ Planet_Segment.prototype = {
     }
 }
 
-function Planet(config) {
-    this.center = {x: 0, y: 0, z: 0};
-    this.deg_inc = 10;
-    this.radius = 1000;
-    this.center = false;
-    _.defaults(this, config);
-
+function Planet(radius, deg_inc, cx, cy, cz) {
+    if (!deg_inc) {
+        deg_inc = 10;
+    }
+    if (!cx) cx = 0;
+    if (!cy) cy = 0;
+    if (!cz) cz = 0;
+    this.center = {x: cx, y: cy, z: cz};
+    this.deg_inc = deg_inc;
+    this.radius = radius;
 }
 
 Planet.prototype = {
@@ -105,21 +108,32 @@ Planet.prototype = {
     },
 
     render: function (scene) {
+
+        //  console.log('planet.render');
+
         var self = this;
 
         material = [
-            new THREE.MeshLambertMaterial({ color: 0xff3366, opacity: 1 }),
+            //    new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('/examples/textures/UV.jpg') }),
             new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, opacity: 0.1 })
         ];
 
-        var s = new THREE.SphereGeometry(this.radius / 4, 8, 8);
-        var sphere = new THREE.Mesh(s, material);
+        var c = new THREE.SphereGeometry(this.radius / 4, 8, 8);
+        var cube = new THREE.Mesh(c, material);
 
-        sphere.position.x = this.center.x;
-        sphere.position.y = this.center.y;
-        sphere.position.z = this.center.z;
+        cube.position.x = this.center.x;
+        cube.position.y = this.center.y;
+        cube.position.z = this.center.z;
 
-        scene.addObject(sphere);
-        this.center = sphere;
+        scene.addObject(cube);
+        this.center = cube;
+
+        this.make_segments();
+        this.segments.forEach(function(segment, s) {
+            //     console.log('rendering segment ', s);
+            segment.render();
+        });
+
+        return this.center;
     }
 }
