@@ -1,19 +1,21 @@
 <%
-
 [
     { prefix: '/js',
     libs: ['underscore']
     },
-    { prefix: '/js/3',
-      libs: ['build/Three', 'extras/ImageUtils', 'RequestAnimationFrame']
+    { prefix: '/js/3/build',
+      libs: ['Three']
     },
-    { prefix: '/js/map/MARS_ANI',
-      libs: ['index', 'Ani_Queue', 'materials', 'create_cube', 'animate', 'init']
-    }
+    { prefix: '/js/3',
+      libs: ['Detector',  'RequestAnimationFrame', 'Stats']
+    },
+        {prefix: '/js/map/MARS_ANI',
+        libs: ['index','animate', 'config', 'Planet', 'init']
+        }
 ] .forEach(function(libset){
         console.log(libset);
      libset.libs.forEach(function(lib){
-        console.log(lib); 
+        console.log(lib);
         js_paths.push(libset.prefix + '/' + lib + '.js');
     });
 });
@@ -24,9 +26,10 @@ console.log('paths: ', js_paths.join(','));
 
 <h1><%= map.name %></h1>
 
-<div id="threeD" style="width: 400px; height: 300px; background-color: black;">
-</div>
 
 <script language="javascript">
-    $(init);
+    $(function(){init(); MARS_ANI.animator.animate();});
 </script>
+
+<div id="threeD" style="width: 800px; height: 800px; background-color: white;">
+</div>

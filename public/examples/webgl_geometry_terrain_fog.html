@@ -94,7 +94,7 @@
 				texture = new THREE.Texture( generateTexture( data, worldWidth, worldDepth ), new THREE.UVMapping(), THREE.ClampToEdgeWrapping, THREE.ClampToEdgeWrapping );
 				texture.needsUpdate = true;
 
-				mesh = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: texture } ) );
+				mesh = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { map: texture } ) );
 				mesh.rotation.x = - 90 * Math.PI / 180;
 				scene.addObject( mesh );
 

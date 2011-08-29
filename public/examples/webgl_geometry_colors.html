@@ -118,7 +118,7 @@
 
 						f.vertexColors[ j ] = color;
 
-						color = new THREE.Color( 0x-ffffff );
+						color = new THREE.Color( 0xffffff );
 						color.setHSV( 0.0, ( p.y + 1 ) / 2, 1.0 );
 
 						f2.vertexColors[ j ] = color;
@@ -182,8 +182,8 @@
 			//
 
 			function animate() {
-                var self = this;
-				requestAnimationFrame( function(){ self.animate()});
+
+				requestAnimationFrame( animate );
 
 				render();
 				stats.update();

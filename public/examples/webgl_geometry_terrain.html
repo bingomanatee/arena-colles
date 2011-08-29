@@ -85,8 +85,9 @@
 
 				var geometry = new THREE.PlaneGeometry( 7500, 7500, worldWidth - 1, worldDepth - 1 );
 
-				for ( var i = 0, l = geometry.vertices.length; i < l; i ++ ) {
 
+
+				for ( var i = 0, l = geometry.vertices.length; i < l; i ++ ) {
 					geometry.vertices[ i ].position.z = data[ i ] * 10;
 
 				}
