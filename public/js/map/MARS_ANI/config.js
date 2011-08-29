@@ -3,6 +3,7 @@ function _init_camera(w, h) {
     MARS_ANI.camera.position.x = 0;
     MARS_ANI.camera.position.y = 100;
     MARS_ANI.camera.position.z = -600;
+    MARS_ANI.camera.m   
 }
 
 function _init_light() {
@@ -14,9 +15,9 @@ function _init_light() {
 }
 
 function _init_objects(){
-    var p = new MARS_ANI.Planet({radius: 400, deg_inc: 8});
+    MARS_ANI.planet = new MARS_ANI.Planet({radius: 400, deg_inc: 10});
 
-    p.create();
+    MARS_ANI.planet.create();
 }
 
 function _init_renderer(w, h) {
