@@ -6,10 +6,12 @@ var tcount = 1;
 %>
 
 <h2>Images</h2>
+        <h3>zoom</h3>
+
 <table>
-    <% for (var i = 0; i < 10; ++i ){ %>
+    <% for (var i = 0; i < 5; ++i ){ %>
     <tr>
-        <% for (var j = 0; j < 10; ++j ) { %>
+        <% for (var j = 0; j < 5; ++j ) { %>
         <td>
             <% tiles.forEach(function(tile){
             if (tile.r == i && tile.c == j){ %>
@@ -23,8 +25,24 @@ var tcount = 1;
     <% } %>
 </table>
 
+        <h3>reduced</h3>
+
+
+ <img src="/img/mapimage/<%= mapimage._id %>/color_map.png?zoom=16" />
 <h2>Tile Grid</h2>
 
+        <table class="grid">
+            <tr>
+                <th>North</th>
+                <td><%= mapimage.north %></td>
+                <th>South</th>
+                <td><%= mapimage.south %></td>
+                <th>East</th>
+                <td><%= mapimage.east %></td>
+                <th>West</th>
+                <td><%= mapimage.west %></td>
+            </tr>
+        </table>
 <table class="grid">
     <% tiles.forEach(function(tile, tile_index){ %>
     <%

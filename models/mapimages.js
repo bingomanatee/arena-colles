@@ -15,6 +15,8 @@ module.exports = {
         import_image_data:  require('./mapimages/import_image_data'),
 
         color_map:          require('./mapimages/color_map'),
+        
+        color_map_segment:          require('./mapimages/color_map_segment'),
 
         update_tiles:       require('./mapimages/update_tiles'),
 

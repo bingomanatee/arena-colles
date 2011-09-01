@@ -4,7 +4,10 @@ module.exports = function(Context, gate) {
         //  console.log(__filename, ': this = ', this, '; this.request = ', this.request, '; out = ', out);
         if (merge_params && this.request.hasOwnProperty('params')) {
              // console.log(__filename, ': merging params ', this.request.params);
-            out = _.defaults(out, this.request.params);
+             _.defaults(out, this.request.params);
+        }
+        if (merge_params && this.request.hasOwnProperty('query')){
+           _.defaults(out, this.request.query);
         }
         return out;
     }
