@@ -6,6 +6,7 @@ module.exports = function(image, callback) {
     image.rows = parseInt(image.manifest.lines);
     image.cols = parseInt(image.manifest.line_samples);
     image.bin_path = _bin_path(image);
+    image.scale = parseInt(image.manifest.map_resolution.value);
 
     console.log('updating image data');
     this.put(image, callback ? callback : function() {
