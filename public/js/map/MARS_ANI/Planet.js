@@ -85,8 +85,8 @@ function _make_planet() {
                         mesh.updateMatrix();
                         mesh.matrixAutoUpdate = false;
 
-                        console.log('adding ', points, ' point mesh, visible at ', range,
-                            '; lod pos:', lod.position);
+                      //  console.log('adding ', points, ' point mesh, visible at ', range,
+                      //      '; lod pos:', lod.position);
                         lod.add(mesh, range);
                     }
 
@@ -99,7 +99,7 @@ function _make_planet() {
             }
         },
 
-        create: function (scene) {
+        create: function () {
             var self = this;
 
             this._center = new THREE.Trident();
@@ -123,8 +123,8 @@ function _make_planet() {
             }
 
             var rad_2 = this._rad_2(lat, true);
-            var x = Math.sin(lon) * rad_2;
-            var y = Math.sin(lat) * this.radius;
+            var y = Math.sin(lon) * rad_2;
+            var x = Math.sin(lat) * this.radius;
             var z = Math.cos(lon) * rad_2;
 
             return {x: x, y: y, z: z};

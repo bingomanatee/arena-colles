@@ -1,0 +1,48 @@
+<h1>Segments</h1>
+<%
+var divs = parseInt(divs);
+var zoom = parseInt(zoom);
+
+[
+{ prefix: '/js',
+libs: ['underscore']
+}
+] .forEach(function(libset){
+libset.libs.forEach(function(lib){
+js_paths.push(libset.prefix + '/' + lib + '.js');
+});
+});
+
+function _neg(value) {
+if (value < 0) {
+return Math.abs(value) + 'n';
+}
+return value;
+}
+
+%>
+<p><b>Divs:</b> <%= divs %>, <b>Zoom:</b> <%= zoom %></p>
+<table class="grid">
+    <tr>
+        <th>&nbsp;</th>
+
+        <% for (var lon = -180; lon < 180; lon += divs ) { %>
+        <th><%= lon %></th>
+        <% } %>
+    </tr>
+    <% for (var lat = 90 - divs; lat >= -90; lat -= divs){ %>
+    <tr>
+        <th><%= lat %></th>
+        <% for (var lon = -180; lon < 180; lon += divs ) {
+        var props = [lat + divs, lat, lon + divs, lon, zoom];
+        props.forEach(function(p,i){
+        if (p < 0){
+           props[i] = Math.abs(p) + 'n';
+        }
+        });
+        %>
+        <td><img src="/img/mapimage_segments/<%= props.join('/') %>/color_map.png"/></td>
+        <% } %>
+    </tr>
+    <% } %>
+</table>

@@ -15,7 +15,7 @@ function _init_light() {
 }
 
 function _init_objects(){
-    MARS_ANI.planet = new MARS_ANI.Planet({radius: 400, deg_inc: 10});
+    MARS_ANI.planet = new MARS_ANI.Planet({radius: 400, deg_inc: 30});
 
     MARS_ANI.planet.create();
 }

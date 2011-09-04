@@ -1,0 +1,19 @@
+<h1>Mars Globe: <%= map.name %></h1>
+
+<script language="javascript">
+    $(function() {
+        console.log('MARS_ANI: ', MARS_ANI);
+        MARS_ANI.init();
+        MARS_ANI.log(['init', 'root', 'end'], 'initialized');
+
+        if (!MARS_ANI.animator) {
+            MARS_ANI.log_err('no animator');
+            throw new Error('no animator');
+        }
+        MARS_ANI.log(['animator', 'start'], 'animating');
+        MARS_ANI.animator.animate();
+    });
+</script>
+
+<div id="threeD" style="width: 800px; height: 800px; background-color: white;">
+</div>

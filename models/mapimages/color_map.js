@@ -21,7 +21,6 @@ module.exports = function(image, callback, config) {
         var north = Math.min(config.north, image.north);
         var south = Math.max(config.south, image.south);
 
-
         /**
          * keeping in mind that top/bottom goes in a negative direction because north is up
          * and rows go down...
@@ -54,14 +53,14 @@ module.exports = function(image, callback, config) {
     var cols = (east - west) * image.scale;
     var rows = (north - south) * image.scale;
 
-    console.log('----- image----', image._id, image.image_file);
-    console.log('config', util.inspect(config));
+    // console.log('----- image----', image._id, image.image_file);
+    // console.log('config', util.inspect(config));
     
-    console.log('east...west: ',          config.east - config.west,   'x128=', cols);
-    console.log('North...south: ',        config.north - config.south, 'x128=', rows);
+    // console.log('east...west: ',          config.east - config.west,   'x128=', cols);
+    // console.log('North...south: ',        config.north - config.south, 'x128=', rows);
 
-    console.log('east...west zoomed: ',   config.east - config.west,   'x128=', cols / zoom);
-    console.log('North...south zoomed: ', config.north - config.south, 'x128=', rows / zoom);
+    // console.log('east...west zoomed: ',   config.east - config.west,   'x128=', cols / zoom);
+    // console.log('North...south zoomed: ', config.north - config.south, 'x128=', rows / zoom);
 
     var left_cti_scaled = (zoom == 1) ? left_cti : left_cti / zoom;
     var right_cti_scaled = (zoom == 1) ? right_cti : right_cti / zoom;
@@ -69,7 +68,7 @@ module.exports = function(image, callback, config) {
     var top_cti_scaled = (zoom == 1) ? top_cti : top_cti / zoom;
 
     if ((cols < 1) || (rows < 1)) {
-        console.log('no write space - returning false', cols, rows);
+        // console.log('no write space - returning false', cols, rows);
         return callback(null, false);
     }
 
@@ -78,12 +77,12 @@ module.exports = function(image, callback, config) {
     if (!image) throw new Error('cannot find image ');
     var stub = {id: 'image coords', north: image.north, east: image.east,
         west: image.west, south: image.south};
-    console.log('image data: ', util.inspect(stub));
+    // console.log('image data: ', util.inspect(stub));
 
-    console.log('image: rows ', degm(image.rows), 'x', degm(image.cols), ' cols');
-    console.log('top: ', degm(top_cti, zoom), 'bottom', degm(bottom_cti, zoom));
-    console.log('left', degm(left_cti, zoom), 'right', degm(right_cti, zoom));
-    console.log('zoom', zoom);
+    // console.log('image: rows ', degm(image.rows), 'x', degm(image.cols), ' cols');
+    // console.log('top: ', degm(top_cti, zoom), 'bottom', degm(bottom_cti, zoom));
+    // console.log('left', degm(left_cti, zoom), 'right', degm(right_cti, zoom));
+    // console.log('zoom', zoom);
 
 
     //  ctx.fillMode = 'rgba(128, 255, 255, 1)';
@@ -91,18 +90,18 @@ module.exports = function(image, callback, config) {
 
 
     import(image, function(err, image_data) {
-        console.log('original size: ', degm(image_data.length), 'rows x', degm(image_data[0].length), 'cols')
+        // console.log('original size: ', degm(image_data.length), 'rows x', degm(image_data[0].length), 'cols')
 
         if (bottom_cti < 0) {
-            console.log('bottom_cti = ', degm(bottom_cti, zoom), '; cropping bottom from ', degm(image_data.length, zoom), '...');
+            // console.log('bottom_cti = ', degm(bottom_cti, zoom), '; cropping bottom from ', degm(image_data.length, zoom), '...');
             image_data = image_data.slice(0, image_data.length + bottom_cti_scaled);
-            console.log('... to ', degm(image_data.length));
+            // console.log('... to ', degm(image_data.length));
         }
 
         if (top_cti > 0) {
-            console.log('top_cti = ', degm(top_cti, zoom), '; cropping top from ', degm(image_data.length), '...');
+            // console.log('top_cti = ', degm(top_cti, zoom), '; cropping top from ', degm(image_data.length), '...');
             image_data = image_data.slice(top_cti_scaled);
-            console.log('... to ', degm(image_data.length));
+            // console.log('... to ', degm(image_data.length));
         }
 
         /**
@@ -112,28 +111,28 @@ module.exports = function(image, callback, config) {
 
             if (right_cti > 0) {
                 if (i == 0) {
-                    console.log('right_cti = ', degm(right_cti, zoom), '; cropping row from ', degm(row.length, zoom), ' ...');
+                    // console.log('right_cti = ', degm(right_cti, zoom), '; cropping row from ', degm(row.length, zoom), ' ...');
                 }
                 row = row.slice(0, row.length - right_cti_scaled);
                 if (i == 0) {
-                    console.log('...to', degm(row.length, zoom));
+                    // console.log('...to', degm(row.length, zoom));
                 }
             }
 
             if (left_cti < 0) {
                 if (i == 0) {
-                    console.log('left_cti = ', degm(left_cti, zoom), '; cropping row from ', degm(row.length, zoom), '...');
+                    // console.log('left_cti = ', degm(left_cti, zoom), '; cropping row from ', degm(row.length, zoom), '...');
                 }
                 row = row.slice(-1 * left_cti_scaled);
                 if (i == 0) {
-                    console.log('...to', degm(row.length, zoom));
+                    // console.log('...to', degm(row.length, zoom));
                 }
             }
 
             image_data[i] = row;
         })
 
-        console.log('post crop size: ', image_data.length, 'rows x ', image_data[0].length, 'cols');
+        // console.log('post crop size: ', image_data.length, 'rows x ', image_data[0].length, 'cols');
 
         /**
          * step 2 - zoom
@@ -164,7 +163,7 @@ module.exports = function(image, callback, config) {
 
         for (var row_block = first_row; row_block < last_row; row_block += 128) {
 
-            console.log('row set ', row_block);
+            // console.log('row set ', row_block);
             var last_subsample = Math.min(128, image_data.length - row_block);
             var ctx_image = ctx.createImageData(last_col, last_subsample);
             var base = 0;
@@ -180,7 +179,7 @@ module.exports = function(image, callback, config) {
             }
             ctx.putImageData(ctx_image, 0, row_block);
         }
-        console.log('calculated color map for ', image._id);
+        // console.log('calculated color map for ', image._id);
         canvas.createPNGStream().pipe(fs.createWriteStream(MVC_PUBLIC + '/img/mapimage/' + image._id + '.png'));
         callback(null, canvas);
 

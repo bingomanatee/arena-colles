@@ -30,6 +30,10 @@ module.exports = {
     },
 
     animate: require('./map/actions/animate'),
+
+    globe: require('./map/actions/globe'),
+
+    segments: require('./map/actions/segments'),
     
    // tile_icon: require('./map/actions/tile_icon'),
     
@@ -43,6 +47,10 @@ module.exports = {
             context.get(app, '/maps/:id/parse_images', 'parse_images');
 
             context.get(app, '/maps/:id/animate', 'animate');
+            
+            context.get(app, '/maps/:id/globe', 'globe');
+
+            context.get(app, '/map_segments/:divs/:zoom', 'segments');
         });
     }
     
