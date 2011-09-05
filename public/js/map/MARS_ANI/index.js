@@ -81,7 +81,7 @@ var MARS_ANI = {
         MARS_ANI.scene.addLight(new THREE.AmbientLight(0x404040));
 
         light = new THREE.DirectionalLight(0xffffff, 2.0);
-        light.position.z = 1;
+        light.position.z = -1;
         light.position.x = -0.5;
         light.position.normalize();
 

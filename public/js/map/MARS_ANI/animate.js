@@ -1,7 +1,8 @@
 MARS_ANI._ani_exe = function() {
     MARS_ANI.log(['animate'], 'preparing animation');
-    Animator = function(ani) {
+    var Animator = function(ani) {
         this.ani = ani;
+        this.queue = new MARS_ANI.Ani_Queue(this);
     }
 
     Animator.prototype = {
@@ -23,14 +24,15 @@ MARS_ANI._ani_exe = function() {
         ani_count: 0,
 
         update: function() {
-            MARS_ANI.stats.update();
+            this.queue.run();
             //   console.log('updating');
         }
     }
 
     MARS_ANI.animator = new Animator(MARS_ANI);
+
     MARS_ANI.log(['animate', 'clear'], 'done with MARS_ANI.ani');
-    delete  MARS_ANI._ani_exe;
+   // delete  MARS_ANI._ani_exe;
 }
 
 MARS_ANI._ani_exe()

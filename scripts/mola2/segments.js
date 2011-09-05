@@ -15,9 +15,11 @@ module.exports.run = function() {
 
     for (var lat = -90; lat < 90; lat += divs) {
         for (var lon = 0; lon < 360; lon += divs) {
-            configs.push({
+            var data = {
                 south: lat, north: lat + divs, east: lon + divs, west: lon,  zoom: zoom
-            });
+            };
+            console.log('data: ', data);
+            configs.push(data);
 
         }
     }
@@ -38,7 +40,7 @@ function _neg(value) {
     if (value < 0) {
         return Math.abs(value) + 'n';
     }
-    return value;
+    return new String(value);
 }
 
 function _make_segment(config, static, seg_done, finish) {

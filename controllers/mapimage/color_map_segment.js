@@ -6,7 +6,7 @@ module.exports = function(context) {
     var req_params = context.req_params(true);
     console.log('req-params', req_params);
 
-    ['north','south','east','west'].forEach(function(p) {
+/*    ['north','south','east','west'].forEach(function(p) {
         var value = req_params[p];
         if (/n/.test(value)) {
             value = parseInt(value.replace('n', ''));
@@ -14,7 +14,7 @@ module.exports = function(context) {
         } else {
             req_params[p] = parseInt(value);
         }
-    });
+    });*/
 
     if (req_params['west'] < 0) {
         req_params.east += 360;
@@ -33,7 +33,7 @@ module.exports = function(context) {
         stream.pipe(context.response);
 
         var dir = MVC_PUBLIC + '/img/mapimage_segments/'
-            + [req_params.north, req_params.soth,
+            + [req_params.north, req_params.south,
             req_params.east, req_params.west, req_params.zoom].join('/');
         fsu.ensure_dir(dir);
         var stream = canvas.createPNGStream();

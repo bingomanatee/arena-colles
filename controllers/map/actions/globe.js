@@ -4,6 +4,7 @@ module.exports = function(context) {
 
         var params = context.params({map: map, js_paths: []});
         [
+            //fonts/helvetiker_regular.typeface.js"
             { prefix: '/js',
                 libs: ['underscore']
             },
@@ -11,7 +12,10 @@ module.exports = function(context) {
                 libs: ['Detector', 'Three', 'RequestAnimationFrame', 'Stats']
             },
             {prefix: '/js/map/MARS_ANI',
-                libs: ['index','util', 'animate', 'config2', 'Map_Tile', 'init']
+                libs: ['index','util', 'Text', 'ani_queue', 'animate', 'config2', 'Planet_Tiler', 'Map_Tile', 'init']
+            },
+            {prefix: '/fonts',
+                libs: ['helvetiker_regular.typeface','helvetiker_bold.typeface']
             }
         ].forEach(function(libset) {
            // console.log(libset);

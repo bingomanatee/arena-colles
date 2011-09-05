@@ -1,5 +1,5 @@
 MARS_ANI._util_exe = function () {
-    MARS_ANI.res = {colors: {}, mat: {}};
+    MARS_ANI.res = {colors: {}, mat: {}, tex: {}};
 
     MARS_ANI.res.colors = {};
     var c = new THREE.Color();
@@ -17,9 +17,14 @@ MARS_ANI._util_exe = function () {
         black : c.setRGB(0, 0, 0).getHex()
     }
 
+    MARS_ANI.res.tex = {
+
+        uv_semi:  new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('/img/textures/UV2.png'), opacity: 0.5 })
+    };
+
     MARS_ANI.res.mat = {
         uv_wire: [
-            new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('/img/textures/UV.jpg') }),
+            new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('/img/textures/UV2.png') }),
             new THREE.MeshBasicMaterial({ color: MARS_ANI.res.colors.red, wireframe: true, opacity: 0.5 })
         ],
         wire: [
@@ -71,7 +76,7 @@ MARS_ANI._util_exe = function () {
             var yes_tags = _.intersection(tags, non_array_yes_flags);
             if (yes_tags.length) {
               //  console.log('simple yes flag found');
-                return console.log(args.length ? args : msg);
+                return console.log(args.length ? args : msg, '#', tags.join(' '));
             }
 
             if (non_array_yes_flags.length != MARS_ANI.log_flags.length) {
@@ -83,7 +88,7 @@ MARS_ANI._util_exe = function () {
                     var yaa = array_yes_tags[i];
                     if (_.intersection(yaa, tags).length == yaa.length) {
                  //       console.log('yaa found:', yaa);
-                        return console.log(args.length ? args : msg);
+                        return console.log(args.length ? args : msg, '#', tags.join(' '));
                     }
                 }
             } else {
