@@ -21,17 +21,16 @@ MARS_ANI._Planet_Tiler_create = function() {
             tile_range: 1
         },
 
-        create_tile: function(x, y) {
-            MARS_ANI.log(['planet_tiler', 'create'], 'x', x, 'y', y);
+        create_tile: function(west, south) {
+            MARS_ANI.log(['planet_tiler', 'create'], 'west', west, 'south', south);
             var self = this;
-            var west = 180 + (this.deg_per_tile * x);
-            var east = this.deg_per_tile + west;
-            var north = this.deg_per_tile * y;
-            var south = north - this.deg_per_tile;
-            var cx = x * this.size_per_tile;
-            var cy = y * this.size_per_tile * -1;
+            var east = west + this.deg_per_tile;
+            var north = south + this.deg_per_tile;
+            var deg_to_size = this.size_per_tile/this.deg_per_tile;
+            var cx = deg_to_size * (east + west) / 2
+            var cy = deg_to_size * (north + south) / -2
             var half_size = this.size_per_tile/2;
-            console.log('half size: ', half_size);
+            //console.log('half size: ', half_size);
 
             var config = {
                 north: north,
@@ -84,8 +83,8 @@ MARS_ANI._Planet_Tiler_create = function() {
             }
 
             config.pt_filter = _pt_filter;
-            var out = {x: x,
-            y: y,
+            var out = {x: cx,
+            y: cy,
             tile: new MARS_ANI.Map_Tile(config)};
             out.tile.create();
 
@@ -93,9 +92,9 @@ MARS_ANI._Planet_Tiler_create = function() {
         },
 
         init: function() {
-            for (var x = -1 * this.tile_range; x <= this.tile_range; ++x) {
-                for (var y = -1 * this.tile_range; y <= this.tile_range; ++y) {
-                    this.tiles.push(this.create_tile(x, y));
+            for (var long = 0; long < 360; long += this.deg_per_tile) {
+                for (var lat = -90; lat < 90; lat += this.deg_per_tile) {
+                    this.tiles.push(this.create_tile(long, lat));
                 }
             }
         }

@@ -1,5 +1,5 @@
 MARS_ANI._config_exe = function() {
-   // MARS_ANI.log_flags.push(['planet_tiler','create'],'TextGeometry', ['Map_Tile', 'text']);
+    MARS_ANI.log_flags.push('animate', 'update', 'ani_queue');
     MARS_ANI.unlog_flags.push('clear');
 
     MARS_ANI.log(['config'], 'MARS_ANI._config_exe');
@@ -9,14 +9,14 @@ MARS_ANI._config_exe = function() {
         MARS_ANI.tiler = new MARS_ANI.Planet_Tiler({size_per_tile: 1000, tile_range: 4, deg_per_tile: 20});
         MARS_ANI.tiler.init();
 
-            MARS_ANI.scene.addChild( new THREE.Trident());
+        MARS_ANI.scene.addChild(new THREE.Trident());
     }
 
     MARS_ANI._init_camera = function() {
         var camera = MARS_ANI.camera = new THREE.FirstPersonCamera({
             constrainVertical: true,
             fov: 60, aspect: MARS_ANI.scene_width / MARS_ANI.scene_height,
-            near: 1, far: 20000,
+            near: 1, far: 2000,
             movementSpeed: 500, lookSpeed: 0.1, noFly: false, lookVertical: false
 
         });
@@ -24,7 +24,7 @@ MARS_ANI._config_exe = function() {
         p.x = 0;
         p.y = 50;
         p.z = -1200;
-       // camera.rotation.x = MARS_ANI.degrees_to_radians * 15;
+        // camera.rotation.x = MARS_ANI.degrees_to_radians * 15;
         camera.lat = MARS_ANI.degrees_to_radians * 90;
     }
 

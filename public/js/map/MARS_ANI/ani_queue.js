@@ -7,16 +7,18 @@ MARS_ANI._create_queue = function() {
 
     MARS_ANI.Ani_Queue.prototype = {
         run: function() {
-              MARS_ANI.log(['ani_queue', 'run'], 'running ');
+            MARS_ANI.log(['animate', 'ani_queue', 'run'], 'starting ');
             var self = this;
-            var primary_tasks = _.select(this._tasks, _primary_tasks);
+            var primary_tasks = this._tasks; // _.select(this._tasks, _primary_tasks);
+
+            MARS_ANI.log(['animate', 'ani_queue', 'run'], 'running ', primary_tasks.length, 'tasks');
 
             _.sortBy(primary_tasks, _order_tasks)
                 .forEach(function(task) {
                     task.run(self);
                 });
 
-              MARS_ANI.log(['ani_queue', 'run', 'clear'], 'done running ');
+            MARS_ANI.log(['ani_queue', 'run', 'clear'], 'done running ');
         },
 
         get_tasks: function() {
@@ -37,22 +39,22 @@ MARS_ANI._create_queue = function() {
 
             if (_.isNull(order)) {
 
-                var primary_tasks = _.select(this._tasks, _primary_tasks);
+                var primary_tasks = this._tasks;
                 if (primary_tasks.length) {
                     order = null;
-                    _.sortBy(primary_tasks, _order_tasks)
-                        .forEach(function(task) {
-                            if (_.isNull(order) || order < task.order) {
-                                order = task.order;
-                            }
-                        });
+                    primary_tasks.forEach(function(task) {
+                        if (_.isNull(order) || order < task.order) {
+                            order = task.order;
+                        }
+                    });
                 } else {
                     order = 0;
                 }
 
             }
 
-            this._tasks.push(new MARS_ANI.Ani_Task(this, handler, order, parent));
+            MARS_ANI.log(['animate', 'ani_queue', 'add_task'], 'adding ', handler, order);
+            this._tasks.push(new MARS_ANI.Ani_Task(this, name, handler, order, parent));
         }
     }
 
@@ -123,7 +125,7 @@ MARS_ANI._create_queue = function() {
     }
 
     setTimeout(function() {
-      //  delete MARS_ANI._create_queue
+        //  delete MARS_ANI._create_queue
     }, 1);
 }
 
