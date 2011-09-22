@@ -1,5 +1,5 @@
 MARS_ANI._config_exe = function() {
-    MARS_ANI.log_flags.push('animate', 'update', 'ani_queue');
+    MARS_ANI.log_flags.push('*');
     MARS_ANI.unlog_flags.push('clear');
 
     MARS_ANI.log(['config'], 'MARS_ANI._config_exe');
@@ -10,6 +10,7 @@ MARS_ANI._config_exe = function() {
         MARS_ANI.tiler.init();
 
         MARS_ANI.scene.addChild(new THREE.Trident());
+        MARS_ANI.log(['init', 'objects', 'clear'], 'done with _init_objects');
     }
 
     MARS_ANI._init_camera = function() {

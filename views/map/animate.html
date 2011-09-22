@@ -1,16 +1,24 @@
 <%
+js_paths = [];
+
+
 [
     { prefix: '/js',
-    libs: ['underscore']
+    libs: ['jq_dev', 'ui', 'underscore']
     },
     { prefix: '/js/3/build',
       libs: ['Three']
     },
+    { prefix: '/js/3/src/extras/geometries',
+      libs: ['ExtrudeGeometry', 'TextGeometry']
+    },
+    { prefix: '/fonts',
+        libs: ['helvetiker_regular.typeface']},
     { prefix: '/js/3',
       libs: ['Detector',  'RequestAnimationFrame', 'Stats']
     },
         {prefix: '/js/map/MARS_ANI',
-        libs: ['index','animate', 'config', 'Planet', 'init']
+        libs: ['index', 'util', 'ani_queue', 'animate', 'config2', 'Text', 'Map_Tile', 'Planet_Tiler', 'Planet', 'init']
         }
 ] .forEach(function(libset){
         console.log(libset);
@@ -28,7 +36,7 @@ console.log('paths: ', js_paths.join(','));
 
 
 <script language="javascript">
-    $(function(){init(); MARS_ANI.animator.animate();});
+    $(function(){MARS_ANI.init(); MARS_ANI.animator.animate();});
 </script>
 
 <div id="threeD" style="width: 800px; height: 800px; background-color: white;">

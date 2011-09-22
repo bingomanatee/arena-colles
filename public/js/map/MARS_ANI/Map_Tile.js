@@ -51,12 +51,14 @@ MARS_ANI._Map_Tile_exe = function() {
 
         this._geo = false;
         this._mesh = false;
-        //north/:south/:east/:west/:zoom
+
         var props = [this.north, this.south, this.east, this.west, this.zoom];
         MARS_ANI.log(['Map_Tile', 'create'], props);
         //  MARS_ANI.res.tex.uv_semi, })
         this._mat = [
-            new THREE.MeshLambertMaterial({  map: THREE.ImageUtils.loadTexture('/img/mapimage_segments/' + props.join('/') + '/color_map.png')}),
+            new THREE.MeshLambertMaterial({
+             normal: THREE.ImageUtils.loadTexture('/img/mapimage_segments/' + props.join('/') + '/normal_map.png'),
+                map: THREE.ImageUtils.loadTexture('/img/mapimage_segments/' + props.join('/') + '/color_map.png')}),
 
              new THREE.MeshBasicMaterial({
                 color: MARS_ANI.res.colors.red,
@@ -271,7 +273,7 @@ MARS_ANI.log(['Map_Tile', 'text', 'start'], 'starting text');
             params.amount2 = 2;
 
             MARS_ANI.log(['Map_Tile', 'text'], 'making geometry', text, 'with params', params);
-            var textGeo = new MARS_ANI.TextGeometry(text, params);
+            var textGeo = new THREE.TextGeometry(text, params);
 
             MARS_ANI.log(['Map_Tile', 'text'], 'geo done');
 

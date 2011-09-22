@@ -40,7 +40,7 @@
 
 MARS_ANI.TextGeometry = function (text, parameters) {
 
-    MARS_ANI.log(['TextGeometry', 'start'], 'starting TextGeometry', parameters);
+    MARS_ANI.log(['TextGeometry', 'start'], 'starting TextGeometry for ', text);
     var textPath = new MARS_ANI.TextPath(text, parameters);
     var textShapes = textPath.toShapes();
 
@@ -69,6 +69,10 @@ MARS_ANI.TextGeometry = function (text, parameters) {
 
     MARS_ANI.log(['TextGeometry'], 'extruding TextGeometry', textShapes);
 
+    if (!THREE.ExtrudeGeometry) {
+        throw new Error('THREE.ExtrudeGeometry not loaded');
+    }
+
     THREE.ExtrudeGeometry.call(this, textShapes, parameters);
 
 
@@ -76,6 +80,9 @@ MARS_ANI.TextGeometry = function (text, parameters) {
 
 };
 
+if (!THREE.ExtrudeGeometry) {
+    throw new Error('THREE.ExtrudeGeometry not loaded');
+}
 MARS_ANI.TextGeometry.prototype = new THREE.ExtrudeGeometry();
 MARS_ANI.TextGeometry.prototype.constructor = MARS_ANI.TextGeometry;
 
@@ -112,7 +119,7 @@ MARS_ANI.FontUtils = {
     divisions : 10,
 
     getFace : function() {
-    MARS_ANI.log(['TextGeometry'], 'getting face from this faces', this.faces);
+        MARS_ANI.log(['TextGeometry'], 'getting face from this faces', this.faces);
 
         return this.faces[ this.face ][ this.weight ][ this.style ];
 
@@ -145,7 +152,7 @@ MARS_ANI.FontUtils = {
 
     drawText : function(text) {
 
-    MARS_ANI.log(['TextGeometry', 'FontUtils', 'start'], 'drawing start');
+        MARS_ANI.log(['TextGeometry', 'FontUtils', 'start'], 'drawing start');
         var characterPts = [], allPts = [];
 
         // RenderText
@@ -159,7 +166,7 @@ MARS_ANI.FontUtils = {
 
         var fontPaths = [];
 
-    MARS_ANI.log(['TextGeometry', 'FontUtils', 'start'], 'iterating');
+        MARS_ANI.log(['TextGeometry', 'FontUtils', 'start'], 'iterating');
         for (i = 0; i < length; i ++) {
 
             var path = new THREE.Path();
@@ -188,7 +195,7 @@ MARS_ANI.FontUtils = {
         //extract.paths = fontPaths;
         //extract.offset = width;
 
-    MARS_ANI.log(['TextGeometry', 'FontUtils', 'start'], 'done');
+        MARS_ANI.log(['TextGeometry', 'FontUtils', 'start'], 'done');
         return { paths : fontPaths, offset : width };
 
     },
@@ -550,71 +557,73 @@ window._typeface_js = { faces: MARS_ANI.FontUtils.faces, loadFace: MARS_ANI.Font
  *
  **/
 
-MARS_ANI.TextPath = function ( text, parameters ) {
+MARS_ANI.TextPath = function (text, parameters) {
 
     MARS_ANI.log(['TextGeometry', 'start'], 'starting TextPath');
 
-	THREE.Path.call( this );
+    if (!THREE.Path){
+        throw new Error('THREE.Path is not defined');
+    }
+    THREE.Path.call(this);
 
-	this.parameters = parameters || {};
+    this.parameters = parameters || {};
 
-	this.set( text );
+    this.set(text);
 
     MARS_ANI.log(['TextGeometry', 'start'], 'done with TextPath');
 };
 
-MARS_ANI.TextPath.prototype.set = function ( text, parameters ) {
+MARS_ANI.TextPath.prototype.set = function (text, parameters) {
 
-	this.text = text;
+    this.text = text;
 
-	var parameters = parameters || this.parameters;
+    var parameters = parameters || this.parameters;
 
-	var size = parameters.size !== undefined ? parameters.size : 100;
-	var curveSegments = parameters.curveSegments !== undefined ? parameters.curveSegments: 4;
+    var size = parameters.size !== undefined ? parameters.size : 100;
+    var curveSegments = parameters.curveSegments !== undefined ? parameters.curveSegments : 4;
 
-	var font = parameters.font !== undefined ? parameters.font : "helvetiker";
-	var weight = parameters.weight !== undefined ? parameters.weight : "normal";
-	var style = parameters.style !== undefined ? parameters.style : "normal";
+    var font = parameters.font !== undefined ? parameters.font : "helvetiker";
+    var weight = parameters.weight !== undefined ? parameters.weight : "normal";
+    var style = parameters.style !== undefined ? parameters.style : "normal";
 
-	MARS_ANI.FontUtils.size = size;
-	MARS_ANI.FontUtils.divisions = curveSegments;
+    MARS_ANI.FontUtils.size = size;
+    MARS_ANI.FontUtils.divisions = curveSegments;
 
-	MARS_ANI.FontUtils.face = font;
-	MARS_ANI.FontUtils.weight = weight;
-	MARS_ANI.FontUtils.style = style;
+    MARS_ANI.FontUtils.face = font;
+    MARS_ANI.FontUtils.weight = weight;
+    MARS_ANI.FontUtils.style = style;
 
 };
-
 
 
 MARS_ANI.TextPath.prototype.toShapes = function () {
 
     MARS_ANI.log(['TextGeometry', 'shapes'], 'making shapes');
-	// Get a Font data json object
+    // Get a Font data json object
 
-	var data = MARS_ANI.FontUtils.drawText( this.text );
+    var data = MARS_ANI.FontUtils.drawText(this.text);
 
-	var paths = data.paths;
-	var shapes = [];
+    var paths = data.paths;
+    var shapes = [];
 
     MARS_ANI.log(['TextGeometry', 'shapes'], 'adding shapes', data);
 
-	for ( var p = 0, pl = paths.length; p < pl; p ++ ) {
+    for (var p = 0, pl = paths.length; p < pl; p ++) {
 
-		shapes = shapes.concat( paths[ p ].toShapes() );
+        shapes = shapes.concat(paths[ p ].toShapes());
 
-	}
+    }
 
-	return shapes;
+    return shapes;
 
     MARS_ANI.log(['TextGeometry', 'shapes'], 'done with shapes');
-	//console.log(path);
-	//console.log(fontShapes);
+    //console.log(path);
+    //console.log(fontShapes);
 
-	// Either find actions or curves.
+    // Either find actions or curves.
 
-	//var text3d = new THREE.ExtrudeGeometry( shapes , { amount: 20, bevelEnabled:true, bevelThickness:3	} );
+    //var text3d = new THREE.ExtrudeGeometry( shapes , { amount: 20, bevelEnabled:true, bevelThickness:3	} );
 
-	//return text3d;
+    //return text3d;
 
 };

@@ -13,5 +13,5 @@ MARS_ANI.init = function() {
     MARS_ANI._init_objects();
     MARS_ANI.log(['init'], 'init: objects initialized');
     MARS_ANI._init_stats();
-    MARS_ANI.log(['init'], 'init: stats initialized');
+    MARS_ANI.log(['init'], 'init: stats initialized; _____ DONE WITH INIT ____');
 }
