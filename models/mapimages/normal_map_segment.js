@@ -69,7 +69,7 @@ module.exports = function(config, callback) {
                     var scale = image.scale / statics.config.zoom;
                     var x = west * scale;
                     var y = north * scale;
-                    console.log('writing ', tile_canvas.width, 'x', tile_canvas, 'image to', x, y);
+                    console.log('normal_map_segment: writing ', tile_canvas.width, 'x', tile_canvas, 'image to', x, y);
                     statics.ctx.drawImage(tile_canvas, x, y);
                     next_cb();
 

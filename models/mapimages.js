@@ -18,9 +18,9 @@ module.exports = {
 
         color_map_segment:  require('./mapimages/color_map_segment'),
 
-        color_map:          require('./mapimages/normal_map'),
+        normal_map:          require('./mapimages/normal_map'),
 
-        color_map_segment:  require('./mapimages/normal_map_segment'),
+        normal_map_segment:  require('./mapimages/normal_map_segment'),
 
         update_tiles:       require('./mapimages/update_tiles'),
 
