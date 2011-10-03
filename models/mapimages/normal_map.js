@@ -72,7 +72,7 @@ module.exports = function(image, callback, config) {
             ctx.putImageData(ctx_image, 0, row_block);
         }
         // console.log('calculated color map for ', image._id);
-        canvas.createPNGStream().pipe(fs.createWriteStream(MVC_PUBLIC + '/img/mapimage/' + image._id + '_normal_x_' + clip.zoom + '.png'));
+        canvas.createPNGStream().pipe(fs.createWriteStream(self.normal_path(image, clip.zoom)));
         callback(null, canvas);
 
     }

@@ -1,3 +1,5 @@
+var _ = require("underscore");
+
 module.exports = {
     collection: 'mapimage',
 
@@ -15,6 +17,22 @@ module.exports = {
         import_image_data:  require('./mapimages/import_image_data'),
 
         color_map:          require('./mapimages/color_map'),
+
+        image_path:         function(image, zoom) {
+            if (!zoom) {
+                zoom = 1;
+            }
+            id = _.isString(image) ? image : image._id;
+            return  MVC_PUBLIC + '/img/mapimage/' + id + '_color_x_' + zoom + '.png';
+        },
+
+        normal_path:         function(image, zoom) {
+            if (!zoom) {
+                zoom = 1;
+            }
+            id = _.isString(image) ? image : image._id;
+            return  MVC_PUBLIC + '/img/mapimage/' + id + '_normal_x_' + zoom + '.png';
+        },
 
         color_map_segment:  require('./mapimages/color_map_segment'),
 

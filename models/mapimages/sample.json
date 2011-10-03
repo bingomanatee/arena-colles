@@ -1,0 +1,86 @@
+{ "map" : {
+    "ObjectId": "1"
+}, "image_file" : "/Users/dave/Documents/Arena_Colles/resources/mola_128/megt88n270hb.img", "manifest" : {
+    "pds_version_id" : "PDS3",
+    "record_type" : "FIXED_LENGTH",
+    "file_records" : "5632",
+    "record_bytes" : "23040",
+    "^image" : "MEGT88N270HB.IMG",
+    "data_set_id" : "MGS-M-MOLA-5-MEGDR-L3-V1.0",
+    "product_id" : "MEGT88N270HB.IMG",
+    "spacecraft_name" : "MARS GLOBAL SURVEYOR",
+    "instrument_id" : "MOLA",
+    "instrument_name" : "MARS ORBITER LASER ALTIMETER",
+    "target_name" : "MARS",
+    "start_time" : "1997-09-15T19:10:00.000",
+    "stop_time" : "2001-06-30T11:10:40.000",
+    "start_orbit_number" : "3",
+    "stop_orbit_number" : "20333",
+    "product_creation_time" : "2003-03-21T01:00:00",
+    "product_version_id" : "2.0",
+    "producer_id" : "MGS_MOLA_TEAM",
+    "producer_full_name" : "DAVID E. SMITH",
+    "producer_institution_name" : "GODDARD SPACE FLIGHT CENTER",
+    "description" : "Each sample represents median",
+    "object" : "IMAGE_MAP_PROJECTION",
+    "name" : "MEDIAN_TOPOGRAPHY",
+    "lines" : "5632",
+    "line_samples" : "11520",
+    "sample_type" : "MSB_INTEGER",
+    "sample_bits" : "16",
+    "unit" : "METER",
+    "end_object" : "IMAGE_MAP_PROJECTION",
+    "^data_set_map_projection" : "DSMAP.CAT",
+    "map_projection_type" : "SIMPLE CYLINDRICAL",
+    "a_axis_radius" : {
+        "unit" : "km",
+        "value" : 3396
+    },
+    "b_axis_radius" : {
+        "unit" : "km",
+        "value" : 3396
+    },
+    "c_axis_radius" : {
+        "unit" : "km",
+        "value" : 3396
+    },
+    "first_standard_parallel" : "N/A",
+    "second_standard_parallel" : "N/A",
+    "positive_longitude_direction" : "EAST",
+    "center_latitude" : "0.0",
+    "center_longitude" : "180.0",
+    "reference_latitude" : "N/A",
+    "reference_longitude" : "N/A",
+    "line_first_pixel" : "1",
+    "line_last_pixel" : "5632",
+    "sample_first_pixel" : "1",
+    "sample_last_pixel" : "11520",
+    "map_projection_rotation" : "0.0",
+    "map_resolution" : {
+        "unit" : "pixel/degree",
+        "value" : 128
+    },
+    "map_scale" : {
+        "unit" : "km/pixel",
+        "value" : 0.463
+    },
+    "maximum_latitude" : "88.0",
+    "minimum_latitude" : "44.0",
+    "westernmost_longitude" : "270.0",
+    "easternmost_longitude" : "360.0",
+    "line_projection_offset" : "11264.5",
+    "sample_projection_offset" : "-11519.5",
+    "coordinate_system_type" : "BODY-FIXED ROTATING",
+    "coordinate_system_name" : "PLANETOCENTRIC"
+}, "_id" : {
+    "ObjectId": "1"
+}, "j_offset" : 34560,
+    "i_offset" : 22528,
+    "west" : 270,
+    "east" : 360,
+    "south" : 44,
+    "north" : 88,
+    "rows" : 5632,
+    "cols" : 11520,
+    "bin_path" : "/Users/dave/Documents/Arena_Colles/resources/mola_128/megt88n270hb.img.bin",
+    "scale" : 128 }

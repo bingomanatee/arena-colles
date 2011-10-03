@@ -51,6 +51,7 @@ module.exports = function(image, callback, config) {
             for (var i = row_block; i < last_block_row; i += 1) {
                 for (var j = first_col; j < last_col; j += 1) {
                     var rgba = color_map_image(image_data, j, i, clip.zoom);
+                   // console.log('rgba: ', rgba, 'base: ', base);
                     ctx_image.data[base] = rgba[0];
                     ctx_image.data[base + 1] = rgba[1];
                     ctx_image.data[base + 2] = rgba[2];
@@ -78,7 +79,8 @@ module.exports = function(image, callback, config) {
 
         }
         // console.log('calculated color map for ', image._id);
-        canvas.createPNGStream().pipe(fs.createWriteStream(MVC_PUBLIC + '/img/mapimage/' + image._id + '_color_x_' + clip.zoom + '.png'));
+        var image_path = self.image_path(image, clip.zoom);
+        canvas.createPNGStream().pipe(fs.createWriteStream(image_path));
         callback(null, canvas);
 
     }

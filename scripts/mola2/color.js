@@ -1,6 +1,7 @@
 var mm = require(MVC_MODELS);
 
 module.exports.run = function() {
+
     mm.model('mapimage', function(err, mapimage_model) {
 
         var cursor = mapimage_model.find({"manifest.name" : "MEDIAN_TOPOGRAPHY"});
