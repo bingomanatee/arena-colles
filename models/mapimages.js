@@ -34,6 +34,16 @@ module.exports = {
             return  MVC_PUBLIC + '/img/mapimage/' + id + '_normal_x_' + zoom + '.png';
         },
 
+        height_path:         function(image, zoom) {
+            if (!zoom) {
+                zoom = 1;
+            }
+            id = _.isString(image) ? image : image._id;
+            return  MVC_PUBLIC + '/img/mapimage/' + id + '_height_x_' + zoom + '.png';
+        },
+
+        height_map:          require('./mapimages/height_map'),
+
         color_map_segment:  require('./mapimages/color_map_segment'),
 
         normal_map:          require('./mapimages/normal_map'),

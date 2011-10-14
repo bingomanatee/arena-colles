@@ -11,8 +11,8 @@ module.exports.run = function() {
             }
             console.log('reading image ', mapimage._id);
            if (mapimage){
-               mapimage_model.normal_map(mapimage, function(){
-                   console.log('######## DONE WITH IMAGE NORMAL ###########');
+               mapimage_model.height_map(mapimage, function(){
+                   console.log('######## DONE WITH IMAGE HEIGHT ###########');
                    return cursor.next(_on_next);
                });
            }

@@ -6,12 +6,12 @@ MARS_ANI.init = function() {
     MARS_ANI.log(['init'], 'init: renderer initialized');
     MARS_ANI._init_scene();
     MARS_ANI.log(['init'], 'init: scene initialized');
-    MARS_ANI._init_camera();
-    MARS_ANI.log(['init'], 'init: camera initialized');
     MARS_ANI._init_lights();
     MARS_ANI.log(['init'], 'init: lights initialized');
     MARS_ANI._init_objects();
     MARS_ANI.log(['init'], 'init: objects initialized');
+    MARS_ANI._init_camera();
+    MARS_ANI.log(['init'], 'init: camera initialized');
     MARS_ANI._init_stats();
     MARS_ANI.log(['init'], 'init: stats initialized; _____ DONE WITH INIT ____');
 }

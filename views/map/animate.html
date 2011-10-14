@@ -3,29 +3,30 @@ js_paths = [];
 
 
 [
-    { prefix: '/js',
-    libs: ['jq_dev', 'ui', 'underscore']
-    },
-    { prefix: '/js/3/build',
-      libs: ['Three']
-    },
-    { prefix: '/js/3/src/extras/geometries',
-      libs: ['ExtrudeGeometry', 'TextGeometry']
-    },
-    { prefix: '/fonts',
-        libs: ['helvetiker_regular.typeface']},
-    { prefix: '/js/3',
-      libs: ['Detector',  'RequestAnimationFrame', 'Stats']
-    },
-        {prefix: '/js/globe/MARS_ANI',
-        libs: ['index', 'util', 'ani_queue', 'animate', 'config', 'Mars_Globe', 'Planet', 'init']
-        }
+{ prefix: '/js',
+libs: ['jq_dev', 'ui', 'underscore']
+},
+{ prefix: '/js/3/build',
+libs: ['Three']
+},
+{ prefix: '/js/3/src/extras/geometries',
+libs: ['ExtrudeGeometry', 'TextGeometry']
+},
+{ prefix: '/fonts',
+libs: ['helvetiker_regular.typeface']},
+{ prefix: '/js/3',
+libs: ['Detector',  'RequestAnimationFrame', 'Stats']
+},
+{prefix: '/js/globe/MARS_ANI',
+libs: ['index', 'util', 'ani_queue', 'animate', 'Orbit_Camera',
+'config', 'Mars_Globe', 'Planet', 'init']
+}
 ] .forEach(function(libset){
-        console.log(libset);
-     libset.libs.forEach(function(lib){
-        console.log(lib);
-        js_paths.push(libset.prefix + '/' + lib + '.js');
-    });
+console.log(libset);
+libset.libs.forEach(function(lib){
+console.log(lib);
+js_paths.push(libset.prefix + '/' + lib + '.js');
+});
 });
 
 console.log('paths: ', js_paths.join(','));
@@ -36,8 +37,59 @@ console.log('paths: ', js_paths.join(','));
 
 
 <script language="javascript">
-    $(function(){MARS_ANI.init(); MARS_ANI.animator.animate();});
+    $(function() {
+        MARS_ANI.init();
+        MARS_ANI.animator.animate();
+    });
 </script>
 
-<div id="threeD" style="width: 800px; height: 800px; background-color: white;">
+<div id="threeD" style="width: 800px; height: 800px; background-color: black;">
 </div>
+<table>
+    <tr>
+        <th style="background-color: #E1E1E1; width: 6em;">Dim</th>
+        <th style="width: 6em; text-align: right">Adj</th>
+        <th style="background-color: #E1E1E1; width: 6em;">Move</th>
+        <th style="width: 6em;">Value</th>
+    </tr>
+    <tr>
+        <th style="background-color: #E1E1E1">X</th>
+        <td id="x_adj" style="width: 6em; text-align: right"></td>
+        <td id="x_move" style="background-color: #E1E1E1; text-align: right"></td>
+        <td id="x_value" style="width: 6em; text-align: right"></td>
+    </tr>
+    <tr>
+        <th style="background-color: #E1E1E1">Y</th>
+        <td id="y_adj" style="width: 6em; text-align: right"></td>
+        <td id="y_move" style="background-color: #E1E1E1; text-align: right"></td>
+        <td id="y_value" style="width: 6em; text-align: right"></td>
+    </tr>
+    <tr>
+        <th style="background-color: #E1E1E1">Z</th>
+        <td id="z_adj" style="width: 6em; text-align: right"></td>
+        <td id="z_move" style="background-color: #E1E1E1; text-align: right"></td>
+        <td id="z_value" style="width: 6em; text-align: right"></td>
+    </tr>
+</table>
+        
+        
+<table>
+    <tr>
+        <th style="background-color: #E1E1E1; width: 6em;">Object</th>
+        <th style="width: 6em; text-align: right">x</th>
+        <th style="background-color: #E1E1E1; width: 6em;">y</th>
+        <th style="width: 6em;">z</th>
+    </tr>
+    <tr>
+        <th style="background-color: #E1E1E1">Sun</th>
+        <td id="sun_x" style="width: 6em; text-align: right"></td>
+        <td id="sun_y" style="background-color: #E1E1E1; text-align: right"></td>
+        <td id="sun_z" style="width: 6em; text-align: right"></td>
+    </tr>
+    <tr>
+        <th style="background-color: #E1E1E1">Moon</th>
+        <td id="moon_x" style="width: 6em; text-align: right"></td>
+        <td id="moon_y" style="background-color: #E1E1E1; text-align: right"></td>
+        <td id="moon_z" style="width: 6em; text-align: right"></td>
+    </tr>
+</table>

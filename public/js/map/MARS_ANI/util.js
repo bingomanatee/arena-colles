@@ -6,14 +6,15 @@ MARS_ANI._util_exe = function () {
     function _color(r, g, b) {
         var c = new THREE.Color();
         c.setRGB(r, g, b);
-        return c.hex;
+        return c.getHex();
     }
 
     MARS_ANI.res.colors = {
         red:      _color(1, 1, 0),
         yellow :  _color(1, 1, 0),
         blue :    _color(0, 0, 1),
-        green :   _color(0, 1, 0),
+        cyan :    _color(0, 1, 1),
+        green :   _color(0, 1, 0), 
         orange :  _color(1, 0.5, 0),
         purple :  _color(0.5, 0, 1),
         magenta : _color(1, 0, 1),

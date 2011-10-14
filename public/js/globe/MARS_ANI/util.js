@@ -1,4 +1,5 @@
 MARS_ANI._util_exe = function () {
+    console.log('util started');
     MARS_ANI.res = {colors: {}, mat: {}, tex: {}};
 
     MARS_ANI.res.colors = {};
@@ -6,12 +7,13 @@ MARS_ANI._util_exe = function () {
     function _color(r, g, b) {
         var c = new THREE.Color();
         c.setRGB(r, g, b);
-        return c.hex;
+        return c.getHex();
     }
 
     MARS_ANI.res.colors = {
         red:      _color(1, 1, 0),
         yellow :  _color(1, 1, 0),
+        cyan:       _color(0, 1, 1),
         blue :    _color(0, 0, 1),
         green :   _color(0, 1, 0),
         orange :  _color(1, 0.5, 0),
@@ -19,6 +21,8 @@ MARS_ANI._util_exe = function () {
         magenta : _color(1, 0, 1),
         white :   _color(1, 1, 1),
         gray :    _color(0.5, 0.5, 0.5),
+        graylt :    _color(0.75, 0.75, 0.75),
+        graydk :    _color(0.25, 0.25, 0.25),
         black :   _color(0, 0, 0)
     }
 
@@ -116,6 +120,39 @@ MARS_ANI._util_exe = function () {
         });
     }
 
+    MARS_ANI.util = {};
+
+    MARS_ANI.util.rad_to_deg = function(r) {
+        return r * 180 / Math.PI;
+    }
+
+    MARS_ANI.util.lat_lon_from_2_points = function(center, point) {
+
+        //@TODO: check identity
+
+        var dx = point.x - center.x;
+        var dy = point.y - center.y;
+        var dz = point.z - center.z;
+
+        var rad = center.distanceTo(point);
+
+        var rad_from_pole = Math.acos(dz / rad);
+
+        if (dx) {
+            var long_radians = Math.atan(dy / dx);
+        } else if (dy > 0) {
+            var long_radians = 0;
+        } else {
+            var long_radians = Math.PI;
+        }
+
+        return {
+            lat: 90 - MARS_ANI.util.rad_to_deg(rad_from_pole),
+            lon: MARS_ANI.util.rad_to_deg(long_radians)
+        }
+
+    }
+
     MARS_ANI.log_err = function(msg) {
         var args = Array.prototype.slice.call(arguments);
         if (_.isArray(args[0])) {
@@ -128,6 +165,20 @@ MARS_ANI._util_exe = function () {
     }
 
     MARS_ANI.log(['util', 'clear'], 'MARS_ANI.util done');
+
+    MARS_ANI.absolute_position = function(mesh, echo) {
+        if (echo) {
+            console.log('ABSOLUTE POSITION INPUT: ', mesh);
+        }
+
+        var v = mesh.matrixWorld.multiplyVector3(mesh.position.clone());
+
+        if (echo) {
+            console.log('ULTIMATE VECTOR: ', v);
+        }
+        return v;
+    }
+
 
     setTimeout(function() {
         MARS_ANI.log(['util', 'clear'], 'MARS_ANI.util cleared');

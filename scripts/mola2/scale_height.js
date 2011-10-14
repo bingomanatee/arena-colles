@@ -12,9 +12,8 @@ module.exports.run = function() {
                 console.log('all done');
                 return;
             }
-
-            var image_path = mapimage_model.image_path(mapimage, 1);
-            var target_path = mapimage_model.image_path(mapimage, scale);
+            var image_path = mapimage_model.height_path(mapimage, 1);
+            var target_path = mapimage_model.height_path(mapimage, scale);
 
             scale_image(image_path, scale, target_path, function() {
                 console.log('shrunk', image_path, 'to', target_path);

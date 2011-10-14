@@ -10,3 +10,7 @@ mola_32
 /node_modules/mongodb/benchmark/streaming_benchmark.js
 /.idea/dictionaries/dave.xml
 /resources
+/models/mapimages/sample.json
+/public/mars_globe_files/
+/public/mars_globe.html
+/public/img/globe/
