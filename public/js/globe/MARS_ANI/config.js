@@ -57,10 +57,9 @@ MARS_ANI._config_exe = function() {
                 near: 100,
                 far: MARS_ANI.mars_radius * 10000
             },
-            MARS_ANI.mars
+            MARS_ANI.mars,
+            MARS_ANI.scene
         );
-
-        MARS_ANI.scene.addChild(camera.focus);
     }
 
     MARS_ANI.animator.queue.add_task('stats', function() {

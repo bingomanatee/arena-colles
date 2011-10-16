@@ -8,9 +8,11 @@ module.exports = {
 
         image_grid:         require('./mapimages/image_grid'),
 
-        make_image_data:    require('./mapimages/make_image_data'),
+        find_lat_lon:       require('./mapimages/find_lat_lon'),
 
         for_map:            require('./mapimages/for_map'),
+
+        topog:            require('./mapimages/topog'),
 
         gen_tiles:          require('./mapimages/gen_tiles'),
 
