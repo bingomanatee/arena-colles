@@ -2,6 +2,7 @@ var mm = require(MVC_MODELS);
 var gate = require('util/gate');
 var data2Dslice = require('mola2/data/data2Dslice');
 var pack2Darray = require('mola2/data/pack2Darray');
+
 var mon = require('mongolian');
 var util = require('util');
 var Gate = require('util/gate');
@@ -28,6 +29,12 @@ module.exports = function(image, callback) {
                 var sub_data = data2Dslice(data, row, col, 129, 129);
                 var pa = pack2Darray(sub_data.data);
 
+                if (col == 0 && row == 0){
+                    for (var r = 0; r < 5; ++r){
+                        console.log(sub_data.data[r].slice(0, 5).join(','));
+                    }
+                }
+
                 assert.ok(lat >= -90, 'lat >= -90: ' + lat);
                 assert.ok(lat <= 90, 'lat <=90: ' + lat);
                 assert.ok(lon >= 0, 'lon >= 0: ' + lon);
@@ -45,14 +52,16 @@ module.exports = function(image, callback) {
                     image: image._id,
                     cols: sub_data.cols,
                     rows: sub_data.rows,
-                    packed_data: new mon.Binary(pa)
+                    packed_data: pa.toString('binary')
                 }
 
                 if ((!(row % inc)) && (!(col % inc))) {
-                    console.log('writing row', row, 'col:', col, 'lat:', lat, 'lon:', lon, 'data rows', 'tile rows: ', tile.rows, 'tile cols:', tile.cols);
+                    console.log('saving row', row, 'col:', col, 'lat:', lat, 'lon:', lon, 'data rows', 'tile rows: ', tile.rows, 'tile cols:', tile.cols);
                 }
 
-                self.put(tile, gate.task_done_callback(true));
+                var done = gate.task_done_callback(true);
+
+                self.put(tile, done);
 
                 ++ lon;
             }

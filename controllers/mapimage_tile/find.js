@@ -1,3 +1,6 @@
+var unpack2Dbuffer = require( 'mola2/data/unpack2Dbuffer');
+var neobuffer = require('neobuffer');
+
 module.exports = function(context) {
     var self = this;
     var rp = context.req_params(true);
@@ -12,15 +15,17 @@ module.exports = function(context) {
                 console.log('err find maptile', err);
                 context.flash('Error finding tile lat: ' + lat + ', lon: ' + lon, 'error', '/');
             } else if (tile) {
-                console.log('tile found ', tile, '; format: ', rp.format);
 
                 switch (rp.format) {
                     case 'img':
-                        context.response.write(tile.packed_data.buffer);
+                        context.response.write(tile.packed_data);
                         context.response.end();
                         break;
 
                     case 'json':
+                        var buffer = neobuffer.Buffer(tile.packed_data, 'binary');
+
+                        tile.data = unpack2Dbuffer(buffer, tile.cols);
                         delete tile.packed_data;
                         context.response.write(JSON.stringify(tile, null, 2));
                         context.response.end();

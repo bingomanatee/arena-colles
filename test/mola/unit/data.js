@@ -1,10 +1,11 @@
-var slice2Darray = require('mola2/data/data2Dslice');
-var pack2Darray  = require('mola2/data/pack2Darray')
-var neobuffer    = require('neobuffer');
-var util         = require('util');
-var fs           = require('fs');
-var Test_Suite   = require('unit/Test/Suite');
-var unpack2Dfile = require('mola2/data/unpack2Dfile');
+var slice2Darray   = require('mola2/data/data2Dslice');
+var pack2Darray    = require('mola2/data/pack2Darray')
+var neobuffer      = require('neobuffer');
+var util           = require('util');
+var fs             = require('fs');
+var Test_Suite     = require('unit/Test/Suite');
+var unpack2Dfile   = require('mola2/data/unpack2Dfile');
+var unpack2Dbuffer = require('mola2/data/unpack2Dbuffer');
 
 function see(n) {
     return util.inspect(n);
@@ -42,6 +43,13 @@ var suite = {
         this.options.packed_data_string = packed_data.toString();
 
         this.options.data_file_path = __dirname + '/data_file.img';
+
+        this.options.big_data = [
+            [1000,   10000,  100000],
+            [-1000, -10000, -100000],
+            [1234,   12345,  123456],
+            [-1234, -12345, -123456]
+        ];
     },
 
     tests: {
@@ -78,6 +86,12 @@ var suite = {
             var packed = pack2Darray(this.options.data).toString();
           //  console.log('packed data: ', util.inspect(packed), packed.length);
             this.is(packed, this.options.packed_data_string)
+        },
+
+        pack_and_unpack_big_data: function(n){
+            var packed = pack2Darray(this.options.big_data);
+            var unpacked = unpack2Dbuffer(packed);
+            this.is(this.options.big_data, unpacked);
         }
 
     },
