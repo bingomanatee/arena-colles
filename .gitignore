@@ -8,3 +8,8 @@ mola_32
 /node_modules/mongodb/benchmark/
 /node_modules/mongodb/benchmark/grid_fs_write_benchmark.js
 /node_modules/mongodb/benchmark/streaming_benchmark.js
+.idea/inspectionProfiles/
+.DS_Store
+.idea/scopes/
+.idea/misc.xml
+.idea/workspace.xml
