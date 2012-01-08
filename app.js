@@ -4,7 +4,7 @@ var ne_static = require('./node_modules/nuby-express/lib/ne_static');
 var ne = require('./node_modules/nuby-express');
 
 var session_secret = "scooby doo";
-var static_contexts = [];
+var static_contexts = [{root: __dirname + '/public', prefix: ''}];
 var app = express.createServer();
 
 //app.use(express.logger(...));
@@ -16,7 +16,8 @@ app.set('view_engne', 'ejs');
 app.register('.html', ejs);
 app.set('view options', {layout:true});
 app.set('views', __dirname + '/views');
-app.use(ne_static(__dirname + '/public', {contexts:static_contexts}));
+app.set('static contexts', static_contexts);
+app.use(ne_static({contexts: static_contexts}));
 //app.use(express.errorHandler(...));
 
 var port = 3000;
@@ -28,19 +29,15 @@ var fw_configs = {
         flash_keys:['info', 'error']
     },
 
-    app:app,
-
-    static_contexts:static_contexts
-
+    app:app
 }
 
 var framework = new ne.Framework(fw_configs);
 
 var loader = new ne.Loader();
 
-function _on_loaded_cb() {
-    fw.app.listen(port);
-}
-
-loader.load(framework, _on_loaded_cb, [__dirname + '/admin', __dirname + '/app']);
+loader.load(framework, function () {
+    console.log('loaded ... listening on %s', port);
+    app.listen(port);
+}, [__dirname + '/admin', __dirname + '/app']);
 

@@ -2,11 +2,11 @@ module.exports = {
 
     manifest:[
         {
-            path:'map_sector/rest',
+            path:'rest',
             type:'rest'
         },
         {
-            path:'map_sector/actions',
+            path:'actions',
             type:'default'
         }
     ],
