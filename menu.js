@@ -9,10 +9,13 @@ module.exports = {
 
             children:[
                 {
+                    title:'Join',
+                    link:'/join'
+                },
+                {
                     title:'Sign In',
-                    link:'/sign_in'
+                    link:'/signin'
                 }
-
 
             ]
         },

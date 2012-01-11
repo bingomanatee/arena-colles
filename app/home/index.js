@@ -1,5 +1,7 @@
 
 
 module.exports = {
-    layout_id: 'ac'
+    params: {
+            layout_id: 'ac'
+    }
 }

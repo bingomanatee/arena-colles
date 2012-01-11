@@ -1,4 +1,4 @@
-
+var util = require('util');
 
 module.exports = {
     route: '/',
@@ -11,6 +11,7 @@ module.exports = {
     execute: function (req_state, callback){
 
         this.framework.menu(req_state, function(err, menu){
+         //   console.log('menu: %s', util.inspect(menu))
             callback(err, {menu: menu});
         })
 
