@@ -1,0 +1,91 @@
+<%
+var short_months = 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec'.split(',');
+function date_format(date){
+return date.getDate() + '&nbsp;' + short_months[date.getMonth()] + '&nbsp;' + date.getYear();
+}
+%>
+        <style>
+            #detail td{padding: 0.25em}
+        </style>
+<form id="member_list" name="member_list" method="post" action="/admin/members" style="font-size: 80%">
+    <div class="ui-widget" >
+                    <div class="ui-widget-header" style="text-align: center">
+                        Members
+                    </div>
+        <div class="ui-widget-content" style="padding: 1em">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" id>
+        <tr>
+            <th scope="col" class="ui-state-default">ID</th>
+            <th scope="col" class="ui-state-default">name</th>
+            <th scope="col" class="ui-state-default">email</th>
+            <th scope="col" class="ui-state-default">created</th>
+            <th scope="col" class="ui-state-default">roles</th>
+            <th scope="col" class="ui-state-default">&nbsp;</th>
+            <th scope="col" class="ui-state-default">&nbsp;</th>
+        </tr>
+                <tbody id="detail">
+
+        <% members.forEach(function(m){ %>
+
+        <tr>
+            <td class="ui-widget-content" style="font-size: 80%; font-family: 'Arial Narrow'"><%= m._id.toString() %></td>
+            <td class="ui-widget-content"><%= m.name %></td>
+            <td class="ui-widget-content"><%= m.email %></td>
+            <td class="ui-widget-content"><%= date_format(m.created) %></td>
+            <td class="ui-widget-content"><% m.roles? m.roles.join(', ') : '' %></td>
+            <td class="ui-widget-content">&nbsp;</td>
+            <td class="ui-widget-content"><input type="button" class="edit-member" value="Edit"
+                       onclick="edit_member('<%= m._id.toString() %>')"/></td>
+        </tr>
+        <% }) %>
+        </tbody>
+        <tbody>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><select name="created.direction" id="created.direction">
+                <option value="before">Until (&lt;= )</option>
+                <option value="after">Since ( &gt;= )</option>
+            </select></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="list[id]" id="list_id"
+                    value="<%= id %>"
+                    /></td>
+            <td><input type="text" name="list[name]" id="list_name"
+                                value="<%= name %>"
+            /></td>
+            <td><input type="text" name="list[email]" id="list_email"
+                                value="<%= email %>"
+            /></td>
+            <td><input type="text" id="datepicker"
+                    value="<%= created %>"></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><input type="submit" class="edit-member" value="Find" /></td>
+        </tr>
+
+                </tbody>
+    </table>
+
+            </div>
+
+        </div>
+</form>
+
+<script language="javascript">
+    function edit_member(id) {
+        document.location = '/admin/members/' + id;
+    }
+    $(function () {
+        var lc = $("#datepicker");
+        console.log('list created = ', lc);
+        lc.datepicker();
+        $('.edit-member').button({text: false, icons: "ui-icon-search"});
+
+    });
+</script>

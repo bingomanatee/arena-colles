@@ -23,6 +23,11 @@ module.exports = {
         {
             title:'Mars',
             link:'/mars'
+        },
+
+        {
+            title: 'Admin',
+            link: '/admin'
         }
     ]
 
