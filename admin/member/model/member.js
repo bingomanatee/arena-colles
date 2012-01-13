@@ -1,1 +1,0 @@
-module.exports = require('./../../../app/member/model/member');
