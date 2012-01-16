@@ -53,9 +53,9 @@ class="yui-skin-sam">
 	   <div id="bd">
 	    <div id="yui-main">
 	    <div class="yui-b"><div role="main" class="yui-g main">
-            <% if (info && info.length) {%><div id="info" class="alert"><%= info %></div><% }; %>
-            <% if (error && error.length) {%><div id="error" class="alert"><%= error %></div><% } %>
-            <%= partial('breadcrumb', breadcrumb) %>
+            <% if (info && info.length) {%><div id="info" class="alert"><%- info %></div><% }; %>
+            <% if (error && error.length) {%><div id="error" class="alert"><%- error %></div><% } %>
+            <%- partial('breadcrumb', breadcrumb) %>
             <% if (header){ %>
                 <h1><%- header %></h1>
             <% } %>

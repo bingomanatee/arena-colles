@@ -41,7 +41,7 @@ var fw_configs = {
             host:'localhost',
             db:'ac2'
         },
-        layout_id: 'ac'
+        layout_id:'ac'
     },
 
     menu:function (req_state, callback) {
@@ -50,19 +50,7 @@ var fw_configs = {
 
     app:app,
 
-    _mongoose:null,
-
-    after_load:function (callback) {
-        var self = this;
-
-        this.get_param({}, 'mongo_params', function (err, mongo_params) {
-        //    console.log('err: %s, prams: %s', util.inspect(err), util.inspect(mongo_params));
-            mongoose.connect(util.format('mongodb://%s:%s/%s',
-                mongo_params.host,
-                mongo_params.port, mongo_params.db));
-            mongoose.connection.on('open', callback);
-        });
-    }
+    _mongoose:null
 }
 
 var framework = new ne.Framework(fw_configs);
@@ -70,14 +58,23 @@ var framework = new ne.Framework(fw_configs);
 framework.add_layouts(__dirname + '/layouts', function () {
     var loader = new ne.Loader();
 
-    loader.load(framework, function () {
+    function _on_load_mp() {
         console.log('loaded ... listening on %s', port);
+        app.listen(port);
+    }
 
-        framework.after_load(function () {
-            app.listen(port);
+    function _after_load() {
+
+        framework.get_param({}, 'mongo_params', function (err, mongo_params) {
+            //    console.log('err: %s, prams: %s', util.inspect(err), util.inspect(mongo_params));
+            mongoose.connect(util.format('mongodb://%s:%s/%s',
+                mongo_params.host,
+                mongo_params.port, mongo_params.db));
+            mongoose.connection.on('open', _on_load_mp);
         });
+    }
 
-    }, [__dirname + '/admin', __dirname + '/app']);
+    loader.load(framework, _after_load, [__dirname + '/admin', __dirname + '/app']);
 
 });
 

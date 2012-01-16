@@ -1,3 +1,6 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
 module.exports = {
 
     email:{type:String, index:{unique:true}, required:true},
@@ -8,5 +11,6 @@ module.exports = {
     birthday:Date,
 
     roles:[String],
+    cans:[{type: Schema.ObjectID , ref: 'Cans'}],
     status:{type:Number, 'default':0}
 }

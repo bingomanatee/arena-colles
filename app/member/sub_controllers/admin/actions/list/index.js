@@ -12,17 +12,17 @@ module.exports = {
                 }
             ],
             header:'Arena Colles Members'
-        }
-    },
+        },
 
-    list:{
-        count:30,
-        page:0,
-        sort:'name',
-        name:'foo',
-        email:'foo@bar.com',
-        id:'penny',
-        created:''
+        list:{
+            count:30,
+            page:0,
+            sort:'name',
+            name:'foo',
+            email:'foo@bar.com',
+            id:'penny',
+            created:''
+        }
     },
 
     load_req_params:true,
@@ -35,9 +35,10 @@ module.exports = {
             var form_params = list_params.hasOwnProperty('form') ? list_params.form.list : {};
             delete list_params.form;
             _.extend(list_params, form_params);
-            console.log('render params: %s', util.inspect(list_params));
+           // console.log('admin list render params: %s', util.inspect(list_params));
 
             function _on_members(err, members) {
+                console.log('on members');
                 if (err) {
                     return req_state.put_flash('Error on list: ' + err.message, 'error', '/admin');
                 } else {
@@ -50,7 +51,9 @@ module.exports = {
                 }
             }
 
-            req_state.controller.model.all(_valid_params(list_params), _on_members);
+            var vp = _valid_params(list_params);
+          //  console.log('vp: %s', util.inspect(vp));
+            req_state.controller.model.find(vp, _on_members);
         }
 
         req_state.get_params([

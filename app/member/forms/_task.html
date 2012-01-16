@@ -1,0 +1,49 @@
+<form id="add_task" name="add_task" method="post" action="<%- action %>">
+    <input type="hidden" name="task[_id]" value="<%- task ? task._id.toString() %>" />
+    <div class="ui-widget">
+        <div class="ui-widget-header" style="text-align: center">
+            Add a new task
+        </div>
+        <div class="ui-widget-content" style="padding: 1em">
+            <table width="500" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th scope="col">Parent</th>
+                    <td scope="col"><select name="task[parent]" id="parent">
+                        <option value="">(top level)</option>
+                        <%- partial('parent_options.html', parents) %>
+                    </select> <input type="checkbox" name="task[property]" id="property" value="1" <%- task && task.property ? ' checked="checked" ' : '' %> />
+                        <label for="property">Universal Property</label></td>
+                </tr>
+                <tr>
+                    <th scope="row">Key</th>
+                    <td><input type="text" name="task[key]" id="key"
+                               value="<%- task ? task.key : '' %>"
+                            /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="title">Title</label></th>
+                    <td><input type="text" name="task[title]" id="title"
+                               value="<%- task ? task.title : '' %>"
+                            /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="notes">Notes</label></th>
+                    <td><textarea name="task[notes]" id="notes" cols="45" rows="3"><%- task ? task.notes : ''
+                        %></textarea></td>
+                </tr>
+                <tr>
+                    <th scope="row">&nbsp;</th>
+                    <td><input type="submit" name="submit" id="add_task_submit"
+                               value="<%- task ? 'Update' : 'Create' %> Task"/></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+
+<script language="javascript">
+    $(function () {
+        $('#add_task_submit').button({text:false, icons:"ui-icon-search"});
+
+    });
+</script>

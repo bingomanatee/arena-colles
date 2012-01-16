@@ -1,0 +1,68 @@
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs_ticket">Ticket</a></li>
+        <li><a href="#tabs_edit">Edit</a></li>
+        <li><a href="#tabs_members">Members Who Can</a></li>
+    </ul>
+
+    <div id="tabs_ticket" style="padding: 0px;">
+        <div class="ui-widget">
+            <div class="ui-widget-header" style="text-align: center">
+                Task <%- task.title %>(<%- task.key %>)
+            </div>
+            <div class="ui-widget-content" style="padding: 1em">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" id>
+                    <tr>
+                        <th scope="row" class="ui-state-default">ID</th>
+                        <td class="ui-widget-content">
+                            <%- task._id.toString() %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="ui-state-default">Key</th>
+                        <td class="ui-widget-content">
+                            <%- task.key %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="ui-state-default">Path</th>
+                        <td class="ui-widget-content">
+                            <% path.forEach(function(tp_path){ %>
+                            <%= tp_path.key %> : <% }) %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="ui-state-default">Parent</th>
+                        <td class="ui-widget-content">
+                            <%- task.parent ? task.parent.title : '(root)' %>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="tabs_edit" style="padding: 0px;">
+        <%- form %>
+    </div>
+
+    <div id="tabs_members" style="padding: 0px;">
+        <div class="ui-widget">
+            <div class="ui-widget-header" style="text-align: center">
+                Members of task <%- task.title %>(<%= task.key %>)
+            </div>
+
+            <div class="ui-widget-content" style="padding: 1em">
+                <p>Members</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script language="javascript">
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>

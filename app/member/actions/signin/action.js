@@ -2,8 +2,8 @@ module.exports = {
 
     load_req_params:'member',
 
-    params: {
-        render: {header: 'Please sign in'}
+    params:{
+        render:{header:'Please sign in'}
     },
 
     MAX_TRIES:5,
@@ -28,8 +28,23 @@ module.exports = {
     },
 
 
-
     execute:function (req_state, callback) {
+        switch (req_state.method) {
+            case 'post':
+                this.execute_post(req_state, callback);
+                break;
+
+            case 'get':
+
+                req_state.framework.menu(req_state, function (err, menu) {
+                    callback(null, {menu:menu});
+                });
+                break
+
+        }
+    },
+
+    execute_post:function (req_state, callback) {
 
         function _on_members(err, members_w_password, member) {
             var found = false;
@@ -48,16 +63,14 @@ module.exports = {
 
         }
 
-        if (req_state.method == 'post') {
-            req_state.get_param('member', function (err, member) {
-                req_state.controller.model.find({'password':member.password},
-                    function (err, members) {
-                        _on_members(err, members, member);
-                    }, function () {
-                        req_state.set_flash('where is the member?', 'error', 'back');
-                    })
-            })
-        }
+        req_state.get_param('member', function (err, member) {
+            req_state.controller.model.find({'password':member.password},
+                function (err, members) {
+                    _on_members(err, members, member);
+                }, function () {
+                    req_state.set_flash('where is the member?', 'error', 'back');
+                })
+        })
     },
 
     route:'/signin',

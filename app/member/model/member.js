@@ -6,7 +6,7 @@ var _model;
 
 module.exports = function () {
     if (!_model) {
-        var Member = new mongoose.Schema(member_schema, {safe:true});
+        var Member = new mongoose.Schema(member_schema);
         var m = mongoose.model('Member', Member);
         _model = mongoose_model.create(m);
     }
