@@ -11,7 +11,7 @@
                     <td scope="col"><select name="task[parent]" id="parent">
                         <option value="">(top level)</option>
                         <% parents.forEach(function(parent){ %>
-                        <option value="<%= parent._id.toString() %>"><%= parent.title %>(<%= parent.key %>)</option>
+                        <option value="<%= parent._id.toString() %>" <%= task.parent && (parent._id.toString() == task.parent._id.toString()) ? 'selected="selected" ' : '' %> ><%= parent.title %>(<%= parent.key %>)</option>
                         <% }) %>
                     </select> <input type="checkbox" name="task[property]" id="property" value="1" <%- task && task.property ? ' checked="checked" ' : '' %> />
                         <label for="property">Universal Property</label></td>

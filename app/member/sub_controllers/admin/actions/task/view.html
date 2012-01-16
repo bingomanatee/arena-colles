@@ -27,14 +27,25 @@
                     <tr>
                         <th scope="row" class="ui-state-default">Path</th>
                         <td class="ui-widget-content">
-                            <% path.forEach(function(tp_path){ %>
-                            <%= tp_path.key %> : <% }) %>
+                            <%= task.path %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="ui-state-default">Type</th>
+                        <td class="ui-widget-content">
+                            <%- task.property ? 'Property' : 'Task' %>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" class="ui-state-default">Parent</th>
                         <td class="ui-widget-content">
                             <%- task.parent ? task.parent.title : '(root)' %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="ui-state-default">Notes</th>
+                        <td class="ui-widget-content">
+                            <%- task.notes %>
                         </td>
                     </tr>
                 </table>

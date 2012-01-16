@@ -1,6 +1,7 @@
 var util = require('util');
 
 /**
+ * Updates an EXISTING task.
  * note - all results of this action are redirects
  */
 module.exports = {
@@ -8,26 +9,20 @@ module.exports = {
     load_req_params:true,
 
     execute:function (req_state, callback) {
-        console.log('updating task');
-
         function _on_put_task(err, put_task) {
-
-            console.log('put task: %s, err: %s', util.inspect(put_task), util.inspect(err));
-
             if (err) {
-                console.log('err = ' + util.inspect(err));
-                return req_state.put_flash('Cannot create task: ' + _validation_errors(err), 'error', '/admin/members/tasks');
+                return req_state.put_flash('Cannot update task: ' + _validation_errors(err), 'error', '/admin/members/tasks');
             } else {
                 req_state.put_flash(
-                    util.format('Created task &quot;%s&quot; (%s)', put_task._id.toString(), put_task.key),
+                    util.format('Upated task &quot;%s&quot; (%s)', put_task._id.toString(), put_task.key),
                     'info', '/admin/members/task/' + put_task._id.toString());
             }
 
         }
 
         function _on_task(err, task) {
+            var task_model = req_state.controller.task_model;
 
-            console.log('task: %s', util.inspect(task));
             if (err) {
                 return req_state.put_flash('error getting task: ' + err.message, 'error', '/admin/members/tasks');
             }
@@ -62,7 +57,7 @@ module.exports = {
                 function _on_got_parent(err, parent) {
                     console.log('found parent %s', util.inspect(parent));
                     task_obj.parent = parent;
-                    task_obj.save(_on_saved);
+                    task_model.put(task_obj, _on_saved);
                 }
 
                 if (task.parent) {
@@ -71,13 +66,13 @@ module.exports = {
                     req_state.controller.task_model.get(task.parent, _on_got_parent);
                 } else {
                     console.log('applying empty parent');
-                    task_obj.parent = '';
-                    task_obj.save(_on_saved);
+                    task_obj.parent = null;
+                    task_model.put(task_obj, _on_saved);
 
                 }
             }
 
-            req_state.controller.task_model.get(task._id, _on_get_task);
+            task_model.get(task._id, _on_get_task);
         }
 
         function _no_task() {

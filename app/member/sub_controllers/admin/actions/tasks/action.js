@@ -28,14 +28,23 @@ module.exports = {
     execute:function (req_state, callback) {
         var self = this;
 
-        function _on_tasks(err, tasks) {
+        //@TODO: better error handling
+
+        function _on_tasks(err, _tasks) {
+            var properties = [];
+            var tasks = [];
+            _tasks.forEach(function(t){ if (t.property){
+                properties.push(t);
+            } else {
+                tasks.push(t);
+            }})
 
             function _on_parents(err, parents) {
 
                 function _on_menu(err, menu) {
 
-                    function _on_task_form(err, form){
-                        callback(null, {tasks:tasks, form: form, menu:menu });
+                    function _on_task_form(err, form) {
+                        callback(null, {tasks:tasks, properties: properties, form:form, menu:menu });
                     }
 
                     task_form(_on_task_form, '/admin/members/task', false, parents);
@@ -52,11 +61,10 @@ module.exports = {
 
     route:'/admin/members/tasks',
 
-    method: 'get'
+    method:'get'
 
 }
 
-var req_re = /Validator "required" failed for path .*/
 
 function _validation_errors(err) {
     var list = [];
@@ -67,6 +75,7 @@ function _validation_errors(err) {
 }
 
 function _filter_error(error) {
+    var req_re = /Validator "required" failed for path .*/
     if (req_re.test(error)) {
         return 'required';
     }

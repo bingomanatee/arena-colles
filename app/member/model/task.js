@@ -28,19 +28,20 @@ module.exports = function () {
                 }
             },
 
-            path: function(task, callback){
+            path:function (task, callback) {
+                //@TODO: prevent circularity
                 var path_list = [];
 
                 this._path(task, callback, path_list);
             },
 
-            _path: function(task, cb, path_list){
+            _path:function (task, cb, path_list) {
 
                 var self = this;
 
-                function _on_get_task(err, task_obj){
+                function _on_get_task(err, task_obj) {
                     path_list.unshift(task_obj);
-                    if (task_obj.parent){
+                    if (task_obj.parent) {
                         self._path(task_obj.parent, cb, path_list);
                     } else {
                         cb(null, path_list);
@@ -49,6 +50,33 @@ module.exports = function () {
 
                 self.get(task._id).populate('parent').run(_on_get_task);
 
+            },
+
+            post_save:function (doc, cb) {
+                if (doc.property){
+                    doc.path = '';
+                    doc.parent = null;
+                    doc.save(cb);
+                    return;
+                }
+                console.log('saving path');
+                function _on_path(err, path_list) {
+                    var keys = [];
+                    path_list.forEach(function (task) {
+                        if (task.property) {
+                            keys.push('error: cannot have propertys in path. Properties cannot have or be parents.');
+                        } else {
+                            keys.push(task.key);
+                        }
+                    })
+
+                    doc.path = keys.join('.');
+                    console.log('path == %s', doc.path);
+
+                    doc.save(cb);
+                }
+
+                this.path(doc, _on_path);
             }
 
         });

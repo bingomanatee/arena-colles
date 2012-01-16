@@ -6,6 +6,8 @@ var Schema = mongoose.Schema;
  * '' -- empty, meaning it is a root task
  * '*' -- "property", meaning any task can have this as a sub modifier
  * 'string' -- any string, which must be the ID of an existing task
+ *
+ * can is the default permission state for anyone with out specific permissions.
  */
 
 module.exports = {
@@ -17,5 +19,6 @@ module.exports = {
     parent:{type:Schema.ObjectId, ref: 'Task'},
     created_by:{type:Schema.ObjectId, ref:'Member'},
     created:{type:Date, 'default':Date.now, required:true},
-    can:{type:Boolean, 'default':false}
+    can:{type:Boolean, 'default':false},
+    deleted: {type: Boolean, 'default': false}
 }
