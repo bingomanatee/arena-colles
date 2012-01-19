@@ -1,0 +1,65 @@
+<form id="join_form" name="join_form" method="post" action="<%- action %>">
+    <input type="hidden" name="member[_id]" value="<%- member ? member._id.toString() : '' %>"/>
+
+    <div class="ui-widget">
+        <div class="ui-widget-header" style="text-align: center">
+            <%- member ? 'Edit member ' + member.name + '(' + member.email + ')' : 'Add a new member' %>
+        </div>
+        <div class="ui-widget-content" style="padding: 1em">
+            <table width="400" border="0" class="form_frame">
+                <tr class="required">
+                    <th scope="row"><label for="member.name">Name</label></th>
+                    <td><input name="member[name]" type="text" id="member.name" value="<%= member.name %>"/></td>
+                    <td><% if (member.hasOwnProperty('name_error')){ %><i><%= member.name_error %></i><% } %></td>
+                </tr>
+                <tr class="required">
+                    <th scope="row"><label for="member.email">Email</label></th>
+                    <td><input name="member[email]" type="text" id="member.email" value="<%= member.email %>"/></td>
+                    <td><% if (member.hasOwnProperty('email_error')){ %><i><%= member.email_error %></i><% } %></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="member.password.0">Password</label></th>
+                    <td>
+                        <input name="member[password][0]" type="password" id="member.password.0" value="" style="margin-bottom: 3px"/><br/>
+                        <input name="member[password][1]" type="password" id="member.password.1" value=""/>
+                    </td>
+                    <td><% if (member.hasOwnProperty('password_error')){ %><i><%= member.password_error %></i><% } %>
+                    </td>
+                </tr>
+
+                <tr class="required">
+                    <th scope="row"><label for="member.birthday.month">Birthday</label></th>
+                    <td nowrap="nowrap">
+                        <select name="member[birthday][month]" id="member.birthday.month">
+                            <option value="-1">-choose-</option>
+                            <% months.forEach(function(month){ %>
+                            <option value="<%- month.value %>"
+                            <%- month.value + 1 == member.birthday.getMonth() ? ' selected="selected" ' : '' %> ><%-
+                            month.label %></option>
+                            <% }) %>
+                        </select>
+                        <input name="member[birthday][day]" type="text" id="member.birthday.day"
+                               value="<%= member.birthday.getDay() %>" size="3" maxlength="2"/>
+                        <input name="member[birthday][year]" type="text" id="member.birthday.year"
+                               value="<%= member.birthday.getFullYear() %>" size="5" maxlength="4"/>
+                    </td>
+                    <td><% if (member.hasOwnProperty('birthday_error')){ %><i><%= member.birthday_error %></i><% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">&nbsp;</th>
+                    <td><input type="submit" name="submit" id="add_member_submit" value="Update Member"/></td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+
+
+<script language="javascript">
+    $(function () {
+        $('#add_member_submit').button({text:false});
+
+    });
+</script>

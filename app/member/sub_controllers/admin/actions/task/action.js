@@ -1,5 +1,5 @@
 var util = require('util');
-var task_form = require('./../../../../forms/task_form');
+var task_form = require('./../../../../views/forms/task_form');
 
 module.exports = {
     params:{

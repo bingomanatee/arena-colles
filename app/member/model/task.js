@@ -53,21 +53,11 @@ module.exports = function () {
             },
 
             post_save:function (doc, cb) {
-                if (doc.property){
-                    doc.path = '';
-                    doc.parent = null;
-                    doc.save(cb);
-                    return;
-                }
                 console.log('saving path');
                 function _on_path(err, path_list) {
                     var keys = [];
                     path_list.forEach(function (task) {
-                        if (task.property) {
-                            keys.push('error: cannot have propertys in path. Properties cannot have or be parents.');
-                        } else {
-                            keys.push(task.key);
-                        }
+                        keys.push(task.key);
                     })
 
                     doc.path = keys.join('.');

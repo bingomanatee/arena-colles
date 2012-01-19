@@ -1,0 +1,30 @@
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs_ticket">Ticket</a></li>
+        <li><a href="#tabs_member_form">Edit</a></li>
+        <li><a href="#tabs_privs">Privileges</a></li>
+    </ul>
+
+    <div id="tabs_ticket" style="padding: 0px;">
+        <%- ticket %>
+    </div>
+
+    <div id="tabs_member_form" style="padding: 0px;">
+        <div class="ui-widget">
+
+            <%- form %>
+        </div>
+    </div>
+
+
+    <div id="tabs_privs">
+        <h3>Privileges</h3>
+    </div>
+
+</div>
+
+<script language="javascript">
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>

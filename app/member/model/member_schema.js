@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var can_schema = require('./can_schema');
+var Can = new Schema(can_schema);
+
 module.exports = {
 
     email:{type:String, index:{unique:true}, required:true},
@@ -9,8 +12,10 @@ module.exports = {
 
     created:{type:Date, 'default':Date.now, required:true},
     birthday:Date,
+    notes:String,
 
     roles:[String],
-    cans:[{type: Schema.ObjectID , ref: 'Cans'}],
+    cans:[Can],
     status:{type:Number, 'default':0}
+
 }

@@ -30,7 +30,6 @@ module.exports = {
     execute:function (req_state, callback) {
         console.log('executing');
 
-
         function _on_list_params(err, list_params) {
             var form_params = list_params.hasOwnProperty('form') ? list_params.form.list : {};
             delete list_params.form;
@@ -72,7 +71,7 @@ module.exports = {
 
     route:'/admin/members',
 
-    method:['get', 'post']
+    method: 'get'
 
 }
 

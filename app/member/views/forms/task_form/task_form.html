@@ -2,16 +2,18 @@
     <input type="hidden" name="task[_id]" value="<%- task ? task._id.toString() : '' %>" />
     <div class="ui-widget">
         <div class="ui-widget-header" style="text-align: center">
-            Add a new task
+           <%- task ? 'Edit Task ' + task.title + '(' + task.key + ')' :  'Add a new task' %>
         </div>
         <div class="ui-widget-content" style="padding: 1em">
-            <table width="500" border="0" cellspacing="0" cellpadding="0">
+            <table width="500" border="0" cellspacing="0" cellpadding="0" class="form_frame">
                 <tr>
                     <th scope="col">Parent</th>
                     <td scope="col"><select name="task[parent]" id="parent">
                         <option value="">(top level)</option>
-                    </select> <input type="checkbox" name="task[property]" id="property"
-                                     value="1" <%- task && task.property ? ' checked="checked" ' : '' %> />
+                        <% parents.forEach(function(parent){ %>
+                        <option value="<%= parent._id.toString() %>" <%= task.parent && (parent._id.toString() == task.parent._id.toString()) ? 'selected="selected" ' : '' %> ><%= parent.title %>(<%= parent.key %>)</option>
+                        <% }) %>
+                    </select> <input type="checkbox" name="task[property]" id="property" value="1" <%- task && task.property ? ' checked="checked" ' : '' %> />
                         <label for="property">Universal Property</label></td>
                 </tr>
                 <tr>

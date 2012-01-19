@@ -5,8 +5,7 @@ var path = require('path');
 module.exports = {
 
     params:{
-        layout_id:'ac',
-        task_form_view:path.resolve(__dirname, 'views/forms/task.html')
+        layout_id:'ac'
     },
 
     model:member_model(),

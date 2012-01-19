@@ -135,6 +135,9 @@ figure { margin: 0; }
 
 form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
+table.form_frame td, table.form_frame th {
+    padding-top: 4px;
+}
 
 /* Indicate that 'label' will shift focus to the associated form element */
 label { cursor: pointer; }

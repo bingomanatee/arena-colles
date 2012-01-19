@@ -1,0 +1,26 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id>
+    <tr>
+        <th scope="row" class="ui-state-default">ID</th>
+        <td class="ui-widget-content">
+            <%- member._id.toString() %>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="ui-state-default">Name</th>
+        <td class="ui-widget-content">
+            <%- member.name %>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="ui-state-default">Email</th>
+        <td class="ui-widget-content">
+            <%= member.email %>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="ui-state-default">Notes</th>
+        <td class="ui-widget-content">
+            <%- member.notes %>
+        </td>
+    </tr>
+</table>

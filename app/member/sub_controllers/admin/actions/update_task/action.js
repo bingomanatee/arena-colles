@@ -63,7 +63,7 @@ module.exports = {
                 if (task.parent) {
                     console.log('applying parent %s', task.parent.toString());
                     // task_obj.parent = task.parent;
-                    req_state.controller.task_model.get(task.parent, _on_got_parent);
+                    task_model.get(task.parent, _on_got_parent);
                 } else {
                     console.log('applying empty parent');
                     task_obj.parent = null;
