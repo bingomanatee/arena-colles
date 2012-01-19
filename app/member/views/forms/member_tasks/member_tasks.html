@@ -1,0 +1,49 @@
+<form id="join_form" name="join_form" method="post" action="<%- action %>">
+    <input type="hidden" name="member[_id]" value="<%- member ? member._id.toString() : '' %>"/>
+
+    <div class="ui-widget">
+        <div class="ui-widget-header" style="text-align: center">
+            <%- 'Edit tasks of member ' + member.name + '(' + member.email + ')' %>
+        </div>
+        <div class="ui-widget-content" style="padding: 1em">
+            <table width="100%">
+                <thead>
+                <tr>
+                    <th rowspan="2">Permissions</th>
+                    <th colspan="<%= root_props.length + 1 %>">Acts</th>
+                </tr>
+
+                <tr>
+                    <th>(all)</th>
+                    <% root_props.forEach(function(prop){ %>
+                    <th><%= prop.key %></th>
+                    <% }) %>
+                </tr>
+                </thead>
+                <tbody>
+                <% non_props.forEach(function(task){ %>
+                <tr>
+                    <th>
+                        <%- task.path %> (<%= task.title %>)
+                    </th>
+                    <td><input name="task[]" type="Checkbox" value="<%- task.path %>"/></td>
+
+                    <% root_props.forEach(function(prop){ %>
+                    <th><input name="task[]" type="Checkbox" value="<%- task.path %>.<%- prop.path %>"/></th>
+                    <% }) %>
+                </tr>
+                <% }) %>
+                </tbody>
+            </table>
+            <input type="submit" id="set_tasks_submit" value="Update Member Tasks"/>
+        </div>
+    </div>
+</form>
+
+
+<script language="javascript">
+    $(function () {
+        $('#set_tasks_submit').button({text:false});
+
+    });
+</script>

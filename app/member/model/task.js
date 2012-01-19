@@ -52,6 +52,15 @@ module.exports = function () {
 
             },
 
+            root_props:function (cb) {
+                var self = this;
+                self.model.find({property: true, parent: null}).sort('name', 1).run(cb);
+            },
+
+            non_props: function(cb){
+                this.model.where('property').ne(true).sort('path', 1).run(cb);
+            },
+
             post_save:function (doc, cb) {
                 console.log('saving path');
                 function _on_path(err, path_list) {

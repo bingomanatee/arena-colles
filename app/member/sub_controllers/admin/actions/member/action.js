@@ -1,4 +1,5 @@
 var member_form = require('./../../../../views/forms/member_form');
+var member_tasks = require('./../../../../views/forms/member_tasks');
 var member_ticket = require('./../../../../views/tickets/member_ticket');
 var util = require('util');
 
@@ -43,8 +44,11 @@ module.exports = {
 
                     function _on_ticket(err, ticket) {
 
-                        callback(null, {form:form, menu:menu, ticket: ticket, member:member})
+                        function _on_mt(err, member_tasks) {
+                            callback(null, {form:form, member_tasks:member_tasks, menu:menu, ticket:ticket, member:member})
+                        }
 
+                        member_tasks(_on_mt, member, '/admin/member/' + member._id.toString() + '/tasks');
                     }
 
                     member_ticket(_on_ticket, member);
@@ -62,7 +66,7 @@ module.exports = {
         });
     },
 
-    route:'/admin/members/:id',
+    route:'/admin/member/:id',
 
     method:'get'
 

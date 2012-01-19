@@ -1,4 +1,4 @@
-var ejs = require('./../../../node_modules/nuby-express/node_modules/ejs');
+var ejs = require('../../../../../node_modules/nuby-express/node_modules/ejs');
 var fs = require('fs');
 
 module.exports = function (callback, member) {

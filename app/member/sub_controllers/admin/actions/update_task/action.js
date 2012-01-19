@@ -57,6 +57,7 @@ module.exports = {
                 function _on_got_parent(err, parent) {
                     console.log('found parent %s', util.inspect(parent));
                     task_obj.parent = parent;
+                    console.log('saving task: 1 %s', util.inspect(task_obj.toObject()));
                     task_model.put(task_obj, _on_saved);
                 }
 
@@ -67,6 +68,7 @@ module.exports = {
                 } else {
                     console.log('applying empty parent');
                     task_obj.parent = null;
+                    console.log('saving task: 2 %s', util.inspect(task_obj.toObject()));
                     task_model.put(task_obj, _on_saved);
 
                 }
