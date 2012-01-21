@@ -1,6 +1,6 @@
 var ejs = require('./../../../../../node_modules/nuby-express/node_modules/ejs');
 var fs = require('fs');
-var task_model = require('./../../../model/task');
+var task_model = require('../../../models/task');
 var util = require('util');
 
 var _task_model = task_model();

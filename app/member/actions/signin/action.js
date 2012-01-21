@@ -36,10 +36,7 @@ module.exports = {
 
             case 'get':
 
-                req_state.framework.menu(req_state, function (err, menu) {
-                    callback(null, {menu:menu});
-                });
-                break
+                callback();
 
         }
     },
@@ -53,17 +50,18 @@ module.exports = {
                 mbr = members_w_password[i];
                 if ((mbr.email == member.name) || (mbr.name == member.name)) {
                     req_state.set_session('memberid', mbr._id.toString());
-                    req_state.set_flash('Welcome Back!', 'info', '/account');
+                    req_state.put_flash('Welcome Back!', 'info', '/account');
                     return;
                 }
             }
 
-            req_state.set_flash('Sorry, we cannot find your identity', error);
+            req_state.put_flash('Sorry, we cannot find your identity', 'error');
             callback(null, {member:member});
 
         }
 
-        req_state.get_param('member', function (err, member) {
+        req_state.get_param(['form','member'], function (err, member) {
+            console.log('checking for members with password: %s', member.password);
             req_state.controller.model.find({'password':member.password},
                 function (err, members) {
                     _on_members(err, members, member);

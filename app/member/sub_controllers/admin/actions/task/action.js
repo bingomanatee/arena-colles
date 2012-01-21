@@ -48,12 +48,8 @@ module.exports = {
 
                             function _on_task_form(err, form) {
 
-                                function _on_menu(err, menu) {
-                                    _.extend(params, {task:task, path: task_path, form:form, menu:menu});
-                                    callback(null, params);
-                                }
-
-                                req_state.framework.menu(req_state, _on_menu);
+                                _.extend(params, {task:task, path:task_path, form:form});
+                                callback(null, params);
 
                             }
 

@@ -40,21 +40,16 @@ module.exports = {
 
             function _on_form(err, form) {
 
-                function _on_menu(err, menu) {
+                function _on_ticket(err, ticket) {
 
-                    function _on_ticket(err, ticket) {
-
-                        function _on_mt(err, member_tasks) {
-                            callback(null, {form:form, member_tasks:member_tasks, menu:menu, ticket:ticket, member:member})
-                        }
-
-                        member_tasks(_on_mt, member, '/admin/member/' + member._id.toString() + '/tasks');
+                    function _on_mt(err, member_tasks) {
+                        callback(null, {form:form, member_tasks:member_tasks, ticket:ticket, member:member})
                     }
 
-                    member_ticket(_on_ticket, member);
+                    member_tasks(_on_mt, member, '/admin/member/' + member._id.toString() + '/tasks');
                 }
 
-                req_state.framework.menu(req_state, _on_menu);
+                member_ticket(_on_ticket, member);
             }
 
             member_form(_on_form, '/admin/member/', member);

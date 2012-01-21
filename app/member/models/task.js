@@ -1,6 +1,6 @@
 var mongoose = require('./../../../node_modules/mongoose');
 var mongoose_model = require('./../../../node_modules/nuby-express/lib/mongoose_model');
-var task_schema = require('./task_schema');
+var task_schema = require('./schema/task_schema');
 
 var _model;
 

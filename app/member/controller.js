@@ -1,5 +1,5 @@
-var member_model = require('./model/member');
-var task_model = require('./model/task');
+var member_model = require('./models/member');
+var task_model = require('./models/task');
 var path = require('path');
 
 module.exports = {

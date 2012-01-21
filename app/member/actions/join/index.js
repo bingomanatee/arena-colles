@@ -65,9 +65,7 @@ module.exports = {
                         console.log('member: %s', util.inspect(member));
                         req_state.put_flash('Sorry you can\'t join us: ' + err.message, 'error');
                         _validation_errors(member_data, err);
-                        req_state.framework.menu(req_state, function (err, menu) {
-                            callback(null, {member:member_data, menu:menu});
-                        });
+                        callback(null, {member:member_data});
                     } else {
                         req_state.put_flash(util.format('Thanks for joining us %s!', member.name), 'info', 'home');
                     }
@@ -77,7 +75,7 @@ module.exports = {
                 var orig_bd = member_data.birthday;
                 var bd = new Date(orig_bd.year, orig_bd.month, orig_bd.day);
                 if (
-                        (member_data.password[0] != member_data.password[1]) ||
+                    (member_data.password[0] != member_data.password[1]) ||
                         (member_data.password[0].length < 8)
                     ) {
                     var err = new Error('Validation Failed');
@@ -86,19 +84,17 @@ module.exports = {
                 } else {
                     member_data.password = member_data.password[0];
                 }
-                req_state.controller.model.put(_.extend(_.clone(member_data), {birthday:bd, created: new Date()}), _on_member_post);
+                req_state.controller.model.put(_.extend(_.clone(member_data), {birthday:bd, created:new Date()}), _on_member_post);
             }, function () {
                 req_state.put_flash('Cannot find member', 'error', 'home');
             })
         } else {
-            this.framework.menu(req_state, function (err, menu) {
-                function _on_member_get(err, member) {
-                    console.log('join member = %s', util.inspect(member));
-                    callback(err, {menu:menu, member:member});
-                }
+            function _on_member_get(err, member) {
+                console.log('join member = %s', util.inspect(member));
+                callback(err, {member:member});
+            }
 
-                req_state.get_param('member', _on_member_get, {name:'', email:'', password:'', birthday:{day:1, month:1, year:1900}});
-            })
+            req_state.get_param('member', _on_member_get, {name:'', email:'', password:'', birthday:{day:1, month:1, year:1900}});
         }
     },
 

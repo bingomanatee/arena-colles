@@ -22,10 +22,17 @@
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css"
+          type="text/css">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
     <link rel="stylesheet" href="/ac/css/style.css">
+
+    <!-- JQUERY UI -->
+
+    <link type="text/css" href="/ac_admin/css/smoothness/jquery-ui-1.8.17.custom.css" rel="stylesheet"/>
+    <script type="text/javascript" src="/ac_admin/js/libs/jq.1.7.js"></script>
+    <script type="text/javascript" src="/ac_admin/js/libs/jqui.1.8.17.js"></script>
 
     <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
@@ -38,30 +45,34 @@ for optimal performance, create your own custom Modernizr build: www.modernizr.c
 </head>
 
 <body style="background-color: white"
-class="yui-skin-sam">
-	<div id="doc3" class="yui-t2" style="margin: 0px">
-	   <header id="hd" role="banner">
-    <img src="/ac/img/logo.png" />
-</header>
-	   <div id="bd">
-	    <div id="yui-main">
-	    <div class="yui-b"><div role="main" class="yui-g main">
-            <% if (info && info.length) {%><div id="info" class="alert"><%= info %></div><% }; %>
-            <% if (error && error.length) {%><div id="error" class="alert"><%= error %></div><% } %>
+      class="yui-skin-sam">
+<div id="doc3" class="yui-t2" style="margin: 0px">
+    <header id="hd" role="banner">
+        <img src="/ac/img/logo.png"/>
+    </header>
+    <div id="bd">
+        <div id="yui-main">
+            <div class="yui-b">
+                <div role="main" class="yui-g main">
+                    <% if (info && info.length) {%>
+                    <div id="info" class="alert"><%= info %></div>
+                    <% }; %>
+                    <% if (error && error.length) {%>
+                    <div id="error" class="alert"><%= error %></div>
+                    <% } %>
 
-            <% if (header){ %>
-                <h1><%- header %></h1>
-            <% } %>
-    <%- body %>
-	    </div>
-	</div>
-	    </div>
-	    <div role="navigation" class="yui-b menu"><%- menu %></div>
+                    <% if (header){ %>
+                    <h1><%- header %></h1>
+                    <% } %>
+                    <%- body %>
+                </div>
+            </div>
+        </div>
+        <div role="navigation" class="yui-b menu"><%- menu %></div>
 
-	    </div>
-	   <footer id="ft" role="contentinfo"><p>&copy;2011,2012 all rights reserved Wonderland Labs</p></footer>
-	</div>
-
+    </div>
+    <footer id="ft" role="contentinfo"><p>&copy;2011,2012 all rights reserved Wonderland Labs</p></footer>
+</div>
 
 
 <!-- JavaScript at the bottom for fast page loading -->

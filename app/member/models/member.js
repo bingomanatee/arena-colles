@@ -1,6 +1,6 @@
-var mongoose = require('./../../../node_modules/mongoose');
-var mongoose_model = require('./../../../node_modules/nuby-express/lib/mongoose_model');
-var member_schema = require('./member_schema');
+var mongoose = require('../../../node_modules/mongoose');
+var mongoose_model = require('../../../node_modules/nuby-express/lib/mongoose_model');
+var member_schema = require('./schema/member_schema.js');
 
 var _model;
 

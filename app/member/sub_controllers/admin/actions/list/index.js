@@ -34,24 +34,22 @@ module.exports = {
             var form_params = list_params.hasOwnProperty('form') ? list_params.form.list : {};
             delete list_params.form;
             _.extend(list_params, form_params);
-           // console.log('admin list render params: %s', util.inspect(list_params));
+            // console.log('admin list render params: %s', util.inspect(list_params));
 
             function _on_members(err, members) {
                 console.log('on members');
                 if (err) {
                     return req_state.put_flash('Error on list: ' + err.message, 'error', '/admin');
                 } else {
-                    req_state.framework.menu(req_state, function (err, menu) {
-                        _.extend(list_params, list_params.render, {members:members, menu:menu});
-                        console.log('===================  list params: %s'
-                            , util.inspect(list_params));
-                        callback(err, list_params);
-                    });
+                    _.extend(list_params, list_params.render, {members:members});
+                    console.log('===================  list params: %s'
+                        , util.inspect(list_params));
+                    callback(err, list_params);
                 }
             }
 
             var vp = _valid_params(list_params);
-          //  console.log('vp: %s', util.inspect(vp));
+            //  console.log('vp: %s', util.inspect(vp));
             req_state.controller.model.find(vp, _on_members);
         }
 
@@ -71,7 +69,7 @@ module.exports = {
 
     route:'/admin/members',
 
-    method: 'get'
+    method:'get'
 
 }
 

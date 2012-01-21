@@ -33,24 +33,21 @@ module.exports = {
         function _on_tasks(err, _tasks) {
             var actions = [];
             var subjects = [];
-            _tasks.forEach(function(t){ if (t.type == 'action'){
-                actions.push(t);
-            } else {
-                subjects.push(t);
-            }})
+            _tasks.forEach(function (t) {
+                if (t.type == 'action') {
+                    actions.push(t);
+                } else {
+                    subjects.push(t);
+                }
+            })
 
             function _on_parents(err, parents) {
 
-                function _on_menu(err, menu) {
-
-                    function _on_task_form(err, form) {
-                        callback(null, {actions: actions, subjects: subjects, form:form, menu:menu });
-                    }
-
-                    task_form(_on_task_form, '/admin/members/task', false, parents);
+                function _on_task_form(err, form) {
+                    callback(null, {actions:actions, subjects:subjects, form:form });
                 }
 
-                req_state.framework.menu(req_state, _on_menu);
+                task_form(_on_task_form, '/admin/members/task', false, parents);
             }
 
             req_state.controller.task_model.parents(null, _on_parents);
