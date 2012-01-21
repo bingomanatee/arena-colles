@@ -15,7 +15,8 @@ module.exports = {
     notes:String,
 
     roles:[String],
-    cans:[Can],
+    cans:[String],
+    cants:[String],
     status:{type:Number, 'default':0}
 
 }

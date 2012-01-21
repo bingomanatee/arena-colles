@@ -29,20 +29,11 @@ module.exports = {
                 return req_state.put_flash(err.message, 'error', '/admin/members/tasks');
             }
             delete task._id;
-            console.log('task. property: %s', task.property);
-            if (!task.hasOwnProperty('property')){
-                        task.property = false;
-            }
             console.log('task: %s', util.inspect(task));
             task.created = new Date();
 
-            if (task.property || !task.parent) {
+            if (!task.parent) {
                 task.parent = null;
-            }
-            if (task.property == 1) {
-                task.property = true;
-            } else {
-                task.property = false;
             }
 
             task_model.put(task, _on_put_task);

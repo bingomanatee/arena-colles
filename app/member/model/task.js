@@ -48,17 +48,40 @@ module.exports = function () {
                     }
                 }
 
-                self.get(task._id).populate('parent').run(_on_get_task);
+                this.get(task._id).populate('parent').run(_on_get_task);
 
             },
 
-            root_props:function (cb) {
-                var self = this;
-                self.model.find({property: true, parent: null}).sort('name', 1).run(cb);
+            root_actions:function (cb) {
+                this.model.find({type:'action', parent:null}).sort('name', 1).run(cb);
             },
 
-            non_props: function(cb){
-                this.model.where('property').ne(true).sort('path', 1).run(cb);
+            subactions:function (cb) {
+
+                var ks_regex = /^[^.]+/;
+                function _on_actions(err, actions) {
+                    var out = {};
+
+                    actions.forEach(function (action) {
+                        if (!action.parent) {
+                            out[action.key] = [];
+                        }
+                    });
+                    actions.forEach(function (action) {
+                        if (action.parent) {
+                            var key_start = ks_regex.exec(action.path)[0];
+                            out[key_start].push(action.path);
+                        }
+                    });
+
+                    cb(null, out);
+                }
+
+                this.model.find({type:'action'}).sort('path', 1).run(_on_actions);
+            },
+
+            subjects:function (cb) {
+                this.model.where('type', 'subject').sort('path', 1).run(cb);
             },
 
             post_save:function (doc, cb) {

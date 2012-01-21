@@ -7,24 +7,32 @@
         <div class="ui-widget-content" style="padding: 1em">
             <table width="500" border="0" cellspacing="0" cellpadding="0" class="form_frame">
                 <tr>
-                    <th scope="col">Parent</th>
-                    <td scope="col"><select name="task[parent]" id="parent">
+                    <th scope="col" class="ui-widget-header" >Parent</th>
+                    <td scope="col" class="ui-state-default"><select name="task[parent]" id="parent">
                         <option value="">(top level)</option>
                         <% parents.forEach(function(parent){ %>
                         <option value="<%= parent._id.toString() %>" <%= task.parent && (parent._id.toString() == task.parent._id.toString()) ? 'selected="selected" ' : '' %> ><%= parent.title %>(<%= parent.key %>)</option>
                         <% }) %>
-                    </select> <input type="checkbox" name="task[property]" id="property" value="1" <%- task && task.property ? ' checked="checked" ' : '' %> />
-                        <label for="property">Universal Property</label></td>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="ui-widget-header" >Type</th>
+                     <td scope="col" class="ui-state-default"><label><input type="radio" name="task[type]" value="action"
+                         <%- ( task && task.type == 'action') ? ' checked="checked" ' : '' %>  />Action</label><br />
+                         <label><input type="radio" name="task[type]" value="subject"
+                         <%- task ? ((  task.type == 'subject') ? ' checked="checked" ' : '') : ' checked="checked" ' %>   />Subject</label>
+                            </td>
                 </tr>
                 <tr>
                     <th scope="row">Key</th>
-                    <td><input type="text" name="task[key]" id="key"
+                    <td scope="col" class="ui-state-default"><input type="text" name="task[key]" id="key"
                                value="<%- task ? task.key : '' %>"
                             /></td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="title">Title</label></th>
-                    <td><input type="text" name="task[title]" id="title"
+                    <td scope="col" class="ui-state-default"><input type="text" name="task[title]" id="title"
                                value="<%- task ? task.title : '' %>"
                             /></td>
                 </tr>

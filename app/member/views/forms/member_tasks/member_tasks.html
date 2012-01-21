@@ -1,3 +1,7 @@
+<%
+var click_group = 1;
+
+%>
 <form id="join_form" name="join_form" method="post" action="<%- action %>">
     <input type="hidden" name="member[_id]" value="<%- member ? member._id.toString() : '' %>"/>
 
@@ -9,28 +13,69 @@
             <table width="100%">
                 <thead>
                 <tr>
-                    <th rowspan="2">Permissions</th>
-                    <th colspan="<%= root_props.length + 1 %>">Acts</th>
+                    <th rowspan="2">Subjects</th>
+                    <th colspan="<%= actions.length  %>">Actions</th>
                 </tr>
 
                 <tr>
-                    <th>(all)</th>
-                    <% root_props.forEach(function(prop){ %>
-                    <th><%= prop.key %></th>
+                    <% actions.forEach(function(action){ %>
+                    <th><%= action.key %></th>
                     <% }) %>
                 </tr>
                 </thead>
                 <tbody>
-                <% non_props.forEach(function(task){ %>
+                <% subjects.forEach(function(subject){ %>
                 <tr>
-                    <th>
-                        <%- task.path %> (<%= task.title %>)
+                    <th style="vertical-align: top" class="ui-state-default">
+                        <%- subject.path %> (<%= subject.title %>)
                     </th>
-                    <td><input name="task[]" type="Checkbox" value="<%- task.path %>"/></td>
 
-                    <% root_props.forEach(function(prop){ %>
-                    <th><input name="task[]" type="Checkbox" value="<%- task.path %>.<%- prop.path %>"/></th>
+                    <% actions.forEach(function(action){ %>
+                    <td class="ui-widget-content">
+                        <label><input name="task[<%- subject.key %>][]" autocomplete="off" <%
+var pattern;
+var out = '';
+var any_subs = 0;
+if (action.path == '*'){
+    var pattern = subject.path;
+} else {
+    var pattern = subject.path + '.' + action.path;
+}
+
+if (member.cans){
+    for (var i = 0; i < member.cans.length; ++i){
+      if (pattern == member.cans[i]){
+       out = ' checked="checked" ';
+      }
+    }
+}
+  %> <%- out %> type="checkbox" value="<%- action.path %>"/><b><%- action.key %> </b></label>
+
+                        <% if (subactions[action.key].length){ %>   <span style="font-size: 60%" onclick="$('#cg<%- click_group %>').toggle()">&nabla;</span><% } %>
+                        <span style="display: none; font-size: 80%" id="cg<%- click_group %>">
+                        <% subactions[action.key].forEach(function(subaction){ %>
+                        <br/><label><input name="task[<%- subject.key %>][]" autocomplete="off" type="checkbox" <%
+var out = '';
+    var pattern = subject.path + '.' + subaction;
+
+if (member.cans){
+    for (var i = 0; i < member.cans.length; ++i){
+      if (pattern == member.cans[i]){
+       out = ' checked="checked" ';
+                            ++any_subs
+      }
+    }
+}
+  %>  <%- out %> value="<%- subaction %>"/>&nbsp;&nbsp;<%- subaction.replace(/^[^.]+\./, '')
+                            %></label>
+                            <% }) %></span>
+                        <% ++click_group %>
+                        <% if (any_subs) { %>(<%- any_subs %>) <% } %>
+                    </td>
                     <% }) %>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
                 </tr>
                 <% }) %>
                 </tbody>

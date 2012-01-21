@@ -31,12 +31,12 @@ module.exports = {
         //@TODO: better error handling
 
         function _on_tasks(err, _tasks) {
-            var properties = [];
-            var tasks = [];
-            _tasks.forEach(function(t){ if (t.property){
-                properties.push(t);
+            var actions = [];
+            var subjects = [];
+            _tasks.forEach(function(t){ if (t.type == 'action'){
+                actions.push(t);
             } else {
-                tasks.push(t);
+                subjects.push(t);
             }})
 
             function _on_parents(err, parents) {
@@ -44,7 +44,7 @@ module.exports = {
                 function _on_menu(err, menu) {
 
                     function _on_task_form(err, form) {
-                        callback(null, {tasks:tasks, properties: properties, form:form, menu:menu });
+                        callback(null, {actions: actions, subjects: subjects, form:form, menu:menu });
                     }
 
                     task_form(_on_task_form, '/admin/members/task', false, parents);

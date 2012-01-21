@@ -52,7 +52,7 @@ module.exports = {
                 task_obj.key = task.key;
                 task_obj.title = task.title;
                 task_obj.notes = task.notes;
-                task_obj.property = task.property == '1' ? true : false;
+                task_obj.type = task.type
 
                 function _on_got_parent(err, parent) {
                     console.log('found parent %s', util.inspect(parent));
