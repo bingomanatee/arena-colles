@@ -5,7 +5,7 @@ module.exports = {
 
     on_render:function (req_state, params, done) {
         if (!params.hasOwnProperty('menu')) {
-            req_state.framework.menu(req_state, function (err, menu) {
+            req_state.framework.resources.menu(req_state, function (err, menu) {
                 params.menu = menu;
                 done();
             });
@@ -14,4 +14,5 @@ module.exports = {
             done();
         }
     }
+
 }

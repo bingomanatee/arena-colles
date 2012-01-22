@@ -9,10 +9,6 @@ module.exports = {
         layout_id:'ac'
     },
 
-    model:member_model(),
-
-    task_model:task_model(),
-
     manifest:[
         {
             path:'rest',

@@ -8,11 +8,6 @@ module.exports = function (req_state, callback) {
             {
                 title:'Mars',
                 link:'/mars'
-            },
-
-            {
-                title:'Admin',
-                link:'/admin'
             }
         ]
     };
@@ -29,6 +24,35 @@ module.exports = function (req_state, callback) {
                     link:'/signout'
                 }
             );
+
+            if (req_state.framework.resources.authorize('site.admin', member)) {
+                menu_config.children.push({
+                    title:'Admin',
+                    link:'/admin',
+                    children: [
+                        {title: 'Members',
+                        link: '/admin/members',
+                            visible: function(req_state){
+                                var rpath = req_state.req.path;
+                                console.log('testing rpath %s', rpath);
+                                return /\/admin/.test(rpath);
+                            },
+                            children: [
+                                {title: 'Tasks',
+                                                      link: '/admin/members/tasks',
+                                                          visible: function(req_state){
+                                                              var rpath = req_state.req.path;
+                                                              console.log('testing rpath %s', rpath);
+                                                              return /\/admin\/members/.test(rpath);
+                                                          }}
+
+                            ]
+                        }
+
+                    ]
+                });
+            }
+
         } else {
             menu_config.children.unshift({
                     title:'Join',
@@ -39,9 +63,11 @@ module.exports = function (req_state, callback) {
                     link:'/signin'
                 });
         }
+
+
         var menu_obj = menu.create(menu_config);
 
-        callback(null, menu_obj.render());
+        callback(null, menu_obj.render(req_state));
     }
 
     req_state.framework.resources.active_member(req_state, _on_member);

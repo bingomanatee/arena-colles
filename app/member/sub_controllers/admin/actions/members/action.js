@@ -1,6 +1,7 @@
 var util = require('util');
 
 module.exports = {
+
     params:{
         render:{
             breadcrumb:[

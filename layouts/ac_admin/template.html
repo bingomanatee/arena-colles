@@ -46,13 +46,13 @@ for optimal performance, create your own custom Modernizr build: www.modernizr.c
 
 <body
 class="yui-skin-sam">
-	<div id="doc3" class="yui-t2" >
+	<div id="doc3" class="yui-t2"  style="margin: 0px">
 	   <header id="hd" role="banner">
     <img src="/ac_admin/img/logo.png" />
 </header>
 	   <div id="bd">
 	    <div id="yui-main">
-	    <div class="yui-b"><div role="main" class="yui-g main">
+	    <div class="yui-b"><div role="main" id="main" class="yui-g main">
             <% if (info && info.length) {%><div id="info" class="alert"><%- info %></div><% }; %>
             <% if (error && error.length) {%><div id="error" class="alert"><%- error %></div><% } %>
             <%- partial('breadcrumb', breadcrumb) %>
@@ -63,7 +63,7 @@ class="yui-skin-sam">
 	    </div>
 	</div>
 	    </div>
-	    <div role="navigation" class="yui-b menu"><%- menu %></div>
+	    <div role="navigation" class="yui-b menu navigation"><%- menu %></div>
 
 	    </div>
 	   <footer id="ft" role="contentinfo"><p>&copy;2011,2012 all rights reserved Wonderland Labs</p></footer>

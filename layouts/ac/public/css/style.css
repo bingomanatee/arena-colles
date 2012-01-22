@@ -121,10 +121,48 @@ img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
 svg:not(:root) { overflow: hidden; }
 
+/* =============================================================================
+   Menu
+   ========================================================================== */
+
+.menu {
+    padding: 0.15em;
+    padding-left: 0.8em;
+    line-height: 100%;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(204, 0, 0);
+    font-family: 'Siginka', sans-serif;
+    font-size: 120%;
+}
+
+.navigation {
+    padding-top: 1em;
+}
 
 /* =============================================================================
-   Figures
+   Body
    ========================================================================== */
+
+#main {
+    padding-top: 1.5em;
+}
+
+/* =============================================================================
+  Footer
+  ========================================================================== */
+
+#ft {
+    padding: 1em;
+    font-size: 75%;
+    color: rgb(100, 100, 100);
+}
+
+   /* =============================================================================
+      Figures
+      ========================================================================== */
 
 figure { margin: 0; }
 
@@ -222,7 +260,7 @@ font-family: 'PT Sans Caption', sans-serif;
 */
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Siginka', snas-serif;
+    font-family: 'Siginka', sans-serif;
     font-weight: 700;
 }
 
@@ -245,16 +283,6 @@ p {
     margin: 0px;
     padding-bottom: 1em;
 }
-
-
-
-
-
-
-
-
-
-
 
 /* ==|== media queries ======================================================
    PLACEHOLDER Media Queries for Responsive Design.

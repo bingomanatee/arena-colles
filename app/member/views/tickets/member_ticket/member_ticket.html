@@ -23,4 +23,14 @@
             <%- member.notes %>
         </td>
     </tr>
+    <tr>
+        <th scope="row" class="ui-state-default">Allowed Actions</th>
+        <td class="ui-widget-content">
+            <ul>
+                <% member.cans.forEach(function(can){ %>
+                    <li><%- can.sub('.', '&nbsp;') %></li>
+                <% }) %>
+            </ul>
+        </td>
+    </tr>
 </table>
