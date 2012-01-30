@@ -1,0 +1,33 @@
+<%- ticket %>
+
+<div id="container" style="width: 1000px; height: 800px; background-color: black;">
+</div>
+
+<script language="JavaScript">
+    var dyn_js_libs = [
+        '/js/underscore-min.js',
+        '/js/three/custom/Detector.js',
+        '/js/three/Three.js',
+        "/js/vendor/threex/THREEx.screenshot.js",
+        "/js/vendor/threex/THREEx.FullScreen.js",
+        "/js/vendor/threex/THREEx.WindowResize.js",
+        "/js/vendor/threex.dragpancontrols.js",
+        '/js/terrain/make_terrain.js',
+        '/js/terrain/improvedNoise.js',
+        '/js/terrain/framework.js'
+    ];
+
+    function _init_preview() {
+        if (dyn_js_libs.length) {
+            $.getScript(dyn_js_libs.shift(), _init_preview);
+        } else {
+
+            if (!init())    animate();
+
+        }
+    }
+
+
+    $(document).ready(_init_preview);
+
+</script>

@@ -1,0 +1,34 @@
+<img
+  src="/img/mapimage/<%- mapimage._id %>_color_x_16.png"  />
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id>
+    <tr>
+        <th scope="row" class="ui-state-default">ID</th>
+        <td class="ui-widget-content">
+            <%- mapimage._id.toString() %>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="ui-state-default">Image File</th>
+        <td class="ui-widget-content">
+            <%= mapimage.image_file %>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="ui-state-default">Name</th>
+        <td class="ui-widget-content">
+            <%- mapimage.manifest.name %>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="ui-state-default">Latitude</th>
+        <td class="ui-widget-content">
+            <%- mapimage.manifest.minimum_latitude %>&deg;...<%- mapimage.manifest.maximum_latitude %>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row" class="ui-state-default">Longitude</th>
+        <td class="ui-widget-content">
+            <%- mapimage.manifest.westernmost_longitude %>&deg;...<%- mapimage.manifest.easternmost_longitude %>
+        </td>
+    </tr>
+</table>

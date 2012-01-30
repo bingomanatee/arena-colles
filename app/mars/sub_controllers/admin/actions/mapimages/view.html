@@ -1,0 +1,14 @@
+<%- jui_ticket({title: 'Mapimage Records', content: mapimages }) %>
+
+<%- jui_ticket({title: 'Mapimages', content: 'start'}) %>
+<div style="position:relative; width: 360px; height: 180px; background-color: rgb(240, 255, 255); font-size: 66%;">
+<% mapimage_data.forEach(function(mid){ %>
+    <div 
+     style="position: absolute; border: 1px solid black;
+    width: 90px; height: 45px; padding: 0px;
+    left: <%- mid.manifest.westernmost_longitude %>px; top: <%- 45 + ( -1 * parseInt(mid.manifest.minimum_latitude))  %>px">
+      <a href="/admin/mapimage/<%-mid._id %>"><img
+  src="/img/mapimage/<%- mid._id %>_color_x_16.png" width="90" height="45" /></a></div>
+    <% }) %>
+</div>
+<%- jui_ticket('end') %>

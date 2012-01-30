@@ -1,0 +1,9 @@
+<script language="javascript" src="http://localhost:4000/socket.io/socket.io.js">
+</script>
+<script language="javascript">
+    var socket = io.connect('http://localhost:4000');
+    socket.on('news', function (data) {
+        console.log('Socket news: ', data);
+       // socket.emit('my other event', { my:'data' });
+    });
+</script>
