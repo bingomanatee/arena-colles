@@ -25,6 +25,7 @@ function _active_member(req_state, callback, force_reload) {
     }
 }
 
-module.exports = function (framework) {
-    return _active_member;
+module.exports = function (controller, callback) {
+    console.log('callback: authorize for %s ', callback.toString());
+    callback(null, _active_member);
 }

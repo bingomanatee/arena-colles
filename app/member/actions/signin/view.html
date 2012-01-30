@@ -1,21 +1,30 @@
+<%- jui_ticket({title: 'Sign In', content : 'start'}) %>
 <form id="signin_form" name="signin_form" method="post" action="/signin">
-  <table width="300" border="0" cellspacing="0" cellpadding="0">
-    <tr class="required">
-      <th scope="row"><label for="member[name]">Name or eMail</label></th>
-      <td><input name="member[name]" type="text" id="member[name]" value="name" /></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <th scope="row"><label for="member[password]">Poassword</label></th>
-      <td>
-      <input name="member[password]" type="password" id="member[password]" value="pass" /></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <th scope="row">&nbsp;</th>
-      <td>      <input type="submit" name="submit" id="submit" value="Sign In" /></td>
-      <td>&nbsp;</td>
-    </tr>
+    <table width="400" border="0" cellspacing="0" cellpadding="0">
+        <tr class="required">
+            <th scope="row" ><label for="member[name]">Name or eMail</label></th>
+            <td><input name="member[name]" type="text" id="member[name]" value=""/></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="member[password]">Poassword</label></th>
+            <td>
+                <input name="member[password]" type="password" id="member[password]" value=""/></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th scope="row">&nbsp;</th>
+            <td><input type="submit" name="submit" id="si_submit" value="Sign In"/></td>
+            <td>&nbsp;</td>
+        </tr>
 
-  </table>
+    </table>
 </form>
+<%- jui_ticket('end') %>
+
+<script language="javascript">
+    $(function () {
+        $('#si_submit').button();
+
+    });
+</script>

@@ -27,7 +27,6 @@ module.exports = {
         }
     },
 
-
     execute:function (req_state, callback) {
         switch (req_state.method) {
             case 'post':
@@ -36,7 +35,8 @@ module.exports = {
 
             case 'get':
 
-                callback();
+                var jui_ticket = require(req_state.framework.app_root + '/views/jui_ticket');
+                callback(null, {jui_ticket:jui_ticket});
 
         }
     },
@@ -60,7 +60,7 @@ module.exports = {
 
         }
 
-        req_state.get_param(['form','member'], function (err, member) {
+        req_state.get_param(['form', 'member'], function (err, member) {
             console.log('checking for members with password: %s', member.password);
             req_state.controller.model.find({'password':member.password},
                 function (err, members) {

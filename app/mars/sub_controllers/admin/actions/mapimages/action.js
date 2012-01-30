@@ -27,8 +27,8 @@ module.exports = {
     route:'/admin/mars/mapimages',
 
     execute:function (req_state, callback) {
-        var jui_ticket = require(req_state.framework.app_root + '/app/views/jui_ticket');
-        var datagrid = require( req_state.framework.app_root + '/app/views/datagrid');
+        var jui_ticket = require(req_state.framework.app_root + '/views/jui_ticket');
+        var datagrid = require( req_state.framework.app_root + '/views/datagrid');
 
         function _on_mi(err, mi) {
 

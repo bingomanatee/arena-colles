@@ -8,6 +8,7 @@ var ejs = require('./node_modules/nuby-express/node_modules/ejs');
 var ne_static = require('./node_modules/nuby-express/lib/ne_static');
 var ne = require('./node_modules/nuby-express');
 var mongoose = require('./node_modules/mongoose');
+var mongoose_init = require('./mongoose');
 
 var session_secret = "scooby doo";
 var static_contexts = [
@@ -36,11 +37,7 @@ var fw_configs = {
     params:{
         session_secret:session_secret,
         flash_keys:['info', 'error'],
-        mongo_params:{
-            port:27017,
-            host:'localhost',
-            db:'ac2'
-        },
+        mongo_params: mongoose_init.params,
         layout_id:'ac'
     },
 
@@ -57,18 +54,17 @@ var framework = new ne.Framework(fw_configs);
 
 framework.add_layouts(__dirname + '/layouts', function () {
     var loader = new ne.Loader();
-
+    // @TODO: put some timeout incase mongoose is not active.
     function _after_load() {
-        function _on_load_mp() {
+
+        function _on_mongoose_connected() {
             console.log('loaded ... listening on %s', port);
             app.listen(port);
         }
 
         framework.get_param({}, 'mongo_params', function (err, mongo_params) {
-            //    console.log('err: %s, prams: %s', util.inspect(err), util.inspect(mongo_params));
-            mongoose.connect(util.format('mongodb://%s:%s/%s',
-                mongo_params.host, mongo_params.port, mongo_params.db));
-            mongoose.connection.on('open', _on_load_mp);
+            mongoose_init.connect(mongo_params, _on_mongoose_connected);
+
         });
     }
 

@@ -2,14 +2,24 @@ var util = require('util');
 
 module.exports = {
 
-        params:{
-            layout_id:'ac_admin'
-        },
+    params:{
+        layout_id:'ac_admin',
+        breadcrumb:[
+            {
+                link:'/',
+                title:'Home'
+            },
+            {
+                link:'/admin',
+                title:'Admin'
+            }
+        ]
+    },
 
     auth:function (req_state, if_auth) {
         function _on_member(err, member) {
             if (member) {
-               // console.log('auth member: %s', util.inspect(member));
+                // console.log('auth member: %s', util.inspect(member));
                 if (req_state.framework.resources.authorize('site.admin', member)) {
                     return if_auth(req_state);
                 }

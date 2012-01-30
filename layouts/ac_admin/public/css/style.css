@@ -169,6 +169,37 @@ figure { margin: 0; }
 
 
 /* =============================================================================
+   datagrid
+   ========================================================================== */
+
+table.data_table {
+    font-family: "Helvetica Neue", helvetica, sans-serif;
+}
+
+table.data_table td {
+    padding: 2px;
+    font-size: 90%;
+}
+
+table.data_table th {
+    text-align: center;
+}
+
+table.data_table td.nm {
+    text-align: right;
+}
+table.data_table td.tt {
+    font-family: Monaco, "Courier New", Courier, monospace
+}
+table.data_table td.sm {
+    font-size: 70%;
+}
+
+table.data_table a {
+    color: rgb( 0, 0, 204);
+}
+
+/* =============================================================================
    Forms
    ========================================================================== */
 

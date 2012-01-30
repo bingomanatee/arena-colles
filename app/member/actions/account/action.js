@@ -15,7 +15,7 @@ module.exports = {
             }
 
             function _on_member_ticket(err, ticket) {
-                var jui_ticket_path = req_state.framework.app_root + '/app/views/jui_ticket';
+                var jui_ticket_path = req_state.framework.app_root + '/views/jui_ticket';
                 callback(null, {ticket:ticket, jui_ticket: require(jui_ticket_path)});
             }
 

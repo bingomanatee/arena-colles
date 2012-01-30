@@ -29,22 +29,41 @@ module.exports = function (req_state, callback) {
                 menu_config.children.push({
                     title:'Admin',
                     link:'/admin',
-                    children: [
-                        {title: 'Members',
-                        link: '/admin/members',
-                            visible: function(req_state){
+                    children:[
+                        {
+                            title:'Members',
+                            link:'/admin/members',
+                            visible:function (req_state) {
                                 var rpath = req_state.req.path;
-                                console.log('testing rpath %s', rpath);
                                 return /\/admin/.test(rpath);
                             },
-                            children: [
-                                {title: 'Tasks',
-                                                      link: '/admin/members/tasks',
-                                                          visible: function(req_state){
-                                                              var rpath = req_state.req.path;
-                                                              console.log('testing rpath %s', rpath);
-                                                              return /\/admin\/members/.test(rpath);
-                                                          }}
+                            children:[
+                                {
+                                    title:'Tasks',
+                                    link:'/admin/members/tasks',
+                                    visible:function (req_state) {
+                                        var rpath = req_state.req.path;
+                                        return /\/admin\/members/.test(rpath);
+                                    }}
+
+                            ]
+                        },
+                        {
+                            title:'Mars',
+                            link: '/admin/mars',
+                            visible:function (req_state) {
+                                var rpath = req_state.req.path;
+                                return /\/admin/.test(rpath);
+                            },
+                            children:[
+                                {
+                                    title:'Mapimages',
+                                    link:'/admin/mars/mapimages',
+                                    visible:function (req_state) {
+                                        var rpath = req_state.req.path;
+                                        return /\/admin\/mars/.test(rpath);
+                                    }
+                                }
 
                             ]
                         }

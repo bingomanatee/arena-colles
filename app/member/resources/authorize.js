@@ -48,6 +48,6 @@ function _authorize(tasks, member) {
     return true;
 }
 
-module.exports = function () {
-    return _authorize;
+module.exports = function (controller, callback) {
+    callback(null, _authorize);
 }
