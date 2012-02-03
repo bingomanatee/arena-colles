@@ -1,9 +1,22 @@
 <script language="javascript" src="http://localhost:4000/socket.io/socket.io.js">
 </script>
-<script language="javascript">
-    var socket = io.connect('http://localhost:4000');
-    socket.on('news', function (data) {
-        console.log('Socket news: ', data);
-       // socket.emit('my other event', { my:'data' });
-    });
+<script language="javascript" src="/js/jquery.cookie.js">
 </script>
+<script language="javascript">
+    $(document).ready(
+            function () {
+                console.log('document.cookie',
+                 document.cookie);
+                $('#sid').html('Session ID: '+ Response.cookies('localhost'));
+                /*
+                 var socket = io.connect('http://localhost:4000');
+                 socket.on('news', function (data) {
+                 console.log('Socket news: ', data);
+                 // socket.emit('my other event', { my:'data' });
+                 }); */
+            }
+    )
+</script>
+
+<h2>Session ID</h2>
+<p id="sid">...</p>
