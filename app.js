@@ -19,13 +19,20 @@ var app = express.createServer();
 //app.use(express.logger(...));
 app.use(express.bodyParser());
 app.use(express.cookieParser());
-app.use(express.session({secret:session_secret}));
+
+var MemoryStore = express.session.MemoryStore;
+var session_store = new MemoryStore();
+var session = express.session({secret:session_secret, store: session_store});
+
+app.use(session);
 
 app.set('view_engne', 'ejs');
 app.register('.html', ejs);
 app.set('view options', {layout:true});
 app.set('views', __dirname + '/views');
 app.set('static contexts', static_contexts);
+app.set('session', session);
+app.set('session_store', session_store);
 app.use(ne_static({contexts:static_contexts}));
 
 //app.use(express.errorHandler(...));

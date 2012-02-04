@@ -3,20 +3,52 @@
 <script language="javascript" src="/js/jquery.cookie.js">
 </script>
 <script language="javascript">
+
+    var sid = '<%- sid %>';
+
+    function _render_map_data(map_data){
+        var render = $("#data_render");
+        var data_range = 1000; // map_data.max - map_data.min;
+        map_data.data.data.forEach(function(series, row_index){
+
+            series.forEach(function(height, col_index){
+                var height_percent = (height - map_data.min) / data_range;
+                render.append('<div style="position:absolute; background-color: rgba(0, 0, 0, ' + height_percent + '); width: 5px; height: 5px; overflow: hidden; left:' + (col_index * 5) + 'px; top: ' + (row_index * 5) + 'px">&nbsp;</div>');
+            });
+        });
+    }
+
+
     $(document).ready(
             function () {
-                console.log('document.cookie',
-                 document.cookie);
-                $('#sid').html('Session ID: '+ Response.cookies('localhost'));
-                /*
-                 var socket = io.connect('http://localhost:4000');
-                 socket.on('news', function (data) {
-                 console.log('Socket news: ', data);
-                 // socket.emit('my other event', { my:'data' });
-                 }); */
+                $('#sid').append('Session ID: ', sid);
+
+                var socket = io.connect('http://localhost:4000');
+                socket.on('connect', function () {
+
+                    var map_req = {sid: sid,
+                        lat: Math.floor(Math.random() * -44),
+                        lon: Math.floor((Math.random() * 90) + 180)};
+                    console.log('MAP REQUEST: lat ', map_req.lat, ', lon: ', map_req.lon);
+                    var start_time = new Date().getTime();
+                    socket.emit('map_data_req', map_req);
+                   // socket.emit('map_data_req', {sid: sid, lat: -36, lon: 251});
+
+                    socket.on('map_data', function (map_data) {
+                        console.log('time to get: ', new Date().getTime() - start_time);
+                        console.log('Map Data: ', map_data);
+                        _render_map_data(map_data);
+                    });
+
+                })
             }
     )
 </script>
 
 <h2>Session ID</h2>
 <p id="sid">...</p>
+
+<div id="data_render" style="position: relative; width: 640px; height: 640px; border: 1px solid black">
+
+
+</div>

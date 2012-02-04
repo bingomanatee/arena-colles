@@ -1,6 +1,6 @@
 var _ = require('underscore');
-var path = require('path');
 var util = require('util');
+var path = require('path');
 var mongoose_util = require('./../../mongoose');
 var mapimage_model_f = require('./../../app/mars/models/mapimages');
 var import_data = require('mola3/import');
