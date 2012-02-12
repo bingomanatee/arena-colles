@@ -12,8 +12,19 @@
         map_data.data.data.forEach(function(series, row_index){
 
             series.forEach(function(height, col_index){
-                var height_percent = (height - map_data.min) / data_range;
-                render.append('<div style="position:absolute; background-color: rgba(0, 0, 0, ' + height_percent + '); width: 5px; height: 5px; overflow: hidden; left:' + (col_index * 5) + 'px; top: ' + (row_index * 5) + 'px">&nbsp;</div>');
+                if ((row_index == 0) || (col_index == 0)){
+                    var height_percent = 0.5;
+                } else {
+                    var north_heights = map_data.data.data[row_index - 1][col_index - 1] * 2;
+                    north_heights += map_data.data.data[row_index][col_index - 1] ;
+                    north_heights += map_data.data.data[row_index- 1][col_index ] ;
+                    var hp = (north_heights / 4) - height;
+                    hp /= 100;
+                    hp += 0.5;
+                }
+                render.append('<div style="position:absolute;' +
+                        ' background-color: rgba(0, 0, 0, ' + hp + '); width: 2px; height: 2px; overflow: hidden;' +
+                        ' left:' + (col_index * 2) + 'px; top: ' + (row_index * 2) + 'px">&nbsp;</div>');
             });
         });
     }
@@ -27,6 +38,7 @@
                 socket.on('connect', function () {
 
                     var map_req = {sid: sid,
+                        erode: true,
                         lat: Math.floor(Math.random() * -44),
                         lon: Math.floor((Math.random() * 90) + 180)};
                     console.log('MAP REQUEST: lat ', map_req.lat, ', lon: ', map_req.lon);

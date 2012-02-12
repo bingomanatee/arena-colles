@@ -3,41 +3,71 @@ var util = require('util');
 var path = require('path');
 var mongoose_util = require('./../../mongoose');
 var mapimage_model_f = require('./../../app/mars/models/mapimages');
+var mapimages_model;
 var import_data = require('mola3/import');
 var fs = require('fs');
+var Pipe = require('support/pipe');
 
 module.exports = function (config, callback) {
-    console.log('tile = %s', config.tile);
+    mapimages_model = mapimage_model_f();
+    mongoose_util.connect(null, _on_connect);
     var c = require('child_process').spawn;
     c('ulimit -n 1000');
 
-    var file_path = util.format('/Users/dave/Documents/Arena_Colles/resources/mola_128/%s', config.tile);
+    function _on_connect() {
+        console.log('tile = %s', config.tile);
+        if (config.tile == 'all') {
 
-    function _on_connect(err, conn) {
-        var mapimages_model = mapimage_model_f();
+            function _do_tile_pipe(image, static, on_done, pipe_done) {
+                if (!image){
+                    console.log('no image');
+                    return pipe_done();
+                }
+                console.log('loading image %s, tile %s', util.inspect(image), image.image_file);
+                _do_tile(image.image_file, on_done);
+            }
 
+            function _on_images(err, images) {
+                var pipe = new Pipe(function(){
+                    callback();
+                }, _do_tile_pipe, images);
+                pipe.start();
+            }
+
+            mapimages_model.topo_data(_on_images);
+
+        }
+
+        else {
+            _do_tile(config.tile, callback);
+        }
+    }
+}
+
+function _do_tile(tile, callback) {
+
+    var file_path = (tile.substr(0, 1) == '/') ? tile : util.format('/Users/dave/Documents/Arena_Colles/resources/mola_128/%s', tile);
+
+    if (!path.existsSync(file_path)) {
+        callback(new Error(util.format('file %s not found', file_path)));
+    } else {
+        console.log("------------------- \n LOADING %s \n --------------", file_path);
         function _on_mi(err, mi) {
             if (err) {
                 return callback(err);
             } else if (mi) {
-                console.log(mi);
+                console.log('loaded data for %s', mi.image_file);
                 // callback(null, util.format('found record %s', mi._id));
                 var rows = mi.manifest.lines;
                 var cols = mi.manifest.line_samples;
 
-                _data_to_files(config, mi, callback);
+                _data_to_files(mi, callback);
             } else {
                 callback(new Error('cannog find record for image file %s', file_path));
             }
         }
 
         mapimages_model.find_one({image_file:file_path}, _on_mi);
-    }
-
-    if (path.existsSync(file_path)) {
-        mongoose_util.connect(null, _on_connect);
-    } else {
-        callback(new Error(util.format('file %s not found', file_path)));
     }
 }
 
@@ -52,8 +82,8 @@ function slice_n_write(mi, grid, lat, lon, sw_callback) {
     }
     var r1 = row_index * 128;
     var c1 = col_index * 128;
-    var r2 = (1 + row_index) * 128;
-    var c2 = (1 + col_index) * 128;
+    var r2 = (1 + row_index) * 128 + 1;
+    var c2 = (1 + col_index) * 128 + 1;
 
     console.log('.... from (r %s, c %s) to (r %s,c %s) out of [%s, %s]',
         r1, c1, r2, c2, grid.rows, grid.cols);
@@ -62,13 +92,13 @@ function slice_n_write(mi, grid, lat, lon, sw_callback) {
     echo_grid(slice, 2, 2)
 
     var data_filename = path.join(__dirname, './../../resources/mapimages',
-        util.format('lat_%s_lon_%s.bin', data_dir, lat, lon));
+        util.format('lat_%s_lon_%s.bin', lat, lon));
     console.log('slice rows: %s, cols: %s', slice.rows, slice.cols);
     slice.write_to(data_filename, sw_callback);
 
 }
 
-function _data_to_files(config, mi, callback) {
+function _data_to_files(mi, callback) {
 
     function _on_data(err, grid) {
         if (err) {
@@ -85,7 +115,7 @@ function _data_to_files(config, mi, callback) {
         }
 
         function _next_slice_and_write(lat_lon) {
-            console.log('acvancing next slice from %s, %s', lat_lon.lat, lat_lon.lon);
+            console.log('advancing next slice from %s, %s', lat_lon.lat, lat_lon.lon);
             if (lat_lon.lon < mi.manifest.easternmost_longitude - 1) {
                 ++lat_lon.lon;
                 console.log('... next lon, %s', lat_lon.lon);

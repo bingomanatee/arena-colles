@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{b955b5aa-9c1c-4cd6-9a10-9e34431be3eb}") = "Assembly-UnityScript-firstpass-vs", "Assembly-UnityScript-firstpass-vs.unityproj", "{BECA83EA-DA01-26DB-9123-52BDAA286CD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BECA83EA-DA01-26DB-9123-52BDAA286CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECA83EA-DA01-26DB-9123-52BDAA286CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECA83EA-DA01-26DB-9123-52BDAA286CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECA83EA-DA01-26DB-9123-52BDAA286CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-UnityScript-firstpass-vs.unityproj
+	EndGlobalSection
+EndGlobal
