@@ -1,4 +1,7 @@
 import JsonFx.Json;
+import MarsUtils.SendRaw;
+import MarsUtils;
+
 var land_gameobject: Terrain;
 
 function Start(){
@@ -8,12 +11,11 @@ function Start(){
 	var min: int; 
 	var max: int;
 	var MAX_HEIGHT = 3000.0;
-	var UPSCALE = 8;
+	var UPSCALE = 4;
 	var r2i: int;
 	var c2i: int;
 	
-	var t = new Time();
-	var start_time = t.time;
+	var start_time = System.Environment.TickCount;
 	
 	/* ************ LOADING DATA FROM WEB ************** */
 
@@ -21,15 +23,15 @@ function Start(){
 	var www : WWW = new WWW (url);
 	
 	yield www;
-	var www_time = t.time;
+	var www_time = System.Environment.TickCount;
 	Debug.Log('www load: ' + (www_time - start_time));
 	
 	var raw_url = "http://localhost:3000/mars/data/-34/83.raw";
 	var raw_www : WWW = new WWW (raw_url);
 	
 	yield raw_www;
-	var raw_www_time = t.time;
-	Debug.Log('raw www load: ' + (raw_www_time - www_time) + ':(' +  (raw_www_time - start_time) + ')' );
+	var raw_www_time = System.Environment.TickCount;
+	Debug.Log('raw www load: ' + (raw_www_time - www_time)/1000 + ':(' +  (raw_www_time - start_time)/1000 + ')' );
 	
 	if (www.error !== null){
 	  	Debug.LogError('cannot read ' + url);
@@ -44,35 +46,21 @@ function Start(){
 	var value = reader.Deserialize();
 	var rows:int = value["rows"];
 	var cols:int = value["cols"];
-	var utf_values  = new int[rows, cols];
-	var json_values = new int[rows, cols];
+	var utf_values: int[,] = new int[rows, cols];
 	var offset = 0;
 	yield;
 	Debug.Log('value: rows, ' + rows + ', cols ' + cols);
 	
 	try {
 	   var utf_bytes = raw_www.bytes;
-		
-	/*	Debug.Log('raw bytes: 0..10 ');
-		for (var i = 0; i < 10; ++i){
-		     Debug.Log(i + ': ' + utf_bytes[i]);
-		}
-		//return;
-		*/
-		
-		
-		try {
-			var json_data = value["data"];
-		} catch ( e){
-			Debug.Log("cannot get data from json");
-		}
 		for ( row = 0; row < rows; ++row){
 			//Debug.Log('Row ' + row);
 		    try {
-				var json_row = json_data[row];
 			  	for (col = 0; col < cols; ++col){
 			  		try {
-			  			var h_int:int = json_row[col];
+			  			var h_int:int = readInt16(utf_bytes, offset);
+				  		utf_values[row,col] = h_int;
+				  		
 			  			if ((row == 0) && (col == 0)){
 			  				min =h_int;
 			  				max = h_int;
@@ -81,12 +69,6 @@ function Start(){
 			  				} else if (max < h_int){
 			  				max = h_int;
 			  			}
-				  		json_values[row,col] = h_int;
-				  	//	Debug.Log('col = ' + col + ', h=' + h);
-				  		utf_values[row,col] = readInt16(utf_bytes, offset);
-				  		if (json_values[row,col] != utf_values[row,col]){
-				  			Debug.Log("mismatch at [" + row + ',' + col + ']: json_value =' + json_values[row,col] + ', utf value = ' + utf_values[row,col]);
-				  		}
 				  		offset += 2;
 			  		} catch ( e){
 			  			Debug.Log("cannot get col " + col + 'from row ' + row + 'from json data');
@@ -102,8 +84,8 @@ function Start(){
 	} 
 	
 	yield;
-	var load_time = t.time;
-	Debug.Log('raw www load: ' + (load_time - raw_www_time) + ':(' +  (load_time - start_time) + ')' );
+	var load_time = System.Environment.TickCount;
+	Debug.Log('raw www load: ' + ((load_time - raw_www_time)/1000) + ':(' + ((load_time - start_time)/1000) + ')' );
 
 			
 	/* ********************* COPY DATA INTO ARRAYS ******************* */
@@ -114,7 +96,7 @@ function Start(){
 	var td: TerrainData = land_gameobject.terrainData;
 	
 	var terrain_heights = new float[lg_rows, lg_cols];
-	var terrain_heights2 = new float[lg_rows, lg_cols];
+	var terrain_base_profile = new float[lg_rows, lg_cols];
 	
 	Debug.Log('loading terrain');
 		
@@ -130,47 +112,32 @@ function Start(){
 		}
 		
 	}
+	utf_values = null;
+	
+	//td.SetHeights(0, 0, terrain_heights);
 	
 	/* ************************ SMOOTH THE TERRAIN ******************* */
 	// aliases for scaling 
 	
 	Debug.Log('smoothing terrain');
-	for ( row = 0; row < lg_rows; ++row){
-		for ( col = 0; col < lg_cols; ++col){
-			var h_fl:float = 0;
-			var count = 0;
-			
-			for ( r2i = Mathf.Max(0, row - UPSCALE ); r2i < Mathf.Min(lg_rows, row + UPSCALE ); ++r2i){						
-				for ( c2i = Mathf.Max(0, col - UPSCALE  ); c2i < Mathf.Min(lg_cols, col + UPSCALE ); ++c2i){
-					++count;
-					h_fl += terrain_heights[r2i, c2i];
-				   // if (row < 4 && col < 4){
-				  //  	Debug.Log(r2i + ',' + c2i + ': count: ' + count + ', h_fl: ' + h_fl);
-				 //   }
-				}
-			}
-			
-			h_fl = h_fl/(count * 1.0);
-			
-				  //  if (row < 4 && col < 4){
-			//	    	Debug.Log('row ' + row + ', col ' + col + ': height ' + h_fl);
-				 ///   }
-			terrain_heights2[row, col] = h_fl;
-		
-		}
-	}  
+	TerrainUtils.smooth(terrain_heights, UPSCALE/2, 2, terrain_base_profile);
 	
-	td.SetHeights(0, 0, terrain_heights2);
+	td.SetHeights(0, 0, terrain_base_profile);
+	
 	yield;
-	var sh_time = t.time;
-	Debug.Log('smooth and set heights: ' + (sh_time - load_time) + ':(' +  (sh_time - start_time) + ')' );
+	var sh_time = System.Environment.TickCount;
+	Debug.Log('smooth and set heights: ' + ((sh_time - load_time)/1000) + ':(' + ((sh_time - start_time)/1000) + ')' );
 	  
 	
-	/* ********************* APPLY TERRAIN EFFECTS *********************** 
-	var reps = 30;
-	var blend = 0.01;
-	land_gameobject.GetComponent("TerrainToolkit").PerlinGenerator(reps, 1.0, 8, blend);
-	reps = 40;
+	/* ********************* APPLY TERRAIN EFFECTS *********************** */
+	
+	var blend:float = 0.25;
+	var freq = 10.0;
+	var oct = 8;
+	var amp = 1.0;
+	land_gameobject.GetComponent("TerrainToolkit").PerlinGenerator(freq, amp, oct, blend);
+	var reps = 10;
+	
 	var cutting = 0.025;
 	var rain = 0.01;
 	var evap   = 0.25;
@@ -180,56 +147,74 @@ function Start(){
 	var mom = 0.25;
 	var entropy = 01;
 	land_gameobject.GetComponent("TerrainToolkit").VelocityHydraulicErosion(
-	reps, rain,
-	 evap, solubility, saturation,
-	  velocity, mom, entropy, cutting); 
-	  
-	terrain_heights2 = td.GetHeights(0, 0, lg_rows, lg_cols); */
-	
+	reps, rain, evap, solubility, saturation, velocity, mom, entropy, cutting); 
+	 
+	var altered_data: float[, ] = td.GetHeights(0, 0, lg_rows, lg_cols); 
+	var altered_data_smooth: float[, ] = new float[lg_rows, lg_cols];
+	var terrain_offset: float[, ] = new float[lg_rows, lg_cols];
+	Debug.Log('smoothing altered data');
 	yield;
-	var te_time = t.time;
-	Debug.Log('smooth and set heights: ' + (te_time - sh_time ) + ':(' +  (te_time - start_time) + ')' );
+	TerrainUtils.smooth(altered_data, UPSCALE/2, 4, altered_data_smooth);
+	Debug.Log('diff of smooth to base');
+	yield;
+	TerrainUtils.diff(altered_data_smooth, terrain_base_profile, terrain_offset, 1.0);
+	altered_data_smooth = null;
+	Debug.Log('re-floating altered data');
+	yield;
+	TerrainUtils.diff(altered_data, terrain_offset, altered_data, 0.125);
+	Debug.Log('copying new altered data to terrain');
+	yield;
+	td.SetHeights(0, 0, altered_data); 
+	
+	
+	var te_time = System.Environment.TickCount;
+	Debug.Log('apply Terrain Effects: ' + ((te_time - sh_time )/1000) + ':(' + ((te_time - start_time)/1000) + ')' );
+	yield;
+	
+	/* *************** COLOR PLAIN ************* */
+	
+	 TerrainUtils.color_plains(td);
 	  
+	var ctime = System.Environment.TickCount;
+	Debug.Log('color mountains: ' + ((ctime - te_time)/1000) + ':(' + ((ctime - start_time)/1000) + ')' );
+	yield;
+	
 	  /* ****************** SETTING THE DATA TO A BUFFER **************** */
 	  
-	var buf_count = rows * cols * 2;
+	var buf_count = lg_rows * lg_cols * 2;
 	var buffer = new byte[buf_count];
 	 offset = 0;
 	
-	for ( row = 0; row < rows; ++row) {
-		for ( col = 0; col < cols; ++col){
+	terrain_heights = td.GetHeights(0, 0, lg_rows, lg_cols);
+	for ( row = 0; row < lg_rows; ++row) {
+		for ( col = 0; col < lg_cols; ++col){
 			try {
-				var height: int = min + (terrain_heights2[row,col] * MAX_HEIGHT);
+				var height: int = min + (terrain_heights[row,col] * MAX_HEIGHT);
 			} catch(e){
 				Debug.Log('Error in height creation: ' + e);
 				offset += 2;
 				continue;
 			}
+			
 			writeInt16(buffer, height, offset);
 			offset += 2;
 		}
 	}
 	
+	Debug.Log((offset/2) + ' values sent');
+	
 	yield;
-	var buf_time = t.time;
-	Debug.Log('store to buffer: ' + (buf_time - te_time ) + ':(' +  (buf_time - start_time) + ')' );
+	var buf_time = System.Environment.TickCount;
+	Debug.Log('store to buffer: ' + ((buf_time - ctime)/1000) + ':(' + ((buf_time - start_time)/1000) + ')' );
 	
 	/* *********************** WRITE BUFFER BACK TO SITE ************** */
 	
-	var form = new WWWForm();
-	form.AddBinaryData('heights', buffer);
 	var form_url = 'http://localhost:3000/mars/data/-34/83/' + UPSCALE;
-	var www_out = new WWW(form_url, form);
-	
-	if (www_out.error != null){
-		Debug.Log('Error writing data back to server: ' + www_out.error);
-	} else {
-		Debug.Log('Data Writen to Server');
-	}
 
-	yield;
-	var w_time = t.time;
-	Debug.Log('write to site: ' + (w_time - buf_time  ) + ':(' +  (w_time - start_time) + ')' );
+	MarsUtils.SendRaw.send(form_url, buffer);
+
+	var w_time = System.Environment.TickCount;
+	Debug.Log('write to site: ' + ((w_time - buf_time)/1000) + ':(' +  ((w_time - start_time)/1000) + ')' );
 }
 
 

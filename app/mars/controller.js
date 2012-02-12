@@ -7,7 +7,7 @@ module.exports = {
 
     manifest: [
         'action',
-        'rest'
+        {type: 'rest', path: 'rest'}
     ]
 
 }

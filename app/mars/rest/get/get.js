@@ -26,19 +26,6 @@ module.exports = {
                         case 'raw':
                             console.log('... returning raw data');
                             var raw = fs.readFileSync(resource_path);
-
-
-
-
-                            for (var i = 0; i < 10; ++i) {
-                                if ((i % 2) == 0) {
-                                    readInt16(raw, i, true);
-                                    console.log('=========== buffer Int16BE: %s', raw.readInt16BE(i, true));
-
-                                }
-                                console.log("byte %s: %s", i, raw[i]);
-                            }
-                            //req_state.res.send(raw, {'Content-Type':'text/binary'});
                             req_state.res.write(raw);
                             req_state.res.end();
                             break;
@@ -46,7 +33,7 @@ module.exports = {
                         case 'json':
                         default:
                             mola_import(resource_path, 129, function (err, grid) {
-                                var out = {data:grid.data, rows:grid.rows, cols:grid.cols};
+                                var out = {rows:grid.rows, cols:grid.cols}; // data:grid.data, 
                                 callback(null, out);
                             });
                     }
@@ -65,7 +52,7 @@ module.exports = {
     }
 
 }
-
+/*
 function readUInt16(buffer, offset, isBigEndian) {
   var val = 0;
   if (offset < 20){
@@ -109,3 +96,4 @@ function readInt16(buffer, offset) {
   
   return nvalue;
 }
+    */
