@@ -33,7 +33,7 @@ module.exports = {
                         case 'json':
                         default:
                             mola_import(resource_path, 129, function (err, grid) {
-                                var out = {rows:grid.rows, cols:grid.cols}; // data:grid.data, 
+                                var out = {rows:grid.rows, cols:grid.cols}; // data:grid.data,
                                 callback(null, out);
                             });
                     }

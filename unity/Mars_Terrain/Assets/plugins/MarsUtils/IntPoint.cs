@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 namespace MarsUtils
 {
 	public class IntPoint
@@ -20,7 +22,17 @@ namespace MarsUtils
 			return (px == x) && (py == y);
 		}
 		
-		public Boolean in_list(IntPoint[] points){
+		public bool in_list(LinkedList<IntPoint> points){
+			foreach(IntPoint test_point in points){
+				if (test_point == this){
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		public bool in_list(IntPoint[] points){
 			foreach(IntPoint test_point in points){
 				if (test_point == this){
 					return true;

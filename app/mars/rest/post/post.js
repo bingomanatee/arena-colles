@@ -1,30 +1,35 @@
 var util = require('util');
+var fs = require('fs');
 
 module.exports = {
 
     route: '/mars/data/:lat/:lon/:scale',
 
     execute: function(req_state, callback){
-//        console.log('recieved req: %s', util.inspect(req_state.req));
-        var c = 0;
-
+        var self = this;
         console.log('headers: ', util.inspect(req_state.req.headers));
-        req_state.req.on('data', function(buffer){
-            var offset = 0;
 
-            while (offset < buffer.length){
-                var n = buffer.readInt16BE(offset);
-                if (offset < 8){
-                    console.log('reading buffer: %s: %s', c, n);
-                }
-                offset += 2;
-                ++c;
-            }
-        });
+        function _on_input(err, input) {
+            console.log('getting map data lat %s, lon %s scale %s', input.lat, input.lon, input.scale);
+            var root = self.framework.app_root;
 
-        req_state.req.on('end', function(){
-            console.log('TOTAL: %s', c);
-            callback();
+            var resource_path = util.format('%s/resources/mapimages/lat_%s_lon_%s_x_%s.bin', root, input.lat, input.lon, input.scale);
+
+            var write_stream = fs.createWriteStream(resource_path);
+            write_stream.on('close', callback);
+
+            req_state.req.on('data', function(buffer){
+                write_stream.write(buffer);
+            });
+
+            req_state.req.on('end', function(){
+                write_stream.end();
+            });
+
+        }
+
+        req_state.get_param('input', _on_input, function () {
+            callback('cannot get input');
         });
     }
 

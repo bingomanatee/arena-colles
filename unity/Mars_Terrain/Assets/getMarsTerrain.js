@@ -4,6 +4,8 @@ import MarsUtils;
 
 var land_gameobject: Terrain;
 
+var mf: MtnFinder;
+	
 function Start(){
 	var row: int;
 	var col: int;
@@ -172,8 +174,6 @@ function Start(){
 	yield;
 	
 	/* *************** COLOR PLAIN ************* */
-	
-	 TerrainUtils.color_plains(td);
 	  
 	var ctime = System.Environment.TickCount;
 	Debug.Log('color mountains: ' + ((ctime - te_time)/1000) + ':(' + ((ctime - start_time)/1000) + ')' );
@@ -215,10 +215,34 @@ function Start(){
 
 	var w_time = System.Environment.TickCount;
 	Debug.Log('write to site: ' + ((w_time - buf_time)/1000) + ':(' +  ((w_time - start_time)/1000) + ')' );
+	
+	Debug.Log("MF created");
+	start_me = true;
+	yield;
 }
 
+var start_me = false;
+var done = 0;
+var cd = 0;
 
 function Update () {
+	/*if (!start_me){
+		return;
+		}
+	if (!mf){
+		var terrain_heights = land_gameobject.terrainData.GetHeights(0, 0, land_gameobject.terrainData.heightmapWidth, land_gameobject.terrainData.heightmapHeight);
+	  mf = new MarsUtils.MtnFinder(terrain_heights);
+	  Debug.Log("Created new mf" + cd);
+	  ++cd;
+	};
+	if (mf.mode == "done"){
+		TerrainUtils.color_plains(land_gameobject.terrainData, mf.mtn_array());
+	start = false;
+	} else {
+	mf.update();
+	}
+	//Debug.Log("Done " + done);
+	//++done; */
 }
 
 function sqrg(v){
