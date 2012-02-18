@@ -28,14 +28,17 @@ module.exports = {
     },
 
     execute:function (req_state, callback) {
+        console.log("signin action");
         switch (req_state.method) {
             case 'post':
+                console.log('signin post');
                 this.execute_post(req_state, callback);
                 break;
 
             case 'get':
-
+                console.log('signin get');
                 var jui_ticket = require(req_state.framework.app_root + '/views/jui_ticket');
+                console.log('jui_ticket: %s', jui_ticket.toString());
                 callback(null, {jui_ticket:jui_ticket});
 
         }
@@ -44,6 +47,7 @@ module.exports = {
     execute_post:function (req_state, callback) {
 
         function _on_members(err, members_w_password, member) {
+            console.log('signin _on_members');
             var found = false;
             var mbr;
             for (var i = 0; i < members_w_password.length; ++i) {
@@ -55,8 +59,8 @@ module.exports = {
                 }
             }
 
-            req_state.put_flash('Sorry, we cannot find your identity', 'error');
-            callback(null, {member:member});
+
+            req_state.put_flash('Sorry, we cannot find your identity', 'error', '/signin');
 
         }
 
@@ -64,9 +68,11 @@ module.exports = {
             console.log('checking for members with password: %s', member.password);
             req_state.controller.model.find({'password':member.password},
                 function (err, members) {
+                    console.log('find members');
                     _on_members(err, members, member);
                 }, function () {
-                    req_state.set_flash('where is the member?', 'error', 'back');
+                    console.log('find absent');
+                    req_state.set_flash('where is the member?', 'error', '');
                 })
         })
     },
