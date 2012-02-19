@@ -15,6 +15,7 @@ namespace MarsUtils
 			req.ContentType = "text/binary";
 			req.ContentLength = data.Length;
 			req.Method = "POST";
+			Debug.Log("sending data to " + url);
 			var req_stream = req.GetRequestStream();
 			var fromi = 0;
 			

@@ -13,7 +13,7 @@ module.exports = {
             console.log('getting map data lat %s, lon %s scale %s', input.lat, input.lon, input.scale);
             var root = self.framework.app_root;
 
-            var resource_path = util.format('%s/resources/mapimages/lat_%s_lon_%s_x_%s.bin', root, input.lat, input.lon, input.scale);
+            var resource_path = util.format('%s/resources/mapimages_lg/lat_%s_lon_%s_x_%s.bin', root, input.lat, input.lon, input.scale);
 
             var write_stream = fs.createWriteStream(resource_path);
             write_stream.on('close', callback);

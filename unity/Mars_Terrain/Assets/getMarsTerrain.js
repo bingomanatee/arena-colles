@@ -123,7 +123,7 @@ function Start(){
 	// aliases for scaling 
 	
 	Debug.Log('smoothing terrain');
-	TerrainUtils.smooth(terrain_heights, UPSCALE/2, 2, terrain_base_profile);
+	TerrainUtils.smooth(terrain_heights, UPSCALE, 2, terrain_base_profile);
 	
 	td.SetHeights(0, 0, terrain_base_profile);
 	
@@ -210,7 +210,7 @@ function Start(){
 	
 	/* *********************** WRITE BUFFER BACK TO SITE ************** */
 	
-	var form_url = 'http://arenaolles.com/mars/data/-34/83/' + UPSCALE;
+	var form_url = 'http://arenacolles.com/mars/data/-34/83/' + UPSCALE;
 
 	MarsUtils.SendRaw.send(form_url, buffer);
 
