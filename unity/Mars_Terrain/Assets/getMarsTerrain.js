@@ -21,14 +21,14 @@ function Start(){
 	
 	/* ************ LOADING DATA FROM WEB ************** */
 
-	var url = "http://localhost:3000/mars/data/-34/83.json";
+	var url = "http://arenacolles.com/mars/data/-34/83.json";
 	var www : WWW = new WWW (url);
 	
 	yield www;
 	var www_time = System.Environment.TickCount;
 	Debug.Log('www load: ' + (www_time - start_time));
 	
-	var raw_url = "http://localhost:3000/mars/data/-34/83.raw";
+	var raw_url = "http://arenacolles.com/mars/data/-34/83.raw";
 	var raw_www : WWW = new WWW (raw_url);
 	
 	yield raw_www;
@@ -45,6 +45,7 @@ function Start(){
 
 	Debug.Log(www.text);
 	var reader = new JsonReader(www.data);
+	Debug.Log('data: ' + www.data);
 	var value = reader.Deserialize();
 	var rows:int = value["rows"];
 	var cols:int = value["cols"];
@@ -209,7 +210,7 @@ function Start(){
 	
 	/* *********************** WRITE BUFFER BACK TO SITE ************** */
 	
-	var form_url = 'http://localhost:3000/mars/data/-34/83/' + UPSCALE;
+	var form_url = 'http://arenaolles.com/mars/data/-34/83/' + UPSCALE;
 
 	MarsUtils.SendRaw.send(form_url, buffer);
 

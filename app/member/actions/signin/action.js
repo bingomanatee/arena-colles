@@ -1,3 +1,5 @@
+var util = require('util');
+
 module.exports = {
 
     load_req_params:'member',
@@ -50,6 +52,7 @@ module.exports = {
             console.log('signin _on_members');
             var found = false;
             var mbr;
+            console.log('members with password: %s', util.inspect(members_w_password));
             for (var i = 0; i < members_w_password.length; ++i) {
                 mbr = members_w_password[i];
                 if ((mbr.email == member.name) || (mbr.name == member.name)) {
@@ -64,17 +67,16 @@ module.exports = {
 
         }
 
-        req_state.get_param(['form', 'member'], function (err, member) {
+        function _on_member_params(err, member) {
             console.log('checking for members with password: %s', member.password);
             req_state.controller.model.find({'password':member.password},
                 function (err, members) {
                     console.log('find members');
                     _on_members(err, members, member);
-                }, function () {
-                    console.log('find absent');
-                    req_state.set_flash('where is the member?', 'error', '');
                 })
-        })
+        }
+
+        req_state.get_param(['form', 'member'], _on_member_params);
     },
 
     route:'/signin',
