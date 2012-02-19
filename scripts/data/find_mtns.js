@@ -383,7 +383,22 @@ module.exports = function (config, callback) {
                }
             });
 
-            smooth_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), callback);
+            smooth_terrain.write_to(fpath.replace('.bin', '.smooth.bin'));
+
+            var b = new Buffer(terrain.rows * terrain.cols);
+            var bo = 0;
+            terrain.each_cell(function(c){
+              if (c.mtn){
+                  b[bo] = (c.mtn) ? 1 : 0;
+                  ++bo;
+              }
+            });
+
+            var stream = fs.createWriteStream(fpath.replace('.bin', '.mtn.bin'));
+            stream.write(b);
+            stream.end();
+            callback();
+
         });
     }
 }

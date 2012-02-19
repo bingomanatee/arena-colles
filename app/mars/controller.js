@@ -1,13 +1,13 @@
-
 module.exports = {
 
-    params: {
-        mars_ws_port: 3456
+    params:{
+        mars_ws_port:3456
     },
 
-    manifest: [
-        'action',
-        {type: 'rest', path: 'rest'}
+    manifest:[
+        'actions',
+        {type:'rest', path:'rest'},
+        {type:'rest', path:'rest_lg'}
     ]
 
 }
