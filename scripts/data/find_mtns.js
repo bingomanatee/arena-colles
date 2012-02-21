@@ -9,7 +9,11 @@ _.mixin(_.str.exports());
 var mola_import = require('mola3/import');
 var Terrain = require('mola3/grid/Terrain');
 var Canvas = require('canvas');
-
+/**
+ * Note - mtn is actually a rating of "Valleyness.
+ * @param config
+ * @param callback
+ */
 module.exports = function (config, callback) {
     var cl;
     var bl;
@@ -21,6 +25,9 @@ module.exports = function (config, callback) {
     var data_file_root = path.join(__dirname, './../../resources/mapimages_lg');
     fs.readdir(data_file_root, function (err, files) {
         files.forEach(function (name) {
+            if (!x_pat.test(name)) {
+                return;
+            }
             console.log('analyzing %s/ %s', data_file_root, name)
             find_mtns(util.format("%s/%s", data_file_root, name), x_pat.exec(name)[1]);
         });
@@ -72,96 +79,90 @@ module.exports = function (config, callback) {
                 cell.normal = {r:128 + Math.round(-1280 * v), g:128 + Math.round(-1280 * h), b:255}
             }
 
-            /*
-             function _mtn_ness(cell) {
-             var hcount = 0;
-             var hcavity = 0;
-             var vcount = 0;
-             var vcavity = 0;
 
-             if (cell.neighbors.t && cell.neighbors.b) {
-             var slope_top = (cell.height - cell.neighbors.t.height);
-             var slope_bottom = (cell.neighbors.b.height - cell.height);
-             vcavity += 2 * (slope_bottom - slope_top);
-             vcount += 2;
+            function _concavity(cell) {
+                var hcount = 0;
+                var hcavity = 0;
+                var vcount = 0;
+                var vcavity = 0;
 
-             var t = cell.neighbors.t;
+                if (cell.neighbors.t && cell.neighbors.b) {
+                    var slope_top = (cell.height - cell.neighbors.t.height);
+                    var slope_bottom = (cell.neighbors.b.height - cell.height);
+                    vcavity +=  (slope_bottom - slope_top);
+                    vcount += 1;
+/*
+                    var t = cell.neighbors.t;
 
-             if (t.neighbors.t) {
-             slope_top = cell.height - t.height;
-             slope_bottom = t.height - t.neighbors.t.height;
-             vcavity += slope_bottom - slope_top;
-             ++vcount;
-             }
+                    if (t.neighbors.t) {
+                        slope_top = cell.height - t.height;
+                        slope_bottom = t.height - t.neighbors.t.height;
+                        vcavity += slope_bottom - slope_top;
+                        ++vcount;
+                    }
 
-             var b = cell.neighbors.b;
+                    var b = cell.neighbors.b;
 
-             if (b.neighbors.b) {
-             slope_top = b.height - cell.height;
-             slope_bottom = b.neighbors.b.height - b.height;
-             vcavity += slope_bottom - slope_top;
-             ++vcount;
-             }
-             }
+                    if (b.neighbors.b) {
+                        slope_top = b.height - cell.height;
+                        slope_bottom = b.neighbors.b.height - b.height;
+                        vcavity += slope_bottom - slope_top;
+                        ++vcount;
+                    } */
+                }
 
-             if (cell.neighbors.l && cell.neighbors.r) {
-             var slope_left = (cell.height - cell.neighbors.l.height);
-             var slope_right = (cell.neighbors.r.height - cell.height);
-             hcavity += 2 * (slope_right - slope_left);
-             hcount += 2;
+                if (cell.neighbors.l && cell.neighbors.r) {
+                    var slope_left = (cell.height - cell.neighbors.l.height);
+                    var slope_right = (cell.neighbors.r.height - cell.height);
+                    hcavity +=  (slope_right - slope_left);
+                    hcount += 1;
+/*
+                    var l = cell.neighbors.l;
 
-             var l = cell.neighbors.l;
+                    if (l.neighbors.l) {
+                        slope_right = cell.height - l.height;
+                        slope_left = l.height - l.neighbors.l.height;
+                        hcavity += slope_right - slope_left;
+                        ++hcount;
+                    }
 
-             if (l.neighbors.l) {
-             slope_right = cell.height - l.height;
-             slope_left = l.height - l.neighbors.l.height;
-             hcavity += slope_right - slope_left;
-             ++hcount;
-             }
+                    var r = cell.neighbors.r;
 
-             var r = cell.neighbors.r;
+                    if (r.neighbors.r) {
+                        slope_left = r.height - cell.height;
+                        slope_right = r.neighbors.r.height - r.height;
+                        hcavity += slope_right - slope_left;
+                        ++hcount;
+                    } */
+                }
 
-             if (r.neighbors.r) {
-             slope_left = r.height - cell.height;
-             slope_right = r.neighbors.r.height - r.height;
-             hcavity += slope_right - slope_left;
-             ++hcount;
-             }
-             }
+                var vslope = 0;
+                var hslope = 0;
 
-             var vslope = 0;
-             var hslope = 0;
+                if (hcount > 0) {
+                    var hslope = hcavity / hcount;
 
-             if (hcount > 0) {
-             var hslope = hcavity / hcount;
+                    if (vcount > 0) {
+                        var vslope = vcavity / vcount;
+                        if (Math.abs(vslope) > Math.abs(hslope)) {
+                            cell.concavity = vslope;
+                        } else {
+                            cell.concavity = hslope;
+                        }
+                    } else {
+                        cell.concavity = hslope;
+                    }
+                } else {
 
-             if (vcount > 0) {
-             var vslope = vcavity / vcount;
-             if (Math.abs(vslope) > Math.abs(hslope)){
-             cell.concavity = vslope;
-             } else {
-             cell.concavity = hslope;
-             }
-             } else {
-             cell.concavity = hslope;
-             }
-             } else {
+                    if (vcount > 0) {
+                        var vslope = vcavity / vcount;
+                        cell.concavity = vslope;
+                    } else {
+                        cell.concavity = 0;
+                    }
+                }
+            }
 
-             if (vcount > 0) {
-             var vslope = vcavity / vcount;
-             cell.concavity = vslope;
-             } else {
-             cell.concavity = 0;
-             }
-             }
-
-             // console.log('%s, hslope: %s, vslope: %s', cell_format(cell), hslope, vslope);
-
-             //  console.log('%s  avg_height: %s,  heights: %s / count: %s, concavity: %s', cell_format(cell), s_string(avg_height), heights, count, s_string(cell.concavity));
-
-
-             }
-             */
             // console.log("cl: %s, b: %s, cl2: %s, bl2: %s", cl, bl, cl2, bl2);
 
             function rainage() {
@@ -315,12 +316,13 @@ module.exports = function (config, callback) {
 
             terrain.each_cell(rain_amount);
 
-            function _make_group(cell, group){
+            function _make_group(cell, group) {
                 group.push(cell);
                 cell.group = group;
-                _.filter(cell.get_neighbors(), function (n){
-                    return n.mtn == cell.mtn;
-                }).forEach(function(n){
+                _.filter(cell.get_neighbors(),
+                    function (n) {
+                        return n.mtn == cell.mtn;
+                    }).forEach(function (n) {
                         _make_group(n, group);
                     })
             }
@@ -333,19 +335,19 @@ module.exports = function (config, callback) {
                 var like_me = 0;
                 var unlike_me = 0;
 
-                cell.neighborhood(function(n){
-                    if (n.mtn == cell.mtn){
+                cell.neighborhood(function (n) {
+                    if (n.mtn == cell.mtn) {
                         like_me++;
                     } else {
                         unlike_me++;
                     }
                 }, 4);
-                cell.flip = (like_me/unlike_me < 0.3);
+                cell.flip = (like_me / unlike_me < 0.3);
 
             }
 
-            function flip(cell){
-                if (cell.flip){
+            function flip(cell) {
+                if (cell.flip) {
                     cell.mtn = (cell.mtn) ? 0 : 1;
                 }
             }
@@ -370,34 +372,48 @@ module.exports = function (config, callback) {
 
             var smooth_terrain = new Terrain(grid.data);
 
-            smooth_terrain.each_cell(function(cell){
-               if( terrain.get(cell.row, cell.col).mtn) {
-                   var heights = cell.height * 2;
-                   var count = 2;
-                   base_terrain.get(cell.row, cell.col).each_neighbor(function(n){
-                        ++count;
-                       heights += n.height;
-                   });
+            smooth_terrain.each_cell(function (cell) {
+                if (terrain.get(cell.row, cell.col).mtn) {
+                    var heights = cell.height * 2;
+                    var count = 2;
 
-                   cell.height = heights/count;
-               }
+                    base_terrain.slice(cell.col - 3, cell.row - 3, cell.col + 3, cell.row + 3).forEach(
+                        function (n) {
+                            ++count;
+                            heights += n.height;
+                        }
+
+                    )
+
+                    cell.height = Math.floor(heights / count);
+                } else {
+                    _concavity(cell);
+                    //console.log('%s  concavity: %s', cell_format(cell), s_string(cell.concavity));
+                    if (cell.concavity >= 0) {
+                        cell.height += Math.random() * 25 ;
+                    }
+                }
             });
 
-            smooth_terrain.write_to(fpath.replace('.bin', '.smooth.bin'));
+            smooth_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), function () {
+                console.log('smooth terrain saved');
+            });
 
-            var b = new Buffer(terrain.rows * terrain.cols);
+            var size = (terrain.rows - 1) * (terrain.cols - 1);
+            var b = new Buffer(size);
             var bo = 0;
-            terrain.each_cell(function(c){
-              if (c.mtn){
-                  b[bo] = (c.mtn) ? 1 : 0;
-                  ++bo;
-              }
-            });
+            for (var c = 0; c < terrain.cols - 1; ++c) {
+                for (var r = 0; r < terrain.rows - 1; ++r) {
+                    var cell = terrain.get(r, c);
+                    b.writeUInt8((cell.mtn) ? 1 : 0, bo);
+                    ++bo;
+                }
+            }
 
             var stream = fs.createWriteStream(fpath.replace('.bin', '.mtn.bin'));
+            stream.on('end', callback);
             stream.write(b);
             stream.end();
-            callback();
 
         });
     }
