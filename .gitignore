@@ -48,3 +48,7 @@ unity/Mars2/Assembly-UnityScript-firstpass-vs.unityproj
 unity/Mars2/Assembly-UnityScript-firstpass.unityproj
 unity/Mars2/Assembly-UnityScript-vs.unityproj
 unity/Mars2/Assembly-UnityScript.unityproj
+unity/Mars2/Assembly-CSharp-Editor.pidb
+unity/Mars2/Assembly-CSharp-firstpass.pidb
+unity/Mars2/Assembly-UnityScript-firstpass.pidb
+unity/Mars2/Assembly-UnityScript.pidb

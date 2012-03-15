@@ -30,8 +30,6 @@ public class LoadSmoothData : MonoBehaviour
 			HeightJsonData value = JsonReader.Deserialize<HeightJsonData> (www.data);
 			height_file.json_data = value;
 			Debug.Log ("JSON rows: " + height_file.json_data.rows.ToString () + ", cols: " + height_file.json_data.cols.ToString ());
-			height_file.rows = value.rows;
-			height_file.cols = value.cols;
 			height_file.status = GetHeightFile.STATUS_JSON_LOADED;
 		}
 	}
@@ -39,7 +37,7 @@ public class LoadSmoothData : MonoBehaviour
 	IEnumerator load_bin_data ()
 	{
 		height_file.status = GetHeightFile.STATUS_BIN_LOADING;
-		var www = height_file.bin_smooth_www ();
+		var www = height_file.bin_smooth_www (4);
 		
 		yield return www;
 		
@@ -83,6 +81,22 @@ public class LoadSmoothData : MonoBehaviour
 		
 		
 	}
+	
+	IEnumerator load_detail(){
+		int dw = land.terrainData.detailWidth;
+		int dh = land.terrainData.detailHeight;
+		int[,] dl = new int[dw, dh];
+		land.terrainData.GetDetailLayer(0, 0, dw, dh, 0);
+		yield return new WaitForSeconds(0.1f);
+		for (int x = 0; x < dw; ++x) for (int y = 0; y < dh; ++y){
+			if (Random.value < 0.01){
+				dl[x, y] = 1;
+			} else {
+				dl[x, y] = 0;
+			}
+		}
+		land.terrainData.SetDetailLayer(0, 0, 0, dl);
+	}
 
 	// Update is called once per frame
 	void Update ()
@@ -101,12 +115,14 @@ public class LoadSmoothData : MonoBehaviour
 				
 				case GetHeightFile.STATUS_BIN_LOADED:
 					Debug.Log ("Bin Loaded");
-					height_file.set_terrain_heights (land);
+					height_file.set_terrain_heights(land);
 					height_file.status = GetHeightFile.STATUS_TERRAIN_LOADED;
 					break;
 				
 				case GetHeightFile.STATUS_TERRAIN_LOADED:
 					Debug.Log ("Terrain Loaded; loading mountain data");
+					StartCoroutine(load_detail());
+					height_file.status = GetHeightFile.STATUS_DONE;
 					break;
 				
 				default:

@@ -26,7 +26,7 @@ var session = express.session({secret:session_secret, store: session_store});
 
 app.use(session);
 
-app.set('view_engne', 'ejs');
+app.set('view_engine', 'ejs');
 app.register('.html', ejs);
 app.set('view options', {layout:true});
 app.set('views', __dirname + '/views');

@@ -8,7 +8,7 @@ var rolls = 30;
 module.exports = function (terrain, cb) {
 
     var r = 0;
-
+    var revalley = 5;
     var loop = 0;
 
     terrain.each_cell(function (cell) {
@@ -28,7 +28,7 @@ module.exports = function (terrain, cb) {
                 cell.drops += 1.0 + cell.valleyness/3;
                 cell.valleyness *= 0.66;
             });
-            if (!(r % 20)){
+            if (!(r % revalley)){
                 terrain.each_cell(_prep_slope);
             }
             process.nextTick(_drippage);

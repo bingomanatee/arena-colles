@@ -11,8 +11,10 @@ var drippage = require('./support/drippage');
 var concavity = require('./support/concavity');
 var cf = require('./support/cell_format');
 var cell_format = cf.cell_format;
+var median_mtn_ness = require('./support/median_mtn_ness');
 var cc = cf.column_block;
 var highpass = require('./support/highpass');
+var terrain_smooth = require('./support/terrain_smooth');
 
 _.str = require('underscore.string');
 _.mixin(_.str.exports());
@@ -39,35 +41,35 @@ module.exports = function (config, callback) {
             if (!x_pat.test(name)) {
                 return;
             }
-            console.log('analyzing %s/ %s', data_file_root, name)
+            console.log('@@@@@@@@@@@@ analyzing %s/ %s', data_file_root, name)
             find_mtns(util.format("%s/%s", data_file_root, name), x_pat.exec(name)[1]);
         });
     });
 
     function find_mtns(fpath, scale) {
         mola_import(fpath, 128 * parseInt(scale) + 1, function (err, grid) {
-            var terrain = new Terrain(grid.data);
-            terrain.corner_length = Math.sqrt(2 * terrain.length * terrain.length);
+            var original_terrain = new Terrain(grid.data);
+            original_terrain.corner_length = Math.sqrt(2 * original_terrain.length * original_terrain.length);
 
             /* ***************** ANALYZE ************ */
 
-            cl = (1.4 * terrain.corner_length);
-            bl = (1.0 * terrain.length);
-            cl2 = (terrain.corner_length * (2.8));
-            bl2 = (terrain.length * 2.0);
+            cl = (1.4 * original_terrain.corner_length);
+            bl = (1.0 * original_terrain.length);
+            cl2 = (original_terrain.corner_length * (2.8));
+            bl2 = (original_terrain.length * 2.0);
 
             var min;
             var max;
-            var oo = terrain.get(0, 0);
+            var oo = original_terrain.get(0, 0);
             min = max = oo.height;
 
-            terrain.each_cell(function (c) {
+            original_terrain.each_cell(function (c) {
                 min = Math.min(min, c.height);
                 max = Math.max(max, c.height);
             });
             var range = max - min;
 
-            terrain.each_cell(normal);
+            original_terrain.each_cell(normal);
 
             /* *************** HEIGHT ***************** */
 
@@ -76,7 +78,7 @@ module.exports = function (config, callback) {
             var index = 0;
             var id = ctx.getImageData(0, 0, grid.cols, grid.rows);
 
-            terrain.each_cell(function (cell) {
+            original_terrain.each_cell(function (cell) {
                 var height = (cell.height - min) / range;
                 var hnum = Math.floor(height * 255);
                 id.data[index] = id.data[index + 1] = id.data[index + 2] = hnum;
@@ -95,7 +97,7 @@ module.exports = function (config, callback) {
 
             var id = ctx.getImageData(0, 0, grid.cols, grid.rows);
             index = 0;
-            terrain.each_cell(function (cell) {
+            original_terrain.each_cell(function (cell) {
                 id.data[index] = cell.normal.r;
                 id.data[index + 1] = cell.normal.g;
                 id.data[index + 2] = cell.normal.b;
@@ -110,23 +112,34 @@ module.exports = function (config, callback) {
 
             function cb() {
 
-              //  highpass(terrain, 6, 'hp1');
+                //  highpass(terrain, 6, 'hp1');
 
-               // highpass(terrain, 12, 'hp2');
+                // highpass(terrain, 12, 'hp2');
 
-                highpass(terrain, 18, 'hp3');
+                highpass(original_terrain, 9, 'hp3');
+
+                original_terrain.each_cell(function (cell) {
+
+                    var vallyness = Math.round(cell.valleyness);
+                    var h3 = Math.max(0, Math.round(cell.hp3 + 80));
+                    var mtn_ness = Math.max(vallyness, h3);
+                    mtn_ness = Math.floor(Math.min(255, mtn_ness));
+                    cell.mtn_ness = mtn_ness;
+                });
+
+                original_terrain.each_cell(median_mtn_ness);
 
                 /* ********* CONCAVITY *********************** */
 
-                terrain.each_cell(concavity);
-                terrain.each_cell(_cc_rough);
+                original_terrain.each_cell(concavity);
+                original_terrain.each_cell(_cc_rough);
 
                 canvas = new Canvas(grid.cols, grid.rows);
                 ctx = canvas.getContext('2d');
                 id = ctx.getImageData(0, 0, grid.cols, grid.rows);
                 index = 0;
 
-                terrain.each_cell(function (cell) {
+                original_terrain.each_cell(function (cell) {
                     var concav = 128 + Math.round(cell.concavity);
                     id.data[index] = id.data[index + 1] = id.data[index + 2] = concav;
                     id.data[index + 3] = 255;
@@ -141,7 +154,7 @@ module.exports = function (config, callback) {
                 id = ctx.getImageData(0, 0, grid.cols, grid.rows);
                 index = 0;
 
-                terrain.each_cell(function (cell) {
+                original_terrain.each_cell(function (cell) {
                     var concav = Math.round(cell.concavity_roughness * 5);
                     id.data[index] = id.data[index + 1] = id.data[index + 2] = concav;
                     id.data[index + 3] = 255;
@@ -164,12 +177,12 @@ module.exports = function (config, callback) {
 
                 id = ctx.getImageData(0, 0, grid.cols, grid.rows);
                 index = 0;
-                terrain.each_cell(function (cell) {
-                //    var h1 = Math.round(cell.hp1 + 128);
-                 //   var h2 = Math.round(cell.hp2 + 128);
+                original_terrain.each_cell(function (cell) {
+                    //    var h1 = Math.round(cell.hp1 + 128);
+                    //   var h2 = Math.round(cell.hp2 + 128);
                     var h3 = Math.max(0, Math.round(cell.hp3 + 80));
-                 //   if (!(index % 50)) console.log('cell %s valleyness = %s', cell_format(cell), cell.valleyness);
-                  //  id.data[index] = id.data[index + 1] = id.data[index + 2] = vallyness;
+                    //   if (!(index % 50)) console.log('cell %s valleyness = %s', cell_format(cell), cell.valleyness);
+                    //  id.data[index] = id.data[index + 1] = id.data[index + 2] = vallyness;
                     id.data[index] = h3;
                     id.data[index + 1] = h3;
                     id.data[index + 2] = h3;
@@ -193,7 +206,7 @@ module.exports = function (config, callback) {
 
                 id = ctx.getImageData(0, 0, grid.cols, grid.rows);
                 index = 0;
-                terrain.each_cell(function (cell) {
+                original_terrain.each_cell(function (cell) {
                     var vallyness = Math.round(cell.valleyness);
                     id.data[index] = vallyness;
                     id.data[index + 1] = vallyness;
@@ -207,49 +220,46 @@ module.exports = function (config, callback) {
 
                 /* ************** create mountain mask ********** */
 
-                var size = (terrain.rows - 1) * (terrain.cols - 1);
+                var size = (original_terrain.rows - 1) * (original_terrain.cols - 1);
                 var b = new Buffer(size);
                 var bo = 0;
-                for (var c = 0; c < terrain.cols - 1; ++c) {
-                    for (var r = 0; r < terrain.rows - 1; ++r) {
-                        var cell = terrain.get(r, c);
-                        var vallyness = Math.round(cell.valleyness);
-                        var h3 = Math.max(0, Math.round(cell.hp3 + 80));
-                        var mtn_ness = cell.mtn = Math.max(vallyness, h3);
-                       if (!(bo % 1000)) {
-                           console.log('cell: %s, mtn_ness: %s', cell_format(cell), mtn_ness);
-                       }
-                        mtn_ness = Math.floor(Math.min(255, mtn_ness));
+                for (var c = 0; c < original_terrain.cols - 1; ++c) {
+                    for (var r = 0; r < original_terrain.rows - 1; ++r) {
+                        var cell = original_terrain.get(r, c);
+                        if (!(bo % 1000)) {
+                            //  console.log('cell: %s, mtn_ness: %s', cell_format(cell), mtn_ness);
+                        }
+                        var mtn_ness = Math.floor(Math.min(255, cell.mtn_ness_med));
                         b.writeUInt8(mtn_ness, bo);
                         ++bo;
                     }
                 }
 
+                var inc = 0;
                 var stream = fs.createWriteStream(fpath.replace('.bin', '.mtn.bin'));
-            //    stream.on('end', callback);
+                stream.on('close', function () {
+                    console.log('writing smooth data: ');
+                    /* *************** WRITE SMOOTH DATA ************** */
+                  //  return original_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), callback);
+
+                    var smooth_terrain = terrain_smooth(original_terrain, 4, 0.5);
+                    original_terrain.each_cell(function (cell) {
+                        var rough_height = cell.height;
+                        var smooth_cell = smooth_terrain.get(cell.row, cell.col);
+                        var smooth_height = smooth_cell.height;
+                     //   var mtn_ness = cell.mtn_ness_med / 255.0);
+                       // if (inc++ % 200 == 0)  console.log("rough_height: %s, smooth height: %s, mtn_ness: %s", rough_height, smooth_height, mtn_ness);
+                       if (cell.mtn_ness_med < 128)  smooth_cell.height = rough_height;// parseInt((smooth_height * mtn_ness) + (rough_height * (1 - mtn_ness)));
+                    });
+
+                    smooth_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), callback);
+                });
                 stream.write(b);
                 stream.end();
 
-                /* *************** WRITE SMOOTH DATA ************** */
-
-                var size = (terrain.rows - 1) * (terrain.cols - 1) * 2;
-                var b = new Buffer(size);
-                var bo = 0;
-                for (var c = 0; c < terrain.cols - 1; ++c) {
-                    for (var r = 0; r < terrain.rows - 1; ++r) {
-                        var cell = terrain.get(r, c);
-                        b.writeInt16(cell.height, bo);
-                        bo += 2;
-                    }
-                }
-
-                var stream = fs.createWriteStream(fpath.replace('.bin', '.smooth.bin'));
-                stream.on('end', callback);
-                stream.write(b);
-                stream.end();
             }
 
-            drippage(terrain, cb);
+            drippage(original_terrain, cb);
         });
     }
 
@@ -259,9 +269,9 @@ function s_string(slope) {
     return slope.toFixed(6);
 }
 /*
-function cc(n) {
-    return _.pad(n, 3, ' ', 'left');
-} */
+ function cc(n) {
+ return _.pad(n, 3, ' ', 'left');
+ } */
 
 
 function clump(cell) {
