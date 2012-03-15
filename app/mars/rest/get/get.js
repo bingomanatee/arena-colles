@@ -37,7 +37,7 @@ module.exports = {
 
                                 var filepath = util.format('%s/resources/mapimages_lg/lat_%s_lon_%s_x_4.bin',
                                             self.framework.app_root, input.lat, input.lon);
-                                out.lg = {file: filepath, exists: file.existsSync(filepath)};
+                                out.lg = {file: filepath, exists: path.existsSync(filepath)};
                                 callback(null, out);
                             });
                     }

@@ -13,12 +13,15 @@ namespace MarsUtils
 
 		private int max;
 		private int min;
-		private int rows;
-		private int cols;
+		public int rows;
+		public int cols;
 
 		public int[,] heights;
+		public int[,] scaled_heights;
+		private byte[,] mtns;
 
 		public int status = 0;
+		public int mtn_status = 0;
 		
 		private const int RANGE = 3000;
 
@@ -28,10 +31,16 @@ namespace MarsUtils
 		public const int STATUS_JSON_LOADED = 20;
 		public const int STATUS_BIN_LOADING = 30;
 		public const int STATUS_BIN_LOADED = 40;
+		public const int STATUS_BIN_SCALED = 45
 		public const int STATUS_BIN_PARSED = 50;
 		public const int STATUS_TERRAIN_LOADED = 60;
+		public const int STATUS_MTN_LOADING = 70;
+		public const int STATUS_MTN_LOADED = 80;
+		public const int STATUS_MTN_MASKING = 90;
+		public const int STATUS_MTN_MASKED = 100;
+		public const int STATUS_DONE = 1000000;
 		
-		public const int SIZE_SCALE = 4;
+		public function scale = 1;
 
 		private HeightJsonData _json_data;
 
@@ -59,6 +68,52 @@ namespace MarsUtils
 		}
 
 		/* ***************** METHODS ************ */
+		
+		public void scale(int s){
+			scale = s;
+			/*
+			var lg_rows:int = (rows - 1) * UPSCALE + 1;
+	var lg_cols:int = (cols - 1) * UPSCALE + 1;
+	Debug.Log('MIN = ' + min + ', MAX = ' + max + ': ' + (max - min));
+	var td: TerrainData = land_gameobject.terrainData;
+	
+	var terrain_heights = new float[lg_rows, lg_cols];
+	var terrain_base_profile = new float[lg_rows, lg_cols];*/
+		}
+		
+		public void set_mtn_mask(Terrain land){
+			Debug.Log(" ############### Set Mtn Mask: cols: " + cols.ToString() + ", rows " + rows.ToString());
+			Debug.Log("alphamap size: (" +  land.terrainData.alphamapWidth.ToString() + "," +  land.terrainData.alphamapHeight.ToString() + ")");
+			float[,,] alphas = land.terrainData.GetAlphamaps(0, 0, cols - 1, rows - 1);
+			for (int row = 0; row < rows - 1; ++row){
+				for (int col = 0; col < cols - 1; ++col){
+					if (((col + row) % 50) == 0){
+				//		Debug.Log("Mtn (" + col.ToString() + "," + row.ToString() + ": " + mtns[col, row].ToString());
+					}
+					if(mtns[row, col] == 0){
+						alphas[col, row, 0] = 0.75f;
+						alphas[col, row, 1] = 0.0f;
+					} else {
+						alphas[col, row, 0] = 0.0f;
+						alphas[col, row, 1] = 0.75f;
+					}
+				}
+			}
+			land.terrainData.SetAlphamaps(0, 0, alphas);
+			mtn_status = STATUS_MTN_MASKED;
+		}
+		
+		public void load_mtn_mask(byte[] mask){
+			int offset = 0;
+			mtns = new byte[cols - 1, rows - 1];
+			
+			for (int row = 0; row < rows - 1; ++row){
+				for (int col = 0; col < cols - 1; ++col){
+					mtns[col, row] = mask[offset];
+					++offset;
+				}
+			}
+		}
 
 		public WWW json_www ()
 		{
@@ -69,13 +124,32 @@ namespace MarsUtils
 			return JSON_www;
 		}
 
-		public WWW bin_smooth_www ()
+		public WWW bin_www ()
 		{
-			string bin_url = "http://arenacolles.com/mars/data/" + lat.ToString () + "/" + lon.ToString () + "/smoothed.bin";
+			string bin_url = "http://arenacolles.com/mars/data/" + lat.ToString () + "/" + lon.ToString () + ".bin";
 			Debug.Log("bin url: " + bin_url);
 			
 			WWW bin_www = new WWW (bin_url);
 			return bin_www;
+		}
+
+
+		public WWW bin_smooth_www ()
+		{
+			string bin_url = "http://arenacolles.com/mars/data/" + lat.ToString () + "/" + lon.ToString () + "/lg/smooth.bin";
+			Debug.Log("bin url: " + bin_url);
+			
+			WWW bin_www = new WWW (bin_url);
+			return bin_www;
+		}
+
+		public WWW bin_mtn_www ()
+		{
+			string mtn_url = "http://arenacolles.com/mars/data/" + lat.ToString () + "/" + lon.ToString () + "/lg/mtn.bin";
+			Debug.Log("********** MTN url: " + mtn_url);
+			
+			WWW mtn_www = new WWW (mtn_url);
+			return mtn_www;
 		}
 		
 		public void set_terrain_heights(Terrain land){
