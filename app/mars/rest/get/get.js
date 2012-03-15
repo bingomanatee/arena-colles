@@ -34,6 +34,10 @@ module.exports = {
                         default:
                             mola_import(resource_path, 129, function (err, grid) {
                                 var out = {rows:grid.rows, cols:grid.cols}; // data:grid.data,
+
+                                var filepath = util.format('%s/resources/mapimages_lg/lat_%s_lon_%s_x_4.bin',
+                                            self.framework.app_root, input.lat, input.lon);
+                                out.lg = {file: filepath, exists: file.existsSync(filepath)};
                                 callback(null, out);
                             });
                     }
