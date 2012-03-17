@@ -3,20 +3,23 @@ using System.Collections;
 using MarsUtils;
 using JsonFx.Json;
 
-public class Resize_terrain : MonoBehaviour
+public class Resize_terrain_88 : MonoBehaviour
 {
 
 	public Terrain land;
-	public int lat = -88;
+	public GUIscript gui_script;
+	public int lat = 88;
 	public int lon = 0;
 	public bool skip = false;
+	public bool complete = false;
 
 	private GetHeightFile height_file;
 	// Use this for initialization
 	void Start ()
 	{
-		lat = 20;
-		lon = 200;
+		lat = 87;
+		lon = 0;
+	//	gui_script = (GUIscript) gameObject.GetComponent("feedback");
 	}
 	
 	IEnumerator load_json ()
@@ -91,10 +94,15 @@ public class Resize_terrain : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (height_file == null) {
+		if (complete == true){
+			gui_script.done = "COMPLETE";
+		} else if (height_file == null) {
 			height_file = new MarsUtils.GetHeightFile (lat, lon);
 			height_file.status = GetHeightFile.STATUS_STARTED;
 		} else {
+			gui_script.lat = lat.ToString();
+			gui_script.lon = lon.ToString();
+			
 			switch (height_file.status) {
 				case GetHeightFile.STATUS_STARTED:
 					Debug.Log ("LOADING JSON");
@@ -145,7 +153,10 @@ public class Resize_terrain : MonoBehaviour
 					lon = lon + 1;
 					if (lon >= 360){
 						lon = 0;
-						lat = lat + 1;
+						lat = lat - 1;
+					}
+					if (lat < -88){
+						complete = true;
 					}
 					break;
 
