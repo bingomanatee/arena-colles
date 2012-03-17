@@ -41,6 +41,7 @@ namespace MarsUtils
 		public const int STATUS_MTN_LOADED = 20;
 		public const int STATUS_MTN_MASKING = 30;
 		public const int STATUS_MTN_MASKED = 40;
+		public const int STATUS_EXISTS = 1000;
 		public const int STATUS_DONE = 1000000;
 		
 		public int scale = 1;

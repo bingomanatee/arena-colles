@@ -13,5 +13,6 @@ namespace MarsUtils {
 		
 		public int cols;
 		
+		public HeightJsonDataLg lg;
 	}
 }

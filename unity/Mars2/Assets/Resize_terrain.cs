@@ -7,14 +7,16 @@ public class Resize_terrain : MonoBehaviour
 {
 
 	public Terrain land;
-	public int lat = -67;
-	public int lon = 220;
+	public int lat = -88;
+	public int lon = 0;
+	public bool skip = false;
 
 	private GetHeightFile height_file;
 	// Use this for initialization
 	void Start ()
 	{
-		
+		lat = 20;
+		lon = 200;
 	}
 	
 	IEnumerator load_json ()
@@ -30,8 +32,11 @@ public class Resize_terrain : MonoBehaviour
 			Debug.Log ("data: " + www.data);
 			HeightJsonData value = JsonReader.Deserialize<HeightJsonData> (www.data);
 			height_file.json_data = value;
-			Debug.Log ("JSON rows: " + height_file.json_data.rows.ToString () + ", cols: " + height_file.json_data.cols.ToString ());
+			//Debug.Log ("JSON rows: " + height_file.json_data.rows.ToString () + ", cols: " + height_file.json_data.cols.ToString ());
 			height_file.status = GetHeightFile.STATUS_JSON_LOADED;
+			if (value.lg.exists == true){
+				height_file.status = GetHeightFile.STATUS_EXISTS;
+			}
 		}
 	}
 	
@@ -46,10 +51,10 @@ public class Resize_terrain : MonoBehaviour
 			height_file.status = GetHeightFile.STATUS_ERROR;
 			throw new UnityException ("Cannot read bin data");
 		} else {
-			Debug.Log ("Data Retuned");
+			//Debug.Log ("Data Retuned");
 			yield return new WaitForSeconds (0.1f);
 			height_file.load_heights (www.bytes);
-			Debug.Log ("Heights Read");
+			//Debug.Log ("Heights Read");
 			yield return new WaitForSeconds (0.1f);
 			height_file.status = GetHeightFile.STATUS_BIN_LOADED;
 		}
@@ -129,10 +134,15 @@ public class Resize_terrain : MonoBehaviour
 					
 					break;
 				
+				case GetHeightFile.STATUS_EXISTS:
+					Debug.Log("Exists; SKIPPING " + lat.ToString() + ", lon " + lon.ToString());
+					height_file.status = GetHeightFile.STATUS_DONE;
+				break;
+				
 				case GetHeightFile.STATUS_DONE:
 					Debug.Log("DONE WITH " + lat.ToString() + ", lon " + lon.ToString());
 					height_file = null;
-					++lon;
+					lon = lon + 1;
 					if (lon >= 360){
 						lon = 0;
 						lat = lat + 1;

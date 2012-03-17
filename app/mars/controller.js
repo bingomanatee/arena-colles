@@ -7,6 +7,7 @@ module.exports = {
     manifest:[
         'actions',
         {type:'rest', path:'rest'},
+        {type:'rest', path:'rest_state'},
         {type:'rest', path:'rest_lg'}
     ]
 
