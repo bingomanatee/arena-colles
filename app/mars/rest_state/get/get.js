@@ -57,7 +57,7 @@ function _init_out() {
     _.range(-88, 88).forEach(function (lat) {
         out[lat + 88] = [];
         _.range(359).forEach(function (lon) {
-            out[lat + 88].push(false);
+            out[lat + 88].push({lat: lat , lon: lon, stat: false});
         })
     });
 
