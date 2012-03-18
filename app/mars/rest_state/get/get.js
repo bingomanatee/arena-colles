@@ -7,57 +7,75 @@ var _filename_regex = /lat_(.*)_lon_(.*)_x_4.bin/;
 
 module.exports = {
 
-    route:'/mars/state.json',
+    route:'/mars/state/:short.json',
 
     method:'get',
 
+    load_req_params:'input',
+
+
     execute:function (req_state, cb) {
-        var self = this;
-        var root = req_state.framework.app_root + '/resources/mapimages_lg';
+        function _on_input(err, input) {
 
-        function _on_dir(err, files) {
-            if (err) {
-                cb(err);
-            } else {
-                var out = _init_out();
-                var gate = new Gate(function () {
-                    cb(null, out);
-                });
+            var self = this;
+            var root = req_state.framework.app_root + '/resources/mapimages_lg';
 
-                files.forEach(function (filename) {
-                        var m = _filename_regex.exec(filename);
-                        if (m) {
-                            function _on_stat(err, s) {
+            function _on_dir(err, files) {
+                if (err) {
+                    cb(err);
+                } else {
+                    var out = _init_out(input.short);
+                    console.log('getting state: short = %s,%s', util.inspect(err), util.inspect(input));
+                    var gate = new Gate(function () {
+                        cb(null, out);
+                    });
+
+                    files.forEach(function (filename) {
+
+                            var m = _filename_regex.exec(filename);
+                            if (m) {
                                 var lat = parseInt(m[1]);
                                 var lon = parseInt(m[2]);
-                                out[lat + 88][lon] = {lat: lat, lon: lon, stat: s};
-                                gate.task_done();
+
+                                if (input.short){
+                                    out[lat + 88][lon] = 1
+                                } else {
+                                    function _on_stat(err, s) {
+                                        if (s) {
+                                            out[lat + 88][lon].stat = s;
+                                        }
+                                        gate.task_done();
+                                    }
+
+                                    gate.task_start();
+                                    fs.stat(root + '/' + filename, _on_stat);
+                                }
                             }
-
-                            gate.task_start();
-                            fs.stat(root + '/' + filename, _on_stat);
                         }
-                    }
-                ); // end files.forEach
+                    ); // end files.forEach
 
-                gate.start();
+                    gate.start();
+                }
             }
+
+            fs.readdir(root, _on_dir);
+
         }
 
-        fs.readdir(root, _on_dir);
-
+        var self = this;
+        req_state.get_param('input', _on_input);
     }
 
 
 }
 
-function _init_out() {
+function _init_out(s) {
     var out = [];
 
     _.range(-88, 88).forEach(function (lat) {
         out[lat + 88] = [];
         _.range(359).forEach(function (lon) {
-            out[lat + 88].push({lat: lat , lon: lon, stat: false});
+            out[lat + 88].push(s ? 0 : {lat:lat, lon:lon, stat:false});
         })
     });
 
