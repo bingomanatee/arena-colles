@@ -1,14 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resize_terrain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/terrain_processing/Resize_terrain.cs">
     <Files>
-      <File FileName="../../../../Downloads/TerrainBumpmap/TerrainBumpmap/UnityTerrainBump/CustomTerrainScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/plugins/MarsUtils/GetHeightFile.cs" Line="127" Column="1" />
-      <File FileName="Assets/LoadSmoothData.cs" Line="50" Column="20" />
-      <File FileName="Assets/Resize_terrain.cs" Line="71" Column="16" />
+      <File FileName="Assets/terrain_processing/Resize_terrain.cs" Line="71" Column="20" />
+      <File FileName="Assets/plugins/MarsUtils/GetHeightFile.cs" Line="37" Column="48" />
       <File FileName="Assets/plugins/MarsUtils/ByteData.cs" Line="44" Column="1" />
-      <File FileName="Assets/plugins/MarsUtils/SendRaw.cs" Line="1" Column="1" />
       <File FileName="Assets/say_alpha.js" Line="4" Column="1" />
+      <File FileName="Assets/terrain_processing/gui/GUIscript.cs" Line="35" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

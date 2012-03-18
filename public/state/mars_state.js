@@ -57,7 +57,7 @@ function init() {
             if (j.length){
                 data = data.concat(j.shift);
             }
-            
+
             data.forEach(function (row) {
 
                 var g = new Graphics();

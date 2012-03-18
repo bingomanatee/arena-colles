@@ -19,7 +19,7 @@ module.exports = {
             var root = self.framework.app_root;
 
             var resource_path = util.format('%s/resources/mapimages/lat_%s_lon_%s.bin', root, input.lat, input.lon);
-            console.log('mars.get trying to read %s', resource_path);
+            console.log('mars.checking existence of %s', resource_path);
             path.exists(resource_path, function (exists) {
                 if (exists) {
                     switch (input.format) {
