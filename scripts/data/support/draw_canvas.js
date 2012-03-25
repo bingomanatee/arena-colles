@@ -1,4 +1,3 @@
-var canvas = require('canvas');
 var fs = require('fs');
 
 module.exports = function (canvas, c_path) {

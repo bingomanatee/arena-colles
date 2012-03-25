@@ -3,19 +3,15 @@ var path = require('path');
 var x_pat = /_x_([\d]+)\.bin$/;
 var util = require('util');
 var _ = require('underscore');
-var rainage = require('./support/rainage');
 var normal = require('./support/normal');
 var draw_canvas = require('./support/draw_canvas');
 var Stat = require('support/stat');
 var drippage = require('./support/drippage');
 var concavity = require('./support/concavity');
-var cf = require('./support/cell_format');
-var cell_format = cf.cell_format;
 var median_mtn_ness = require('./support/median_mtn_ness');
-var cc = cf.column_block;
 var highpass = require('./support/highpass');
 var terrain_smooth = require('./support/terrain_smooth');
-var Pipe = require('support.pipe');
+var Pipe = require('support/pipe');
 
 _.str = require('underscore.string');
 _.mixin(_.str.exports());
@@ -40,18 +36,26 @@ module.exports = function (config, callback) {
     fs.readdir(data_file_root, function (err, files) {
 
         function _find_mtns(name, params, on_act_done, on_pipe_done) {
+            var _oad = on_act_done;
+
+            var start_time = new Date();
+            on_act_done = function(){
+                var t = new Date();
+                console.log('done with _find_mtns: %s in %s seconds', name, (t.getTime() - start_time.getTime())/1000);
+                _oad();
+            }
             if (!name) {
                 return on_pipe_done();
             }
 
             if (!x_pat.test(name)) {
-                return;
+                return on_act_done();
             }
             console.log('@@@@@@@@@@@@ analyzing %s/ %s', data_file_root, name);
 
             var file_path = util.format("%s/%s", data_file_root, name);
 
-            var write_path = fpath.file_path('.bin', '.mtn.bin');
+            var write_path = file_path.replace('.bin', '.smooth.bin');
 
             path.exists(write_path, function (exists) {
 
@@ -121,7 +125,11 @@ module.exports = function (config, callback) {
 
             draw_canvas(canvas, fpath.replace('mapimages_lg', 'heightmaps') + '.heights.png');
 
-            /* *************** NORMAL ***************** */
+            delete ctx;
+            delete canvas;
+            delete id;
+
+            /* *************** NORMAL ***************** *
 
             canvas = new Canvas(grid.cols, grid.rows);
             ctx = canvas.getContext('2d');
@@ -138,10 +146,14 @@ module.exports = function (config, callback) {
             ctx.putImageData(id, 0, 0);
 
             draw_canvas(canvas, fpath.replace('mapimages_lg', 'heightmaps') + '.normal.png');
+            delete ctx;
+            delete canvas;
+            delete id;
+            */
 
             /* ************** MTN_NESS ************** */
 
-            function cb() {
+            function process_mtn_data() {
 
                 //  highpass(terrain, 6, 'hp1');
 
@@ -178,6 +190,10 @@ module.exports = function (config, callback) {
                 });
                 ctx.putImageData(id, 0, 0);
 
+                delete ctx;
+                delete canvas;
+                delete id;
+
                 draw_canvas(canvas, fpath.replace('mapimages_lg', 'heightmaps') + '.concavity.png');
 
                 canvas = new Canvas(grid.cols, grid.rows);
@@ -195,13 +211,11 @@ module.exports = function (config, callback) {
 
                 draw_canvas(canvas, fpath.replace('mapimages_lg', 'heightmaps') + '.concavity_roughness.png');
 
-                /** Map out mountain regions to bitmap *************** */
+                delete ctx;
+                delete canvas;
+                delete id;
 
-                    //  terrain.each_cell(rain_amount);
-                var groups = [];
-
-                // terrain.each_cell(clump);
-                // terrain.each_cell(flip);
+                /** Map out mountain regions to bitmap ***************
 
                 canvas = new Canvas(grid.cols, grid.rows);
                 ctx = canvas.getContext('2d');
@@ -223,14 +237,14 @@ module.exports = function (config, callback) {
                 ctx.putImageData(id, 0, 0);
 
                 draw_canvas(canvas, fpath.replace('mapimages_lg', 'heightmaps') + '.slope.png');
+                delete ctx;
+                delete canvas;
+                delete id;
+                */
 
-                /** valleyness *************** */
+                /** valleyness *************** *
 
-                    //  terrain.each_cell(rain_amount);
                 var groups = [];
-
-                // terrain.each_cell(clump);
-                // terrain.each_cell(flip);
 
                 canvas = new Canvas(grid.cols, grid.rows);
                 ctx = canvas.getContext('2d');
@@ -249,17 +263,23 @@ module.exports = function (config, callback) {
 
                 draw_canvas(canvas, fpath.replace('mapimages_lg', 'heightmaps') + '.vallyness.png');
 
-                /* ************** create mountain mask ********** */
+                delete ctx;
+                delete canvas;
+                delete id;
+*/
 
+                /* ************** create mountain mask ********** */
+                // note - mtn_ness_med is a badly named value;
+                // the higher the value, the smoother the terrain.
+
+                var mtn_path = fpath.replace('.bin', '.mtn.bin');
+                var stream = fs.createWriteStream(mtn_path);
                 var size = (original_terrain.rows - 1) * (original_terrain.cols - 1);
                 var b = new Buffer(size);
                 var bo = 0;
                 for (var c = 0; c < original_terrain.cols - 1; ++c) {
                     for (var r = 0; r < original_terrain.rows - 1; ++r) {
                         var cell = original_terrain.get(r, c);
-                        if (!(bo % 1000)) {
-                            //  console.log('cell: %s, mtn_ness: %s', cell_format(cell), mtn_ness);
-                        }
                         var mtn_ness = Math.floor(Math.min(255, cell.mtn_ness_med));
                         b.writeUInt8(mtn_ness, bo);
                         ++bo;
@@ -267,20 +287,15 @@ module.exports = function (config, callback) {
                 }
 
                 var inc = 0;
-                var stream = fs.createWriteStream(fpath.replace('.bin', '.mtn.bin'));
                 stream.on('close', function () {
                     console.log('writing smooth data: ');
                     /* *************** WRITE SMOOTH DATA ************** */
-                    //  return original_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), callback);
 
                     var smooth_terrain = terrain_smooth(original_terrain, 4, 0.5);
                     original_terrain.each_cell(function (cell) {
                         var rough_height = cell.height;
                         var smooth_cell = smooth_terrain.get(cell.row, cell.col);
-                        var smooth_height = smooth_cell.height;
-                        //   var mtn_ness = cell.mtn_ness_med / 255.0);
-                        // if (inc++ % 200 == 0)  console.log("rough_height: %s, smooth height: %s, mtn_ness: %s", rough_height, smooth_height, mtn_ness);
-                        if (cell.mtn_ness_med < 128)  smooth_cell.height = rough_height;// parseInt((smooth_height * mtn_ness) + (rough_height * (1 - mtn_ness)));
+                        if (cell.mtn_ness_med < 128)  smooth_cell.height = rough_height;
                     });
 
                     smooth_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), f_m_done);
@@ -290,7 +305,7 @@ module.exports = function (config, callback) {
 
             }
 
-            drippage(original_terrain, cb);
+            drippage(original_terrain, process_mtn_data);
         });
     }
 
