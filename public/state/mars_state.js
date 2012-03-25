@@ -21,7 +21,7 @@ function init() {
             sm_canvas_id.data[i * 4] = 0;
         }
 
-        interval = setInterval(_write_line, 500);
+        interval = setInterval(_write_line, 50);
     }
 
     function _write_line() {

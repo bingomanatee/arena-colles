@@ -15,6 +15,7 @@ var median_mtn_ness = require('./support/median_mtn_ness');
 var cc = cf.column_block;
 var highpass = require('./support/highpass');
 var terrain_smooth = require('./support/terrain_smooth');
+var Pipe = require('support.pipe');
 
 _.str = require('underscore.string');
 _.mixin(_.str.exports());
@@ -37,16 +38,46 @@ module.exports = function (config, callback) {
 
     var data_file_root = path.join(__dirname, './../../resources/mapimages_lg');
     fs.readdir(data_file_root, function (err, files) {
-        files.forEach(function (name) {
+
+        function _find_mtns(name, params, on_act_done, on_pipe_done) {
+            if (!name) {
+                return on_pipe_done();
+            }
+
             if (!x_pat.test(name)) {
                 return;
             }
-            console.log('@@@@@@@@@@@@ analyzing %s/ %s', data_file_root, name)
-            find_mtns(util.format("%s/%s", data_file_root, name), x_pat.exec(name)[1]);
-        });
+            console.log('@@@@@@@@@@@@ analyzing %s/ %s', data_file_root, name);
+
+            var file_path = util.format("%s/%s", data_file_root, name);
+
+            var write_path = fpath.file_path('.bin', '.mtn.bin');
+
+            path.exists(write_path, function (exists) {
+
+                if (exists) {
+                    console.log("..... ALREADY DID MOUNTAIN %s", file_path);
+                    return on_act_done();
+                }
+
+                path.exists(file_path, function (exists) {
+                    if (!exists) {
+                        console.log("..... cannot find %s", file_path);
+                        on_act_done();
+                    } else {
+                        find_mtns(file_path, x_pat.exec(name)[1], on_act_done);
+                    }
+                });
+            })
+
+        }
+
+        var p = new Pipe(callback, _find_mtns, files);
+
+        p.start();
     });
 
-    function find_mtns(fpath, scale) {
+    function find_mtns(fpath, scale, f_m_done) {
         mola_import(fpath, 128 * parseInt(scale) + 1, function (err, grid) {
             var original_terrain = new Terrain(grid.data);
             original_terrain.corner_length = Math.sqrt(2 * original_terrain.length * original_terrain.length);
@@ -240,19 +271,19 @@ module.exports = function (config, callback) {
                 stream.on('close', function () {
                     console.log('writing smooth data: ');
                     /* *************** WRITE SMOOTH DATA ************** */
-                  //  return original_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), callback);
+                    //  return original_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), callback);
 
                     var smooth_terrain = terrain_smooth(original_terrain, 4, 0.5);
                     original_terrain.each_cell(function (cell) {
                         var rough_height = cell.height;
                         var smooth_cell = smooth_terrain.get(cell.row, cell.col);
                         var smooth_height = smooth_cell.height;
-                     //   var mtn_ness = cell.mtn_ness_med / 255.0);
-                       // if (inc++ % 200 == 0)  console.log("rough_height: %s, smooth height: %s, mtn_ness: %s", rough_height, smooth_height, mtn_ness);
-                       if (cell.mtn_ness_med < 128)  smooth_cell.height = rough_height;// parseInt((smooth_height * mtn_ness) + (rough_height * (1 - mtn_ness)));
+                        //   var mtn_ness = cell.mtn_ness_med / 255.0);
+                        // if (inc++ % 200 == 0)  console.log("rough_height: %s, smooth height: %s, mtn_ness: %s", rough_height, smooth_height, mtn_ness);
+                        if (cell.mtn_ness_med < 128)  smooth_cell.height = rough_height;// parseInt((smooth_height * mtn_ness) + (rough_height * (1 - mtn_ness)));
                     });
 
-                    smooth_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), callback);
+                    smooth_terrain.write_to(fpath.replace('.bin', '.smooth.bin'), f_m_done);
                 });
                 stream.write(b);
                 stream.end();

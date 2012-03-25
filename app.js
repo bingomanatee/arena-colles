@@ -7,7 +7,6 @@ var express = require('./node_modules/nuby-express/node_modules/express');
 var ejs = require('./node_modules/nuby-express/node_modules/ejs');
 var ne_static = require('./node_modules/nuby-express/lib/ne_static');
 var ne = require('./node_modules/nuby-express');
-var mongoose = require('./node_modules/mongoose');
 var mongoose_init = require('./mongoose');
 
 var session_secret = "scooby doo";
@@ -37,7 +36,7 @@ app.use(ne_static({contexts:static_contexts}));
 
 //app.use(express.errorHandler(...));
 
-var port = 3000;
+var port = 80;
 
 var fw_configs = {
 
@@ -69,7 +68,7 @@ framework.add_layouts(__dirname + '/layouts', function () {
             app.listen(port);
         }
 
-        framework.get_param({}, 'mongo_params', function (err, mongo_params) {
+        framework.get_param(null, 'mongo_params', function (err, mongo_params) {
             mongoose_init.connect(mongo_params, _on_mongoose_connected);
 
         });

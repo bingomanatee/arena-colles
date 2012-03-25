@@ -161,6 +161,9 @@ public class Resize_terrain : MonoBehaviour
 			case GetHeightFile.STATUS_EXISTS:
 				DebugLog ("Exists; SKIPPING " + lat.ToString () + ", lon " + lon.ToString ());
 				height_file.status = GetHeightFile.STATUS_DONE;
+				lon = -1;
+				lat = lat + lat_dir;
+				
 				break;
 			
 			case GetHeightFile.STATUS_DONE:
@@ -171,9 +174,6 @@ public class Resize_terrain : MonoBehaviour
 					lon = 0;
 					lat = lat + lat_dir;
 				}
-				if ((lat < -88) || (lat >= 88)) {
-					complete = true;
-				}
 				break;
 			default:
 				
@@ -181,6 +181,9 @@ public class Resize_terrain : MonoBehaviour
 				break;
 			}
 			// end Switch
+			if ((lat < -88) || (lat >= 88)) {
+				complete = true;
+			}
 		}
 		// end if height_file
 	}
