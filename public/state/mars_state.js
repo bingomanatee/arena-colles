@@ -17,7 +17,7 @@ function init() {
         sm_canvas = document.getElementById('mars_state_canvas_sm');
         sm_canvas_ctx = sm_canvas.getContext('2d');
         sm_canvas_id = sm_canvas_ctx.getImageData(0, 0, 360, 180);
-        for (var i = 0; i < (360 * 180); ++i){
+        for (var i = 0; i < (360 * 180); ++i) {
             sm_canvas_id.data[i * 4] = 0;
         }
 
@@ -31,12 +31,18 @@ function init() {
             var row_data = j[row];
             var lat = row + 2;
             var color;
-            row_data.forEach(function(state, lon){
+            row_data.forEach(function (state, lon) {
+                switch (state) {
+                    case 1:
+                        color = [100, 255, 50, 255];
+                        break;
+                    
+                    case 2:
+                        color = [100, 120, 255, 255];
+                        break;
 
-                if (state) {
-                    color = [100, 255, 50, 255]
-                } else {
-                    color = [200, 0, 25, 255]
+                    default:
+                        color = [200, 0, 25, 255];
                 }
 
                 var offset = 4 * ((360 * (lat)) + lon);
@@ -46,48 +52,48 @@ function init() {
             });
             ++row;
             /*
-            var mt = 90;
-            var mxt = -90;
-            var data = j.shift();
-            if (j.length) {
-                data = data.concat(j.shift);
-            }
-            if (j.length) {
-                data = data.concat(j.shift);
-            }
-            if (j.length) {
-                data = data.concat(j.shift);
-            }
-            if (j.length) {
-                data = data.concat(j.shift);
-            }
-            if (j.length) {
-                data = data.concat(j.shift);
-            }
+             var mt = 90;
+             var mxt = -90;
+             var data = j.shift();
+             if (j.length) {
+             data = data.concat(j.shift);
+             }
+             if (j.length) {
+             data = data.concat(j.shift);
+             }
+             if (j.length) {
+             data = data.concat(j.shift);
+             }
+             if (j.length) {
+             data = data.concat(j.shift);
+             }
+             if (j.length) {
+             data = data.concat(j.shift);
+             }
 
-            data.forEach(function (row) {
+             data.forEach(function (row) {
 
-                var g;
-                var lat = row.lat;
-                var lon = row.lon;
-                var color;
+             var g;
+             var lat = row.lat;
+             var lon = row.lon;
+             var color;
 
-                if (mt > lat) mt = lat;
-                if (mxt < lat) mxt = lat;
+             if (mt > lat) mt = lat;
+             if (mxt < lat) mxt = lat;
 
-                if (lat < -88 || lat >= 88) {
-                    color = [0, 0, 0, 255]
-                } else if (row.stat) {
-                    color = [100, 255, 50, 255]
-                } else {
-                    color = [200, 0, 25, 255]
-                }
+             if (lat < -88 || lat >= 88) {
+             color = [0, 0, 0, 255]
+             } else if (row.stat) {
+             color = [100, 255, 50, 255]
+             } else {
+             color = [200, 0, 25, 255]
+             }
 
-                var offset = 4 * ((360 * (lat + 90)) + lon);
-                for (var i = 0; i < 4; ++i) {
-                    sm_canvas_id.data[offset + i] = color[i];
-                }
-            }); */
+             var offset = 4 * ((360 * (lat + 90)) + lon);
+             for (var i = 0; i < 4; ++i) {
+             sm_canvas_id.data[offset + i] = color[i];
+             }
+             }); */
 
             sm_canvas_ctx.putImageData(sm_canvas_id, 0, 0);
 
@@ -97,7 +103,7 @@ function init() {
         }
     }
 
-    $.getJSON('/mars/state/1.json', _on_json);
+    $.getJSON('/mars/state/2.json', _on_json);
 
 }
 

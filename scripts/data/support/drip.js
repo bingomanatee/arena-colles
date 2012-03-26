@@ -3,16 +3,16 @@ var Terrain = require('mola3/grid/Terrain');
 var _ = require('underscore');
 
 var FLOW_PERCENT = 0.25;
-var RAIN_AMOUNT = 4.0;
+var RAIN_AMOUNT = 5.0;
 var HEAVY_RAIN_AMOUNT = 1;
-var MUD_FLOW_PERCENT = 0.1;
+var MUD_FLOW_PERCENT = 0.25;
 var MUD_DRY_AMOUNT = 0.1;
-var EVAP_AMOUNT = 0.5;
-var SEASON_FLUX = 0.8;
-var SEASON_EVAP_FLUX = 2.5;
+var EVAP_AMOUNT = 0.125;
+var SEASON_FLUX = 0.666;
+var SEASON_EVAP_FLUX = 3.0;
 var Stat = require('support/stat');
-var TURNS = 100;
-var SMOOTH_ITER = 10;
+var TURNS = 150;
+var SMOOTH_ITER = 15;
 
 module.exports = function (height_path, scale, cb) {
 
@@ -188,7 +188,7 @@ module.exports = function (height_path, scale, cb) {
         }
 
         function _changes(cell) {
-            var slice = cell.slice(3);
+            var slice = cell.slice(2);
             var heights = _.map(slice, _water_height);
             var stat = new Stat(heights);
             return [
@@ -200,11 +200,13 @@ module.exports = function (height_path, scale, cb) {
         }
 
         var t = (new Date().getTime() - start_time.getTime()) / 1000;
+
+        var write_path = height_path.replace('mapimages_lg', 'heightmaps');
         console.log('time: %s seconds, %s secs/day', t, t / TURNS);
-        ter.paint(height_path + '.ht_mud_eros.' + TURNS + '_turns.png', _hme);
+        ter.paint(write_path + '.d1.png', _hme);
+        ter.paint(write_path + '.d2.png', _changes);
 
-
-        ter.paint(height_path + '.ht_adj,stdev,h2o.' + TURNS + '_turns.png', _changes);
+        cb();
     }
 
     mola_import(height_path, 128 * parseInt(scale) + 1, _on_grid);
