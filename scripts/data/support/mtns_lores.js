@@ -4,6 +4,7 @@ var Terrain = require('mola3/grid/Terrain');
 var _ = require('underscore');
 var util = require('util');
 var Stat = require('support/stat');
+var fs = require('fs');
 
 var DI = 40;
 
@@ -35,8 +36,6 @@ module.exports = function (height_path, scale, write_path, cb) {
          var smax = stat.avg() + (1.5 * sd);
          var srange = 3 * sd; */
 
-        console.log('min: %s, max: %s, range: %s', min_height, max_height, height_range);
-
         var t = (new Date().getTime() - start_time.getTime()) / 1000;
 
         ter.each_cell(function (cell) {
@@ -46,10 +45,10 @@ module.exports = function (height_path, scale, write_path, cb) {
             sum += cell.height;
 
             var debug = false;
-            if (!((cell.col % DI) || (cell.row % DI))) {
+          /*   if (!((cell.col % DI) || (cell.row % DI))) {
                 console.log('cell: r: %s, c: %s', cell.row, cell.col);
                 debug = true;
-            }
+            } */
 
             cell.angle = 0;
 
