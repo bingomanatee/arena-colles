@@ -36,7 +36,7 @@ function init() {
                     case 1:
                         color = [100, 255, 50, 255];
                         break;
-                    
+
                     case 2:
                         color = [100, 120, 255, 255];
                         break;

@@ -4,8 +4,10 @@ var path = require('path');
 var file = __dirname + '/scripts/' + process.argv[2];
 
 var config = {};
+var args = process.argv.length;
+console.log(' ---------------- SCRIPT %s (%s) ------------ ', file, args);
 
-if (process.args > 3) {
+if (args > 3) {
     var config_string = process.argv[3];
     console.log('config string: %s', config_string);
 
@@ -13,7 +15,7 @@ if (process.args > 3) {
 
     process.argv.slice(3).forEach(
         function (span) {
-            console.log('span: %s', span);
+            console.log('SCRIPT span: %s', span);
             if (span_regex.test(span)) {
                 var m = span_regex.exec(span);
                 var key = m[1];
