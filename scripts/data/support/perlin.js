@@ -57,7 +57,7 @@ module.exports.Noise2D = function( x, y, octaves, f, persistence )
 
     for ( var octave = 0; octave < octaves; ++octave )
     {
-        var frequency = Math.pow( 2, octave ) * f;
+        var frequency = Math.pow( 2, octave );
         var amplitude = Math.pow( persistence, octave );
 
         total += InterpolatedNoise( x * frequency, y * frequency, octave ) * amplitude;
