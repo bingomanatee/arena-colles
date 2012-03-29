@@ -4,7 +4,7 @@
 *
 *
 * Copyright (c) 2010 Grant Skinner
-* 
+*
 * Permission is hereby granted, free of charge, to any person
 * obtaining a copy of this software and associated documentation
 * files (the "Software"), to deal in the Software without
@@ -13,10 +13,10 @@
 * copies of the Software, and to permit persons to whom the
 * Software is furnished to do so, subject to the following
 * conditions:
-* 
+*
 * The above copyright notice and this permission notice shall be
 * included in all copies or substantial portions of the Software.
-* 
+*
 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -28,8 +28,8 @@
 */
 
 /**
-* The Easel Javascript library provides a retained graphics mode for canvas 
-* including a full, hierarchical display list, a core interaction model, and 
+* The Easel Javascript library provides a retained graphics mode for canvas
+* including a full, hierarchical display list, a core interaction model, and
 * helper classes to make working with Canvas much easier.
 * @module EaselJS
 **/
@@ -55,7 +55,7 @@ var p = Bitmap.prototype = new DisplayObject();
 	 * @type Image | HTMLCanvasElement | HTMLVideoElement
 	 **/
 	p.image = null;
-	
+
 	/**
 	 * Whether or not the Bitmap should be draw to the canvas at whole pixel coordinates.
 	 * @property snapToPixel
@@ -63,7 +63,7 @@ var p = Bitmap.prototype = new DisplayObject();
 	 * @default true
 	 **/
 	p.snapToPixel = true;
-	
+
 	// constructor:
 
 	/**
@@ -73,7 +73,7 @@ var p = Bitmap.prototype = new DisplayObject();
 	 **/
 	p.DisplayObject_initialize = p.initialize;
 
-	/** 
+	/**
 	 * Initialization method.
 	 * @method initialize
 	 * @protected
@@ -87,7 +87,7 @@ var p = Bitmap.prototype = new DisplayObject();
 			this.image = imageOrUri;
 		}
 	}
-	
+
 // public methods:
 
 	/**
@@ -107,44 +107,57 @@ var p = Bitmap.prototype = new DisplayObject();
 	 * @private
 	 **/
 	p.DisplayObject_draw = p.draw;
-	
+
 	/**
 	 * Draws the display object into the specified context ignoring it's visible, alpha, shadow, and transform.
 	 * Returns true if the draw was handled (useful for overriding functionality).
 	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
 	 * @method draw
 	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
-	 * @param {Boolean} ignoreCache Indicates whether the draw operation should ignore any current cache. 
+	 * @param {Boolean} ignoreCache Indicates whether the draw operation should ignore any current cache.
 	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
 	 * into itself).
 	 **/
 	p.draw = function(ctx, ignoreCache) {
 		if (this.DisplayObject_draw(ctx, ignoreCache)) { return true; }
-		ctx.drawImage(this.image, 0, 0);
+        if (this.image instanceof HTMLCanvasElement){
+
+         //   if ((this.scaleX!= 1) || (this.scaleY != 1)){
+                ctx.drawImage(this.image, 0, 0);
+          //  } else {
+
+            //    var ic = this.image.getContext('2d');
+           // /    ctx.putImageData(ic.getImageData(0, 0, this.image.width, this.image.height), this.x, this.y);
+           // }
+
+
+        } else {
+            ctx.drawImage(this.image, 0, 0);
+        }
 		return true;
 	}
-	
+
 	//Note, the doc sections below document using the specified APIs (from DisplayObject)  from
 	//Bitmap. This is why they have no method implementations.
-	
+
 	/**
 	 * Because the content of a Bitmap is already in a simple format, cache is unnecessary for Bitmap instances.
 	 * You should not cache Bitmap instances as it can degrade performance.
 	 * @method cache
 	 **/
-	
+
 	/**
 	 * Because the content of a Bitmap is already in a simple format, cache is unnecessary for Bitmap instances.
 	 * You should not cache Bitmap instances as it can degrade performance.
 	 * @method updateCache
 	 **/
-	
+
 	/**
 	 * Because the content of a Bitmap is already in a simple format, cache is unnecessary for Bitmap instances.
 	 * You should not cache Bitmap instances as it can degrade performance.
 	 * @method uncache
 	 **/
-	
+
 	/**
 	 * Returns a clone of the Bitmap instance.
 	 * @method clone
@@ -155,7 +168,7 @@ var p = Bitmap.prototype = new DisplayObject();
 		this.cloneProps(o);
 		return o;
 	}
-	
+
 	/**
 	 * Returns a string representation of this object.
 	 * @method toString

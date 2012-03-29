@@ -1,4 +1,4 @@
-(function (w) {
+(function(w){
 
     var NoiseFilter = easely('NoiseFilter', Bitmap, 'Bitmap');
 
@@ -21,26 +21,17 @@
         }
 
         var pixels = imageData.data;
-        var c = Math.random();
+        var c = Math.floor(Math.random() * 255);
         for (var i = 0; i < pixels.length; ++i) {
-            if (!(i + 1) % 4) {
-                c = Math.random();
+            if (!((i + 1) % 4)) {
+                c = Math.floor(Math.random() * 255);
+                pixels[i] = 255;
             } else {
                 pixels[i] = c;
             }
         }
+        targetCtx.putImageData(imageData, 0, 0);
     }
 
-    var Perlin = easely('Perlin', Bitmap, 'Bitmap');
-    var p = Perlin.prototype;
-    _.extend(p, {
-
-        _post_initialize:function () {
-            this.filters = [new NoiseFilter()];
-        }
-
-    });
-
-    w.Perlin = Perlin;
-
-})(window)
+        w.NoiseFilter = NoiseFilter;
+})(window);
