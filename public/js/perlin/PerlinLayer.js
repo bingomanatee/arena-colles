@@ -1,32 +1,41 @@
 (function (w) {
 
-    var PerlinLayer = easely('Perlin', Bitmap, 'Bitmap');
-    var p = Perlin.prototype;
+    var PerlinLayer = easely('PerlinLayer', Bitmap, 'Bitmap');
+    var p = PerlinLayer.prototype;
     _.extend(p, {
 
-        _post_initialize:function (h, w, source_canvas, op, scale) {
-            this.filters = [new BoxBlurFilter(2, 2, 8)];
+        _post_initialize:function (h, w, scale, a, b) {
             this.image = document.createElement('canvas');
             this.image.width = w;
             this.image.height = h;
 
             var stage = new Stage(this.image);
-
-            var sx = perlin.image.width * scale;
-            var sy = perlin.image.height * scale;
+            var pc = 100;
+            var sx = pc * scale;
+            var sy = pc * scale;
 
             for (var x = 0; x < w; x += sx)
-            for (var y = 0; y < h; y += sy){
+                for (var y = 0; y < h; y += sy) {
 
-                var p = new Perlin(source_canvas);
-                p.alpha = op;
-                p.scaleX = p.scaleY = scale;
+                    var p = new Perlin(pc, pc);
+                    p.scaleX = p.scaleY = scale;
 
-                p.x = x;
-                p.y = y;
+                    p.x = x;
+                    p.y = y;
 
-                stage.addChild(p);
+                    stage.addChild(p);
 
+                }
+            stage.update();
+
+            var ctx = this.image.getContext('2d');
+
+            if (a) {
+               // var bf = new BoxBlurFilter(a, b, 4);
+               // bf.applyFilter(ctx, 0, 0, 400, 400);
+
+                var nf = new NormalFilter(3);
+                nf.applyFilter(ctx, 0, 0, 400, 400);
             }
         }
 

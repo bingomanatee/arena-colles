@@ -1,8 +1,8 @@
 (function(w){
 
-    var NoiseFilter = easely('NoiseFilter', Bitmap, 'Bitmap');
+    var NoiseFilter = easely('NoiseFilter', Filter, 'Filter');
 
-    var p = NoiseFilter.prototype = new Filter();
+    var p = NoiseFilter.prototype;
 
     p.applyFilter = function (ctx, x, y, width, height, targetCtx, targetX, targetY) {
         targetCtx = targetCtx || ctx;
