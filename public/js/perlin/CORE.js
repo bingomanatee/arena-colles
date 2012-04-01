@@ -1,122 +1,154 @@
-$(function () {
-/*
-    var bm_canvas = document.getElementById('noise');
-    var bctx = bm_canvas.getContext('2d');
-    var imageData = bctx.getImageData(0, 0, 100, 100);
-    var pixels = imageData.data;
-
-    var c = Math.floor(Math.random() * 255);
-    for (var i = 0; i < pixels.length; ++i) {
-        if (!((i + 1) % 4)) {
-            c = Math.floor(Math.random() * 255);
-            pixels[i] = 255;
-        } else {
-            pixels[i] = 100;
-
-        }
+var PERLIN_CORE = {
+    stage:null,
+    update:false,
+    colors:{
+        black:Graphics.getRGB(0, 0, 0),
+        button_back:Graphics.getRGB(230, 240, 240)
     }
-    bctx.putImageData(imageData, 0, 0);
+}
 
+function tick() {
 
-    var bbf = new BoxBlurFilter(4, 4, 0.5);
+    if (PERLIN_CORE.update) {
+        PERLIN_CORE.update = false;
+        PERLIN_CORE.stage.update();
+        console.log('updating stage');
+    }
+}
+$(function (w) {
+    var canvas0 = document.getElementById('perlin');
+    PERLIN_CORE.stage = new Stage(canvas0);
+    PERLIN_CORE.perlin_set = new PerlinSet(400, 400, 6, 2.25);
+    PERLIN_CORE.stage.addChild(PERLIN_CORE.perlin_set);
 
-    var b = new Perlin(bm_canvas);
-    b.filters = [bbf];
-    b.scaleX = 8;
-    b.scaleY = 8;
-    stage.addChild(b);
-    var b = new Perlin(bm_canvas);
-    b.filters = [bbf];
-    b.scaleX = 16;
-    b.scaleY = 16;
-    b.alpha = 0.6;
-    stage.addChild(b);
+    _octave_button();
+    _op_base_button();
+    _analysis_button();
 
-    var c2 = new Container();
-    c2.filters = [bbf];
-    var b = new Perlin(bm_canvas);
-    b.filters = [bbf];
-    b.alpha = 0.4;
-    b.scaleX = 4;
-    b.scaleY = 4;
-    stage.addChild(b);
+    PERLIN_CORE.update = true;
+    Ticker.addListener(window);
 
-    var c3 = new Container();
-    c3.filters = [bbf];
-    for (var x = 0; x < 400; x += 200)
-        for (var y = 0; y < 400; y += 200) {
+    function _analyze() {
 
-            var b = new Perlin(bm_canvas);
-            b.filters = [bbf];
-            b.x = x;
-            b.y = y;
-            b.alpha = 0.2;
-            b.scaleX = 2;
-            b.scaleY = 2;
-            stage.addChild(b);
+        if (PERLIN_CORE.sd_layer) {
+            PERLIN_CORE.stage.removeChild(PERLIN_CORE.sd_layer);
         }
 
-    var c4 = new Container();
-    c4.filters = [bbf];
-    for (var x = 0; x < 400; x += 100)
-        for (var y = 0; y < 400; y += 100) {
+        PERLIN_CORE.sd_layer = new TerrainHeight(PERLIN_CORE.perlin_set.image);
+        PERLIN_CORE.stage.addChild(PERLIN_CORE.sd_layer);
+        PERLIN_CORE.update = true;
+    }
 
-            var b = new Perlin(bm_canvas);
-            b.filters = [bbf];
-            b.x = x;
-            b.y = y;
-            b.alpha = 0.1;
-            stage.addChild(b);
-        } */
-/*
-    var canvas1 = document.getElementById('perlin1');
-    var stage1 = new Stage(canvas1);
-    var p1 = new PerlinLayer(400, 400, 1, 8, 12, 12);
-    stage1.addChild(p1);
-    stage1.update();
+    function _op_base_button() {
+        var button = new Container();
+        var g = new Graphics();
+        g.beginFill(PERLIN_CORE.colors.button_back);
+        g.beginStroke(PERLIN_CORE.colors.black);
+        g.rect(0, 0, 70, 20);
+        g.endStroke();
+        g.endFill();
+        var bb = new Shape(g);
+        button.addChild(bb);
+        var label = new Text('Opacity', "10pt Arial", PERLIN_CORE.colors.black);
+        label.y = 14;
+        label.x = 5;
+        button.addChild(label);
+        button.x = 5;
+        button.y = 30;
 
-    var canvas2 = document.getElementById('perlin2');
-    var stage2 = new Stage(canvas2);
-    var p2 = new PerlinLayer(400, 400, 1/(Math.pow(2, 2)), 4, 6, 6);
-    stage2.addChild(p2);
-    stage2.update();
+        (function (target) {
+            target.onPress = function (evt) {
+                // bump the target in front of it's siblings:
 
-    var canvas3 = document.getElementById('perlin3');
-    var stage3 = new Stage(canvas3);
-    var p3 = new PerlinLayer(400, 400, 1/(Math.pow(2, 3)), 2, 2, 2);
-    stage3.addChild(p3);
-    stage3.update();
+                var offset = {x:target.x - evt.stageX, y:target.y - evt.stageY};
 
-    var canvas4 = document.getElementById('perlin4');
-    var stage4 = new Stage(canvas4);
-    var p4 = new PerlinLayer(400, 400, 1/(Math.pow(2, 4)), 1, 1,1);
-    stage4.addChild(p4);
-    stage4.update();
+                // add a handler to the event object's onMouseMove callback
+                // this will be active until the user releases the mouse button:
+                evt.onMouseMove = function (ev) {
+                    target.x = ev.stageX + offset.x;
+                    PERLIN_CORE.perlin_set.set_op_base((target.x - 5) / 50);
+                    //target.y = ev.stageY+offset.y;
+                    // indicate that the stage should be updated on the next tick:
+                    PERLIN_CORE.update = true;
+                }
+            }
+            target.onMouseOver = function () {
+                PERLIN_CORE.update = true;
+            }
+            target.onMouseOut = function () {
+                PERLIN_CORE.update = true;
+            }
+        })(button);
+        PERLIN_CORE.stage.addChild(button);
+    }
 
-    var canvas5 = document.getElementById('perlin5');
-    var stage5 = new Stage(canvas5);
-    var p5 = new PerlinLayer(400, 400, 1/(Math.pow(2, 5)), 0.5, 0, 0);
-    stage5.addChild(p5);
-    stage5.update();
+    function _octave_button() {
+        var button = new Container();
+        var g = new Graphics();
+        g.beginFill(PERLIN_CORE.colors.button_back);
+        g.beginStroke(PERLIN_CORE.colors.black);
+        g.rect(0, 0, 70, 20);
+        g.endStroke();
+        g.endFill();
+        var bb = new Shape(g);
+        button.addChild(bb);
+        var label = new Text('Octaves', "10pt Arial", PERLIN_CORE.colors.black);
+        label.y = 14;
+        label.x = 5;
+        button.addChild(label);
+        button.x = 5;
+        button.y = 10;
 
+        (function (target) {
+            target.onPress = function (evt) {
+                // bump the target in front of it's siblings:
 
-    var canvas6 = document.getElementById('perlin6');
-    var stage6 = new Stage(canvas6);
-    var ctx = canvas6.getContext('2d');
-    stage6.addChild(p1);
-    stage6.addChild(p2);
-    stage6.addChild(p3);
-    stage6.addChild(p4);
-    stage6.addChild(p5);
-    stage6.update();
-  //  var nf = new NormalFilter(2);
- //   nf.applyFilter(ctx, 0, 0, 200, 400);
-//    var bf = new BoxBlurFilter(1,1, 4);
- //   bf.applyFilter(ctx, 0, 200, 400, 200); */
+                var offset = {x:target.x - evt.stageX, y:target.y - evt.stageY};
 
-    var canvas0 = document.getElementById('perlin0');
-    var stage0 = new Stage(canvas0);
-    var p0 = new PerlinSet(400, 400, 6, 2.25);
-    stage0.addChild(p0);
-    stage0.update();
+                // add a handler to the event object's onMouseMove callback
+                // this will be active until the user releases the mouse button:
+                evt.onMouseMove = function (ev) {
+                    target.x = ev.stageX + offset.x;
+                    PERLIN_CORE.perlin_set.set_octaves((target.x - 5) / 25);
+                    //target.y = ev.stageY+offset.y;
+                    // indicate that the stage should be updated on the next tick:
+                    PERLIN_CORE.update = true;
+                }
+            }
+            target.onMouseOver = function () {
+                PERLIN_CORE.update = true;
+            }
+            target.onMouseOut = function () {
+                PERLIN_CORE.update = true;
+            }
+        })(button);
+        PERLIN_CORE.stage.addChild(button);
+    }
+
+    function _analysis_button() {
+        var button = new Container();
+        var g = new Graphics();
+        g.beginFill(PERLIN_CORE.colors.button_back);
+        g.beginStroke(PERLIN_CORE.colors.black);
+        g.rect(0, 0, 70, 20);
+        g.endStroke();
+        g.endFill();
+        var bb = new Shape(g);
+        button.addChild(bb);
+        var label = new Text('Analyze', "10pt Arial", PERLIN_CORE.colors.black);
+        label.y = 14;
+        label.x = 5;
+        button.addChild(label);
+        button.x = 200;
+        button.y = 380;
+
+        (function (target) {
+            target.onClick = function (evt) {
+                _analyze();
+            }
+
+        })(button);
+        PERLIN_CORE.stage.addChild(button);
+    }
+
 });
