@@ -1,3 +1,6 @@
 [submodule "node_modules/nuby-express"]
 	path = node_modules/nuby-express
 	url = git@github.com:bingomanatee/nuby-express.git
+[submodule "node_modules/easel"]
+	path = node_modules/easel
+	url = https://github.com/enobrev/EaselJS.git
