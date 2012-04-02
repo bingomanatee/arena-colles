@@ -1,5 +1,7 @@
 var Canvas = require('canvas');
 var easel = require('easel');
+var fs = require('fs');
+var draw_canvas = require('support/draw_canvas');
 
 module.exports = function (config, cb) {
 
@@ -18,6 +20,9 @@ module.exports = function (config, cb) {
     c.addChild(new Shape(g));
 
     stage.addChild(c);
+    stage.update();
+
+    draw_canvas(canvas, __dirname + '/easel_test.png',  cb);
 
     cb();
 
