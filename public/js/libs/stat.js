@@ -95,3 +95,52 @@ Stat.prototype = {
         return sum / (1.0 * end_count);
     }
 }
+
+
+function Wstat(params){
+    this.weight = 'weight';
+    this.value  = 'value';
+    _.extend(this, params);
+    _.defaults(this, {values: []});
+}
+
+Wstat.prototype = {
+
+    w_avg: function(){
+
+        var weights = 0;
+        var sum = 0;
+        var self = this;
+
+        this.values.forEach(function(item){
+            var value = 0;
+            var weight = 1;
+            if (item.hasOwnProperty(self.value)){
+                value = item[self.value];
+            };
+
+            if (item.hasOwnProperty(self.weight)){
+                weight = item[self.weight];
+            }
+
+            if (isNaN(value) || isNaN(weight) || (weight <= 0) || (!isFinite(value)) || (!isFinite(weight))){
+                return;
+            }
+
+           // console.log('weight: %s, value: %s', weight, value);
+            weights += weight;
+            sum += value * weight;
+        });
+
+        if (weights <= 0){
+            return 0;
+        }
+        var out = sum / weights;
+        if (isNaN(out) || (!isFinite(out))){
+            return 0;
+        }
+        return out;
+    }
+
+
+}

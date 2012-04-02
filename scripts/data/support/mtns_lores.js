@@ -20,22 +20,6 @@ module.exports = function (height_path, scale, write_path, cb) {
         var sum = 0;
         var count = 0;
 
-        /*    var h = [];
-
-         ter.each_cell(function (cell) {
-         h.push(cell.height);
-         });
-
-         var stat = new Stat(h);
-         console.log('OVERALL AVG: %s, std_dev: %s', stat.avg(), stat.std_dev()
-         )
-
-         var height_range = max_height - min_height;
-         var sd = stat.std_dev();
-         var smin = stat.avg() - (1.5 * sd);
-         var smax = stat.avg() + (1.5 * sd);
-         var srange = 3 * sd; */
-
         var t = (new Date().getTime() - start_time.getTime()) / 1000;
 
         ter.each_cell(function (cell) {

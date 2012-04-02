@@ -76,6 +76,12 @@
             return ((n.row == this.row) && (n.col == this.col));
         },
 
+        distance: function(cell){
+            var xd = Math.abs(cell.row - this.row);
+            var yd = Math.abs(cell.col - this.row);
+            return xd + yd;
+        },
+
         slice:function (distance) {
 
             var c_min = this.col - distance;
@@ -100,7 +106,7 @@
         this.data = _canvas_to_data(canvas);
         this._cell_data = [];
         this.make_cell_data();
-        this.length = length || 500; // meters per region
+        this.length = 10; // meters per region
     }
 
     CanvasTerrain.prototype = {
@@ -127,12 +133,6 @@
             this.each_cell(function(c){ data.push(c.height)});
 
             return new Terrain(data, this.rows, this.cols);
-        },
-
-        write_to: function(write_path, cb){
-            var data = this.export();
-            var grid = new CanvasGrid(data, this.rows);
-            grid.write_to(write_path, cb);
         },
 
         make_cell_data:function () {
@@ -240,7 +240,7 @@
                 out.push(this.get(r, c));
             }
             return out;
-        }
+        },
     }
 
     function _neighborhood(cell) {
@@ -356,11 +356,6 @@
                 ]
                 rows[r][c] = (rgba[0] + rgba[1] + rgba[2])/3;
 
-                if (c < 10 && r < 10){
-                    console.log('row: ', r, 'col: ', c, 'rgba: ', rgba.join(','));
-                    var cell_id = '#cd_r_' + r + '_c_' + c + '_height';
-                    $(cell_id).html(':' + rows[r][c]);
-                }
             }
         }
         return rows;
