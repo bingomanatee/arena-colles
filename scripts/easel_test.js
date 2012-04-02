@@ -10,14 +10,14 @@ module.exports = function (config, cb) {
     var stage = new easel.Stage(canvas);
 
     var g = new easel.Graphics();
-    g.beginFill(PERLIN_CORE.colors.button_back);
-    g.beginStroke(PERLIN_CORE.colors.black);
+    g.beginFill(easel.Graphics.getRGB(200, 210, 180));
+    g.beginStroke(easel.Graphics.getRGB(0, 0, 0, 0.4));
     g.rect(0, 0, 120, 20);
     g.endStroke();
     g.endFill();
 
-    var Container = new easel.Container();
-    c.addChild(new Shape(g));
+    var c = new easel.Container();
+    c.addChild(new easel.Shape(g));
 
     stage.addChild(c);
     stage.update();
